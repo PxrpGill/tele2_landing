@@ -1,0 +1,88 @@
+.footer__title--visually-hidden {
+    display: none;
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.footer__container {
+    width: 80%;
+}
+
+.footer__upper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #39404C;
+    padding-bottom: 12px;
+}
+
+.footer__navigation-list {
+    display: flex;
+    gap: 11px;
+    align-items: center;
+}
+
+.footer__upper-terms-stonk {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer__terms-stonk-eclipse {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Tele2 TextSans Regular";
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+}
+
+.footer__terms-stonk-title {
+    font-family: "Tele2 TextSans Regular";
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.footer__lower {
+    display: flex;
+    justify-content: space-between;
+    padding: 42px 0px 47px 0px;
+}
+
+.footer__lower-copywriting {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.footer__copy {
+    font-family: "Tele2 TextSans Regular";
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #ffff;
+}
+
+.footer__lower-made-by {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.footer__made {
+    font-family: "Tele2 TextSans Regular";
+    font-size: 13px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #ffff;
+}

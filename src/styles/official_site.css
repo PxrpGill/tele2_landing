@@ -11,6 +11,7 @@
     font-weight: 700;
     line-height: 52px;
     font-family: "Tele2 DisplaySerif Regular";
+    margin-bottom: 30px;
 }
 
 .main__link-to-site-about {
@@ -18,6 +19,7 @@
     font-weight: 400;
     line-height: 30px;
     font-family: "Tele2 TextSans Regular";
+    margin-bottom: 48px;
 }
 
 .main__link-to-site-link {
@@ -29,4 +31,24 @@
     font-size: 16px;
     line-height: 22px;
     font-weight: 700;
+    cursor: pointer;
+}
+
+.main__tele2-site-information {
+    display: flex;
+    gap: 118px;
+    align-items: center;
+    margin-bottom: 148px;
+}
+
+.main__tele2-site-information-link-to-site {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.main__tele2-site-information-image-rate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
