@@ -7,3 +7,8 @@
     font-family: "Standard CT Stencil";
     src: url("/fonts/StandardCTStencil-Bold.ttf");
 }
+
+@font-face {
+    font-family: "Tele2 DisplaySerif Regular";
+    src: url("/fonts/tele2_displayserif-regular.ttf");
+}

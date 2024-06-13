@@ -1,0 +1,67 @@
+.main__rate-my-online {
+    margin-top: 148px;
+    margin-bottom: 148px;
+}
+
+.main__rate-my-online-title--visually-hidden {
+    display: none;
+}
+
+.main__about-rate-title-slogan {
+    font-family: "Tele2 DisplaySerif Regular";
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 52px;
+    margin-bottom: 24px;
+}
+
+.main__about-rate-text {
+    font-family: "Tele2 TextSans Regular";
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    margin-bottom: 56px;
+}
+
+.main__rate-my-online-title--visually-hidden {
+    display: none;
+}
+
+.main__rate-my-online-information-list {
+    width: 100%;    
+}
+
+.main__rate-my-online-list {
+    display: flex;
+    flex-direction: row;
+    gap: 56px;
+    justify-content: start;
+}
+
+.main__rate-my-online-list-item-title--visually-hidden {
+    display: none;
+}
+
+.main__rate-my-online-list-item-information {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 16px;
+}
+
+.main__rate-my-online-list-item-about-favico {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    background-color: #39404C;
+}
+
+.main__rate-my-online-list-item-about-information {
+    font-family: "Tele2 TextSans Regular";
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+}

@@ -17,7 +17,7 @@
     display: flex;
     flex-direction: column;
     height: 551px;
-    justify-content: space-around   ;
+    justify-content: start;
     align-items: start;
 }
 
@@ -26,11 +26,14 @@
     font-size: 20px;
     font-weight: 400;
     line-height: 30px;
+    margin-top: 27px;
+    margin-bottom: 48px;
 }
 
 .main__stocks-content-title {
     font-family: "Standard CT Stencil";
     font-size: 68px;
+    margin-bottom: 24px;
 }
 
 .stocks-content__title-benefit {
@@ -42,6 +45,7 @@
     font-size: 20px;
     line-height: 30px;
     font-weight: 400;
+    margin-bottom: 56px;
 }
 
 .main__stocks-content-participate-button {
@@ -51,4 +55,5 @@
     font-weight: 700;
     line-height: 22px;
     border-radius: 45px;
+    cursor: pointer;
 }
