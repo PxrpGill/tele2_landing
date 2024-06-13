@@ -36,7 +36,7 @@
     margin-bottom: 24px;
 }
 
-.stocks-content__title-benefit {
+.stocks-content__title--benefit {
     color: #48ccfd;
 }
 
@@ -54,6 +54,7 @@
     font-size: 16px;
     font-weight: 700;
     line-height: 22px;
-    border-radius: 45px;
+    border-radius: 48px;
     cursor: pointer;
+    border: none;
 }
