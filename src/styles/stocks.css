@@ -1,0 +1,54 @@
+.main__stocks-title--visually-hidden {
+    display: none;
+}
+
+.main__logo-boss-title--visually-hidden {
+    display: none;
+}
+
+.main__stocks {
+    margin: 56px 0px 148px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main__stocks-content {
+    display: flex;
+    flex-direction: column;
+    height: 551px;
+    justify-content: space-around   ;
+    align-items: start;
+}
+
+.main__stocks-content-data-information {
+    font-family: "Tele2 TextSans Regular";
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+.main__stocks-content-title {
+    font-family: "Standard CT Stencil";
+    font-size: 68px;
+}
+
+.stocks-content__title-benefit {
+    color: #48ccfd;
+}
+
+.main__stocks-content-about-rate-my-online {
+    font-family: "Tele2 TextSans Regular";
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+.main__stocks-content-participate-button {
+    padding: 19px 44px 19px 44px;
+    font-family: "Tele2 TextSans Regular";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    border-radius: 45px;
+}

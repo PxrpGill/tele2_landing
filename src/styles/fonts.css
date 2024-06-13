@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "Tele2 TextSans Regular";
+    src: url("/fonts/tele2_textsans-regular.ttf");
+}
+
+@font-face {
+    font-family: "Standard CT Stencil";
+    src: url("/fonts/StandardCTStencil-Bold.ttf");
+}
