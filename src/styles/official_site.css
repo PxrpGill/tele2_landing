@@ -1,0 +1,32 @@
+.main__tele2-site-information-title--visually-hidden {
+    display: none;
+}
+
+.main__image-rate-title--visually-hidden {
+    display: none;
+}
+
+.main__link-to-site-slogan {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 52px;
+    font-family: "Tele2 DisplaySerif Regular";
+}
+
+.main__link-to-site-about {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    font-family: "Tele2 TextSans Regular";
+}
+
+.main__link-to-site-link {
+    border-radius: 48px;
+    width: 205px;
+    height: 48px;
+    border: none;
+    font-family: "Tele2 TextSans Regular";
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 700;
+}
