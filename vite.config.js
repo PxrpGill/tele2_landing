@@ -14,9 +14,6 @@ export default defineConfig({
             }
         }
     },
-    server: {
-        open: true
-    },
     resolve: {
         alias: {
             '/scripts': resolve(__dirname, 'src/scripts'),

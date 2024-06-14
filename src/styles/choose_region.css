@@ -1,0 +1,66 @@
+.choose-region__modal-window {
+    margin: 0;
+    width: 297px;
+    height: 123px;
+    position: relative;
+    top: 76px;
+    left: 71%;
+    border-radius: 4px;
+    border: none;
+    background-color: #fff;
+    overflow: visible;
+}
+
+.choose-region__modal-window::after {
+    content: '';
+    position: absolute;
+    top: -10px; /* Располагаем треугольник над верхней границей окна */
+    left: 75%; /* Центрируем треугольник по горизонтали */
+    transform: translateX(-50%); /* Корректируем положение, чтобы треугольник был точно над окном */
+    border-style: solid;
+    border-width: 10px 10px 0 10px; /* Размеры треугольника: сначала высота, затем ширина */
+    border-color: #fff transparent transparent transparent; /* Цвета для треугольника */
+    rotate: 180deg;
+}
+
+.choose-region__title--visually-hidden {
+    display: none;
+}
+
+.choose-region__question {
+    font-family: "Tele2 TextSans Regular";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+}
+
+.choose-region__agree-button {
+    border: 2px solid #1F2229;
+    background: none;
+    color: #1F2229;
+    font-family: "Tele2 TextSans Regular";
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    border-radius: 48px;
+    padding: 9px 19px 9px 19px;
+    cursor: pointer;
+}
+
+.choose-region__change-city-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.choose-region__content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 16px;
+    height: 100%;
+}

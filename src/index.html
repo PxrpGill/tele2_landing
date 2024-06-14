@@ -14,7 +14,7 @@
     <div class="header__container">
       <article class="header__logo">
         <h1 class="header__title--visually-hidden">
-          ТЕЛЕ2
+          ТЕЛЕ2 - Тариф «Мой онлайн+» и 1 ТБ трафика
         </h1>
         <img class="tele2-logo" src="/images/tele2_logo.svg" alt="Логотип Теле2">
       </article>
@@ -280,6 +280,30 @@
       </section>
     </div>
   </footer>
+  <template class="choose-region">
+    <dialog class="choose-region__modal-window">
+      <article class="choose-region__content">
+        <h2 class="choose-region__title--visually-hidden">
+          Выбор города
+        </h2>
+        <p class="choose-region__question">
+          Ваш город Санкт-Петербург?
+        </p>
+        <section class="choose-region__button-section">
+          <h3 class="choose-region__title--visually-hidden">
+            Секция кнопок
+          </h3>
+          <button class="choose-region__agree-button">
+            Да, все верно
+          </button>
+          <button class="choose-region__change-city-button">
+            Изменить регион
+          </button>
+        </section>
+      </article>
+    </dialog>
+  </template>
+  <script src="/scripts/choose_city.js"></script>
 </body>
 
 </html>

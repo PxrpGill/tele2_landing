@@ -5,6 +5,7 @@
 @import url('./tariff.css');
 @import url('./official_site.css');
 @import url('./footer.css');
+@import url('./choose_region.css');
 @import url('./fonts.css');
 
 
@@ -142,4 +143,3 @@ table {
 body {
     background-color: #1F2229;
 }
-
