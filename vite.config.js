@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import { resolve } from "path";
 
 export default defineConfig({
+    base: "/tele2_landing/",
     root: "src/",
     publicDir: resolve(__dirname, 'public'),
     build: {
