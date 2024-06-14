@@ -15,12 +15,12 @@
 .choose-region__modal-window::after {
     content: '';
     position: absolute;
-    top: -10px; /* Располагаем треугольник над верхней границей окна */
-    left: 75%; /* Центрируем треугольник по горизонтали */
-    transform: translateX(-50%); /* Корректируем положение, чтобы треугольник был точно над окном */
+    top: -10px; 
+    left: 75%; 
+    transform: translateX(-50%); 
     border-style: solid;
-    border-width: 10px 10px 0 10px; /* Размеры треугольника: сначала высота, затем ширина */
-    border-color: #fff transparent transparent transparent; /* Цвета для треугольника */
+    border-width: 10px 10px 0 10px; 
+    border-color: #fff transparent transparent transparent; 
     rotate: 180deg;
 }
 
