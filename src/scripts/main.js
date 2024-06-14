@@ -1,8 +1,8 @@
 const header = document.querySelector('.header__geoposition');
+const geopositionButton = document.querySelector('.header__geoposition-button');
 const mainContainer = document.querySelector('.main__container');
 let statePage = {
-    regionQuestion: false,
-    regionChange: false
+    region: 'Санкт Петербург'
 }
 
 const templateQuestionNode = document.querySelector('.choose-region-question');
@@ -38,8 +38,18 @@ const regionButtons = modalTemplateNodeChange.querySelectorAll('.change-region__
 changeRegionShowButton.addEventListener('click', () => {
     document.body.style.overflow = '';
     modalWindow.close();
+   
     
     mainContainer.appendChild(modalTemplateNodeChange);
     modalWindowChange.showModal();
     document.body.style.overflow = 'hidden';
+});
+
+regionButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        geopositionButton.textContent = button.textContent;
+        document.body.style.overflow = '';
+        modalWindowChange.close();
+        mainContainer.removeChild(modalTemplateNodeChange);
+    });
 });
