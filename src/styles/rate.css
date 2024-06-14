@@ -1,11 +1,16 @@
 .main__rate-my-online {
     margin-top: 148px;
     margin-bottom: 148px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
 }
 
 .main__rate-my-online-title--visually-hidden {
     display: none;
 }
+
 
 .main__about-rate-title-slogan {
     font-family: "Tele2 DisplaySerif Regular";

@@ -9,8 +9,9 @@
 .main__stocks {
     margin: 56px 0px 148px 0px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: start;   
+    align-items: start;
+    gap: 192px;
 }
 
 .main__stocks-content {

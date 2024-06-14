@@ -39,6 +39,7 @@
 
 .main__how-to-get-tariff {
     display: flex;
+    justify-content: flex-start;
     gap: 141px;
     margin-bottom: 148px;
 }

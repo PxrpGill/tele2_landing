@@ -2,11 +2,13 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .main__container {
-    width: 80%;
+    width: 1116px;
     display: flex;
+    align-items: start;
     justify-content: center;
     flex-direction: column;
 }
