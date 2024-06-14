@@ -1,4 +1,4 @@
-const header = document.querySelector('.header');
+const header = document.querySelector('.header__geoposition');
 
 const templateNode = document.querySelector('.choose-region');
 const contentTemplateNode = templateNode.content.cloneNode(true);
