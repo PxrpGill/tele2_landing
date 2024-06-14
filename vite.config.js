@@ -17,7 +17,8 @@ export default defineConfig({
     resolve: {
         alias: {
             '/scripts': resolve(__dirname, 'src/scripts'),
-            '/styles': resolve(__dirname, "src/styles")
+            '/styles': resolve(__dirname, "src/styles"),
+            '/components': resolve(__dirname, 'src/components')
         }
     }
 });

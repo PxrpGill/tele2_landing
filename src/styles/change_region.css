@@ -1,0 +1,63 @@
+.change-region__title--visually-hidden {
+    display: none;
+}
+
+.change-region__modal-window {
+    width: 1116px;
+    height: 554px;
+    background: #1F2229;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.change-region__title {
+    font-family: "Tele2 DisplaySerif Regular";
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 52px;
+    text-align: left;
+    color: #fff;
+}
+
+.change-region__content {
+    display: flex;
+    flex-direction: column;
+    gap: 64px
+}
+
+.change-region__region-list {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    gap: 88px;
+}
+
+.change-region__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.change-region__item-list {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    padding: 0;
+}
+
+.change-region__item-button {
+    background: none;
+    color: #fff;
+    font-family: "Tele2 TextSans Regular";
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}

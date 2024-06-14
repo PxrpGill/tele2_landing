@@ -7,6 +7,7 @@
   <title>Tele2</title>
   <link rel="stylesheet" href="styles/style.css">
   <link rel="icon" href="/images/favico_tele2.png" type="image/x-icon">
+  <script src="/scripts/main.js" type="module"></script>
 </head>
 
 <body>
@@ -280,33 +281,102 @@
       </section>
     </div>
   </footer>
-  <template class="choose-region">
-    <dialog class="choose-region__modal-window">
-      <article class="choose-region__content">
-        <h2 class="choose-region__title--visually-hidden">
+  <template class="choose-region-question">
+    <dialog class="choose-region-question__modal-window">
+      <article class="choose-region-question__content">
+        <h2 class="choose-region-question__title--visually-hidden">
           Выбор города
         </h2>
-        <p class="choose-region__question">
+        <p class="choose-region-question__question">
           Ваш город Санкт-Петербург?
         </p>
-        <section class="choose-region__button-section">
-          <h3 class="choose-region__title--visually-hidden">
+        <section class="choose-region-question__button-section">
+          <h3 class="choose-region-question__title--visually-hidden">
             Секция кнопок
           </h3>
-          <button class="choose-region__agree-button">
+          <button class="choose-region-question__agree-button">
             Да, все верно
           </button>
-          <button class="choose-region__change-city-button">
+          <button class="choose-region-question__change-city-button">
             Изменить регион
           </button>
         </section>
       </article>
     </dialog>
   </template>
-  <template class="changing-region">
-    
+  <template class="change-region">
+    <dialog class="change-region__modal-window">
+      <article class="change-region__content">
+        <h2 class="change-region__title">Выберите город</h2>
+        <article class="change-region__region-list">
+          <h4 class="change-region__title--visually-hidden">
+            Список городов
+          </h4>
+          <ul class="change-region__list">
+            <li class="change-region__item-list">
+              <button class="change-region__item-button">
+                Воронеж
+              </button>
+            </li>
+            <li class="change-region__item-list">
+              <button class="change-region__item-button">
+                Иркутск
+              </button>
+            </li>
+            <li class="change-region__item-list">
+              <button class="change-region__item-button">
+                Кемерово
+              </button>
+            </li>
+            <li class="change-region__item-list">
+              <button class="change-region__item-button">
+                Красноярск
+              </button>
+            </li>
+          </ul>
+          <ul class="change-region__list">
+            <li class="change-region__item-list">
+              <button class="change-region__item-button">
+                Москва
+              </button>
+            </li>
+            <li class="change-region__item-list">
+              <button class="change-region__item-button">
+                Н. Новгород
+              </button>
+            </li>
+            <li class="change-region__item-list">
+              <button class="change-region__item-button">
+                Новосибирск
+              </button>
+            </li>
+            <li class="change-region__item-list">
+              <button class="change-region__item-button">
+                Пермь
+              </button>
+            </li>
+          </ul>
+          <ul class="change-region__list">
+            <li class="change-region__item-list">
+              <button class="change-region__item-button">
+                Ростов-на-Дону
+              </button>
+            </li>
+            <li class="change-region__item-list">
+              <button class="change-region__item-button">
+                Санкт Петербург
+              </button>
+            </li>
+            <li class="change-region__item-list">
+              <button class="change-region__item-button">
+                Челябинск
+              </button>
+            </li>
+          </ul>
+        </article>
+      </article>
+    </dialog>
   </template>
-  <script src="/scripts/choose_city.js"></script>
 </body>
 
 </html>
