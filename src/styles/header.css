@@ -39,3 +39,23 @@
     color: var(--white-color);
     cursor: pointer;
 }
+
+@media screen and (max-width: 575px) {
+    .tele2-logo {
+        width: 48px;
+        height: 18px;
+    }
+
+    .geoposition-image {
+        width: 24px;
+        height: 24px;
+    }
+
+    .header__geoposition-button {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 27px;
+        text-align: left;
+
+    }
+}

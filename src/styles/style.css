@@ -1,9 +1,9 @@
 @import url('./header.css');
 @import url('./main.css');
-@import url('./stocks.css');
-@import url('./rate.css');
-@import url('./tariff.css');
-@import url('./official_site.css');
+@import url('./main/stocks.css');
+@import url('./main/rate.css');
+@import url('./main/tariff.css');
+@import url('./main/information.css');
 @import url('./footer.css');
 @import url('./choose_region.css');
 @import url('./change_region.css');
@@ -20,7 +20,24 @@
     --border-radius-button: 48px;
     --border-radius-eclipse: 50%;
     --info-text-size: 20px;
-    --section-gap: 148px;
+    --section-gap: 72px;
+}
+
+@media screen and (max-width: 575px) {
+    :root {
+        --main-color: #1F2229;
+        --line-color: #39404C;
+        --data-color: #8F9399;
+        --info-message-color: #262B36;
+        --white-color: #fff;
+        --blue-color: #48CCFD;
+        --main-container: 320px;
+        --border-radius-button: 48px;
+        --border-radius-eclipse: 50%;
+        --info-text-size: 18px;
+        --section-gap: 72px;
+    }
+
 }
 
 html,
