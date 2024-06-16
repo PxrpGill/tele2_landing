@@ -38,11 +38,9 @@ const regionButtons = modalTemplateNodeChange.querySelectorAll('.change-region__
 changeRegionShowButton.addEventListener('click', () => {
     document.body.style.overflow = '';
     modalWindow.close();
-   
-    
-    mainContainer.appendChild(modalTemplateNodeChange);
-    modalWindowChange.showModal();
-    document.body.style.overflow = 'hidden';
+    if (header.contains(modalTemplateNodeQuestion)) {
+        header.removeChild(modalTemplateNodeQuestion);
+    }
 });
 
 regionButtons.forEach(button => {
@@ -53,3 +51,4 @@ regionButtons.forEach(button => {
         mainContainer.removeChild(modalTemplateNodeChange);
     });
 });
+

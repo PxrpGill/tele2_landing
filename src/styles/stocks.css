@@ -7,7 +7,6 @@
 }
 
 .main__stocks {
-    margin: 56px 0px 148px 0px;
     display: flex;
     justify-content: start;   
     align-items: start;
@@ -38,12 +37,12 @@
 }
 
 .stocks-content__title--benefit {
-    color: #48ccfd;
+    color: var(--blue-color);
 }
 
 .main__stocks-content-about-rate-my-online {
     font-family: "Tele2 TextSans Regular";
-    font-size: 20px;
+    font-size: var(--info-text-size);
     line-height: 30px;
     font-weight: 400;
     margin-bottom: 56px;

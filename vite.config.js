@@ -20,5 +20,5 @@ export default defineConfig({
             '/styles': resolve(__dirname, "src/styles"),
             '/components': resolve(__dirname, 'src/components')
         }
-    }
+    },
 });

@@ -1,6 +1,4 @@
 .main__rate-my-online {
-    margin-top: 148px;
-    margin-bottom: 148px;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -10,7 +8,6 @@
 .main__rate-my-online-title--visually-hidden {
     display: none;
 }
-
 
 .main__about-rate-title-slogan {
     font-family: "Tele2 DisplaySerif Regular";
@@ -22,7 +19,7 @@
 
 .main__about-rate-text {
     font-family: "Tele2 TextSans Regular";
-    font-size: 20px;
+    font-size: var(--info-text-size);
     font-weight: 400;
     line-height: 30px;
     margin-bottom: 56px;
@@ -57,16 +54,16 @@
 .main__rate-my-online-list-item-about-favico {
     width: 72px;
     height: 72px;
-    border-radius: 50%;
+    border-radius: var(--border-radius-eclipse);
     display: flex;
     justify-content: center;
     align-items: center;    
-    background-color: #39404C;
+    background-color: var(--line-color);
 }
 
 .main__rate-my-online-list-item-about-information {
     font-family: "Tele2 TextSans Regular";
-    font-size: 20px;
+    font-size: var(--info-text-size);
     font-weight: 400;
     line-height: 30px;
 }

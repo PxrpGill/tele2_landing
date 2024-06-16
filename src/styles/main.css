@@ -6,9 +6,11 @@
 }
 
 .main__container {
-    width: 1116px;
+    width: var(--main-container);
     display: flex;
     align-items: start;
     justify-content: center;
     flex-direction: column;
+    gap: var(--section-gap);
+    margin: 56px 0px var(--section-gap) 0px;
 }

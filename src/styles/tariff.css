@@ -15,11 +15,11 @@
 }
 
 .main__how-to-get-tariff-slogan--benefit {
-    color: #48ccfd;
+    color: var(--blue-color);
 }
 
 .main__step-title {
-    color: #48ccfd;
+    color: var(--blue-color);
     font-size: 40px;
     font-weight: 700;
     line-height: 52px;
@@ -41,15 +41,14 @@
     display: flex;
     justify-content: flex-start;
     gap: 141px;
-    margin-bottom: 148px;
 }
 
 .main__step-eclipse {
     width: 80px;
     height: 80px;
-    border-radius: 50%;
+    border-radius: var(--border-radius-eclipse);
     background: none;
-    border: 2px solid #39404C;
+    border: 2px solid var(--line-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,7 +67,7 @@
 }
 
 .main__step-description {
-    font-size: 20px;
+    font-size: var(--info-text-size);
     line-height: 30px;
     font-weight: 400;
     font-family: "Tele2 TextSans Regular";
@@ -76,7 +75,7 @@
 
 .main__processing-personal-data-tel-label {
     font-size: 13px;
-    color: #8F9399;
+    color: var(--data-color);
     font-weight: 400;
     line-height: 18px;
     font-family: "Tele2 TextSans Regular";
@@ -85,10 +84,10 @@
 .main__processing-personal-data-input-tel {
     background: none;
     border: none;
-    border-bottom: 1px solid #39404C;
+    border-bottom: 1px solid var(--line-color);
     font-size: 16px;
     font-family: "Tele2 TextSans Regular";
-    color: white;
+    color: var(--white-color);
 }
 
 .main__processing-personal-data-input-tel:focus {
@@ -116,7 +115,7 @@
 .main__processing-personal-data-submit {
     width: 218px;
     height: 48px;
-    border-radius: 48px;
+    border-radius: var(--border-radius-button);
     border: none;
     font-family: "Tele2 TextSans Regular";
     font-weight: 700;
@@ -130,7 +129,7 @@
     display: flex;
     justify-content: start;
     align-items: center;
-    background-color: #262B36;
+    background-color: var(--info-message-color);
     height: 48px;
     gap: 12px;
     padding-left: 12px;

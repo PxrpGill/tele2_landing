@@ -9,14 +9,14 @@
 }
 
 .footer__container {
-    width: 1116px;
+    width: var(--main-container);
 }
 
 .footer__upper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #39404C;
+    border-bottom: 1px solid var(--line-color);
     padding-bottom: 12px;
 }
 
@@ -35,8 +35,8 @@
 .footer__terms-stonk-eclipse {
     width: 32px;
     height: 32px;
-    border-radius: 50%;
-    border: 2px solid white;
+    border-radius: var(--border-radius-eclipse);
+    border: 2px solid var(--white-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,7 +70,7 @@
     font-size: 16px;
     line-height: 22px;
     font-weight: 400;
-    color: #ffff;
+    color: var(--white-color);
 }
 
 .footer__lower-made-by {
@@ -84,5 +84,5 @@
     font-size: 13px;
     line-height: 22px;
     font-weight: 400;
-    color: #ffff;
+    color: var(--white-color);
 }

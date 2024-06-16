@@ -9,6 +9,19 @@
 @import url('./change_region.css');
 @import url('./fonts.css');
 
+:root {
+    --main-color: #1F2229;
+    --line-color: #39404C;
+    --data-color: #8F9399;
+    --info-message-color: #262B36;
+    --white-color: #fff;
+    --blue-color: #48CCFD;
+    --main-container: 1116px;
+    --border-radius-button: 48px;
+    --border-radius-eclipse: 50%;
+    --info-text-size: 20px;
+    --section-gap: 148px;
+}
 
 html,
 body,
@@ -142,5 +155,5 @@ table {
 }
 
 body {
-    background-color: #1F2229;
+    background-color: var(--main-color);
 }
