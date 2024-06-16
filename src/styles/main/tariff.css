@@ -52,6 +52,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--blue-color);
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 52px;
+    font-family: "Tele2 DisplaySerif Regular";
 }
 
 .main__how-to-get-tariff-list {
@@ -167,6 +172,12 @@
     }
 
     .main__how-to-get-tariff-slogan {
+        font-size: 24px;
+    }
+
+    .main__step-eclipse {
+        width: 56px;
+        height: 56px;
         font-size: 24px;
     }
 }

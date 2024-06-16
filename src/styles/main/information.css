@@ -56,12 +56,17 @@
 @media screen and (max-width: 575px) {
     .main__tele2-site-information {
         flex-direction: column;
-        gap: 32px;
         padding: 0px 16px 0px 16px;
+        gap: 0;
     }
 
     .rate-image {
         width: 230px;
         height: 239px;
+    }
+
+    .main__link-to-site-slogan {
+        font-size: 24px;
+        margin-bottom: 16px;
     }
 }
