@@ -41,6 +41,10 @@
 }
 
 @media screen and (max-width: 575px) {
+    .header__container {
+        padding: 0px 14px 0px 16px;
+    }
+
     .tele2-logo {
         width: 48px;
         height: 18px;
