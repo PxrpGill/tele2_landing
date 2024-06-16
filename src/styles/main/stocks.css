@@ -77,4 +77,8 @@
         line-height: 36px;
         text-align: left;
     }
+
+    .main__stocks-content {
+        margin: 0px 16px 0px 16px;
+    }
 }

@@ -89,7 +89,15 @@
 
 
 @media screen and (max-width: 575px) {
+    .footer__lower-made-by {
+        display: none;
+    }
+
+    .footer__upper {
+        padding: 0px 10px 0px 10px;
+    }
+
     .footer__lower {
-        flex-wrap: wrap;
+        padding: 27px 16px 0px 16px;
     }
 }

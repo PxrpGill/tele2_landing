@@ -57,6 +57,7 @@
     .main__tele2-site-information {
         flex-direction: column;
         gap: 32px;
+        padding: 0px 16px 0px 16px;
     }
 
     .rate-image {
