@@ -1,14 +1,14 @@
 @font-face {
     font-family: "Tele2 TextSans Regular";
-    src: url("/fonts/tele2_textsans-regular.ttf");
+    src: url("/fonts/tele2_textsans-regular.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "Standard CT Stencil";
-    src: url("/fonts/StandardCTStencil-Bold.ttf");
+    src: url("/fonts/StandardCTStencil-Bold.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "Tele2 DisplaySerif Regular";
-    src: url("/fonts/tele2_displayserif-regular.ttf");
+    src: url("/fonts/tele2_displayserif-regular.ttf") format("truetype");
 }

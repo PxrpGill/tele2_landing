@@ -81,4 +81,16 @@
     .main__rate-my-online {
         padding: 0px 16px 0px 16px;
     }
+
+    .main__about-rate {
+        margin-bottom: 16px;
+    }
+
+    .main__about-rate-text {
+        margin-bottom: 40px;
+    }
+
+    .main__rate-my-online-list {
+        gap: 32px;
+    }
 }

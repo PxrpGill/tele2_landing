@@ -81,4 +81,16 @@
     .main__stocks-content {
         margin: 0px 16px 0px 16px;
     }
+
+    .main__stocks-content-data-information {
+        margin: 0px 0px 40px 0px;
+    }
+
+    .main__stocks-content-title {
+        margin-bottom: 16px;
+    }
+
+    .main__stocks-content-about-rate-my-online {
+        margin-bottom: 40px;
+    }
 }
