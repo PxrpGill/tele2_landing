@@ -72,6 +72,8 @@
 @media screen and (max-width: 575px) {
     .main__about-rate-title-slogan {
         font-size: 24px;
+        width: 288px;
+        line-height: 33px;
     }
 
     .main__rate-my-online-list {
@@ -89,9 +91,17 @@
 
     .main__about-rate-text {
         margin-bottom: 40px;
+        width: 288px;
+        line-height: 27px;
+        font-size: 18px;
+        font-weight: 400;
     }
 
     .main__rate-my-online-list {
         gap: 32px;
+    }
+
+    .main__rate-my-online-list-item-about-information {
+        width: 202px;
     }
 }

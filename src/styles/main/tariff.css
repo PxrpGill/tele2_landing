@@ -230,4 +230,20 @@
         display: flex;
         justify-content: center;
     }
+
+    .first {
+        width: 288px;
+    }
+
+    .second {
+        width: 272px;
+    }
+
+    .third {
+        width: 288px;
+    }
+
+    .main__processing-personal-data-agree-label {
+        width: 256px;
+    }
 }

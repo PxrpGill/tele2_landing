@@ -77,9 +77,9 @@
 
     .main__stocks-content-title {
         font-size: 36px;
-        font-weight: 700;
         line-height: 36px;
         text-align: left;
+        margin-bottom: 16px;
     }
 
     .main__stocks-content {
@@ -91,11 +91,8 @@
         line-height: 36px;
     }
 
-    .main__stocks-content-title {
-        margin-bottom: 16px;
-    }
-
     .main__stocks-content-about-rate-my-online {
         margin-bottom: 40px;
+        width: 288px;
     }
 }

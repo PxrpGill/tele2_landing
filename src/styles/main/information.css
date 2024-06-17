@@ -98,6 +98,11 @@
 
     .main__link-to-site-about {
         margin-bottom: 32px;
+        width: 288px;
+    }
+
+    .main__link-to-site-about::after {
+        content: ' Теперь вы получите 1 ТБ  на ваш телефон при подключении тарифа «Мой онлайн+».'
     }
 
     .main__tele2-site-information-image-rate {
