@@ -12,6 +12,7 @@
     font-weight: 700;
     line-height: 52px;
     margin-bottom: 64px;
+    grid-column: 1/2;
 }
 
 .main__how-to-get-tariff-slogan--benefit {
@@ -26,6 +27,19 @@
     font-family: "Tele2 DisplaySerif Regular";
 }
 
+.main__how-to-get-tariff-personal-data {
+    grid-column: 1/2;
+}
+
+.main__how-to-get-tariff-list-steps {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column: 2/2;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+}
+
 .main__how-to-get-tariff-processing-personal-data {
     display: flex;
     flex-direction: column;
@@ -38,9 +52,9 @@
 }
 
 .main__how-to-get-tariff {
-    display: flex;
-    justify-content: flex-start;
-    gap: 141px;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 132px;
 }
 
 .main__step-eclipse {
@@ -53,28 +67,35 @@
     justify-content: center;
     align-items: center;
     color: var(--blue-color);
-    font-size: 40px;
+    font-size: 35px;
     font-weight: 700;
     line-height: 52px;
     font-family: "Tele2 DisplaySerif Regular";
 }
 
 .main__how-to-get-tariff-list {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 32px;
+    justify-content: start;
+    flex-wrap: wrap;
 }
 
 .main__item-step {
     display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: start;
     gap: 24px;
+    width: 100%;
 }
 
 .main__step-description {
     font-size: var(--info-text-size);
     line-height: 30px;
     font-weight: 400;
+    
     font-family: "Tele2 TextSans Regular";
 }
 
@@ -153,18 +174,14 @@
     .main__how-to-get-tariff {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        gap: 141px;
-        padding: 0px 16px 0px 16px
+        gap: 40px;
+        padding: 0px 16px 0px 16px;
     }
 
     .main__item-step {
         flex-direction: column;
         align-items: start;
-    }
-
-    .main__how-to-get-tariff {
-        gap: 40px;
+        gap: 16px;
     }
 
     .main__how-to-get-tariff-list {
@@ -173,11 +190,31 @@
 
     .main__how-to-get-tariff-slogan {
         font-size: 24px;
+        order: 0;
+        margin: 0;
     }
 
     .main__step-eclipse {
         width: 56px;
         height: 56px;
         font-size: 24px;
+    }
+    
+    .main__how-to-get-tariff-personal-data {
+        order: 2;
+    }
+
+    .main__how-to-get-tariff-list-steps {
+        order: 1;
+    }
+
+    .main__processing-personal-data-submit {
+        justify-self: center;
+    }
+
+    .main__submit-form {
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 }

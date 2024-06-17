@@ -35,29 +35,44 @@
 }
 
 .main__tele2-site-information {
-    display: flex;
-    gap: 118px;
-    align-items: center;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 118px;
 }
 
-.main__tele2-site-information-link-to-site {
+.main__tele2-site-information-about {
+    grid-column: 1/2;
     display: flex;
     flex-direction: column;
     justify-content: start;
+    padding-top: 52px;
+}
+
+.main__tele2-site-information-link-to-site {
+    grid-column: 1/2;
 }
 
 .main__tele2-site-information-image-rate {
     display: flex;
     justify-content: center;
     align-items: center;
+    grid-column: 2/2;
+    grid-row-start: 1;
+    grid-row-end: 3;
 }
 
 @media screen and (max-width: 575px) {
     .main__tele2-site-information {
+        display: flex;
         flex-direction: column;
-        padding: 0px 16px 0px 16px;
         gap: 0;
+        margin: 0;
+        padding: 0px 16px 0px 16px;
+    }
+
+    .main__link-to-site-slogan {
+        margin-bottom: 16px;
+        font-size: 24px;
     }
 
     .rate-image {
@@ -68,5 +83,23 @@
     .main__link-to-site-slogan {
         font-size: 24px;
         margin-bottom: 16px;
+    }
+
+    .main__tele2-site-information-link-to-site {
+        order: 2;
+        display: flex;
+        justify-content: center;
+    }
+
+    .main__tele2-site-information-about {
+        padding-top: 0;
+    }
+
+    .main__link-to-site-about {
+        margin-bottom: 32px;
+    }
+
+    .main__tele2-site-information-image-rate {
+        margin-bottom: 48px;
     }
 }

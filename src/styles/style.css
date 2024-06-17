@@ -20,7 +20,7 @@
     --border-radius-button: 48px;
     --border-radius-eclipse: 50%;
     --info-text-size: 20px;
-    --section-gap: 72px;
+    --section-gap: 148px;
 }
 
 @media screen and (max-width: 575px) {
