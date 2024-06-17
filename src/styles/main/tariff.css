@@ -15,6 +15,18 @@
     grid-column: 1/2;
 }
 
+.first {
+    width: 432px;
+}
+
+.second {
+    width: 492px;
+}
+
+.third {
+    width: 387px;
+}
+
 .main__how-to-get-tariff-slogan--benefit {
     color: var(--blue-color);
 }
@@ -192,6 +204,7 @@
         font-size: 24px;
         order: 0;
         margin: 0;
+        line-height: 33px;
     }
 
     .main__step-eclipse {

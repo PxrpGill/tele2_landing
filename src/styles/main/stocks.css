@@ -46,6 +46,7 @@
     line-height: 30px;
     font-weight: 400;
     margin-bottom: 56px;
+    width: 340px;
 }
 
 .main__stocks-content-participate-button {
@@ -59,18 +60,13 @@
     border: none;
 }
 
+.logo-boss {
+    background: none;
+}
+
 @media screen and (max-width: 575px) {
-    @media only screen and (-webkit-min-device-pixel-ratio: 2),
-    only screen and (min--moz-device-pixel-ratio: 2),
-    only screen and (-o-min-device-pixel-ratio: 2/1),
-    only screen and (min-device-pixel-ratio: 2),
-    only screen and (min-resolution: 192dpi),
-    only screen and (min-resolution: 2dppx) {
-        .logo-boss {
-            width: 316px;
-            height: 333px;
-            content: url('/images/first_section/boss.svg');
-        }
+    .logo-boss {
+        width: 316px;
     }
 
     .main__stocks {
