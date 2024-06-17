@@ -60,9 +60,17 @@
 }
 
 @media screen and (max-width: 575px) {
-    .logo-boss {
-        width: 316px;
-        height: 333px;
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+        .logo-boss {
+            width: 316px;
+            height: 333px;
+            content: url('/images/first_section/boss.svg');
+        }
     }
 
     .main__stocks {
@@ -84,6 +92,7 @@
 
     .main__stocks-content-data-information {
         margin: 0px 0px 40px 0px;
+        line-height: 36px;
     }
 
     .main__stocks-content-title {
