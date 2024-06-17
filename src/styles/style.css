@@ -5,9 +5,11 @@
 @import url('./main/tariff.css');
 @import url('./main/information.css');
 @import url('./footer.css');
-@import url('./choose_region.css');
-@import url('./change_region.css');
+@import url('./modal/choose_region.css');
+@import url('./modal/change_region.css');
 @import url('./fonts.css');
+@import url('./mixins/display.css');
+@import url('./mixins/text.css');
 
 :root {
     --main-color: #1F2229;
@@ -25,7 +27,7 @@
 
 button,
 input {
-    color: black;   
+    color: black;
     -webkit-appearance: none;
     background-color: white;
 }
@@ -180,6 +182,6 @@ table {
 
 body {
     background-color: var(--main-color);
-    -webkit-font-smoothing: antialiased; 
-    -moz-osx-font-smoothing: grayscale; 
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
