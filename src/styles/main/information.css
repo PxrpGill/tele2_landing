@@ -20,7 +20,7 @@
     line-height: 30px;
     font-family: "Tele2 TextSans Regular";
     margin-bottom: 48px;
-    width: 100%;
+    width: 513px;
 }
 
 .main__link-to-site-link {
@@ -47,6 +47,11 @@
     flex-direction: column;
     justify-content: start;
     padding-top: 52px;
+}
+
+.rate-image {
+    width: 359px;
+    height: 373px;
 }
 
 .main__tele2-site-information-link-to-site {

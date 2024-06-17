@@ -7,7 +7,9 @@
   <title>Tele2</title>
   <link rel="stylesheet" href="styles/style.css">
   <link rel="icon" href="/images/favico_tele2.png" type="image/x-icon">
-  <script src="/scripts/main.js" type="module"></script>
+  <script src="/scripts/modal_windows.js" type="module"></script>
+  <script src="/scripts/auto_scroll.js" type="module"></script>
+  <script src="/scripts/validate_input.js" type="module"></script>
 </head>
 
 <body>
@@ -35,6 +37,12 @@
   </template>
   <template class="change-region">
     {{> change }}
+  </template>
+  <template class="main__failed-message-template">
+    {{> failed_message }}
+  </template>
+  <template class="main__success-message-template">
+    {{> success_message }}
   </template>
 </body>
 

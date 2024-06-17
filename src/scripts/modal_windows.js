@@ -51,7 +51,3 @@ regionButtons.forEach(button => {
         mainContainer.removeChild(modalTemplateNodeChange);
     });
 });
-
-window.onload = function() {
-    window.scrollTo(0, 0);
-}

@@ -182,6 +182,14 @@
     line-height: 19px;
 }
 
+.main__processing-personal-data-input-tel-block {
+    width: 100%;
+}
+
+.main__processing-personal-data-input-tel {
+    width: 100%;
+}
+
 @media screen and (max-width: 575px) {
     .main__how-to-get-tariff {
         display: flex;

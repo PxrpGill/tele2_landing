@@ -42,7 +42,8 @@ export default defineConfig({
                 resolve(__dirname, `${components}/main`),
                 resolve(__dirname, `${components}/footer`),
                 resolve(__dirname, `${components}/dialog_question`),
-                resolve(__dirname, `${components}/dialog_change`)
+                resolve(__dirname, `${components}/dialog_change`),
+                resolve(__dirname, `${components}/info_message`)
             ]
         })
     ]
