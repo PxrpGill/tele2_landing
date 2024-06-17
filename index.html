@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tele2</title>
-  <link rel="icon" href="/tele2_landing/images/favico_tele2.png" type="image/x-icon">
-  <script type="module" crossorigin src="/tele2_landing/assets/main-CkNciH94.js"></script>
-  <link rel="stylesheet" crossorigin href="/tele2_landing/assets/main-CP4AXRSy.css">
+  <link rel="icon" href="/tele2_landing/images/favico_tele2.png" type="image/x-icon">
+  <script type="module" crossorigin src="/tele2_landing/assets/main-BRBc1n5j.js"></script>
+  <link rel="stylesheet" crossorigin href="/tele2_landing/assets/main-Br8gm6_p.css">
 </head>
 
 <body>
@@ -128,7 +128,7 @@
             Как получить тариф «Мой онлайн+»
           </h3>
           <form action="GET" class="main__how-to-get-tariff-processing-personal-data">
-            <div class="main__processing-personal-data-input-tel">
+            <div class="main__processing-personal-data-input-tel-block">
               <input type="tel" id="phone" class="main__processing-personal-data-input-tel">
               <label for="phone" class="main__processing-personal-data-tel-label">
                 Номер телефона
@@ -145,12 +145,7 @@
               <input class="main__processing-personal-data-submit" type="submit" value="Выслать промокод">
             </div>
           </form>
-          <article class="main__how-to-get-tariff-info-message">
-            <img src="/tele2_landing/images/third_section/completed.svg" alt="Иконка выполненно" loading="lazy">
-            <h3 class="info-messagage__text-mesage">
-              Промокод был выслан на ваш номер
-            </h3>
-          </article>
+          <!--Здесь будет стоять информация об отправке сообщения-->
         </article>
         <article class="main__how-to-get-tariff-list-steps">
           <h3 class="main__how-to-get-tariff-title--visually-hidden">
@@ -188,7 +183,7 @@
                 </h3>
                 <div class="main__step-eclipse">3</div>
                 <p class="main__step-description third">
-                  Используйте свой подарочный ТБ от Tele2 
+                  Используйте свой подарочный ТБ от Tele2
                   в течение всего года
                 </p>
               </article>
@@ -369,6 +364,20 @@
         </article>
       </article>
     </dialog>  </template>
+  <template class="main__failed-message-template">
+    <article class="main__how-to-get-tariff-info-message">
+      <img src="/tele2_landing/images/third_section/error.svg" alt="Иконка выполненно" loading="lazy">
+      <h3 class="info-messagage__text-mesage">
+        На этот номер уже выслан промокод, на один номер можно получить один промокод
+      </h3>
+    </article>  </template>
+  <template class="main__success-message-template">
+    <article class="main__how-to-get-tariff-info-message">
+      <img src="/tele2_landing/images/third_section/completed.svg" alt="Иконка выполненно" loading="lazy">
+      <h3 class="info-messagage__text-mesage">
+        Промокод был выслан на ваш номер
+      </h3>
+    </article>  </template>
 </body>
 
 </html>
