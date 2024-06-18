@@ -78,7 +78,6 @@
     .main__tele2-site-information {
         display: flex;
         flex-direction: column;
-        width: 100%;
     }
 }
 
