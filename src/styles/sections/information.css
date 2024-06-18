@@ -81,6 +81,21 @@
     .main__tele2-site-information {
         display: flex;
         flex-direction: column;
+        gap: 32px;
+    }
+
+    .main__link-to-site-slogan {
+        margin-bottom: 16px;
+    }
+
+    .main__tele2-site-information-link-to-site {
+        order: 2;
+        display: flex;
+        justify-content: center;
+    }
+
+    .main__tele2-site-information-about {
+        margin: 0;
     }
 }
 
