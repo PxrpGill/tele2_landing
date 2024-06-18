@@ -55,7 +55,7 @@
 .main__how-to-get-tariff-processing-personal-data {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 29px;
 }
 
 .main__processing-personal-data-input-tel {
@@ -65,8 +65,8 @@
 
 .main__how-to-get-tariff {
     display: grid;
-    grid-template-columns: auto auto;
-    column-gap: 132px;
+    grid-template-columns: 348px 598px;
+    column-gap: 130px;
 }
 
 .main__step-eclipse {
@@ -89,7 +89,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 23px;
     justify-content: start;
     flex-wrap: wrap;
 }

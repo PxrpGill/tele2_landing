@@ -19,7 +19,6 @@
     font-weight: 400;
     line-height: 30px;
     font-family: "Tele2 TextSans Regular";
-    margin-bottom: 48px;
     width: 513px;
 }
 
@@ -37,7 +36,7 @@
 
 .main__tele2-site-information {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 513px 359px;
     column-gap: 118px;
 }
 
@@ -46,7 +45,7 @@
     display: flex;
     flex-direction: column;
     justify-content: start;
-    padding-top: 52px;
+    margin-top: 51px;
 }
 
 .rate-image {
@@ -56,6 +55,7 @@
 
 .main__tele2-site-information-link-to-site {
     grid-column: 1/2;
+    
 }
 
 .main__tele2-site-information-image-rate {
@@ -68,6 +68,9 @@
 }
 
 @media screen and (max-width: 1178px) {
+    .main__tele2-site-information {
+        grid-template-columns: auto auto;
+    }
     .rate-image {
         width: 270px;
         height: auto;
