@@ -3,7 +3,8 @@
 }
 
 .change-region__modal-window {
-    width: 100%;
+    width: var(--main-container);
+    background-color: var(--main-color);
     height: 554px;
     box-shadow: none;
     border: none;
@@ -11,6 +12,16 @@
     display: flex;
     justify-content: start;
     align-items: center;
+    backdrop-filter: none;
+    box-shadow: none;
+    margin: 0 auto;
+    top: 144px;
+}
+
+.change-region__modal-window::backdrop {
+    backdrop-filter: none;
+    box-shadow: none;
+    background-color: transparent;
 }
 
 .change-region__title {

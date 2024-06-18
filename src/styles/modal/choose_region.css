@@ -10,6 +10,7 @@
     background-color: var(--white-color);
     overflow: visible;
     backdrop-filter: none;
+    z-index: 10;
 }
 
 .choose-region-question__modal-window::after {
