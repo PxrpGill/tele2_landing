@@ -183,6 +183,8 @@
 
 .main__processing-personal-data-input-tel-block {
     width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .main__processing-personal-data-input-tel {

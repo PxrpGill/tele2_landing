@@ -10,7 +10,7 @@
     display: flex;
     justify-content: start;
     align-items: start;
-    gap: 192px;
+    gap: 55px;
 }
 
 .main__stocks-content {
@@ -33,6 +33,7 @@
     font-family: "Standard CT Stencil";
     font-size: 68px;
     margin-bottom: 24px;
+    width: 477px;
 }
 
 .stocks-content__title--benefit {
@@ -79,6 +80,7 @@
         line-height: 36px;
         text-align: left;
         margin-bottom: 16px;
+        width: 288px;
     }
 
     .main__stocks-content {
