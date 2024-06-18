@@ -64,6 +64,12 @@
     background: none;
 }
 
+@media screen and (max-width: 1178px) {
+    .logo-boss {
+        width: 450px;
+    }
+}
+
 @media screen and (max-width: 575px) {
     .logo-boss {
         width: 316px;
@@ -90,6 +96,7 @@
     .main__stocks-content-data-information {
         margin: 0px 0px 40px 0px;
         line-height: 36px;
+        font-size: 16px;
     }
 
     .main__stocks-content-about-rate-my-online {

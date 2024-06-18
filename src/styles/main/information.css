@@ -67,6 +67,13 @@
     grid-row-end: 3;
 }
 
+@media screen and (max-width: 1178px) {
+    .rate-image {
+        width: 270px;
+        height: auto;
+    }
+}
+
 @media screen and (max-width: 575px) {
     .main__tele2-site-information {
         display: flex;

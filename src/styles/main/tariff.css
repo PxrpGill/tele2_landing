@@ -256,3 +256,9 @@
         width: 256px;
     }
 }
+
+@media screen and (max-width: 1178px) {
+    .main__how-to-get-tariff {
+        column-gap: 30px;
+    }
+}
