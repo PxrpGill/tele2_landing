@@ -24,7 +24,7 @@ const dialogTimeId = setTimeout(() => {
 agreeButton.addEventListener('click', () => {
     document.body.style.overflow = '';
     modalWindow.close();
-    
+
     const modalContainer = header.querySelector('.header__modal-container');
     header.removeChild(modalContainer);
 });
@@ -47,6 +47,11 @@ changeRegionShowButton.addEventListener('click', () => {
 });
 
 geopositionButton.addEventListener('click', () => {
+    const templateChangeNode = document.querySelector('.change-region');
+    const modalTemplateNodeChange = templateChangeNode.content.cloneNode(true);
+    const modalWindowChange = modalTemplateNodeChange.querySelector('.change-region__modal-window');
+    const regionButtons = modalTemplateNodeChange.querySelectorAll('.change-region__item-button');
+
     const modalContainerChange = document.createElement('div');
     modalContainerChange.className = 'main__modal-container';
     modalContainerChange.appendChild(modalTemplateNodeChange);
@@ -58,7 +63,7 @@ regionButtons.forEach(button => {
     button.addEventListener('click', () => {
         geopositionButton.textContent = button.textContent;
         document.body.style.overflow = '';
-        
+
         const modalContainerChange = mainContainer.querySelector(".main__modal-container");
         modalWindowChange.close();
         mainContainer.removeChild(modalContainerChange);

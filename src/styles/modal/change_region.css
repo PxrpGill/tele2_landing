@@ -71,3 +71,25 @@
     cursor: pointer;
     padding: 0;
 }
+
+@media screen and (max-width: 575px) {
+    .change-region__modal-window {
+        top: 78px;
+        height: 100%;
+        align-items: start;
+        padding-top: 64px;
+    }
+
+    .change-region__list {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .change-region__title {
+        font-size: 24px;
+    }
+
+    .change-region__title {
+        font-size: 18px;
+    }
+}
