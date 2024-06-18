@@ -7,7 +7,6 @@ import handlebars from "vite-plugin-handlebars";
 
 const components = 'src/components';
 
-
 export default defineConfig({
     base: "/tele2_landing/",
     root: "src/",
@@ -39,7 +38,9 @@ export default defineConfig({
         handlebars({
             partialDirectory: [
                 resolve(__dirname, `${components}/header`),
-                resolve(__dirname, `${components}/main`),
+                resolve(__dirname, `${components}/sections`),
+                resolve(__dirname, `${components}/sections/rate`),
+                resolve(__dirname, `${components}/sections/tariff`),
                 resolve(__dirname, `${components}/footer`),
                 resolve(__dirname, `${components}/dialog_question`),
                 resolve(__dirname, `${components}/dialog_change`),

@@ -72,7 +72,7 @@
     padding: 0;
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
     .change-region__modal-window {
         top: 78px;
         height: 100%;

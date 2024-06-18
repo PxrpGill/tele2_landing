@@ -191,7 +191,13 @@
     width: 100%;
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 1178px) {
+    .main__how-to-get-tariff {
+        column-gap: 30px;
+    }
+}
+
+@media screen and (max-width: 576px) {
     .main__how-to-get-tariff {
         display: flex;
         flex-direction: column;
@@ -254,11 +260,5 @@
 
     .main__processing-personal-data-agree-label {
         width: 256px;
-    }
-}
-
-@media screen and (max-width: 1178px) {
-    .main__how-to-get-tariff {
-        column-gap: 30px;
     }
 }

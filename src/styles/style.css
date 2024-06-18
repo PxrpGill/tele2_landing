@@ -8,8 +8,6 @@
 @import url('./modal/choose_region.css');
 @import url('./modal/change_region.css');
 @import url('./fonts.css');
-@import url('./mixins/display.css');
-@import url('./mixins/text.css');
 
 :root {
     --main-color: #1F2229;
@@ -35,7 +33,7 @@ input {
 @media screen and (max-width: 1178px) {
     :root {
         --main-color: #1F2229;
-        --line-color: #39404C;
+        --line-color: #39404C;  
         --data-color: #8F9399;
         --info-message-color: #262B36;
         --white-color: #fff;
@@ -48,7 +46,7 @@ input {
     }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
     :root {
         --main-color: #1F2229;
         --line-color: #39404C;

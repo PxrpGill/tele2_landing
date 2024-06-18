@@ -88,7 +88,7 @@
 }
 
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 576px) {
     .footer__lower-made-by {
         display: none;
     }
