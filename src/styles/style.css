@@ -33,12 +33,28 @@ input {
 @media screen and (max-width: 1178px) {
     :root {
         --main-color: #1F2229;
-        --line-color: #39404C;  
+        --line-color: #39404C;
         --data-color: #8F9399;
         --info-message-color: #262B36;
         --white-color: #fff;
         --blue-color: #48CCFD;
         --main-container: 968px;
+        --border-radius-button: 48px;
+        --border-radius-eclipse: 50%;
+        --info-text-size: 18px;
+        --section-gap: 72px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    :root {
+        --main-color: #1F2229;
+        --line-color: #39404C;
+        --data-color: #8F9399;
+        --info-message-color: #262B36;
+        --white-color: #fff;
+        --blue-color: #48CCFD;
+        --main-container: 575px;
         --border-radius-button: 48px;
         --border-radius-eclipse: 50%;
         --info-text-size: 18px;

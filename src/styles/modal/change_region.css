@@ -6,16 +6,15 @@
     width: var(--main-container);
     background-color: var(--main-color);
     height: 554px;
-    box-shadow: none;
     border: none;
     padding: 0;
     display: flex;
     justify-content: start;
-    align-items: center;
-    backdrop-filter: none;
-    box-shadow: none;
+    align-items: start;
     margin: 0 auto;
-    top: 144px;
+    padding-top: 144px;
+    top: 78px;
+    height: 100%;
 }
 
 .change-region__modal-window::backdrop {
@@ -70,6 +69,24 @@
     border: none;
     cursor: pointer;
     padding: 0;
+}
+
+@media screen and (max-width: 1178px) {
+    .change-region__modal-window {
+        top: 78px;
+        height: 100%;
+        align-items: start;
+        padding-top: 144px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .change-region__modal-window {
+        top: 78px;
+        height: 100%;
+        align-items: start;
+        padding-top: 144px;
+    }
 }
 
 @media screen and (max-width: 576px) {

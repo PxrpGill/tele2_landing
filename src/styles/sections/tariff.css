@@ -197,6 +197,28 @@
     }
 }
 
+@media screen and (max-width: 1024px) {
+    .main__how-to-get-tariff {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .main__step-eclipse {
+        width: 56px;
+        height: 56px;
+        font-size: 24px;
+    }
+
+    .main__how-to-get-tariff-personal-data {
+        order: 2;
+    }
+
+    .main__how-to-get-tariff-list-steps {
+        order: 1;
+    }
+}
+
 @media screen and (max-width: 576px) {
     .main__how-to-get-tariff {
         display: flex;
