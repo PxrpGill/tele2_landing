@@ -1,9 +1,9 @@
 @import url('./header.css');
 @import url('./main.css');
-@import url('./main/stocks.css');
-@import url('./main/rate.css');
-@import url('./main/tariff.css');
-@import url('./main/information.css');
+@import url('./sections/stocks.css');
+@import url('./sections/rate.css');
+@import url('./sections/tariff.css');
+@import url('./sections/information.css');
 @import url('./footer.css');
 @import url('./modal/choose_region.css');
 @import url('./modal/change_region.css');
