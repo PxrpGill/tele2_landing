@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tele2</title>
-  <link rel="icon" href="/tele2_landing/images/favico_tele2.png" type="image/x-icon">
-  <script type="module" crossorigin src="/tele2_landing/assets/main-D-xobckB.js"></script>
-  <link rel="stylesheet" crossorigin href="/tele2_landing/assets/main-BNC5WKwY.css">
+  <link rel="icon" href="/tele2_landing/images/favico_tele2.png" type="image/x-icon">
+  <script type="module" crossorigin src="/tele2_landing/assets/main-3pE7n6km.js"></script>
+  <link rel="stylesheet" crossorigin href="/tele2_landing/assets/main-D6qk8bGu.css">
 </head>
 
 <body>
@@ -206,9 +206,11 @@
           <h3 class="main__tele2-site-information-title--visually-hidden">
             Ссылка на официальный сайт Теле2
           </h3>
-          <button class="main__link-to-site-link">
-            Оформить тариф
-          </button>
+          <a href="https://rostov.tele2.ru" class="main__link-to-site" target="_blank">
+            <button class="main__link-to-site-link">
+              Оформить тариф
+            </button>
+          </a>
         </article>
         <article class="main__tele2-site-information-image-rate">
           <h3 class="main__image-rate-title--visually-hidden">
@@ -216,7 +218,23 @@
           </h3>
           <img src="/tele2_landing/images/fourth_section/one_tb.png" alt="Картинка 1 терабайта Теле2" class="rate-image" loading="lazy">
         </article>
+      </section>      <section class="main__slider">
+        <h2 class="main__slider-title--visually-hidden">Слайдер</h2>
       </section>    </div>
+    <template class="main__failed-message-template">
+      <article class="main__how-to-get-tariff-info-message">
+        <img src="/tele2_landing/images/third_section/error.svg" alt="Иконка выполненно" loading="lazy">
+        <h3 class="info-messagage__text-mesage">
+          На этот номер уже выслан промокод, на один номер можно получить один промокод
+        </h3>
+      </article>    </template>
+    <template class="main__success-message-template">
+      <article class="main__how-to-get-tariff-info-message">
+        <img src="/tele2_landing/images/third_section/completed.svg" alt="Иконка выполненно" loading="lazy">
+        <h3 class="info-messagage__text-mesage">
+          Промокод был выслан на ваш номер
+        </h3>
+      </article>    </template>
   </main>
   <footer class="footer">
     <div class="footer__container">
@@ -362,20 +380,15 @@
           </ul>    </article>
       </article>
     </dialog>  </template>
-  <template class="main__failed-message-template">
-    <article class="main__how-to-get-tariff-info-message">
-      <img src="/tele2_landing/images/third_section/error.svg" alt="Иконка выполненно" loading="lazy">
-      <h3 class="info-messagage__text-mesage">
-        На этот номер уже выслан промокод, на один номер можно получить один промокод
-      </h3>
-    </article>  </template>
-  <template class="main__success-message-template">
-    <article class="main__how-to-get-tariff-info-message">
-      <img src="/tele2_landing/images/third_section/completed.svg" alt="Иконка выполненно" loading="lazy">
-      <h3 class="info-messagage__text-mesage">
-        Промокод был выслан на ваш номер
-      </h3>
-    </article>  </template>
+  <template class="participate">
+    <dialog class="participate__modal-window">
+      <article class="participate__modal-window-content">
+        <h2 class="participate__title--visually-hidden">
+          Форма принятия участия
+        </h2>
+      </article>
+    </dialog>
+  </template>
 </body>
 
 </html>
