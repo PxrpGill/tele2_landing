@@ -24,13 +24,6 @@
     --section-gap: 148px;
 }
 
-button,
-input {
-    color: black;
-    -webkit-appearance: none;
-    background-color: white;
-}
-
 @media screen and (max-width: 1178px) {
     :root {
         --main-color: #1F2229;
