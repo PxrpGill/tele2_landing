@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputTel = document.querySelector('.main__processing-personal-data-input-tel');
     const submitButton = document.querySelector('.main__processing-personal-data-submit');
     const placeToAppendMessage = document.querySelector('.main__how-to-get-tariff-personal-data');
+    const checkBox = document.querySelector('.main__processing-personal-data-agree');
 
     const timeLiveMessage = 3000;
 
@@ -55,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function validatePhoneNumber(phoneNumber) {
-        const regex = /^[+]?[(]?[0-9]{1,4}[)]?[-\s.]?[0-9]{1,4}[-\s.]?[0-9]{1,4}$/;
+        const regex = /(\+7|[0-689])\s\(\d{3}\)\s\d{3}-\d{2}-\d{2}/;
         return regex.test(phoneNumber);
     }
 
@@ -63,15 +64,24 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
         const phoneNumber = inputTel.value;
 
-        if (phoneInLocalStorage(phoneNumber)) {
-            outputFailedMessage();
+        if (!checkBox.checked) {
+            submitButton.style.background = 'gray';
+            setTimeout(() => {
+                submitButton.style.background = 'white';
+            }, timeLiveMessage);
         } else {
             if (validatePhoneNumber(phoneNumber)) {
-                setNumberInLocalStorage(phoneNumber);
-                outputSuccessMessage();
+                if (phoneInLocalStorage(phoneNumber)) {
+                    outputFailedMessage();
+                } else {
+                    setNumberInLocalStorage(phoneNumber);
+                    outputSuccessMessage();
+                }
             } else {
                 outputFailedMessage();
             }
         }
+
+        console.log(phoneNumber);
     });
 });
