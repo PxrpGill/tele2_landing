@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
         const phoneNumber = inputTel.value;
 
-        if (!checkBox.checked) {
+        if (!checkBox.checked || phoneNumber == '') {
             submitButton.style.background = 'gray';
             setTimeout(() => {
                 submitButton.style.background = 'white';

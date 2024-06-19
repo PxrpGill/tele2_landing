@@ -86,6 +86,7 @@
 
     .main__link-to-site-slogan {
         margin-bottom: 16px;
+        width: 575px;
     }
 
     .main__tele2-site-information-link-to-site {
@@ -121,6 +122,7 @@
     .main__link-to-site-slogan {
         font-size: 24px;
         margin-bottom: 16px;
+        width: auto;
     }
 
     .main__tele2-site-information-link-to-site {
@@ -139,7 +141,7 @@
     }
 
     .main__link-to-site-about::after {
-        content: ' Теперь вы получите 1 ТБ  на ваш телефон при подключении тарифа «Мой онлайн+».'
+        content: ' Теперь вы получите 1 ТБ на ваш телефон при подключении тарифа «Мой онлайн+».'
     }
 
     .main__tele2-site-information-image-rate {
