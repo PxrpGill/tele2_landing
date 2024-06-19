@@ -1,0 +1,38 @@
+.main__slider-title--visually-hidden {
+    display: none;
+}
+
+.main__slider {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    overflow-x: scroll;
+    cursor: pointer;
+    user-select: none;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    padding: 20px 0px 20px 0px;
+}
+
+.main__slider::-webkit-scrollbar {
+    display: none;
+}
+
+.main__slider-element {
+    overflow: hidden;
+    width: 220px;
+    min-width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    transition: .5s;
+}
+
+.main__slider-element:hover {
+    transform: scale(1.05);
+}
+
+.main__slider-image {
+    width: 220px;
+    height: 220px;
+}
