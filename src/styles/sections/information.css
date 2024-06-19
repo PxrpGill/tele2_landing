@@ -32,6 +32,8 @@
     line-height: 22px;
     font-weight: 700;
     cursor: pointer;
+    background-color: white;
+    color: black;
 }
 
 .main__tele2-site-information {

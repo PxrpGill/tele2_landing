@@ -52,7 +52,7 @@
     line-height: 22px;
     border-radius: var(--border-radius-button);
     cursor: pointer;
-    -webkit-appearance: none;
+    appearance: none;
     text-align: center; 
     padding: 0;
 }
@@ -70,6 +70,8 @@
     font-weight: 400;
     height: 24px;
     font-family: "Tele2 TextSans Regular";
+    background-color: white;
+    color: black;
 }
 
 .choose-region-question__content {

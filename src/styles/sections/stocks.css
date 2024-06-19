@@ -58,6 +58,8 @@
     border-radius: 48px;
     cursor: pointer;
     border: none;
+    appearance: none;
+    color: black;
 }
 
 .logo-boss {
