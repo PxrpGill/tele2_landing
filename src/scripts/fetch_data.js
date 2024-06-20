@@ -18,6 +18,7 @@ const inputInDOM = (data) => {
       <li class="main__slider-marker">
         <a href="#item-${index}">
           <span class="main__marker">Photo ${index + 1}</span>
+
         </a>
       </li>
     `;
