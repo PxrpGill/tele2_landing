@@ -44,3 +44,9 @@
     width: 45px;
     height: 45px;
 }
+
+@media screen and (max-width: 576px) {
+    .participate__modal-window {
+        width: 320px;   
+    }
+}

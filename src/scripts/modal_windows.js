@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const mainHeader = document.querySelector('.header');
+    const main = document.querySelector('.main');
+
     const header = document.querySelector('.header__geoposition');
     const geopositionButton = document.querySelector('.header__geoposition-button');
     const mainContainer = document.querySelector('.main__container');
@@ -10,6 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const changeRegionShowButton = modalWindowQuestion.querySelector('.choose-region-question__change-city-button');
 
     const showRegionModal = () => {
+        main.style.opacity = 0;
+        mainHeader.style.position = 'fixed';
+
         const templateChangeNode = document.querySelector('.change-region');
         const modalTemplateNodeChange = templateChangeNode.content.cloneNode(true);
         const modalWindowChange = modalTemplateNodeChange.querySelector('.change-region__modal-window');
@@ -28,6 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 geopositionButton.textContent = localStorage.getItem('region');
                 modalWindowChange.close();
                 mainContainer.removeChild(modalContainer);
+                main.style.opacity = 1;
+                mainHeader.style.position = '';
             });
         });
     };

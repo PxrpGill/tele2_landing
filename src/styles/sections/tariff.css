@@ -67,6 +67,7 @@
     display: grid;
     grid-template-columns: 348px 598px;
     column-gap: 130px;
+    position: relative;
 }
 
 .main__step-eclipse {
@@ -194,6 +195,7 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 19px;
+    width: 288px;
 }
 
 .main__processing-personal-data-input-tel-block {
@@ -202,8 +204,35 @@
     flex-direction: column-reverse;
 }
 
-.main__processing-personal-data-input-tel {
-    width: 100%;
+.main__how-to-get-tariff-title--visually-hidden {
+    display: none;
+}
+
+.main__info-message-phone {
+    display: none;
+}
+
+.main__tariff-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.success {
+    background-color: rgba(72, 204, 253, 1);
+}
+
+.failed {
+    background-color: rgba(255, 16, 121, 1);
+    color: rgba(102, 20, 34, 1);
+}
+
+.successed-image {
+    width: 9px;
+    height: 9px;
 }
 
 @media screen and (max-width: 1178px) {
@@ -243,7 +272,7 @@
     .main__how-to-get-tariff {
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        gap: 24px;
         padding: 0px 16px 0px 16px;
     }
 
@@ -307,4 +336,78 @@
     .main__processing-personal-data-agree-label {
         width: 226px;
     }
+
+    .main__info-message-phone {
+        display: block;
+    }
+
+    .main__processing-personal-data-input-tel {
+        order: 2;
+    }
+
+    .main__processing-personal-data-tel-label {
+        order: 2;
+    }
+
+    .main__info-message-phone {
+        order: 0;
+    }
+
+    .main__info-message-computers {
+        display: none;
+    }
+
+    .main__info-message-phone {
+        display: block;
+    }
+
+    .main__how-to-get-tariff-info-message {
+        background: none;
+        margin-top: 8px;
+        padding: 0;
+    }
+
+    .main__tariff-circle {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .success {
+        background-color: rgba(7, 203, 92, 1);
+    }
+
+    .main__how-to-get-tariff-info-message {
+        margin: 0;
+    }
+
+    .failed {
+        background-color: rgba(255, 77, 108, 1);
+        color: rgba(102, 20, 34, 1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Tele2 TextSans Regular";
+        font-size: 8px;
+    }
+
+    .fail {
+        color: rgba(255, 77, 108, 1);
+    }
+
+    .successed-image {
+        width: 5px;
+        height: 5px;    
+    }
+
+    .successed {
+        color: rgba(7, 203, 92, 1);
+    }
+
+    .info-messagage__text-mesage {
+        width: 248px;
+}
 }

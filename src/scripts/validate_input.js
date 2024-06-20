@@ -1,37 +1,64 @@
 document.addEventListener('DOMContentLoaded', () => {
     const inputTel = document.querySelector('.main__processing-personal-data-input-tel');
     const submitButton = document.querySelector('.main__processing-personal-data-submit');
-    const placeToAppendMessage = document.querySelector('.main__how-to-get-tariff-personal-data');
+    const placeToAppendMessage = document.querySelector('.main__info-message-computers');
     const checkBox = document.querySelector('.main__processing-personal-data-agree');
+    const phoneMessagePlace = document.querySelector('.main__info-message-phone');
 
     const timeLiveMessage = 3000;
 
     function deleteMessageFromDOM(container) {
         setTimeout(() => {
-            placeToAppendMessage.removeChild(container);
+            if (container.parentNode) {
+                container.parentNode.removeChild(container);
+            }
         }, timeLiveMessage);
+    }
+
+    function clearMessages(container) {
+        while (container.firstChild) {
+            container.removeChild(container.firstChild);
+        }
     }
 
     function outputFailedMessage() {
         const template = document.querySelector('.main__failed-message-template');
-        const templateNode = template.content.cloneNode(true);
 
-        const container = document.createElement('main__message-container');
-        container.appendChild(templateNode);
+        clearMessages(placeToAppendMessage);
+        const templateNode1 = template.content.cloneNode(true);
+        const container1 = document.createElement('div');
+        container1.className = 'main__message-container';
+        container1.appendChild(templateNode1);
+        placeToAppendMessage.appendChild(container1);
+        deleteMessageFromDOM(container1);
 
-        placeToAppendMessage.appendChild(container);
-        deleteMessageFromDOM(container);
+        clearMessages(phoneMessagePlace);
+        const templateNode2 = template.content.cloneNode(true);
+        const container2 = document.createElement('div');
+        container2.className = 'main__message-container';
+        container2.appendChild(templateNode2);
+        phoneMessagePlace.appendChild(container2);
+        deleteMessageFromDOM(container2);
     }
 
     function outputSuccessMessage() {
         const template = document.querySelector('.main__success-message-template');
-        const templateNode = template.content.cloneNode(true);
 
-        const container = document.createElement('main__message-container');
-        container.appendChild(templateNode);
+        clearMessages(placeToAppendMessage);
+        const templateNode1 = template.content.cloneNode(true);
+        const container1 = document.createElement('div');
+        container1.className = 'main__message-container';
+        container1.appendChild(templateNode1);
+        placeToAppendMessage.appendChild(container1);
+        deleteMessageFromDOM(container1);
 
-        placeToAppendMessage.appendChild(container);
-        deleteMessageFromDOM(container);
+        clearMessages(phoneMessagePlace);
+        const templateNode2 = template.content.cloneNode(true);
+        const container2 = document.createElement('div');
+        container2.className = 'main__message-container';
+        container2.appendChild(templateNode2);
+        phoneMessagePlace.appendChild(container2);
+        deleteMessageFromDOM(container2);
     }
 
     function setNumberInLocalStorage(phoneNumber) {
