@@ -1,7 +1,9 @@
+import { slideSlider } from './slider_scroll';
+
 const url = 'https://api.github.com/users';
 
 const inputInDOM = (data) => {
-  const sliderPlace = document.querySelector('.main__slider');
+  const sliderPlace = document.querySelector('.main__slider-items');
   for (let key in data) {
     const htmlElement = `
     <article class="main__slider-element">
@@ -11,12 +13,14 @@ const inputInDOM = (data) => {
     `;
     sliderPlace.innerHTML += htmlElement;
   }
+  const sliderElements = sliderPlace.querySelectorAll('.main__slider-element');
+  slideSlider(sliderElements);
 }
 
 const fetchData = async () => {
   try {
     const response = await fetch(url, {
-     
+
     });
 
     if (response.ok) {

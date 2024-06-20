@@ -1,15 +1,30 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const slider = document.querySelector('.main__slider');
-    const scrollSpeed = 500; // Увеличьте это значение для большей скорости
+export function slideSlider(sliderElements) {
+    const buttonPrev = document.querySelector('.main__button-prev');
+    const buttonNext = document.querySelector('.main__button-next');
+    let indexElement = 0;
 
-    slider.addEventListener('wheel', (event) => {
-        event.preventDefault(); // предотвращает стандартное поведение прокрутки страницы
-        if (event.deltaY < 0) {
-            // Прокрутка вверх - листаем влево
-            slider.scrollBy({ left: -scrollSpeed, behavior: 'smooth' });
-        } else {
-            // Прокрутка вниз - листаем вправо
-            slider.scrollBy({ left: scrollSpeed, behavior: 'smooth' });
-        }
+    // Показать первый слайд по умолчанию
+    sliderElements[indexElement].style.display = 'block';
+
+    buttonNext.addEventListener('click', () => {
+        // Скрыть текущий слайд
+        sliderElements[indexElement].style.display = 'none';
+
+        // Увеличить индекс
+        indexElement = (indexElement + 1) % sliderElements.length;
+
+        // Показать следующий слайд
+        sliderElements[indexElement].style.display = 'block';
     });
-});
+
+    buttonPrev.addEventListener('click', () => {
+        // Скрыть текущий слайд
+        sliderElements[indexElement].style.display = 'none';
+
+        // Уменьшить индекс, если он равен 0, то сделать индекс последним
+        indexElement = (indexElement - 1 + sliderElements.length) % sliderElements.length;
+
+        // Показать предыдущий слайд
+        sliderElements[indexElement].style.display = 'block';
+    });
+}
