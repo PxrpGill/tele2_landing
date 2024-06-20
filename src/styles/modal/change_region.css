@@ -34,6 +34,7 @@
 
 .change-region__content {
     display: flex;
+    gap: 88px;
     flex-direction: column;
     gap: 64px;
 }
@@ -42,13 +43,14 @@
     display: flex;
     align-items: start;
     justify-content: start;
-    gap: 88px;
 }
 
 .change-region__list {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 30px);
+    column-gap: 88px;
+    row-gap: 24px;
 }
 
 .change-region__item-list {
@@ -93,6 +95,7 @@
     .change-region__modal-window {
         top: 78px;
         height: 100%;
+        width: 320px;
         align-items: start;
         padding-top: 64px;
     }
@@ -108,5 +111,17 @@
 
     .change-region__title {
         font-size: 18px;
+    }
+
+    .change-region__item-button {
+        font-size: 18px;
+    }
+
+    .change-region__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 27px);
+        column-gap: 53px;
+        row-gap: 16px;
     }
 }
