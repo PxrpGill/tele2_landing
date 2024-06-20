@@ -14,6 +14,7 @@
   <script src="/scripts/main.js" type="module"></script>
   <script src="/scripts/fetch_data.js" type="module"></script>
   <script src="/scripts/slider_scroll.js" type="module"></script>
+  <script src="/scripts/participate_modal.js" type="module"></script>
 </head>
 
 <body>
@@ -50,13 +51,7 @@
     {{> change }}
   </template>
   <template class="participate">
-    <dialog class="participate__modal-window">
-      <article class="participate__modal-window-content">
-        <h2 class="participate__title--visually-hidden">
-          Форма принятия участия
-        </h2>
-      </article>
-    </dialog>
+    {{> participate }}
   </template>
 </body>
 

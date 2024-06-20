@@ -1,0 +1,46 @@
+.participate__modal-window {
+    background-color: var(--main-color);
+    width: 400px;
+    height: 450px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    border: none;
+}
+
+.participate__modal-window::backdrop {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.participate__title--visually-hidden {
+    display: none;
+}
+
+.main__processing-personal-data-agree-label {
+    color: white;
+}
+
+.participate__modal-window-content {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 50px;
+}
+
+.participate__close-button {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+    border: none;
+    cursor: pointer;
+}
+
+.cross {
+    width: 45px;
+    height: 45px;
+}
