@@ -2,62 +2,157 @@
     display: none;
 }
 
-.main__slider {
-    width: 100%;
+@supports (animation-timeline: view()) {
+    [data-component="main__slider"] {
+        timeline-scope: --carousel;
+    }
+}
+
+[data-component="main__slider"] {
+    border-radius: 0.5em;
+    border: 0.25em solid #6300ff;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
+    margin: 0 auto 10vh;
+    background: white;
+    height: 70vmin;
+    width: 70vmin;
+    overflow: hidden;
 }
 
-.main__slider-button {
-    width: 75px;
-    height: 75px;
-    color: white;
-    font-size: 30px;
-    transition: 0.6s ease;
-    border-radius: 50%;
-    cursor: pointer;
-    background-color: var(--blue-color);
-    border: none;
-    transition: .5s;
-    color: var(--main-color);
-}
-
-.main__slider-button:hover {
-    transform: scale(1.05);
-}
-
-.main__slider-element {
-    display: none;
-    transition: .3s;
-    cursor: pointer;
-}
-
-.main__slider-element:hover {
-    transform: scale(1.05);
-}
-
-.main__slider-items {
-    width: 420px;
-    height: 420px;
-}
-
-.main__slider-image {
-    width: 420px;
-    height: 420px;
-}
-
-@media screen and (max-width: 576px) {
-    .main__slider-element {
-        width: 150px;
-        min-width: 150px;
-        height: 150px;
+@supports (animation-timeline: view()) {
+    [data-component="main__slider"] {
+        .main__slider-items {
+            scroll-timeline: --carousel x;
+        }
     }
+}
 
-    .main__slider-image {
-        width: 150px;
-        height: 150px;
+[data-component="main__slider"] {
+    .main__slider-items {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        flex-direction: row;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+        overscroll-behavior: contain;
     }
+}
+
+[data-component="main__slider"] {
+    & .main__slider-items {
+        >li {
+            scroll-snap-align: center;
+            flex: 100% 1 0;
+            display: flex;
+            padding: 1rem 1rem 4rem 1rem;
+        }
+    }
+}
+
+[data-component="main__slider"] {
+    & .main__slider-items {
+        &>li {
+            & a {
+                display: flex;
+                align-self: stretch;
+            }
+        }
+    }
+}
+
+[data-component="main__slider"] {
+    & .main__slider-items {
+        &>li {
+            & img {
+                display: block;
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+                object-position: 50% 100%;
+            }
+        }
+    }
+}
+
+[data-component="main__slider"] {
+    .main__slider-markers {
+        display: flex;
+        flex-direction: row;
+        gap: 0.25em;
+        font-size: 2em;
+        position: absolute;
+        bottom: 1.5rem;
+        left: 50%;
+        translate: -50% 0;
+    }
+}
+
+[data-component="main__slider"] {
+    & .main__slider-markers {
+        & li {
+            &:nth-child(1) {
+                --i: 1;
+            }
+        }
+    }
+}
+
+[data-component="main__slider"] {
+    .main__slider-markers {
+        display: flex;
+        flex-direction: row;
+        gap: 0.25em;
+        font-size: 2em;
+        position: absolute;
+        bottom: 1.5rem;
+        left: 50%;
+        translate: -50% 0;
+    }
+}
+
+[data-component="main__slider"] {
+    & .main__slider-markers {
+        & li {
+            &:nth-child(1) {
+                --i: 1;
+            }
+        }
+    }
+}
+
+@supports (animation-timeline: view()) {
+    [data-component="main__slider"] {
+        .main__slider-markers a {
+            animation: colorize-dot linear;
+            animation-timeline: --carousel;
+            animation-range: calc((var(--i) - 1)* 20%) calc(var(--i)* 20% + 1px);
+        }
+    }
+}
+
+[data-component="main__slider"] {
+    & .markers {
+        & a {
+            display: block;
+            width: 0.5em;
+            aspect-ratio: 1;
+            background: #6300ff;
+            border-radius: 50%;
+        }
+    }
+}
+
+.main__marker {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }

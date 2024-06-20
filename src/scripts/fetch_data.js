@@ -1,20 +1,27 @@
-import { slideSlider } from './slider_scroll';
-
 const url = 'https://api.github.com/users';
 
 const inputInDOM = (data) => {
   const sliderPlace = document.querySelector('.main__slider-items');
+  const sliderMarkers = document.querySelector('.main__slider-markers');
   for (let key in data) {
+    let index = 0;
     const htmlElement = `
-    <article class="main__slider-element">
-      <h3 class="main__slider-title--visually-hidden">Элемент слайдера</h3>
-      <img class="main__slider-image" src="${data[key].avatar_url}" alt="Картинка пользователя">
-    </article>
+    <li class="main__slider-item">
+      <a name="item-${index}">
+        <img class="main__slider-image" src="${data[key].avatar_url}" alt="Картинка пользователя" draggable="false">
+      </a>
+    </li>
+    `;
+    const sliderMarker = `
+    <li class="main__slider-marker>
+      <a href="#item-${index}">
+        <span class="main__marker">Photo 1</span>
+      </a>
+    </li>
     `;
     sliderPlace.innerHTML += htmlElement;
+    sliderMarkers.innerHTML += sliderMarker;
   }
-  const sliderElements = sliderPlace.querySelectorAll('.main__slider-element');
-  slideSlider(sliderElements);
 }
 
 const fetchData = async () => {
