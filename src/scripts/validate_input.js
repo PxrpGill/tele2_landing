@@ -36,15 +36,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function setNumberInLocalStorage(phoneNumber) {
         const key = new Date();
-        localStorage.setItem(String(key), JSON.stringify(phoneNumber));
+        localStorage.setItem(String(key), phoneNumber);
     }
 
     function phoneInLocalStorage(phoneNumber) {
         let flag = false;
 
         for (let key in localStorage) {
-            if (localStorage.hasOwnProperty) {
-                const item = JSON.parse(localStorage.getItem(key));
+            if (localStorage.hasOwnProperty && key != 'region') {
+                const item = localStorage.getItem(key);
 
                 if (phoneNumber == item) {
                     flag = true;

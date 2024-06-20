@@ -24,10 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         regionButtons.forEach(button => {
             button.addEventListener('click', () => {
-                modalWindowChange.close();
-                mainContainer.removeChild(modalContainer);
                 localStorage.setItem('region', button.textContent);
                 geopositionButton.textContent = localStorage.getItem('region');
+                modalWindowChange.close();
+                mainContainer.removeChild(modalContainer);
             });
         });
     };
