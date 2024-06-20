@@ -108,7 +108,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 outputFailedMessage();
             }
         }
-
-        console.log(phoneNumber);
     });
 });

@@ -21,7 +21,6 @@ const fetchData = async () => {
 
     if (response.ok) {
       const json = await response.json();
-      console.log(json);
       inputInDOM(json);
     } else {
       console.error("Ошибка HTTP: " + response.status);
