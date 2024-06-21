@@ -4,9 +4,11 @@
 
 [data-component="main__slider"] {
     position: relative;
-    height: 450px;
+    height: 300px;
     width: 100%;
     display: flex;
+    justify-content: center;
+    align-items: start;
 }
 
 [data-component="main__slider"] {
@@ -44,7 +46,7 @@
             }
 
             & img:hover {
-                transform: scale(1.05);
+                transform: scale(1.02);
             }
         }
     }
