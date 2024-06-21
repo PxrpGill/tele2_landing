@@ -1,31 +1,46 @@
 const url = 'https://api.github.com/users';
+const itemsPerPage = 3;
+let fetchedData = [];
+let totalPages = 0;
+let currentPage = 1;
+let isScrolling = false;
 
 const inputInDOM = (data) => {
   const sliderPlace = document.querySelector('.main__slider-items');
   const sliderMarkers = document.querySelector('.main__slider-markers');
+
   sliderPlace.innerHTML = ''; // Очистка содержимого перед добавлением новых элементов
   sliderMarkers.innerHTML = ''; // Очистка содержимого перед добавлением новых маркеров
 
-  data.forEach((user, index) => {
-    const htmlElement = `
-      <li class="main__slider-item">
-        <a name="item-${index}">
+  for (let i = 0; i < data.length; i += itemsPerPage) {
+    const users = data.slice(i, i + itemsPerPage);
+    let htmlElement = '<li class="main__slider-item">';
+
+    users.forEach((user, index) => {
+      htmlElement += `
+        <a id="item-${i + index}" name="item-${i + index}">
           <img class="main__slider-image" src="${user.avatar_url}" alt="Картинка пользователя" draggable="false">
         </a>
-      </li>
-    `;
+      `;
+    });
+
+    htmlElement += '</li>';
+    sliderPlace.innerHTML += htmlElement;
+  }
+
+  totalPages = Math.ceil(data.length / itemsPerPage);
+  for (let i = 1; i <= totalPages; i++) {
     const sliderMarker = `
       <li class="main__slider-marker">
-        <a href="#item-${index}">
-          <span class="main__marker">Photo ${index + 1}</span>
-
+        <a href="#" data-page="${i}">
+          <span class="main__marker">Page ${i}</span>
         </a>
       </li>
     `;
-    sliderPlace.innerHTML += htmlElement;
     sliderMarkers.innerHTML += sliderMarker;
-  });
-  
+  }
+
+  addClickEventListeners();
   updateMarkersVisibility(0); // Инициализация видимости маркеров
 };
 
@@ -33,8 +48,8 @@ const fetchData = async () => {
   try {
     const response = await fetch(url);
     if (response.ok) {
-      const json = await response.json();
-      inputInDOM(json);
+      fetchedData = await response.json();
+      inputInDOM(fetchedData);
       addScrollEventListener(); // Добавляем обработчик событий прокрутки после загрузки данных
     } else {
       console.error("Ошибка HTTP: " + response.status);
@@ -47,8 +62,21 @@ const fetchData = async () => {
 const addScrollEventListener = () => {
   const sliderPlace = document.querySelector('.main__slider-items');
   sliderPlace.addEventListener('scroll', () => {
-    const index = getCurrentSlideIndex(sliderPlace);
-    updateMarkersVisibility(index);
+    if (!isScrolling) {
+      isScrolling = true;
+      setTimeout(() => {
+        const index = getCurrentSlideIndex(sliderPlace);
+        updateMarkersVisibility(index);
+        isScrolling = false;
+      }, 100);
+    }
+  });
+
+  sliderPlace.addEventListener('wheel', (event) => {
+    if (event.shiftKey) {
+      event.preventDefault();
+      sliderPlace.scrollLeft += event.deltaY;
+    }
   });
 };
 
@@ -68,12 +96,30 @@ const getCurrentSlideIndex = (container) => {
 const updateMarkersVisibility = (currentIndex) => {
   const sliderMarkers = document.querySelectorAll('.main__slider-marker');
   sliderMarkers.forEach((marker, index) => {
-    if (index >= currentIndex - 1 && index <= currentIndex + 1) {
-      marker.style.display = 'block';
+    if (index === currentIndex) {
+      marker.classList.add('active');
     } else {
-      marker.style.display = 'none';
+      marker.classList.remove('active');
     }
   });
+};
+
+const addClickEventListeners = () => {
+  const sliderMarkers = document.querySelectorAll('.main__slider-marker a');
+  sliderMarkers.forEach((marker, index) => {
+    marker.addEventListener('click', (event) => {
+      event.preventDefault();
+      const page = parseInt(event.target.closest('a').getAttribute('data-page'));
+      scrollToPage(page);
+    });
+  });
+};
+
+const scrollToPage = (page) => {
+  const sliderPlace = document.querySelector('.main__slider-items');
+  const slideWidth = sliderPlace.clientWidth;
+  const scrollPosition = (page - 1) * slideWidth;
+  sliderPlace.scrollTo({ left: scrollPosition, behavior: 'smooth' });
 };
 
 fetchData();
