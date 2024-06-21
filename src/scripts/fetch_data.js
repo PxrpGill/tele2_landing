@@ -33,7 +33,7 @@ const inputInDOM = (data) => {
     const sliderMarker = `
       <li class="main__slider-marker">
         <a href="#" data-page="${i}">
-          <span class="main__marker">Page ${i}</span>
+          ${i}
         </a>
       </li>
     `;
@@ -111,6 +111,16 @@ const updateMarkersVisibility = (currentIndex) => {
     } else {
       marker.classList.remove('active');
     }
+
+    // Calculate distance from currentIndex
+    const distance = Math.abs(index - currentIndex);
+
+    // Show only the necessary markers
+    if (distance === 0 || distance === 1 || distance === 2 || index === 0 || index === totalPages - 1) {
+      marker.style.display = 'block';
+    } else {
+      marker.style.display = 'none';
+    }
   });
 };
 
@@ -122,6 +132,23 @@ const addClickEventListeners = () => {
       const page = parseInt(event.target.closest('a').getAttribute('data-page'));
       scrollToPage(page);
     });
+  });
+
+  const prevButton = document.querySelector('.main__slider-control.prev');
+  const nextButton = document.querySelector('.main__slider-control.next');
+
+  prevButton.addEventListener('click', () => {
+    const currentIndex = getCurrentSlideIndex(document.querySelector('.main__slider-items'));
+    if (currentIndex > 0) {
+      scrollToPage(currentIndex);
+    }
+  });
+
+  nextButton.addEventListener('click', () => {
+    const currentIndex = getCurrentSlideIndex(document.querySelector('.main__slider-items'));
+    if (currentIndex < totalPages - 1) {
+      scrollToPage(currentIndex + 2);
+    }
   });
 };
 
