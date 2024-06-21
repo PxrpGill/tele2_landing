@@ -75,7 +75,16 @@ const addScrollEventListener = () => {
   sliderPlace.addEventListener('wheel', (event) => {
     if (event.shiftKey) {
       event.preventDefault();
-      sliderPlace.scrollLeft += event.deltaY;
+      const slideWidth = sliderPlace.clientWidth;
+      const scrollAmount = Math.round(event.deltaY / 100) * slideWidth; // Определяем количество пикселей для прокрутки
+
+      sliderPlace.scrollTo({
+        left: sliderPlace.scrollLeft + scrollAmount,
+        behavior: 'smooth' // Плавное прокручивание к новому элементу списка
+      });
+
+      const index = getCurrentSlideIndex(sliderPlace);
+      updateMarkersVisibility(index);
     }
   });
 };
