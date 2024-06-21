@@ -26,7 +26,7 @@ export const inputInDOM = (data) => {
     }
 
     totalPages = Math.ceil(data.length / itemsPerPage);
-    generatePaginationMarkers(1); // Generate markers for the first page initially
+    generatePaginationMarkers(1); 
     addClickEventListeners();
     updateMarkersVisibility(0);
 };
@@ -84,7 +84,7 @@ const updateMarkersVisibility = (currentIndex) => {
         }
     });
 
-    generatePaginationMarkers(currentIndex + 1); // Update markers based on the current index
+    generatePaginationMarkers(currentIndex + 1); 
 
     const prevButton = document.querySelector('.main__slider-control.prev');
     const nextButton = document.querySelector('.main__slider-control.next');
@@ -104,9 +104,8 @@ const updateMarkersVisibility = (currentIndex) => {
 
 const generatePaginationMarkers = (currentPage) => {
     const sliderMarkers = document.querySelector('.main__slider-markers');
-    sliderMarkers.innerHTML = ''; // Clear existing markers
+    sliderMarkers.innerHTML = ''; 
 
-    // Always show the first page marker
     const firstMarker = `
     <li class="main__slider-marker">
       <a href="#" data-page="1">
@@ -178,7 +177,7 @@ const generatePaginationMarkers = (currentPage) => {
     if (currentPage != totalPages)
         sliderMarkers.innerHTML += lastMarker;
 
-    addClickEventListeners(); // Reattach event listeners after updating markers
+    addClickEventListeners(); 
 };
 
 const addClickEventListeners = () => {
