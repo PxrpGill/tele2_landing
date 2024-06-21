@@ -1,4 +1,4 @@
-const url = 'https://api.github.com/users';
+const url = 'https://api.github.com/users?per_page=100';
 const itemsPerPage = 3;
 let fetchedData = [];
 let totalPages = 0;
@@ -49,6 +49,7 @@ const fetchData = async () => {
     const response = await fetch(url);
     if (response.ok) {
       fetchedData = await response.json();
+      console.log(response);
       inputInDOM(fetchedData);
       addScrollEventListener(); // Добавляем обработчик событий прокрутки после загрузки данных
     } else {
