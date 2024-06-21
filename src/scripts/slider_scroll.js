@@ -1,7 +1,5 @@
 const itemsPerPage = 3;
-let fetchedData = [];
 let totalPages = 0;
-let currentPage = 1;
 let isScrolling = false;
 
 export const inputInDOM = (data) => {
@@ -28,21 +26,10 @@ export const inputInDOM = (data) => {
     }
 
     totalPages = Math.ceil(data.length / itemsPerPage);
-    for (let i = 1; i <= totalPages; i++) {
-        const sliderMarker = `
-        <li class="main__slider-marker">
-          <a href="#" data-page="${i}">
-            ${i}
-          </a>
-        </li>
-      `;
-        sliderMarkers.innerHTML += sliderMarker;
-    }
-
+    generatePaginationMarkers(1); // Generate markers for the first page initially
     addClickEventListeners();
     updateMarkersVisibility(0);
 };
-
 
 export const addScrollEventListener = () => {
     const sliderPlace = document.querySelector('.main__slider-items');
@@ -95,15 +82,9 @@ const updateMarkersVisibility = (currentIndex) => {
         } else {
             marker.classList.remove('active');
         }
-
-        const distance = Math.abs(index - currentIndex);
-
-        if (distance === 0 || distance === 1 || index === 0 || index === totalPages - 1) {
-            marker.style.display = 'block';
-        } else {
-            marker.style.display = 'none';
-        }
     });
+
+    generatePaginationMarkers(currentIndex + 1); // Update markers based on the current index
 
     const prevButton = document.querySelector('.main__slider-control.prev');
     const nextButton = document.querySelector('.main__slider-control.next');
@@ -119,6 +100,85 @@ const updateMarkersVisibility = (currentIndex) => {
     } else {
         nextButton.style.display = 'block';
     }
+};
+
+const generatePaginationMarkers = (currentPage) => {
+    const sliderMarkers = document.querySelector('.main__slider-markers');
+    sliderMarkers.innerHTML = ''; // Clear existing markers
+
+    // Always show the first page marker
+    const firstMarker = `
+    <li class="main__slider-marker">
+      <a href="#" data-page="1">
+        1
+      </a>
+    </li>
+  `;
+
+    if (currentPage != 1)
+        sliderMarkers.innerHTML += firstMarker;
+
+    if (currentPage > 3) {
+        const dotsBeforeCurrent = `
+      <li class="main__slider-marker">
+        <span>...</span>
+      </li>
+    `;
+        sliderMarkers.innerHTML += dotsBeforeCurrent;
+    }
+
+    if (currentPage > 2) {
+        const prevMarker = `
+      <li class="main__slider-marker">
+        <a href="#" data-page="${currentPage - 1}">
+          ${currentPage - 1}
+        </a>
+      </li>
+    `;
+        sliderMarkers.innerHTML += prevMarker;
+    }
+
+    const currentMarker = `
+    <li class="main__slider-marker active">
+      <a href="#" data-page="${currentPage}">
+        ${currentPage}
+      </a>
+    </li>
+  `;
+    sliderMarkers.innerHTML += currentMarker;
+
+    if (currentPage < totalPages - 1) {
+        const nextMarker = `
+      <li class="main__slider-marker">
+        <a href="#" data-page="${currentPage + 1}">
+          ${currentPage + 1}
+        </a>
+      </li>
+    `;
+        sliderMarkers.innerHTML += nextMarker;
+    }
+
+    if (currentPage < totalPages - 2) {
+        const dotsAfterCurrent = `
+      <li class="main__slider-marker">
+        <span>...</span>
+      </li>
+    `;
+        sliderMarkers.innerHTML += dotsAfterCurrent;
+    }
+
+    const lastMarker = `
+    <li class="main__slider-marker">
+      <a href="#" data-page="${totalPages}">
+        ${totalPages}
+      </a>
+    </li>
+  `;
+
+    if (currentPage != totalPages)
+        sliderMarkers.innerHTML += lastMarker;
+
+    addClickEventListeners(); // Reattach event listeners after updating markers
 };
 
 const addClickEventListeners = () => {
