@@ -9,8 +9,8 @@ const inputInDOM = (data) => {
   const sliderPlace = document.querySelector('.main__slider-items');
   const sliderMarkers = document.querySelector('.main__slider-markers');
 
-  sliderPlace.innerHTML = ''; // Очистка содержимого перед добавлением новых элементов
-  sliderMarkers.innerHTML = ''; // Очистка содержимого перед добавлением новых маркеров
+  sliderPlace.innerHTML = ''; 
+  sliderMarkers.innerHTML = ''; 
 
   for (let i = 0; i < data.length; i += itemsPerPage) {
     const users = data.slice(i, i + itemsPerPage);
@@ -41,7 +41,7 @@ const inputInDOM = (data) => {
   }
 
   addClickEventListeners();
-  updateMarkersVisibility(0); // Инициализация видимости маркеров
+  updateMarkersVisibility(0); 
 };
 
 const fetchData = async () => {
@@ -51,7 +51,7 @@ const fetchData = async () => {
       fetchedData = await response.json();
       console.log(response);
       inputInDOM(fetchedData);
-      addScrollEventListener(); // Добавляем обработчик событий прокрутки после загрузки данных
+      addScrollEventListener(); 
     } else {
       console.error("Ошибка HTTP: " + response.status);
     }
@@ -77,11 +77,11 @@ const addScrollEventListener = () => {
     if (event.shiftKey) {
       event.preventDefault();
       const slideWidth = sliderPlace.clientWidth;
-      const scrollAmount = Math.round(event.deltaY / 100) * slideWidth; // Определяем количество пикселей для прокрутки
+      const scrollAmount = Math.round(event.deltaY / 100) * slideWidth; 
 
       sliderPlace.scrollTo({
         left: sliderPlace.scrollLeft + scrollAmount,
-        behavior: 'smooth' // Плавное прокручивание к новому элементу списка
+        behavior: 'smooth'
       });
 
       const index = getCurrentSlideIndex(sliderPlace);
@@ -112,10 +112,8 @@ const updateMarkersVisibility = (currentIndex) => {
       marker.classList.remove('active');
     }
 
-    // Calculate distance from currentIndex
     const distance = Math.abs(index - currentIndex);
 
-    // Show only the necessary markers
     if (distance === 0 || distance === 1 || index === 0 || index === totalPages - 1) {
       marker.style.display = 'block';
     } else {
@@ -123,7 +121,6 @@ const updateMarkersVisibility = (currentIndex) => {
     }
   });
 
-  // Hide or show prevButton and nextButton based on currentIndex
   const prevButton = document.querySelector('.main__slider-control.prev');
   const nextButton = document.querySelector('.main__slider-control.next');
 
