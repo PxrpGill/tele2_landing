@@ -86,14 +86,14 @@
             border-radius: 5px;
             text-align: center;
             line-height: 20px;
-            color: black;
+            color: white;
             text-decoration: none;
-            transition: .5s;
             font-family: "Tele2 TextSans Regular";
         }
 
         & .active a {
             background: white;
+            color: black;
             box-shadow: 0px 0px 8px var(--blue-color);
         }
     }

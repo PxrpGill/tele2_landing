@@ -1,4 +1,4 @@
-const url = 'https://api.github.com/users?per_page=100';
+const url = 'https://api.github.com/users?per_page=99';
 const itemsPerPage = 3;
 let fetchedData = [];
 let totalPages = 0;
@@ -116,12 +116,28 @@ const updateMarkersVisibility = (currentIndex) => {
     const distance = Math.abs(index - currentIndex);
 
     // Show only the necessary markers
-    if (distance === 0 || distance === 1 || distance === 2 || index === 0 || index === totalPages - 1) {
+    if (distance === 0 || distance === 1 || index === 0 || index === totalPages - 1) {
       marker.style.display = 'block';
     } else {
       marker.style.display = 'none';
     }
   });
+
+  // Hide or show prevButton and nextButton based on currentIndex
+  const prevButton = document.querySelector('.main__slider-control.prev');
+  const nextButton = document.querySelector('.main__slider-control.next');
+
+  if (currentIndex === 0) {
+    prevButton.style.display = 'none';
+  } else {
+    prevButton.style.display = 'block';
+  }
+
+  if (currentIndex === totalPages - 1) {
+    nextButton.style.display = 'none';
+  } else {
+    nextButton.style.display = 'block';
+  }
 };
 
 const addClickEventListeners = () => {
