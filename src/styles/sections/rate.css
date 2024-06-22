@@ -12,9 +12,9 @@
 
 .main__about-rate-title-slogan {
     font-family: "Tele2 DisplaySerif Regular";
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 52px;
+    font-size: var(--text-big);
+    font-weight: var(--bold-weight);
+    line-height: var(--line-height-52);
     margin-bottom: 24px;
     width: 936px;
 }
@@ -22,8 +22,8 @@
 .main__about-rate-text {
     font-family: "Tele2 TextSans Regular";
     font-size: var(--info-text-size);
-    font-weight: 400;
-    line-height: 30px;
+    font-weight: var(--normal-weight);
+    line-height: var(--line-height-30);
     width: 660px;
 }
 
@@ -50,7 +50,7 @@
     display: flex;
     justify-content: start;
     align-items: center;
-    gap: 16px;
+    gap: var(--item-gap);
 }
 
 .main__rate-my-online-list-item-about-favico {
@@ -66,8 +66,8 @@
 .main__rate-my-online-list-item-about-information {
     font-family: "Tele2 TextSans Regular";
     font-size: var(--info-text-size);
-    font-weight: 400;
-    line-height: 30px;
+    font-weight: var(--normal-weight);
+    line-height: var(--line-height-30);
 }
 
 @media screen and (max-width: 1024px) {
@@ -92,7 +92,6 @@
 @media screen and (max-width: 576px) {
     .main__rate-my-online {
         padding: 0px 16px 0px 16px;
-        gap: 40px;
     }
 
     .main__about-rate {
@@ -100,7 +99,6 @@
     }
 
     .main__about-rate-title-slogan {
-        font-size: 24px;
         width: 288px;
         line-height: 33px;
         margin-bottom: 16px;
@@ -109,7 +107,6 @@
     .main__about-rate-text {
         width: 288px;
         line-height: 27px;
-        font-weight: 400;
         margin-bottom: 0;
     }
 
@@ -120,10 +117,6 @@
 
     .main__rate-my-online-list {
         gap: 32px;
-    }
-
-    .main__rate-my-online-list-item-information {
-        gap: 16px;
     }
 
     .main__rate-my-online-list-item-about-information {

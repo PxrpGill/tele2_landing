@@ -36,20 +36,20 @@
 .choose-region-question__question {
     font-family: "Tele2 TextSans Regular";
     font-size: 18px;
-    font-weight: 400;
+    font-weight: var(--normal-weight);
     line-height: 27px;
 }
 
 .choose-region-question__agree-button {
-    border: 2px solid #1F2229;
+    border: 2px solid var(--main-color);
     background: none;
     width: 110px;
     height: 40px;
     color: var(--main-color);
     font-family: "Tele2 TextSans Regular";
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 22px;
+    font-weight: var(--bold-weight);
+    font-size: var(--text-mini);
+    line-height: var(--line-height-22);
     border-radius: var(--border-radius-button);
     cursor: pointer;
     appearance: none;
@@ -65,9 +65,9 @@
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 16px;
+    font-size: var(--text-mini)x;
     line-height: 24px;
-    font-weight: 400;
+    font-weight: var(--normal-weight);
     height: 24px;
     font-family: "Tele2 TextSans Regular";
     background-color: white;
@@ -79,7 +79,7 @@
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    gap: 16px;
+    gap: var(--item-gap);
     height: 100%;
 }
 

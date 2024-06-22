@@ -22,8 +22,8 @@
 
 .footer__navigation-list {
     display: flex;
-    gap: 11px;
     align-items: center;
+    gap: 12px;
 }
 
 .footer__upper-terms-stonk {
@@ -42,15 +42,15 @@
     align-items: center;
     font-family: "Tele2 TextSans Regular";
     font-size: 12px;
-    font-weight: 700;
+    font-weight: var(--bold-weight);
     line-height: 14px;
 }
 
 .footer__terms-stonk-title {
     font-family: "Tele2 TextSans Regular";
-    font-size: 13px;
-    font-weight: 400;
     line-height: 18px;
+    font-size: 13px;
+    font-weight: var(--normal-weight);
 }
 
 .footer__lower {
@@ -61,29 +61,29 @@
 
 .footer__lower-copywriting {
     display: flex;
-    gap: 24px;
+    gap: var(--item-gap);
     align-items: center;
 }
 
 .footer__copy {
     font-family: "Tele2 TextSans Regular";
-    font-size: 16px;
-    line-height: 22px;
-    font-weight: 400;
+    font-size: var(--text-mini);
+    line-height: var(----line-height-22);
+    font-weight: var(--normal-weight);
     color: var(--white-color);
 }
 
 .footer__lower-made-by {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: var(--item-gap);
 }
 
 .footer__made {
     font-family: "Tele2 TextSans Regular";
     font-size: 13px;
-    line-height: 22px;
-    font-weight: 400;
+    line-height: var(--line-height-22);
+    font-weight: var(--normal-weight);
     color: var(--white-color);
 }
 
@@ -92,7 +92,7 @@
         flex-wrap: wrap;
         gap: 10px;
     }
-    
+
     .footer__lower-copywriting {
         width: 100%;
         justify-content: space-between;
