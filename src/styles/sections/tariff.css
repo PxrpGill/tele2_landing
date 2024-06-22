@@ -190,12 +190,13 @@
     margin-top: 48px;
 }
 
-.info-messagage__text-mesage {
+.info-message__text-message {
     font-family: "Tele2 TextSans Regular";
     font-size: 14px;
     font-weight: var(--normal-weight);
     line-height: 19px;
     width: 288px;
+    color: var(--white-color);
 }
 
 .main__processing-personal-data-input-tel-block {
@@ -383,7 +384,7 @@
         color: var(--success-color);
     }
 
-    .info-messagage__text-mesage {
+    .info-message__text-mesage {
         width: 248px;
     }
 }

@@ -1,6 +1,6 @@
 export default class Validate {
     constructor() {
-        this.timeLiveMessage = 3000;
+        this.timeLiveMessage = 300000;
         this.successTemplate = document.querySelector('.main__success-message-template');
         this.failedTemplate = document.querySelector('.main__failed-message-template');
     }
@@ -81,7 +81,7 @@ export default class Validate {
         return regex.test(phoneNumber);
     }
 
-    dataProcessing(event, checkbox, phone, computer, submitButton) {
+    dataProcessing(event, checkbox, phone, computer, submitButton, inputTel) {
         event.preventDefault();
         const phoneNumber = inputTel.value;
 
@@ -89,7 +89,7 @@ export default class Validate {
             submitButton.style.background = 'gray';
             setTimeout(() => {
                 submitButton.style.background = 'white';
-            }, timeLiveMessage);
+            }, this.timeLiveMessage);
         } else {
             if (this.validatePhoneNumber(phoneNumber)) {
                 if (this.phoneInLocalStorage(phoneNumber)) {
@@ -115,6 +115,6 @@ const submitButton = document.querySelector('.main__processing-personal-data-sub
 submitButton.addEventListener(
     'click', function (event) {
         const validate = new Validate();
-        validate.dataProcessing(event, checkBox, phoneMessagePlace, computerMessagePlace, submitButton);
+        validate.dataProcessing(event, checkBox, phoneMessagePlace, computerMessagePlace, submitButton, inputTel);
     }
 );
