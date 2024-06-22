@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tele2</title>
-  <link rel="icon" href="/tele2_landing/images/favico_tele2.png" type="image/x-icon">
-  <script type="module" crossorigin src="/tele2_landing/assets/main-3pE7n6km.js"></script>
-  <link rel="stylesheet" crossorigin href="/tele2_landing/assets/main-D6qk8bGu.css">
+  <link rel="icon" href="/tele2_landing/images/favico_tele2.png" type="image/x-icon">
+  <script type="module" crossorigin src="/tele2_landing/assets/main-BmLUE34a.js"></script>
+  <link rel="stylesheet" crossorigin href="/tele2_landing/assets/main-V8XaJHuv.css">
 </head>
 
 <body>
@@ -127,12 +127,17 @@
           <h3 class="main__how-to-get-tariff-title--visually-hidden">
             Как получить тариф «Мой онлайн+»
           </h3>
-          <form action="GET" class="main__how-to-get-tariff-processing-personal-data">
+          <form action="POST" class="main__how-to-get-tariff-processing-personal-data">
             <div class="main__processing-personal-data-input-tel-block">
               <input type="tel" id="phone" class="main__processing-personal-data-input-tel" maxlength="18">
               <label for="phone" class="main__processing-personal-data-tel-label">
                 Номер телефона
               </label>
+              <article class="main__info-message-phone">
+                <h4 class="main__how-to-get-tariff-title--visually-hidden">
+                  Информационное сообщение для телефонов
+                </h4>
+              </article>
             </div>
             <div class="main__processing-personal-data-agreement">
               <input type="checkbox" id="agree" class="main__processing-personal-data-agree">
@@ -144,8 +149,13 @@
             <div class="main__submit-form">
               <input class="main__processing-personal-data-submit" type="submit" value="Выслать промокод">
             </div>
+            <!--Здесь будет стоять информация об отправке сообщения-->
+            <article class="main__info-message-computers">
+              <h4 class="main__how-to-get-tariff-title--visually-hidden">
+                Информационное сообщение для компьютеров
+              </h4>
+            </article>
           </form>
-          <!--Здесь будет стоять информация об отправке сообщения-->
         </article>
         <article class="main__how-to-get-tariff-list-steps">
           <h3 class="main__how-to-get-tariff-title--visually-hidden">
@@ -218,23 +228,37 @@
           </h3>
           <img src="/tele2_landing/images/fourth_section/one_tb.png" alt="Картинка 1 терабайта Теле2" class="rate-image" loading="lazy">
         </article>
-      </section>      <section class="main__slider">
+      </section>      <section class="main__slider" data-component="main__slider">
         <h2 class="main__slider-title--visually-hidden">Слайдер</h2>
+        <ul class="main__slider-items" tabindex="0"></ul>
+      
+        <div class="main__slider-contorls-container">
+          <button class="main__slider-control prev">&lt;</button>
+          <ul class="main__slider-markers"></ul>
+          <button class="main__slider-control next">&gt;</button>
+        </div>
       </section>    </div>
     <template class="main__failed-message-template">
-      <article class="main__how-to-get-tariff-info-message">
-        <img src="/tele2_landing/images/third_section/error.svg" alt="Иконка выполненно" loading="lazy">
+      <article class="main__how-to-get-tariff-info-message fail">
+        <div class="main__tariff-circle failed">
+          !
+        </div>
         <h3 class="info-messagage__text-mesage">
           На этот номер уже выслан промокод, на один номер можно получить один промокод
         </h3>
       </article>    </template>
     <template class="main__success-message-template">
-      <article class="main__how-to-get-tariff-info-message">
-        <img src="/tele2_landing/images/third_section/completed.svg" alt="Иконка выполненно" loading="lazy">
+      <article class="main__how-to-get-tariff-info-message successed">
+        <div class="main__tariff-circle success">
+          <img src="/tele2_landing/images/successed.svg" alt="галчока" class="successed-image">
+        </div>
         <h3 class="info-messagage__text-mesage">
           Промокод был выслан на ваш номер
         </h3>
       </article>    </template>
+    <button class="main__to-scroll-up-button">
+      ↑
+    </button>
   </main>
   <footer class="footer">
     <div class="footer__container">
@@ -338,8 +362,6 @@
                 Красноярск
               </button>
             </li>
-          </ul>
-          <ul class="change-region__list">
             <li class="change-region__item-list">
               <button class="change-region__item-button">
                 Москва
@@ -360,8 +382,6 @@
                 Пермь
               </button>
             </li>
-          </ul>
-          <ul class="change-region__list">
             <li class="change-region__item-list">
               <button class="change-region__item-button">
                 Ростов-на-Дону
@@ -386,9 +406,29 @@
         <h2 class="participate__title--visually-hidden">
           Форма принятия участия
         </h2>
+        <button class="participate__close-button">
+          <img src="/tele2_landing/images/cross.svg" alt="Крестик" class="cross">
+        </button>
+        <form action="POST" class="main__how-to-get-tariff-processing-personal-data">
+          <div class="main__processing-personal-data-input-tel-block">
+            <input type="tel" id="phone" class="main__processing-personal-data-input-tel" maxlength="18">
+            <label for="phone" class="main__processing-personal-data-tel-label">
+              Номер телефона
+            </label>
+          </div>
+          <div class="main__processing-personal-data-agreement">
+            <input type="checkbox" id="agree" class="main__processing-personal-data-agree">
+            <label for="agree" class="main__processing-personal-data-agree-label">
+              Даю согласие на обработку персональных
+              данных. Условия соглашения.
+            </label>
+          </div>
+          <div class="main__submit-form">
+            <input class="main__processing-personal-data-submit" type="submit" value="Выслать промокод">
+          </div>
+        </form>
       </article>
-    </dialog>
-  </template>
+    </dialog>  </template>
 </body>
 
 </html>
