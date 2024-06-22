@@ -8,9 +8,9 @@
 
 .main__how-to-get-tariff-slogan {
     font-family: "Tele2 DisplaySerif Regular";
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 52px;
+    font-size: var(--text-big);
+    font-weight: var(--bold-weight);
+    line-height: var(--line-height-52);
     margin-bottom: 64px;
     grid-column: 1/2;
 }
@@ -33,9 +33,9 @@
 
 .main__step-title {
     color: var(--blue-color);
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 52px;
+    font-size: var(--text-big);
+    font-weight: var(--weight-bold);
+    line-height: var(--line-height-52);
     font-family: "Tele2 DisplaySerif Regular";
 }
 
@@ -81,8 +81,8 @@
     align-items: center;
     color: var(--blue-color);
     font-size: 35px;
-    font-weight: 700;
-    line-height: 52px;
+    font-weight: var(--bold-weight);
+    line-height: var(--line-height-52);
     font-family: "Tele2 DisplaySerif Regular";
 }
 
@@ -90,7 +90,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 23px;
+    gap: var(--item-gap);
     justify-content: start;
     flex-wrap: wrap;
 }
@@ -100,21 +100,21 @@
     flex-direction: row;
     align-items: center;
     justify-content: start;
-    gap: 24px;
+    gap: var(--item-gap);
     width: 100%;
 }
 
 .main__step-description {
     font-size: var(--info-text-size);
-    line-height: 30px;
-    font-weight: 400;
+    line-height: var(--line-height-30);
+    font-weight: var(--normal-weight);
     font-family: "Tele2 TextSans Regular";
 }
 
 .main__processing-personal-data-tel-label {
     font-size: 13px;
     color: var(--data-color);
-    font-weight: 400;
+    font-weight: var(--normal-weight);
     line-height: 18px;
     font-family: "Tele2 TextSans Regular";
 }
@@ -123,7 +123,7 @@
     background: none;
     border: none;
     border-bottom: 1px solid var(--line-color);
-    font-size: 16px;
+    font-size: var(--text-mini);
     font-family: "Tele2 TextSans Regular";
     color: var(--white-color);
 }
@@ -143,7 +143,7 @@
     margin: 0;
     width: 24px;
     height: 24px;
-    border: 2px solid white;
+    border: 2px solid var(--white-color);
     cursor: pointer;
 }
 
@@ -155,9 +155,9 @@
 }
 
 .main__processing-personal-data-agree-label {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 22px;
+    font-size: var(--text-mini);
+    font-weight: var(--normal-weight);
+    line-height: var(--line-height-22);
     font-family: "Tele2 TextSans Regular";
     width: 316px;
 }
@@ -168,9 +168,9 @@
     border-radius: var(--border-radius-button);
     border: none;
     font-family: "Tele2 TextSans Regular";
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 22px;
+    font-weight: var(--bold-weight);
+    font-size: var(--text-mini);
+    line-height: var(--line-height-22);
     cursor: pointer;
     margin-top: 8px;
     appearance: none;
@@ -193,7 +193,7 @@
 .info-messagage__text-mesage {
     font-family: "Tele2 TextSans Regular";
     font-size: 14px;
-    font-weight: 400;
+    font-weight: var(--normal-weight);
     line-height: 19px;
     width: 288px;
 }
@@ -222,12 +222,12 @@
 }
 
 .success {
-    background-color: rgba(72, 204, 253, 1);
+    background-color: var(--blue-color);
 }
 
 .failed {
-    background-color: rgba(255, 16, 121, 1);
-    color: rgba(102, 20, 34, 1);
+    background-color: var(--failed-message-background-color);
+    color: var(--failed-message-color);
 }
 
 .successed-image {
@@ -251,7 +251,7 @@
     .main__step-eclipse {
         width: 56px;
         height: 56px;
-        font-size: 24px;
+        font-size: var(--text-big);
     }
 
     .main__how-to-get-tariff-slogan {
@@ -272,39 +272,17 @@
     .main__how-to-get-tariff {
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: var(--item-gap);
         padding: 0px 16px 0px 16px;
     }
 
     .main__item-step {
         flex-direction: column;
         align-items: start;
-        gap: 16px;
-    }
-
-    .main__how-to-get-tariff-list {
-        gap: 16px;
     }
 
     .main__how-to-get-tariff-slogan {
-        font-size: 24px;
-        order: 0;
-        margin: 0;
         line-height: 33px;
-    }
-
-    .main__step-eclipse {
-        width: 56px;
-        height: 56px;
-        font-size: 24px;
-    }
-
-    .main__how-to-get-tariff-personal-data {
-        order: 2;
-    }
-
-    .main__how-to-get-tariff-list-steps {
-        order: 1;
     }
 
     .main__processing-personal-data-submit {
@@ -377,7 +355,7 @@
     }
 
     .success {
-        background-color: rgba(7, 203, 92, 1);
+        background-color: var(--success-color);
     }
 
     .main__how-to-get-tariff-info-message {
@@ -385,8 +363,6 @@
     }
 
     .failed {
-        background-color: rgba(255, 77, 108, 1);
-        color: rgba(102, 20, 34, 1);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -395,19 +371,19 @@
     }
 
     .fail {
-        color: rgba(255, 77, 108, 1);
+        color: var(--failed-message-background-color);
     }
 
     .successed-image {
         width: 5px;
-        height: 5px;    
+        height: 5px;
     }
 
     .successed {
-        color: rgba(7, 203, 92, 1);
+        color: var(--success-color);
     }
 
     .info-messagage__text-mesage {
         width: 248px;
-}
+    }
 }

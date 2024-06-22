@@ -23,8 +23,8 @@
 .main__stocks-content-data-information {
     font-family: "Tele2 TextSans Regular";
     font-size: var(--info-text-size);
-    font-weight: 400;
-    line-height: 30px;
+    font-weight: var(--normal-weight);
+    line-height: var(--line-height-30);
     margin-top: 27px;
     margin-bottom: 48px;
 }
@@ -43,8 +43,8 @@
 .main__stocks-content-about-rate-my-online {
     font-family: "Tele2 TextSans Regular";
     font-size: var(--info-text-size);
-    line-height: 30px;
-    font-weight: 400;
+    line-height: var(--line-height-30);
+    font-weight: var(--normal-weight);
     margin-bottom: 56px;
     width: 340px;
 }
@@ -52,14 +52,14 @@
 .main__stocks-content-participate-button {
     padding: 19px 44px 19px 44px;
     font-family: "Tele2 TextSans Regular";
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 22px;
+    font-size: var(--text-mini);
+    font-weight: var(--bold-weight);
+    line-height: var(--line-height-22);
     border-radius: 48px;
     cursor: pointer;
     border: none;
     appearance: none;
-    color: black;
+    color: var(--black-color);
 }
 
 .logo-boss {
@@ -94,7 +94,7 @@
     .main__stocks-content-data-information {
         margin: 0px 0px 40px 0px;
         line-height: 24px;
-        font-size: 16px;
+        font-size: var(--text-mini);
     }
 
     .main__stocks-content-title {

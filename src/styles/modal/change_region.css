@@ -25,9 +25,9 @@
 
 .change-region__title {
     font-family: "Tele2 DisplaySerif Regular";
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 52px;
+    font-size: var(--text-big);
+    font-weight: var(--bold-weight);
+    line-height: var(--line-height-52);
     text-align: left;
     color: var(--white-color);
 }
@@ -50,7 +50,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 30px);
     column-gap: 88px;
-    row-gap: 24px;
+    row-gap: var(--itemp-gap);
 }
 
 .change-region__item-list {
@@ -65,8 +65,8 @@
     color: var(--white-color);
     font-family: "Tele2 TextSans Regular";
     font-size: 20px;
-    font-weight: 400;
-    line-height: 30px;
+    font-weight: var(--normal-weight);
+    line-height: var(--line-height-30);
     text-align: left;
     border: none;
     cursor: pointer;
@@ -122,6 +122,6 @@
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(6, 27px);
         column-gap: 53px;
-        row-gap: 16px;
+        row-gap: var(--item-gap);
     }
 }

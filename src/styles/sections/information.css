@@ -7,17 +7,17 @@
 }
 
 .main__link-to-site-slogan {
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 52px;
+    font-size: var(--text-big);
+    font-weight: var(--bold-weight);
+    line-height: var(--line-height-52);
     font-family: "Tele2 DisplaySerif Regular";
     margin-bottom: 30px;
 }
 
 .main__link-to-site-about {
     font-size: var(--info-text-size);
-    font-weight: 400;
-    line-height: 30px;
+    font-weight: var(--normal-weight);
+    line-height: var(--line-height-30);
     font-family: "Tele2 TextSans Regular";
     width: 513px;
 }
@@ -28,12 +28,12 @@
     height: 48px;
     border: none;
     font-family: "Tele2 TextSans Regular";
-    font-size: 16px;
-    line-height: 22px;
-    font-weight: 700;
+    font-size: var(--text-mini);
+    line-height: var(--line-height-22);
+    font-weight: var(--bold-weight);
     cursor: pointer;
-    background-color: white;
-    color: black;
+    background-color: var(--white-color);
+    color: var(--black-color);
 }
 
 .main__tele2-site-information {
@@ -73,6 +73,7 @@
     .main__tele2-site-information {
         grid-template-columns: auto auto;
     }
+    
     .rate-image {
         width: 270px;
         height: auto;
@@ -114,17 +115,12 @@
     .main__link-to-site-slogan {
         margin-bottom: 16px;
         font-size: 24px;
+        width: auto;
     }
 
     .rate-image {
         width: 230px;
         height: 239px;
-    }
-
-    .main__link-to-site-slogan {
-        font-size: 24px;
-        margin-bottom: 16px;
-        width: auto;
     }
 
     .main__tele2-site-information-link-to-site {
@@ -143,7 +139,7 @@
     }
 
     .main__link-to-site-about::after {
-        content: ' Теперь вы получите 1 ТБ на ваш телефон при подключении тарифа «Мой онлайн+».'
+        content: 'Теперь вы получите 1 ТБ на ваш телефон при подключении тарифа «Мой онлайн+».'
     }
 
     .main__tele2-site-information-image-rate {

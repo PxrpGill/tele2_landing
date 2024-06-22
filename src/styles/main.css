@@ -17,18 +17,6 @@
 
 @media screen and (max-width: 1024px) {
     .main__container {
-        align-items: center;
-        margin: 24px 0px var(--section-gap) 0px;
-    }
-}
-@media screen and (max-width: 576px) {
-    .main__container {
-        width: var(--main-container);
-        display: flex;
-        align-items: start;
-        justify-content: center;
-        flex-direction: column;
-        gap: var(--section-gap);
         margin: 24px 0px var(--section-gap) 0px;
     }
 }
