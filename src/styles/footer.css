@@ -16,47 +16,47 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid var(--line-color);
-    padding-bottom: 12px;
+    border-bottom: 0.1vw solid var(--line-color);
+    padding-bottom: 0.8vw;
 }
 
 .footer__navigation-list {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 0.8vw;
 }
 
 .footer__upper-terms-stonk {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 0.8vw;
 }
 
 .footer__terms-stonk-eclipse {
-    width: 32px;
-    height: 32px;
+    width: clamp(2.2vw, 2.2vw, 11.8vw);
+    height: clamp(2.2vw, 2.2vw, 11.8vw);
     border-radius: var(--border-radius-eclipse);
-    border: 2px solid var(--white-color);
+    border: 0.1vh solid var(--white-color);
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: "Tele2 TextSans Regular";
-    font-size: 12px;
+    font-size: clamp(0.8vw, 0.8vw, 4.4vw);
     font-weight: var(--bold-weight);
-    line-height: 14px;
+    line-height: calc(14px / font-size);
 }
 
 .footer__terms-stonk-title {
     font-family: "Tele2 TextSans Regular";
-    line-height: 18px;
-    font-size: 13px;
+    line-height: calc(18px / clamp(0.9vw, 0.9vw, 4.8vw));
+    font-size: clamp(0.9vw, 0.9vw, 4.8vw);
     font-weight: var(--normal-weight);
 }
 
 .footer__lower {
     display: flex;
     justify-content: space-between;
-    padding: 42px 0px 47px 0px;
+    padding: 2.9vw 0px 3.3vw 0px;
 }
 
 .footer__lower-copywriting {
@@ -68,7 +68,7 @@
 .footer__copy {
     font-family: "Tele2 TextSans Regular";
     font-size: var(--text-mini);
-    line-height: var(----line-height-22);
+    line-height: calc(var(--line-height-22) / var(--text-mini));
     font-weight: var(--normal-weight);
     color: var(--white-color);
 }
@@ -81,10 +81,26 @@
 
 .footer__made {
     font-family: "Tele2 TextSans Regular";
-    font-size: 13px;
-    line-height: var(--line-height-22);
+    font-size: clamp(0.9vw, 0.9vw, 4.8vw);
+    line-height: calc(var(--line-height-22) / clamp(0.9vw, 0.9vw, 4.8vw));
     font-weight: var(--normal-weight);
     color: var(--white-color);
+}
+
+.twitter {
+    width: clamp(1.7vw, 1.7vw, 9.2vw);
+}
+
+.vk {
+    width: clamp(1.9vw, 1.9vw, 10.0vw);
+}
+
+.facebook {
+    width: clamp(0.9vw, 0.9vw, 4.8vw);
+}
+
+.chulakov-logo {
+    width: clamp(9.7vw, 9.7vw, 51.8vw);
 }
 
 @media screen and (max-width: 1024px) {
