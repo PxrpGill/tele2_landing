@@ -35,7 +35,6 @@
     color: var(--blue-color);
     font-size: var(--text-big);
     font-weight: var(--weight-bold);
-    line-height: calc(var(--line-height-52) / var(--text-big));
     font-family: "Tele2 DisplaySerif Regular";
 }
 
@@ -86,7 +85,6 @@
     color: var(--blue-color);
     font-size: clamp(2.4vw, 2.4vw, 12.9vw);
     font-weight: var(--bold-weight);
-    line-height: calc(var(--line-height-52) / clamp(2.4vw, 2.4vw, 12.9vw));
     font-family: "Tele2 DisplaySerif Regular";
 }
 
@@ -196,7 +194,6 @@
     font-family: "Tele2 TextSans Regular";
     font-size: clamp(1.0vw, 1.0vw, 5.1vw);
     font-weight: var(--normal-weight);
-    line-height: calc(19px / clamp(1.0vw, 1.0vw, 5.1vw));
     color: var(--white-color);
     width: clamp(20.0vw, 20.0vw, 106.7vw);
 }

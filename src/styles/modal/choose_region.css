@@ -37,7 +37,6 @@
     font-family: "Tele2 TextSans Regular";
     font-size: clamp(1.3vw, 1.3vw, 6.7vw);
     font-weight: var(--normal-weight);
-    line-height: calc(27px / clamp(5.6vw, 5.6vw, 17.8vw));
 }
 
 .choose-region-question__agree-button {
@@ -49,7 +48,6 @@
     font-family: "Tele2 TextSans Regular";
     font-weight: var(--bold-weight);
     font-size: var(--text-mini);
-    line-height: calc(var(--line-height-22) / var(--text-mini));
     border-radius: var(--border-radius-button);
     cursor: pointer;
     appearance: none;

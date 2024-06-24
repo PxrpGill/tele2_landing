@@ -29,7 +29,6 @@
     border: none;
     font-family: "Tele2 TextSans Regular";
     font-size: var(--text-mini);
-    line-height: calc(var(--line-height-22) / var(--text-mini));
     font-weight: var(--bold-weight);
     cursor: pointer;
     background-color: var(--white-color);

@@ -27,7 +27,6 @@
     font-family: "Tele2 DisplaySerif Regular";
     font-size: var(--text-big);
     font-weight: var(--bold-weight);
-    line-height: calc(var(--line-height-52) / var(--text-big));
     text-align: left;
     color: var(--white-color);
 }
@@ -67,7 +66,6 @@
     font-family: "Tele2 TextSans Regular";
     font-size: var(--info-text-size);
     font-weight: var(--normal-weight);
-    line-height: var(--line-height-30);
     text-align: left;
     border: none;
     cursor: pointer;

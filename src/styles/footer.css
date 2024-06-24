@@ -43,12 +43,10 @@
     font-family: "Tele2 TextSans Regular";
     font-size: clamp(0.8vw, 0.8vw, 4.4vw);
     font-weight: var(--bold-weight);
-    line-height: calc(14px / font-size);
 }
 
 .footer__terms-stonk-title {
     font-family: "Tele2 TextSans Regular";
-    line-height: calc(18px / clamp(0.9vw, 0.9vw, 4.8vw));
     font-size: clamp(0.9vw, 0.9vw, 4.8vw);
     font-weight: var(--normal-weight);
 }
@@ -68,7 +66,6 @@
 .footer__copy {
     font-family: "Tele2 TextSans Regular";
     font-size: var(--text-mini);
-    line-height: calc(var(--line-height-22) / var(--text-mini));
     font-weight: var(--normal-weight);
     color: var(--white-color);
 }
@@ -82,7 +79,6 @@
 .footer__made {
     font-family: "Tele2 TextSans Regular";
     font-size: clamp(0.9vw, 0.9vw, 4.8vw);
-    line-height: calc(var(--line-height-22) / clamp(0.9vw, 0.9vw, 4.8vw));
     font-weight: var(--normal-weight);
     color: var(--white-color);
 }

@@ -44,7 +44,6 @@
     color: var(--white-color);
     padding: 0;
     margin: 0;
-    line-height: calc(var(--line-height-30) var(--info-text-size));
     cursor: pointer;
 }
 

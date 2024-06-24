@@ -24,7 +24,6 @@
     font-family: "Tele2 TextSans Regular";
     font-size: var(--info-text-size);
     font-weight: var(--normal-weight);
-    line-height: var(--line-height-30);
     margin-top: 1.9vw;
     margin-bottom: 3.3vw;
 }
@@ -55,7 +54,6 @@
     font-family: "Tele2 TextSans Regular";
     font-size: var(--text-mini);
     font-weight: var(--bold-weight);
-    line-height: var(--line-height-22);
     border-radius: 3.3vw;
     cursor: pointer;
     border: none;
