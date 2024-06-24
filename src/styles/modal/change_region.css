@@ -50,7 +50,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 30px);
     column-gap: 88px;
-    row-gap: var(--itemp-gap);
+    row-gap: var(--item-gap);
 }
 
 .change-region__item-list {
