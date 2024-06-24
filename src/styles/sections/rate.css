@@ -23,7 +23,7 @@
     font-family: "Tele2 TextSans Regular";
     font-size: var(--info-text-size);
     font-weight: var(--normal-weight);
-    line-height: calc(var(--line-height-30) / var(--info-text-size));
+    line-height: 1.5;
     width: clamp(45.8vw, 45.8vw, 244.4vw);
 }
 

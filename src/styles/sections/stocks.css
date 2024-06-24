@@ -10,7 +10,7 @@
     display: flex;
     justify-content: start;
     align-items: start;
-    gap: clamp(13.3vw, 13.3vw, 20.3vw);
+    gap: clamp(3.8vw, 3.8vw, 20.3vw);
 }
 
 .main__stocks-content {
@@ -32,7 +32,9 @@
 .main__stocks-content-title {
     font-family: "Standard CT Stencil";
     font-size: clamp(4.7vw, 4.7vw, 25.1vw);
+    line-height: 1;
     margin-bottom: 1.7vw;
+    width: clamp(33.1vw, 33.1vw, 176.7vw);
 }
 
 .stocks-content__title--benefit {
@@ -42,7 +44,7 @@
 .main__stocks-content-about-rate-my-online {
     font-family: "Tele2 TextSans Regular";
     font-size: var(--info-text-size);
-    line-height: calc(var(--line-height-30) / var(--info-text-size));
+    line-height: 1.5;
     font-weight: var(--normal-weight);
     margin-bottom: 3.9vw;
     width: clamp(23.6vw, 23.6vw, 125.9vw);

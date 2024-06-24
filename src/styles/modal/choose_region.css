@@ -35,7 +35,7 @@
 
 .choose-region-question__question {
     font-family: "Tele2 TextSans Regular";
-    font-size: clamp(5.6vw, 5.6vw, 17.8vw);
+    font-size: clamp(1.3vw, 1.3vw, 6.7vw);
     font-weight: var(--normal-weight);
     line-height: calc(27px / clamp(5.6vw, 5.6vw, 17.8vw));
 }
@@ -66,7 +66,7 @@
     border: none;
     cursor: pointer;
     font-size: var(--text-mini);
-    line-height: calc(24px / var(--text-mini)); 
+    line-height: calc(24px / var(--text-mini));
     font-weight: var(--normal-weight);
     height: clamp(1.7vw, 1.7vw, 8.9vw);
     font-family: "Tele2 TextSans Regular";
@@ -81,6 +81,13 @@
     justify-content: center;
     gap: var(--item-gap);
     height: 100%;
+    padding-left: 1.1vw;
+}
+
+.choose-region-question__button-section {
+    gap: 1.1vw;
+    display: flex;
+    align-items: center;
 }
 
 @media screen and (max-width: 576px) {

@@ -9,7 +9,7 @@
 .main__link-to-site-slogan {
     font-size: var(--text-big);
     font-weight: var(--bold-weight);
-    line-height: calc(var(--line-height-52) / var(--text-big));
+    line-height: 1.5;
     font-family: "Tele2 DisplaySerif Regular";
     margin-bottom: clamp(2.1vw, 2.1vw, 11.1vw);
 }
@@ -17,7 +17,7 @@
 .main__link-to-site-about {
     font-size: var(--info-text-size);
     font-weight: var(--normal-weight);
-    line-height: calc(var(--line-height-30) / var(--info-text-size));
+    line-height: 1.5;
     font-family: "Tele2 TextSans Regular";
     width: clamp(35.6vw, 35.6vw, 190.0vw);
 }
