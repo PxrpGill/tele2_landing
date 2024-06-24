@@ -126,10 +126,40 @@
     }
 
     .footer__upper {
-        padding: 0px 10px 8px 10px;
+        padding: 0px 3.1vw 2.5vw 3.1vw;
     }
 
     .footer__lower {
-        padding: 27px 16px 0px 16px;
+        padding: 8.4vw 5.0vw 0px 5.0vw;
+    }
+
+    .facebook {
+        width: clamp(2.5vw, 2.5vw, 7.8vw);
+    }
+
+    .twitter {
+        width: clamp(5.6vw, 5.6vw, 17.8vw);
+    }
+
+    .vk {
+        width: clamp(6.3vw, 6.3vw, 20.0vw);
+    }
+
+    .footer__navigation-list {
+        gap: clamp(2.2vw, 2.2vw, 6.9vw);
+    }
+
+    .footer__upper-terms-stonk {
+        gap: clamp(5.0vw, 5.0vw, 15.9vw);
+    }
+
+    .footer__terms-stonk-title {
+        font-size: clamp(4.1vw, 4.1vw, 12.8vw);
+    }
+
+    .footer__terms-stonk-eclipse {
+        width: clamp(10.0vw, 10.0vw, 31.9vw);
+        height: clamp(10.0vw, 10.0vw, 31.9vw);
+        font-size: clamp(3.8vw, 3.8vw, 11.9vw);
     }
 }

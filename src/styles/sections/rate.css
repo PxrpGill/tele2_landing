@@ -92,7 +92,8 @@
 
 @media screen and (max-width: 576px) {
     .main__rate-my-online {
-        padding: 0px 16px 0px 16px;
+        padding: 0px 4.9vw 0px 4.9vw;
+        gap: clamp(11.3vw, 11.3vw, 35.9vw);
     }
 
     .main__about-rate {
@@ -100,15 +101,21 @@
     }
 
     .main__about-rate-title-slogan {
-        width: 288px;
-        line-height: 33px;
-        margin-bottom: 16px;
+        width: clamp(90.0vw, 90.0vw, 287.8vw);
+        line-height: 1.3;
+        margin-bottom: clamp(5.0vw, 5.0vw, 15.9vw);
     }
 
     .main__about-rate-text {
-        width: 288px;
-        line-height: 27px;
+        width: clamp(90.0vw, 90.0vw, 287.8vw);
+        line-height: 1.6;
         margin-bottom: 0;
+        padding: 0;
+        letter-spacing: -0.5px;
+    }
+
+    .main__rate-my-online-list-item-information {
+        gap: clamp(5.0vw, 5.0vw, 15.9vw);
     }
 
     .main__rate-my-online-list {
@@ -117,20 +124,16 @@
     }
 
     .main__rate-my-online-list {
-        gap: 32px;
-    }
-
-    .main__rate-my-online-list-item-about-information {
-        line-height: 27px;
+        gap: clamp(10.0vw, 10.0vw, 31.9vw);
     }
 
     .main__rate-my-online-list-item-about-favico {
-        width: 56px;
-        height: 56px;
+        width: clamp(17.5vw, 17.5vw, 55.9vw);
+        height: clamp(17.5vw, 17.5vw, 55.9vw);
     }
 
     .favico-image {
-        width: 32px;
-        height: 32px;
+        width: clamp(10.0vw, 10.0vw, 31.9vw);
+        height: clamp(10.0vw, 10.0vw, 31.9vw);
     }
 }

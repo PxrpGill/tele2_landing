@@ -150,8 +150,8 @@
             &>li {
                 & img {
                     display: block;
-                    width: 100px;
-                    border-radius: 48px;
+                    width: clamp(31.3vw, 31.3vw, 100.0vw);
+                    border-radius: clamp(15.0vw, 15.0vw, 47.8vw);
                     transition: .5s;
                     cursor: pointer;
                 }
@@ -161,10 +161,28 @@
 
     [data-component="main__slider"] {
         position: relative;
-        height: 200px;
+        height: clamp(62.5vw, 62.5vw, 200.0vw);
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: start;
+    }
+
+    .main__slider-control {
+        width: clamp(9.4vw, 9.4vw, 30.0vw);
+        height: clamp(9.4vw, 9.4vw, 30.0vw);
+    }
+
+    [data-component="main__slider"] {
+        & .main__slider-markers {
+            & a {
+                width: clamp(9.4vw, 9.4vw, 30.0vw);
+                height: clamp(9.4vw, 9.4vw, 30.0vw);
+            }
+    
+            & .active a {
+                box-shadow: 0px 0px 2.5vw var(--blue-color);
+            }
+        }
     }
 }

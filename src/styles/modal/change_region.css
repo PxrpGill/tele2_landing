@@ -94,11 +94,11 @@
 
 @media screen and (max-width: 576px) {
     .change-region__modal-window {
-        top: 78px;
+        top: clamp(24.4vw, 24.4vw, 77.8vw);
         height: 100%;
-        width: 320px;
+        width: clamp(100.0vw, 100.0vw, 320.0vw);
         align-items: start;
-        padding-top: 64px;
+        padding-top: clamp(20.0vw, 20.0vw, 63.7vw);
     }
 
     .change-region__list {
@@ -107,26 +107,26 @@
     }
 
     .change-region__title {
-        font-size: 24px;
+        font-size: clamp(7.5vw, 7.5vw, 23.8vw);
     }
 
     .change-region__title {
-        font-size: 18px;
+        font-size: var(--info-text-size);
     }
 
     .change-region__item-button {
-        font-size: 18px;
+        font-size: var(--info-text-size);
     }
 
     .change-region__list {
         display: grid;
         grid-template-columns: auto auto;
-        grid-template-rows: repeat(6, 27px);
-        column-gap: 53px;
+        grid-template-rows: repeat(6, clamp(8.4vw, 8.4vw, 26.9vw));
+        column-gap: clamp(16.6vw, 16.6vw, 52.8vw);
         row-gap: var(--item-gap);
     }
 
     .change-region__content {
-        gap: 48px;
+        gap: clamp(15.0vw, 15.0vw, 47.8vw);
     }
 }

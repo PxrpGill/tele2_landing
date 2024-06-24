@@ -90,34 +90,41 @@
     .main__stocks {
         display: flex;
         flex-direction: column;
-        gap: 48px;
+        gap: clamp(15.0vw, 15.0vw, 47.8vw);
     }
 
     .main__stocks-content-data-information {
-        margin: 0px 0px 40px 0px;
-        line-height: 24px;
+        margin-bottom: clamp(12.5vw, 12.5vw, 40.0vw);
+        margin-top: 0;
+        line-height: 1.5;
         font-size: var(--text-mini);
     }
 
     .main__stocks-content-title {
-        font-size: 36px;
-        line-height: 36px;
+        font-size: clamp(11.3vw, 11.3vw, 35.9vw);
         text-align: left;
-        margin-bottom: 16px;
-        width: 288px;
+        margin-bottom: clamp(5.0vw, 5.0vw, 15.9vw);
+        width: clamp(90.0vw, 90.0vw, 287.8vw);
     }
 
     .main__stocks-content-about-rate-my-online {
-        margin-bottom: 40px;
-        width: 288px;
-        line-height: 27px;
+        margin-bottom: clamp(12.5vw, 12.5vw, 40.0vw);
+        width: clamp(90.0vw, 90.0vw, 287.8vw);
+        line-height: 1.5;
     }
 
     .logo-boss {
-        width: 316px;
+        width: clamp(98.8vw, 98.8vw, 315.9vw);
+        height: clamp(104.1vw, 104.1vw, 332.8vw);
     }
 
     .main__stocks-content {
-        padding: 0px 16px 0px 16px;
+        padding: 0px 5.0vw 0px 5.0vw;
+    }
+
+    .main__stocks-content-participate-button {
+        width: clamp(62.8vw, 62.8vw, 200.9vw);
+        height: clamp(15.0vw, 15.0vw, 47.8vw);
+        border-radius: clamp(15.0vw, 15.0vw, 47.8vw);
     }
 }

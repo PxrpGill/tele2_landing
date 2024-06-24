@@ -6,7 +6,7 @@
     --white-color: #fff;
     --blue-color: #48CCFD;
     --black-color: rgb(0, 0, 0);
-    --success-color: rgba(7, 203, 92, 1);
+    --success-color: #07CB5C;
     --failed-message-background-color: rgba(255, 77, 108, 1);
     --failed-message-color: rgba(102, 20, 34, 1);
     --main-container: clamp(77.5vw, 77.5vw, 413.3vw);
@@ -47,5 +47,6 @@
         --section-gap: clamp(22.5vw, 22.5vw, 71.9vw);
         --text-big: clamp(7.5vw, 7.5vw, 23.8vw);
         --item-gap: clamp(5vw, 5vw, 15.9vw);
+        --text-mini: clamp(5.0vw, 5.0vw, 15.9vw);
     }
 }

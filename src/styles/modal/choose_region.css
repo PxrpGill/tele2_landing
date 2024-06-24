@@ -66,7 +66,6 @@
     border: none;
     cursor: pointer;
     font-size: var(--text-mini);
-    line-height: calc(24px / var(--text-mini));
     font-weight: var(--normal-weight);
     height: clamp(1.7vw, 1.7vw, 8.9vw);
     font-family: "Tele2 TextSans Regular";
@@ -92,13 +91,31 @@
 
 @media screen and (max-width: 576px) {
     .choose-region-question__modal-window {
-        width: 288px;
-        height: 131px;
+        width: clamp(90.0vw, 90.0vw, 287.8vw);
+        height: clamp(40.9vw, 40.9vw, 130.9vw);
         left: 0;
         margin: 0 auto;
+        top: 15.6vw;
     }
 
     .choose-region-question__modal-window::after {
         left: 90%;
+        border-width: 3.1vw 3.1vw 0 3.1vw;
+    }
+
+    .choose-region-question__question {
+        font-size: var(--text-mini);
+    }
+
+    .choose-region-question__change-city-button {
+        width: clamp(38.4vw, 38.4vw, 122.8vw);
+        height: 7.5vw;
+        letter-spacing: -1px;
+    }
+
+    .choose-region-question__agree-button {
+        width: clamp(34.4vw, 34.4vw, 110.0vw);
+        height: clamp(12.5vw, 12.5vw, 40.0vw);
+        border-radius: clamp(15.0vw, 15.0vw, 47.8vw);
     }
 }
