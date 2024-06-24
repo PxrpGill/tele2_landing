@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    gap: 3.9vw;
+    gap: clamp(3.9vw, 3.9vw, 20.7vw);
 }
 
 .main__rate-my-online-title--visually-hidden {
@@ -14,7 +14,6 @@
     font-family: "Tele2 DisplaySerif Regular";
     font-size: var(--text-big);
     font-weight: var(--bold-weight);
-    line-height: var(--line-height-52);
     margin-bottom: clamp(1.7vw, 1.7vw, 8.9vw);
     width: clamp(65vw, 65vw, 346.7vw);
 }
@@ -23,7 +22,7 @@
     font-family: "Tele2 TextSans Regular";
     font-size: var(--info-text-size);
     font-weight: var(--normal-weight);
-    line-height: 1.5;
+    line-height: 1.6;
     width: clamp(45.8vw, 45.8vw, 244.4vw);
 }
 
@@ -38,7 +37,7 @@
 .main__rate-my-online-list {
     display: flex;
     flex-direction: row;
-    gap: 3.9vw;
+    gap: clamp(3.9vw, 3.9vw, 20.7vw);
     justify-content: start;
 }
 
@@ -50,7 +49,7 @@
     display: flex;
     justify-content: start;
     align-items: center;
-    gap: var(--item-gap);
+    gap: clamp(1.1vw, 1.1vw, 6.0vw);
 }
 
 .main__rate-my-online-list-item-about-favico {
@@ -66,8 +65,6 @@
 .main__rate-my-online-list-item-about-information {
     font-family: "Tele2 TextSans Regular";
     font-size: var(--info-text-size);
-    font-weight: var(--normal-weight);
-    line-height: var(--line-height-30);
 }
 
 .favico-image {
