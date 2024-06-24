@@ -23,17 +23,31 @@ document.addEventListener('DOMContentLoaded', () => {
         mainContainer.appendChild(dialogContainer);
 
         modalWindow.showModal();
+        document.body.style.overflow = 'hidden';
+
+        const body = document.body;
+        const bodyPaddingRight = window.getComputedStyle(body).paddingRight;
+        const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+        // Apply modal-open class to body and add padding
+        body.classList.add('modal-open');
+        body.style.paddingRight = `${parseInt(bodyPaddingRight) + scrollBarWidth}px`;
 
         closeModalButton.addEventListener('click', () => {
             modalWindow.close();
             mainContainer.removeChild(dialogContainer);
+            document.body.style.overflow = '';
+
+            // Remove modal-open class and restore padding
+            body.classList.remove('modal-open');
+            body.style.paddingRight = bodyPaddingRight;
         });
 
         inputTel.addEventListener('input', onPhoneInput);
         inputTel.addEventListener('keydown', onPhoneKeyDown);
         inputTel.addEventListener('paste', onPhonePaste);
 
-        submitButton.addEventListener('click', function(event) {
+        submitButton.addEventListener('click', function (event) {
             const validate = new Validate();
             validate.dataProcessing(event, checkbox, phonePlace, computerPlace, submitButton, inputTel);
         })
