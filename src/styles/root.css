@@ -24,22 +24,6 @@
     --item-gap: clamp(1.7vw, 1.7vw, 8.9vw);
 }
 
-@media screen and (max-width: 1178px) {
-    :root {
-        --main-container: 968px;
-        --info-text-size: 18px;
-        --section-gap: 72px;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    :root {
-        --main-container: 575px;
-        --info-text-size: 18px;
-        --section-gap: 72px;
-    }
-}
-
 @media screen and (max-width: 576px) {
     :root {
         --main-container: clamp(98.8vw, 98.8vw, 320vw);

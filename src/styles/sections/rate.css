@@ -71,25 +71,6 @@
     width: clamp(2.8vw, 2.8vw, 14.8vw);
 }
 
-@media screen and (max-width: 1024px) {
-    .main__rate-my-online {
-        gap: 40px;
-    }
-
-    .main__about-rate-title-slogan {
-        width: 575px;
-    }
-
-    .main__about-rate-text {
-        width: 575px;
-    }
-
-    .main__rate-my-online-list {
-        flex-direction: column;
-        gap: 32px;
-    }
-}
-
 @media screen and (max-width: 576px) {
     .main__rate-my-online {
         padding: 0px 4.9vw 0px 4.9vw;

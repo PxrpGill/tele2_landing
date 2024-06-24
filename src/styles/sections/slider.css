@@ -119,31 +119,6 @@
     font-size: var(--info-text-size);
 }
 
-@media screen and (max-width: 1024px) {
-    [data-component="main__slider"] {
-        & .main__slider-items {
-            &>li {
-                & img {
-                    display: block;
-                    width: 150px;
-                    border-radius: 48px;
-                    transition: .5s;
-                    cursor: pointer;
-                }
-            }
-        }
-    }
-
-    [data-component="main__slider"] {
-        position: relative;
-        height: 250px;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: start;
-    }
-}
-
 @media screen and (max-width: 576px) {
     [data-component="main__slider"] {
         & .main__slider-items {

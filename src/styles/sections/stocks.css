@@ -67,25 +67,6 @@
     background: none;
     width: clamp(40.6vw, 40.6vw, 216.3vw);
 }
-
-@media screen and (max-width: 1178px) {
-    .logo-boss {
-        width: 450px;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .main__stocks {
-        display: flex;
-        flex-direction: column;
-        gap: 48px;
-    }
-
-    .logo-boss {
-        width: 575px;
-    }
-}
-
 @media screen and (max-width: 576px) {
     .main__stocks {
         display: flex;

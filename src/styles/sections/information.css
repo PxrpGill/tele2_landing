@@ -69,40 +69,6 @@
     grid-row-end: 3;
 }
 
-@media screen and (max-width: 1178px) {
-    .main__tele2-site-information {
-        grid-template-columns: auto auto;
-    }
-
-    .rate-image {
-        width: 270px;
-        height: auto;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .main__tele2-site-information {
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
-    }
-
-    .main__link-to-site-slogan {
-        margin-bottom: 16px;
-        width: 575px;
-    }
-
-    .main__tele2-site-information-link-to-site {
-        order: 2;
-        display: flex;
-        justify-content: center;
-    }
-
-    .main__tele2-site-information-about {
-        margin: 0;
-    }
-}
-
 @media screen and (max-width: 576px) {
     .main__tele2-site-information {
         display: flex;

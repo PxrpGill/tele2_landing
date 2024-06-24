@@ -103,23 +103,6 @@
     width: clamp(9.7vw, 9.7vw, 51.8vw);
 }
 
-@media screen and (max-width: 1024px) {
-    .footer__lower {
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    .footer__lower-copywriting {
-        width: 100%;
-        justify-content: space-between;
-    }
-
-    .footer__lower-made-by {
-        width: 100%;
-        justify-content: space-between;
-    }
-}
-
 @media screen and (max-width: 576px) {
     .footer__lower-made-by {
         display: none;
