@@ -183,9 +183,8 @@
     justify-content: start;
     align-items: center;
     background-color: var(--info-message-color);
-    height: 48px;
     gap: 12px;
-    padding-left: 12px;
+    padding: 8px;
     border-radius: 8px;
     margin-top: 48px;
 }
@@ -196,6 +195,7 @@
     font-weight: var(--normal-weight);
     line-height: 19px;
     color: var(--white-color);
+    width: 288px;
 }
 
 .main__processing-personal-data-input-tel-block {
@@ -342,7 +342,6 @@
     .main__how-to-get-tariff-info-message {
         background: none;
         margin-top: 8px;
-        padding: 0;
     }
 
     .main__tariff-circle {
@@ -382,8 +381,13 @@
     .successed {
         color: var(--success-color);
     }
+    .main__how-to-get-tariff-info-message {
+        padding: 0;
+        margin-top: 8px;
+        gap: 4px;
+    }
 
-    .info-message__text-mesage {
+    .info-message__text-message {
         width: 248px;
     }
 }
