@@ -5,15 +5,15 @@
 .change-region__modal-window {
     width: var(--main-container);
     background-color: var(--main-color);
-    height: 554px;
+    height: clamp(38.5vw, 38.5vw, 205.1vw);
     border: none;
     padding: 0;
     display: flex;
     justify-content: start;
     align-items: start;
     margin: 0 auto;
-    padding-top: 144px;
-    top: 78px;
+    padding-top: 10.0vw;
+    top: 5.4vw;
     height: 100%;
 }
 
@@ -27,16 +27,16 @@
     font-family: "Tele2 DisplaySerif Regular";
     font-size: var(--text-big);
     font-weight: var(--bold-weight);
-    line-height: var(--line-height-52);
+    line-height: calc(var(--line-height-52) / var(--text-big));
     text-align: left;
     color: var(--white-color);
 }
 
 .change-region__content {
     display: flex;
-    gap: 88px;
+    gap: 6.1vw;
     flex-direction: column;
-    gap: 64px;
+    gap: 4.4vw;
 }
 
 .change-region__region-list {
@@ -48,8 +48,8 @@
 .change-region__list {
     display: grid;
     grid-template-columns: repeat(3, auto);
-    grid-template-rows: repeat(4, 30px);
-    column-gap: 88px;
+    grid-template-rows: repeat(4, 2.1vw);
+    column-gap: 6.1vw;
     row-gap: var(--item-gap);
     grid-auto-flow: column;
 }
@@ -65,7 +65,7 @@
     background: none;
     color: var(--white-color);
     font-family: "Tele2 TextSans Regular";
-    font-size: 20px;
+    font-size: var(--info-text-size);
     font-weight: var(--normal-weight);
     line-height: var(--line-height-30);
     text-align: left;
