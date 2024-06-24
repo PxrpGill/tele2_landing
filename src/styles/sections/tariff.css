@@ -10,21 +10,21 @@
     font-family: "Tele2 DisplaySerif Regular";
     font-size: var(--text-big);
     font-weight: var(--bold-weight);
-    line-height: var(--line-height-52);
-    margin-bottom: 64px;
+    line-height: 1.3;
+    margin-bottom: clamp(4.4vw, 4.4vw, 23.7vw);
     grid-column: 1/2;
 }
 
 .first {
-    width: 432px;
+    width: clamp(30vw, 30vw, 160vw);
 }
 
 .second {
-    width: 492px;
+    width: clamp(34.2vw, 34.2vw, 182.2vw);
 }
 
 .third {
-    width: 387px;
+    width: clamp(26.9vw, 26.9vw, 143.3vw);
 }
 
 .main__how-to-get-tariff-slogan--benefit {
@@ -35,7 +35,6 @@
     color: var(--blue-color);
     font-size: var(--text-big);
     font-weight: var(--weight-bold);
-    line-height: var(--line-height-52);
     font-family: "Tele2 DisplaySerif Regular";
 }
 
@@ -55,34 +54,37 @@
 .main__how-to-get-tariff-processing-personal-data {
     display: flex;
     flex-direction: column;
-    gap: 29px;
+    margin-top: clamp(0.6vw, 0.6vw, 2.9vw);
 }
 
 .main__processing-personal-data-input-tel {
     display: flex;
     flex-direction: column-reverse;
+    font-family: "Tele2 TextSans Regular";
+    font-size: clamp(1.1vw, 1.1vw, 5.9vw);
+    padding: 0.3vw 0px 0.3vw 0px;
+    margin-bottom: clamp(1.7vw, 1.7vw, 8.9vw);
 }
 
 .main__how-to-get-tariff {
     display: grid;
-    grid-template-columns: 348px 598px;
-    column-gap: 130px;
+    grid-template-columns: clamp(24.2vw, 24.2vw, 128.9vw) clamp(41.5vw, 41.5vw, 221.5vw);
+    column-gap: clamp(9.0vw, 9.0vw, 48.1vw);
     position: relative;
 }
 
 .main__step-eclipse {
-    width: 80px;
-    height: 80px;
+    width: clamp(5.6vw, 5.6vw, 29.6vw);
+    height: clamp(5.6vw, 5.6vw, 29.6vw);
     border-radius: var(--border-radius-eclipse);
     background: none;
-    border: 2px solid var(--line-color);
+    border: 0.1vw solid var(--line-color);
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--blue-color);
-    font-size: 35px;
+    font-size: clamp(2.4vw, 2.4vw, 12.9vw);
     font-weight: var(--bold-weight);
-    line-height: var(--line-height-52);
     font-family: "Tele2 DisplaySerif Regular";
 }
 
@@ -90,7 +92,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: var(--item-gap);
+    gap: clamp(2.1vw, 2.1vw, 11.1vw);
     justify-content: start;
     flex-wrap: wrap;
 }
@@ -106,23 +108,22 @@
 
 .main__step-description {
     font-size: var(--info-text-size);
-    line-height: var(--line-height-30);
+    line-height: 1.5;
     font-weight: var(--normal-weight);
     font-family: "Tele2 TextSans Regular";
 }
 
 .main__processing-personal-data-tel-label {
-    font-size: 13px;
+    font-size: clamp(0.9vw, 0.9vw, 4.8vw);
     color: var(--data-color);
     font-weight: var(--normal-weight);
-    line-height: 18px;
     font-family: "Tele2 TextSans Regular";
 }
 
 .main__processing-personal-data-input-tel {
     background: none;
     border: none;
-    border-bottom: 1px solid var(--line-color);
+    border-bottom: 0.1vw solid var(--line-color);
     font-size: var(--text-mini);
     font-family: "Tele2 TextSans Regular";
     color: var(--white-color);
@@ -135,15 +136,15 @@
 .main__processing-personal-data-agreement {
     display: flex;
     align-items: start;
-    gap: 8px;
+    gap: clamp(0.6vw, 0.6vw, 2.9vw);
 }
 
 .main__processing-personal-data-agree {
     appearance: none;
     margin: 0;
-    width: 24px;
-    height: 24px;
-    border: 2px solid var(--white-color);
+    width: clamp(1.7vw, 1.7vw, 8.9vw);
+    height: clamp(1.7vw, 1.7vw, 8.9vw);
+    border: 0.1vw solid var(--white-color);
     cursor: pointer;
 }
 
@@ -152,27 +153,27 @@
     background-repeat: no-repeat;
     background-position: center;
     color: black;
+    background-size: clamp(0.8vw, 0.8vw, 4.4vw);
 }
 
 .main__processing-personal-data-agree-label {
     font-size: var(--text-mini);
     font-weight: var(--normal-weight);
-    line-height: var(--line-height-22);
+    line-height: 1.6;
     font-family: "Tele2 TextSans Regular";
-    width: 316px;
+    width: clamp(21.9vw, 21.9vw, 117.0vw);
 }
 
 .main__processing-personal-data-submit {
-    width: 218px;
-    height: 48px;
+    width: clamp(15.1vw, 15.1vw, 80.7vw);
+    height: clamp(3.3vw, 3.3vw, 17.8vw);
     border-radius: var(--border-radius-button);
     border: none;
     font-family: "Tele2 TextSans Regular";
     font-weight: var(--bold-weight);
     font-size: var(--text-mini);
-    line-height: var(--line-height-22);
     cursor: pointer;
-    margin-top: 8px;
+    margin-top: clamp(2.2vw, 2.2vw, 11.8vw);
     appearance: none;
     background-color: white;
     color: black;
@@ -183,19 +184,18 @@
     justify-content: start;
     align-items: center;
     background-color: var(--info-message-color);
-    gap: 12px;
-    padding: 8px;
-    border-radius: 8px;
-    margin-top: 48px;
+    gap: clamp(0.8vw, 0.8vw, 4.4vw);
+    padding: 0.6vw;
+    border-radius: 0.6vw;
+    margin-top: clamp(3.3vw, 3.3vw, 17.8vw);
 }
 
 .info-message__text-message {
     font-family: "Tele2 TextSans Regular";
-    font-size: 14px;
+    font-size: clamp(1.0vw, 1.0vw, 5.1vw);
     font-weight: var(--normal-weight);
-    line-height: 19px;
     color: var(--white-color);
-    width: 288px;
+    width: clamp(20.0vw, 20.0vw, 106.7vw);
 }
 
 .main__processing-personal-data-input-tel-block {
@@ -213,8 +213,8 @@
 }
 
 .main__tariff-circle {
-    width: 24px;
-    height: 24px;
+    width: clamp(1.7vw, 1.7vw, 8.9vw);
+    height: clamp(1.7vw, 1.7vw, 8.9vw);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -228,52 +228,30 @@
 .failed {
     background-color: var(--failed-message-background-color);
     color: var(--failed-message-color);
+    font-size: clamp(1.0vw, 1.0vw, 5.1vw);
+    font-family: "Tele2 TextSans Regular";
+}
+
+.fail {
+    align-items: start;
 }
 
 .successed-image {
-    width: 9px;
-    height: 9px;
-}
-
-@media screen and (max-width: 1178px) {
-    .main__how-to-get-tariff {
-        column-gap: 30px;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .main__how-to-get-tariff {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .main__step-eclipse {
-        width: 56px;
-        height: 56px;
-        font-size: var(--text-big);
-    }
-
-    .main__how-to-get-tariff-slogan {
-        order: 0;
-        margin: 0;
-    }
-
-    .main__how-to-get-tariff-personal-data {
-        order: 2;
-    }
-
-    .main__how-to-get-tariff-list-steps {
-        order: 1;
-    }
+    width: clamp(0.6vw, 0.6vw, 3.3vw);
+    height: clamp(0.6vw, 0.6vw, 3.3vw);
 }
 
 @media screen and (max-width: 576px) {
     .main__how-to-get-tariff {
         display: flex;
         flex-direction: column;
-        gap: var(--item-gap);
-        padding: 0px 16px 0px 16px;
+        gap: clamp(12.5vw, 12.5vw, 40.0vw);
+        padding: 0px 5.0vw 0px 5.0vw;
+    }
+
+    .main__how-to-get-tariff-list {
+        gap: clamp(10.0vw, 10.0vw, 31.9vw);
+        margin-bottom: clamp(4.4vw, 4.4vw, 13.8vw);
     }
 
     .main__item-step {
@@ -282,15 +260,24 @@
     }
 
     .main__how-to-get-tariff-slogan {
-        line-height: 33px;
+        line-height: 1.4;
     }
 
     .main__processing-personal-data-submit {
         justify-self: center;
+        width: clamp(68.1vw, 68.1vw, 217.8vw);
+        height: clamp(15.0vw, 15.0vw, 47.8vw);
+        border-radius: clamp(15.0vw, 15.0vw, 47.8vw);
     }
 
     .main__processing-personal-data-agreement {
-        gap: 14px;
+        gap: clamp(2.5vw, 2.5vw, 8.0vw);
+        margin-top: clamp(5.0vw, 5.0vw, 15.9vw);
+        margin-bottom: clamp(7.5vw, 7.5vw, 23.8vw);
+    }
+
+    .main__processing-personal-data-agree:checked {
+        background-size: clamp(3.8vw, 3.8vw, 11.9vw);
     }
 
     .main__submit-form {
@@ -299,20 +286,32 @@
         justify-content: center;
     }
 
+    .main__processing-personal-data-agree {
+        width: clamp(7.5vw, 7.5vw, 23.8vw);
+        height: clamp(7.5vw, 7.5vw, 23.8vw);
+    }
+
     .first {
-        width: 288px;
+        width: clamp(90.0vw, 90.0vw, 287.8vw);
     }
 
     .second {
-        width: 272px;
+        width: clamp(85.0vw, 85.0vw, 271.9vw);
     }
 
     .third {
-        width: 288px;
+        width: clamp(90.0vw, 90.0vw, 287.8vw);
     }
 
     .main__processing-personal-data-agree-label {
-        width: 226px;
+        width: clamp(70.6vw, 70.6vw, 225.9vw);
+        line-height: 1.4;
+    }
+
+    .main__step-eclipse {
+        width: clamp(17.5vw, 17.5vw, 55.9vw);
+        height: clamp(17.5vw, 17.5vw, 55.9vw);
+        font-size: clamp(7.5vw, 7.5vw, 23.8vw);
     }
 
     .main__info-message-phone {
@@ -321,14 +320,19 @@
 
     .main__processing-personal-data-input-tel {
         order: 2;
+        padding-bottom: 1.9vw;
+        margin-bottom: 2.5vw;
     }
 
     .main__processing-personal-data-tel-label {
         order: 2;
+        font-size: clamp(4.1vw, 4.1vw, 12.8vw);
+        margin-bottom: 1.6vw;
     }
 
     .main__info-message-phone {
         order: 0;
+        margin: 0;
     }
 
     .main__info-message-computers {
@@ -341,12 +345,11 @@
 
     .main__how-to-get-tariff-info-message {
         background: none;
-        margin-top: 8px;
     }
 
     .main__tariff-circle {
-        width: 12px;
-        height: 12px;
+        width: clamp(3.8vw, 3.8vw, 11.9vw);
+        height: clamp(3.8vw, 3.8vw, 11.9vw);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -366,7 +369,7 @@
         justify-content: center;
         align-items: center;
         font-family: "Tele2 TextSans Regular";
-        font-size: 8px;
+        font-size: clamp(2.5vw, 2.5vw, 7.8vw);
     }
 
     .fail {
@@ -374,20 +377,23 @@
     }
 
     .successed-image {
-        width: 5px;
-        height: 5px;
+        width: clamp(1.6vw, 1.6vw, 11.9vw);
+        height: clamp(1.6vw, 1.6vw, 11.9vw);
     }
 
     .successed {
         color: var(--success-color);
     }
+
     .main__how-to-get-tariff-info-message {
         padding: 0;
-        margin-top: 8px;
-        gap: 4px;
+        margin-top: clamp(2.5vw, 2.5vw, 7.8vw);
+        gap: clamp(1.3vw, 1.3vw, 3.8vw);
     }
 
     .info-message__text-message {
-        width: 248px;
+        width: clamp(77.5vw, 77.5vw, 247.8vw);
+        font-size: clamp(4.1vw, 4.1vw, 12.8vw);
+        font-family: "Tele2 TextSans Regular";
     }
 }

@@ -4,13 +4,13 @@
 
 [data-component="main__slider"] {
     position: relative;
-    height: 300px;
+    height: clamp(20.8vw, 20.8vw, 111.1vw);
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 20px;
+    gap: clamp(1.4vw, 1.4vw, 7.4vw);
 }
 
 [data-component="main__slider"] {
@@ -41,8 +41,8 @@
         &>li {
             & img {
                 display: block;
-                width: 200px;
-                border-radius: 48px;
+                width: clamp(13.9vw, 13.9vw, 74.0vw);
+                border-radius: var(--border-radius-button);
                 transition: .5s;
                 cursor: pointer;
             }
@@ -58,9 +58,9 @@
     .main__slider-markers {
         display: flex;
         flex-direction: row;
-        gap: 10px;
-        font-size: 1em;
-        bottom: 1.5rem;
+        gap: clamp(0.7vw, 0.7vw, 3.7vw);
+        font-size: var(--info-text-size);
+        bottom: var(--info-text-size);
     }
 }
 
@@ -80,12 +80,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 30px;
-            height: 30px;
+            width: clamp(2.1vw, 2.1vw, 11.1vw);
+            height: clamp(2.1vw, 2.1vw, 11.1vw);
             background: var(--blue-color);
-            border-radius: 5px;
+            border-radius: var(--border-radius-button);
             text-align: center;
-            line-height: 20px;
             color: white;
             text-decoration: none;
             font-family: "Tele2 TextSans Regular";
@@ -94,7 +93,7 @@
         & .active a {
             background: white;
             color: black;
-            box-shadow: 0px 0px 8px var(--blue-color);
+            box-shadow: 0px 0px 0.6vw var(--blue-color);
         }
     }
 }
@@ -106,42 +105,18 @@
 .main__slider-contorls-container {
     width: 100%;
     justify-content: center;
-    gap: 10px;
+    gap: 0.7vw;
 }
 
 .main__slider-control {
-    width: 30px;
-    height: 30px;
+    width: clamp(2.1vw, 2.1vw, 11.1vw);
+    height: clamp(2.1vw, 2.1vw, 11.1vw);
     background-color: white;
     font-family: "Tele2 TextSans Regular";
-    border-radius: 5px;
+    border-radius: var(--border-radius-button);
     border: none;
     cursor: pointer;
-}
-
-@media screen and (max-width: 1024px) {
-    [data-component="main__slider"] {
-        & .main__slider-items {
-            &>li {
-                & img {
-                    display: block;
-                    width: 150px;
-                    border-radius: 48px;
-                    transition: .5s;
-                    cursor: pointer;
-                }
-            }
-        }
-    }
-
-    [data-component="main__slider"] {
-        position: relative;
-        height: 250px;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: start;
-    }
+    font-size: var(--info-text-size);
 }
 
 @media screen and (max-width: 576px) {
@@ -150,8 +125,8 @@
             &>li {
                 & img {
                     display: block;
-                    width: 100px;
-                    border-radius: 48px;
+                    width: clamp(31.3vw, 31.3vw, 100.0vw);
+                    border-radius: clamp(15.0vw, 15.0vw, 47.8vw);
                     transition: .5s;
                     cursor: pointer;
                 }
@@ -161,10 +136,28 @@
 
     [data-component="main__slider"] {
         position: relative;
-        height: 200px;
+        height: clamp(62.5vw, 62.5vw, 200.0vw);
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: start;
+    }
+
+    .main__slider-control {
+        width: clamp(9.4vw, 9.4vw, 30.0vw);
+        height: clamp(9.4vw, 9.4vw, 30.0vw);
+    }
+
+    [data-component="main__slider"] {
+        & .main__slider-markers {
+            & a {
+                width: clamp(9.4vw, 9.4vw, 30.0vw);
+                height: clamp(9.4vw, 9.4vw, 30.0vw);
+            }
+    
+            & .active a {
+                box-shadow: 0px 0px 2.5vw var(--blue-color);
+            }
+        }
     }
 }

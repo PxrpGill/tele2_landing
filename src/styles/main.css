@@ -12,11 +12,5 @@
     justify-content: center;
     flex-direction: column;
     gap: var(--section-gap);
-    margin: 56px 0px var(--section-gap) 0px;
-}
-
-@media screen and (max-width: 1024px) {
-    .main__container {
-        margin: 24px 0px var(--section-gap) 0px;
-    }
+    margin: 3.9vw 0px var(--section-gap) 0px;
 }

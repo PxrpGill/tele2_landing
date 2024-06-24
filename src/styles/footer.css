@@ -16,47 +16,45 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid var(--line-color);
-    padding-bottom: 12px;
+    border-bottom: 0.1vw solid var(--line-color);
+    padding-bottom: 0.8vw;
 }
 
 .footer__navigation-list {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 0.8vw;
 }
 
 .footer__upper-terms-stonk {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 0.8vw;
 }
 
 .footer__terms-stonk-eclipse {
-    width: 32px;
-    height: 32px;
+    width: clamp(2.2vw, 2.2vw, 11.8vw);
+    height: clamp(2.2vw, 2.2vw, 11.8vw);
     border-radius: var(--border-radius-eclipse);
-    border: 2px solid var(--white-color);
+    border: 0.1vh solid var(--white-color);
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: "Tele2 TextSans Regular";
-    font-size: 12px;
+    font-size: clamp(0.8vw, 0.8vw, 4.4vw);
     font-weight: var(--bold-weight);
-    line-height: 14px;
 }
 
 .footer__terms-stonk-title {
     font-family: "Tele2 TextSans Regular";
-    line-height: 18px;
-    font-size: 13px;
+    font-size: clamp(0.9vw, 0.9vw, 4.8vw);
     font-weight: var(--normal-weight);
 }
 
 .footer__lower {
     display: flex;
     justify-content: space-between;
-    padding: 42px 0px 47px 0px;
+    padding: 2.9vw 0px 3.3vw 0px;
 }
 
 .footer__lower-copywriting {
@@ -68,7 +66,6 @@
 .footer__copy {
     font-family: "Tele2 TextSans Regular";
     font-size: var(--text-mini);
-    line-height: var(----line-height-22);
     font-weight: var(--normal-weight);
     color: var(--white-color);
 }
@@ -81,27 +78,25 @@
 
 .footer__made {
     font-family: "Tele2 TextSans Regular";
-    font-size: 13px;
-    line-height: var(--line-height-22);
+    font-size: clamp(0.9vw, 0.9vw, 4.8vw);
     font-weight: var(--normal-weight);
     color: var(--white-color);
 }
 
-@media screen and (max-width: 1024px) {
-    .footer__lower {
-        flex-wrap: wrap;
-        gap: 10px;
-    }
+.twitter {
+    width: clamp(1.7vw, 1.7vw, 9.2vw);
+}
 
-    .footer__lower-copywriting {
-        width: 100%;
-        justify-content: space-between;
-    }
+.vk {
+    width: clamp(1.9vw, 1.9vw, 10.0vw);
+}
 
-    .footer__lower-made-by {
-        width: 100%;
-        justify-content: space-between;
-    }
+.facebook {
+    width: clamp(0.9vw, 0.9vw, 4.8vw);
+}
+
+.chulakov-logo {
+    width: clamp(9.7vw, 9.7vw, 51.8vw);
 }
 
 @media screen and (max-width: 576px) {
@@ -110,10 +105,40 @@
     }
 
     .footer__upper {
-        padding: 0px 10px 8px 10px;
+        padding: 0px 3.1vw 2.5vw 3.1vw;
     }
 
     .footer__lower {
-        padding: 27px 16px 0px 16px;
+        padding: 8.4vw 5.0vw 0px 5.0vw;
+    }
+
+    .facebook {
+        width: clamp(2.5vw, 2.5vw, 7.8vw);
+    }
+
+    .twitter {
+        width: clamp(5.6vw, 5.6vw, 17.8vw);
+    }
+
+    .vk {
+        width: clamp(6.3vw, 6.3vw, 20.0vw);
+    }
+
+    .footer__navigation-list {
+        gap: clamp(2.2vw, 2.2vw, 6.9vw);
+    }
+
+    .footer__upper-terms-stonk {
+        gap: clamp(5.0vw, 5.0vw, 15.9vw);
+    }
+
+    .footer__terms-stonk-title {
+        font-size: clamp(4.1vw, 4.1vw, 12.8vw);
+    }
+
+    .footer__terms-stonk-eclipse {
+        width: clamp(10.0vw, 10.0vw, 31.9vw);
+        height: clamp(10.0vw, 10.0vw, 31.9vw);
+        font-size: clamp(3.8vw, 3.8vw, 11.9vw);
     }
 }
