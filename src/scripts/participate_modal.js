@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         dialogContainer.className = 'main__modal-container';
         const mainContainer = document.querySelector('.main__container');
 
+
         dialogContainer.appendChild(participateTemplateNode);
         mainContainer.appendChild(dialogContainer);
 
@@ -26,21 +27,26 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = 'hidden';
 
         const body = document.body;
-        const bodyPaddingRight = window.getComputedStyle(body).paddingRight;
+        const bodyPaddingRight = parseInt(window.getComputedStyle(body).paddingRight, 10) || 0;
         const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
 
-        // Apply modal-open class to body and add padding
+        console.log(`Body original padding-right: ${bodyPaddingRight}px`);
+        console.log(`Scroll bar width: ${scrollBarWidth}px`);
+
         body.classList.add('modal-open');
-        body.style.paddingRight = `${parseInt(bodyPaddingRight) + scrollBarWidth}px`;
+        body.style.paddingRight = `${bodyPaddingRight + scrollBarWidth}px`;
+
+        console.log(`Body new padding-right: ${body.style.paddingRight}`);
 
         closeModalButton.addEventListener('click', () => {
             modalWindow.close();
             mainContainer.removeChild(dialogContainer);
             document.body.style.overflow = '';
 
-            // Remove modal-open class and restore padding
             body.classList.remove('modal-open');
-            body.style.paddingRight = bodyPaddingRight;
+            body.style.paddingRight = `${bodyPaddingRight}px`;
+
+            console.log('Modal closed and padding restored');
         });
 
         inputTel.addEventListener('input', onPhoneInput);
@@ -50,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         submitButton.addEventListener('click', function (event) {
             const validate = new Validate();
             validate.dataProcessing(event, checkbox, phonePlace, computerPlace, submitButton, inputTel);
-        })
+        });
+
     });
 });

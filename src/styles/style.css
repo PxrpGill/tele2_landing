@@ -152,5 +152,5 @@ body {
 
 body.modal-open {
     overflow: hidden;
-    padding-right: 0 !important;
+    padding-right: 17px !important;
 }
