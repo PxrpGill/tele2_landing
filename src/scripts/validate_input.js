@@ -1,76 +1,70 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const inputTel = document.querySelector('.main__processing-personal-data-input-tel');
-    const submitButton = document.querySelector('.main__processing-personal-data-submit');
-    const placeToAppendMessage = document.querySelector('.main__info-message-computers');
-    const checkBox = document.querySelector('.main__processing-personal-data-agree');
-    const phoneMessagePlace = document.querySelector('.main__info-message-phone');
+export default class Validate {
+    constructor() {
+        this.timeLiveMessage = 300000;
+        this.successTemplate = document.querySelector('.main__success-message-template');
+        this.failedTemplate = document.querySelector('.main__failed-message-template');
+    }
 
-    const timeLiveMessage = 3000;
-
-    function deleteMessageFromDOM(container) {
+    deleteMessageFromDOM(container) {
         setTimeout(() => {
             if (container.parentNode) {
                 container.parentNode.removeChild(container);
             }
-        }, timeLiveMessage);
+        }, this.timeLiveMessage);
     }
 
-    function clearMessages(container) {
+    clearMessages(container) {
         while (container.firstChild) {
             container.removeChild(container.firstChild);
         }
     }
 
-    function outputFailedMessage() {
-        const template = document.querySelector('.main__failed-message-template');
-
-        clearMessages(placeToAppendMessage);
-        const templateNode1 = template.content.cloneNode(true);
+    outputFailedMessage(phone, computer) {
+        this.clearMessages(computer);
+        const templateNode1 = this.failedTemplate.content.cloneNode(true);
         const container1 = document.createElement('div');
         container1.className = 'main__message-container';
         container1.appendChild(templateNode1);
-        placeToAppendMessage.appendChild(container1);
-        deleteMessageFromDOM(container1);
+        computer.appendChild(container1);
+        this.deleteMessageFromDOM(container1);
 
-        clearMessages(phoneMessagePlace);
+        clearMessages(phone);
         const templateNode2 = template.content.cloneNode(true);
         const container2 = document.createElement('div');
         container2.className = 'main__message-container';
         container2.appendChild(templateNode2);
-        phoneMessagePlace.appendChild(container2);
-        deleteMessageFromDOM(container2);
+        phone.appendChild(container2);
+        this.deleteMessageFromDOM(container2);
     }
 
-    function outputSuccessMessage() {
-        const template = document.querySelector('.main__success-message-template');
-
-        clearMessages(placeToAppendMessage);
-        const templateNode1 = template.content.cloneNode(true);
+    outputSuccessMessage(phone, computer) {
+        this.clearMessages(computer);
+        const templateNode1 = this.successTemplate.content.cloneNode(true);
         const container1 = document.createElement('div');
         container1.className = 'main__message-container';
         container1.appendChild(templateNode1);
-        placeToAppendMessage.appendChild(container1);
-        deleteMessageFromDOM(container1);
+        computer.appendChild(container1);
+        this.deleteMessageFromDOM(container1);
 
-        clearMessages(phoneMessagePlace);
+        clearMessages(phone);
         const templateNode2 = template.content.cloneNode(true);
         const container2 = document.createElement('div');
         container2.className = 'main__message-container';
         container2.appendChild(templateNode2);
-        phoneMessagePlace.appendChild(container2);
-        deleteMessageFromDOM(container2);
+        phone.appendChild(container2);
+        this.deleteMessageFromDOM(container2);
     }
 
-    function setNumberInLocalStorage(phoneNumber) {
+    setNumberInLocalStorage(phoneNumber) {
         const key = new Date();
         localStorage.setItem(String(key), phoneNumber);
     }
 
-    function phoneInLocalStorage(phoneNumber) {
+    phoneInLocalStorage(phoneNumber) {
         let flag = false;
 
         for (let key in localStorage) {
-            if (localStorage.hasOwnProperty && key != 'region') {
+            if (localStorage.hasOwnProperty(key) && key != 'region') {
                 const item = localStorage.getItem(key);
 
                 if (phoneNumber == item) {
@@ -82,31 +76,45 @@ document.addEventListener('DOMContentLoaded', () => {
         return flag;
     }
 
-    function validatePhoneNumber(phoneNumber) {
+    validatePhoneNumber(phoneNumber) {
         const regex = /(\+7|[0-689])\s\(\d{3}\)\s\d{3}-\d{2}-\d{2}/;
         return regex.test(phoneNumber);
     }
 
-    submitButton.addEventListener('click', (event) => {
+    dataProcessing(event, checkbox, phone, computer, submitButton, inputTel) {
         event.preventDefault();
         const phoneNumber = inputTel.value;
 
-        if (!checkBox.checked || phoneNumber == '') {
+        if (!checkbox.checked || phoneNumber == '') {
             submitButton.style.background = 'gray';
             setTimeout(() => {
                 submitButton.style.background = 'white';
-            }, timeLiveMessage);
+            }, this.timeLiveMessage);
         } else {
-            if (validatePhoneNumber(phoneNumber)) {
-                if (phoneInLocalStorage(phoneNumber)) {
-                    outputFailedMessage();
+            if (this.validatePhoneNumber(phoneNumber)) {
+                if (this.phoneInLocalStorage(phoneNumber)) {
+                    this.outputFailedMessage(phone, computer);
                 } else {
-                    setNumberInLocalStorage(phoneNumber);
-                    outputSuccessMessage();
+                    this.setNumberInLocalStorage(phoneNumber);
+                    this.outputSuccessMessage(phone, computer);
                 }
             } else {
-                outputFailedMessage();
+                this.outputFailedMessage(phone, computer);
             }
         }
-    });
-});
+    }
+}
+
+const inputTel = document.querySelector('.main__processing-personal-data-input-tel');
+const computerMessagePlace = document.querySelector('.main__info-message-computers');
+const phoneMessagePlace = document.querySelector('.main__info-message-phone');
+const checkBox = document.querySelector('.main__processing-personal-data-agree');
+
+const submitButton = document.querySelector('.main__processing-personal-data-submit');
+
+submitButton.addEventListener(
+    'click', function (event) {
+        const validate = new Validate();
+        validate.dataProcessing(event, checkBox, phoneMessagePlace, computerMessagePlace, submitButton, inputTel);
+    }
+);
