@@ -1,11 +1,11 @@
 .choose-region-question__modal-window {
     margin: 0;
-    width: 297px;
-    height: 123px;
+    width: clamp(20.6vw, 20.6vw, 110.0vw);
+    height: clamp(8.5vw, 8.5vw, 45.6vw);
     position: relative;
-    top: 76px;
-    left: calc(100% - 400px);
-    border-radius: 4px;
+    top: 5.3vw;
+    left: calc(100% - 27.8vw);
+    border-radius: 0.3vw;
     border: none;
     background-color: var(--white-color);
     overflow: visible;
@@ -16,12 +16,12 @@
 .choose-region-question__modal-window::after {
     content: '';
     position: absolute;
-    top: -10px; 
-    left: 90%; 
-    transform: translateX(-50%); 
+    top: -0.7vw;
+    left: 90%;
+    transform: translateX(-50%);
     border-style: solid;
-    border-width: 10px 10px 0 10px; 
-    border-color: var(--white-color) transparent transparent transparent; 
+    border-width: 0.7vw 0.7vw 0 0.7vw;
+    border-color: var(--white-color) transparent transparent transparent;
     rotate: 180deg;
 }
 
@@ -35,25 +35,25 @@
 
 .choose-region-question__question {
     font-family: "Tele2 TextSans Regular";
-    font-size: 18px;
+    font-size: clamp(5.6vw, 5.6vw, 17.8vw);
     font-weight: var(--normal-weight);
-    line-height: 27px;
+    line-height: calc(27px / clamp(5.6vw, 5.6vw, 17.8vw));
 }
 
 .choose-region-question__agree-button {
-    border: 2px solid var(--main-color);
+    border: 0.1vw solid var(--main-color);
     background: none;
-    width: 110px;
-    height: 40px;
+    width: clamp(7.6vw, 7.6vw, 40.7vw);
+    height: clamp(2.8vw, 2.8vw, 14.8vw);
     color: var(--main-color);
     font-family: "Tele2 TextSans Regular";
     font-weight: var(--bold-weight);
     font-size: var(--text-mini);
-    line-height: var(--line-height-22);
+    line-height: calc(var(--line-height-22) / var(--text-mini));
     border-radius: var(--border-radius-button);
     cursor: pointer;
     appearance: none;
-    text-align: center; 
+    text-align: center;
     padding: 0;
 }
 
@@ -65,10 +65,10 @@
     background: none;
     border: none;
     cursor: pointer;
-    font-size: var(--text-mini)x;
-    line-height: 24px;
+    font-size: var(--text-mini);
+    line-height: calc(24px / var(--text-mini)); 
     font-weight: var(--normal-weight);
-    height: 24px;
+    height: clamp(1.7vw, 1.7vw, 8.9vw);
     font-family: "Tele2 TextSans Regular";
     background-color: white;
     color: black;
@@ -87,7 +87,7 @@
     .choose-region-question__modal-window {
         width: 288px;
         height: 131px;
-        left: 0;    
+        left: 0;
         margin: 0 auto;
     }
 
