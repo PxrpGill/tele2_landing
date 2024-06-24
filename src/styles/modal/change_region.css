@@ -47,10 +47,11 @@
 
 .change-region__list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(4, 30px);
     column-gap: 88px;
     row-gap: var(--item-gap);
+    grid-auto-flow: column;
 }
 
 .change-region__item-list {
@@ -119,9 +120,13 @@
 
     .change-region__list {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: auto auto;
         grid-template-rows: repeat(6, 27px);
         column-gap: 53px;
         row-gap: var(--item-gap);
+    }
+
+    .change-region__content {
+        gap: 48px;
     }
 }

@@ -19,23 +19,44 @@ document.addEventListener('DOMContentLoaded', () => {
         dialogContainer.className = 'main__modal-container';
         const mainContainer = document.querySelector('.main__container');
 
+
         dialogContainer.appendChild(participateTemplateNode);
         mainContainer.appendChild(dialogContainer);
 
         modalWindow.showModal();
+        document.body.style.overflow = 'hidden';
+
+        const body = document.body;
+        const bodyPaddingRight = parseInt(window.getComputedStyle(body).paddingRight, 10) || 0;
+        const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+        console.log(`Body original padding-right: ${bodyPaddingRight}px`);
+        console.log(`Scroll bar width: ${scrollBarWidth}px`);
+
+        body.classList.add('modal-open');
+        body.style.paddingRight = `${bodyPaddingRight + scrollBarWidth}px`;
+
+        console.log(`Body new padding-right: ${body.style.paddingRight}`);
 
         closeModalButton.addEventListener('click', () => {
             modalWindow.close();
             mainContainer.removeChild(dialogContainer);
+            document.body.style.overflow = '';
+
+            body.classList.remove('modal-open');
+            body.style.paddingRight = `${bodyPaddingRight}px`;
+
+            console.log('Modal closed and padding restored');
         });
 
         inputTel.addEventListener('input', onPhoneInput);
         inputTel.addEventListener('keydown', onPhoneKeyDown);
         inputTel.addEventListener('paste', onPhonePaste);
 
-        submitButton.addEventListener('click', function(event) {
+        submitButton.addEventListener('click', function (event) {
             const validate = new Validate();
             validate.dataProcessing(event, checkbox, phonePlace, computerPlace, submitButton, inputTel);
-        })
+        });
+
     });
 });
