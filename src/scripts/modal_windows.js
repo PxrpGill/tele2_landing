@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const showRegionModal = () => {
         main.style.opacity = 0;
-        mainHeader.style.position = 'fixed';
 
         const templateChangeNode = document.querySelector('.change-region');
         const modalTemplateNodeChange = templateChangeNode.content.cloneNode(true);
@@ -28,6 +27,15 @@ document.addEventListener('DOMContentLoaded', () => {
         mainContainer.appendChild(modalContainer);
         modalWindowChange.showModal();
 
+        // Save the current padding-right of the body
+        const body = document.body;
+        const bodyPaddingRight = window.getComputedStyle(body).paddingRight;
+        const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+        // Apply modal-open class to body and add padding
+        body.classList.add('modal-open');
+        body.style.paddingRight = `${parseInt(bodyPaddingRight) + scrollBarWidth}px`;
+
         regionButtons.forEach(button => {
             button.addEventListener('click', () => {
                 localStorage.setItem('region', button.textContent);
@@ -36,6 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 mainContainer.removeChild(modalContainer);
                 main.style.opacity = 1;
                 mainHeader.style.position = '';
+
+                // Remove modal-open class and restore padding
+                body.classList.remove('modal-open');
+                body.style.paddingRight = bodyPaddingRight;
             });
         });
     };
@@ -46,18 +58,34 @@ document.addEventListener('DOMContentLoaded', () => {
         modalContainer.appendChild(modalTemplateNodeQuestion);
         header.appendChild(modalContainer);
 
+        // Save the current padding-right of the body
+        const body = document.body;
+        const bodyPaddingRight = window.getComputedStyle(body).paddingRight;
+        const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+
         setTimeout(() => {
+            document.body.style.overflow = 'hidden';
+            body.style.paddingRight = `${parseInt(bodyPaddingRight) + scrollBarWidth}px`;
             modalWindowQuestion.showModal();
-        }, 100)
+        }, 100);
 
         agreeButton.addEventListener('click', () => {
+            document.body.style.overflow = '';
             modalWindowQuestion.close();
             header.removeChild(modalContainer);
+
+            // Remove modal-open class and restore padding
+            body.classList.remove('modal-open');
+            body.style.paddingRight = bodyPaddingRight;
         });
 
         changeRegionShowButton.addEventListener('click', () => {
             modalWindowQuestion.close();
             header.removeChild(modalContainer);
+
+            // Remove modal-open class and restore padding
+            body.classList.remove('modal-open');
+            body.style.paddingRight = bodyPaddingRight;
 
             showRegionModal();
         });

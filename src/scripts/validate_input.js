@@ -1,8 +1,9 @@
 export default class Validate {
     constructor() {
-        this.timeLiveMessage = 300000;
+        this.timeLiveMessage = 3000;
         this.successTemplate = document.querySelector('.main__success-message-template');
         this.failedTemplate = document.querySelector('.main__failed-message-template');
+        this.failedMessagePhoneRetry = 'На этот номер уже выслан промокод';
     }
 
     deleteMessageFromDOM(container) {
@@ -28,11 +29,12 @@ export default class Validate {
         computer.appendChild(container1);
         this.deleteMessageFromDOM(container1);
 
-        clearMessages(phone);
-        const templateNode2 = template.content.cloneNode(true);
+        this.clearMessages(phone);
+        const templateNode2 = this.failedTemplate.content.cloneNode(true);
         const container2 = document.createElement('div');
         container2.className = 'main__message-container';
         container2.appendChild(templateNode2);
+        container2.querySelector('.info-message__text-message').textContent = this.failedMessagePhoneRetry;
         phone.appendChild(container2);
         this.deleteMessageFromDOM(container2);
     }
@@ -46,8 +48,8 @@ export default class Validate {
         computer.appendChild(container1);
         this.deleteMessageFromDOM(container1);
 
-        clearMessages(phone);
-        const templateNode2 = template.content.cloneNode(true);
+        this.clearMessages(phone);
+        const templateNode2 = this.successTemplate.content.cloneNode(true);
         const container2 = document.createElement('div');
         container2.className = 'main__message-container';
         container2.appendChild(templateNode2);
