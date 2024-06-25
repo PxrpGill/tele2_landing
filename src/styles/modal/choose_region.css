@@ -87,6 +87,32 @@
     align-items: center;
 }
 
+@media screen and (max-width: 992px) {
+    .choose-region-question__modal-window {
+        width: clamp(29.9vw, 29.9vw, 43.4vw);
+        left: calc(100% - 43.2vw);
+        top: 7.3vw;
+    }
+
+    .choose-region-question__question {
+        font-size: var(--text-mini);
+    }
+
+    .choose-region-question__agree-button {
+        width: clamp(11.1vw, 11.1vw, 16.0vw);
+        height: clamp(4.8vw, 4.8vw, 7.0vw);
+    }
+
+    .choose-region-question__change-city-button {
+        font-size: var(--text-mini);
+    }
+
+    .choose-region-question__button-section {
+        display: flex;
+        align-items: center;
+    }
+}
+
 @media screen and (max-width: 576px) {
     .choose-region-question__modal-window {
         width: clamp(90.0vw, 90.0vw, 287.8vw);

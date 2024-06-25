@@ -51,6 +51,20 @@
     position: absolute;
 }
 
+@media screen and (max-width: 992px) {
+    .header {
+        height: clamp(7.7vw, 7.7vw, 11.1vw);
+    }
+
+    .tele2-logo {
+        width: clamp(8.9vw, 8.9vw, 12.8vw);
+    }
+
+    .geoposition-image {
+        width: clamp(3.2vw, 3.2vw, 4.6vw);
+    }
+}
+
 @media screen and (max-width: 576px) {
     .header {
         height: clamp(14.1vw, 14.1vw, 45vw);
@@ -69,7 +83,6 @@
     }
 
     .header__geoposition-button {
-        line-height: 27px;
         text-align: left;
     }
 }

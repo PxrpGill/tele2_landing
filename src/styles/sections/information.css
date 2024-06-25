@@ -70,6 +70,24 @@
     grid-row-end: 3;
 }
 
+@media screen and (max-width: 992px) {
+    .main__tele2-site-information {
+        grid-template-columns: auto auto;
+        column-gap: clamp(11.9vw, 11.9vw, 17.2vw);
+    }
+
+    .rate-image {
+        width: clamp(36.2vw, 36.2vw, 52.5vw);
+        height: clamp(36.2vw, 36.2vw, 52.5vw);
+    }
+
+    .main__link-to-site-link {
+        width: clamp(20.7vw, 20.7vw, 29.9vw);
+        height: clamp(4.8vw, 4.8vw, 7.0vw);
+        padding: 1.5vw 4.0vw;
+    }
+}
+
 @media screen and (max-width: 576px) {
     .main__tele2-site-information {
         display: flex;

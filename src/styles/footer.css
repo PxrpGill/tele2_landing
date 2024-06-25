@@ -99,6 +99,38 @@
     width: clamp(9.7vw, 9.7vw, 51.8vw);
 }
 
+@media screen and (max-width: 992px) {
+    .vk {
+        width: clamp(2.7vw, 2.7vw, 3.9vw);
+    }
+
+    .twitter {
+        width: clamp(2.5vw, 2.5vw, 3.6vw);
+    }
+
+    .facebook {
+        width: clamp(1.3vw, 1.3vw, 1.8vw);
+    }
+
+    .footer__terms-stonk-title {
+        font-size: clamp(1.3vw, 1.3vw, 1.8vw);
+    }
+
+    .footer__terms-stonk-eclipse {
+        width: clamp(3.2vw, 3.2vw, 4.6vw);
+        height: clamp(3.2vw, 3.2vw, 4.6vw);
+        font-size: clamp(1.2vw, 1.2vw, 1.7vw);
+    }
+
+    .footer__made {
+        font-size: clamp(1.3vw, 1.3vw, 1.8vw);
+    }
+
+    .chulakov-logo {
+        width: clamp(14.1vw, 14.1vw, 20.5vw);
+    }
+}
+
 @media screen and (max-width: 576px) {
     .footer__lower-made-by {
         display: none;

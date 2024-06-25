@@ -65,6 +65,17 @@
     background: none;
     width: clamp(40.6vw, 40.6vw, 216.3vw);
 }
+
+@media screen and (max-width: 992px) {
+    .main__stocks {
+        gap: clamp(5.5vw, 5.5vw, 8.0vw);
+    }
+
+    .logo-boss {
+        width: clamp(58.9vw, 58.9vw, 85.4vw);
+    }
+}
+
 @media screen and (max-width: 576px) {
     .main__stocks {
         display: flex;

@@ -241,6 +241,41 @@
     height: clamp(0.6vw, 0.6vw, 3.3vw);
 }
 
+@media screen and (max-width: 992px) {
+    .main__how-to-get-tariff {
+        grid-template-columns: auto auto;
+        column-gap: clamp(13.3vw, 13.3vw, 19.3vw);
+    }
+
+    .main__step-eclipse {
+        width: clamp(8.1vw, 8.1vw, 11.7vw);
+        height: clamp(8.1vw, 8.1vw, 11.7vw);
+        font-size: clamp(4.0vw, 4.0vw, 5.8vw);
+    }
+
+    .main__processing-personal-data-agree-label {
+        width: clamp(31.9vw, 31.9vw, 46.2vw);
+    }
+
+    .first {
+        width: clamp(43.5vw, 43.5vw, );
+    }
+
+    .main__processing-personal-data-submit {
+        width: clamp(21.9vw, 21.9vw, 31.9vw);
+        height: clamp(4.8vw, 4.8vw, 7.0vw);
+    }
+
+    .main__how-to-get-tariff-info-message {
+        padding: 1.2vw;
+    }
+
+    .info-message__text-message {
+        width: clamp(29.0vw, 29.0vw, 42.1vw);
+        font-size: clamp(1.4vw, 1.4vw, 2.0vw);
+    }
+}
+
 @media screen and (max-width: 576px) {
     .main__how-to-get-tariff {
         display: flex;
@@ -267,7 +302,7 @@
 
     .main__how-to-get-tariff-list-steps {
         order: 0;
-    }    
+    }
 
     .main__how-to-get-tariff-personal-data {
         order: 1;
