@@ -195,7 +195,7 @@
     margin-top: clamp(3.3vw, 3.3vw, 17.8vw);
 }
 
-.info-message__text-message {
+.main__info-message-text-message {
     @apply text-normal-sans;
     font-size: clamp(1.0vw, 1.0vw, 5.1vw);
     color: var(--white-color);
@@ -274,7 +274,7 @@
         padding: 1.2vw;
     }
 
-    .info-message__text-message {
+    .main__info-message-text-message {
         width: clamp(29.0vw, 29.0vw, 42.1vw);
         font-size: clamp(1.4vw, 1.4vw, 2.0vw);
     }
@@ -440,7 +440,7 @@
         gap: clamp(1.3vw, 1.3vw, 3.8vw);
     }
 
-    .info-message__text-message {
+    .main__info-message-text-message {
         width: clamp(77.5vw, 77.5vw, 247.8vw);
         font-size: clamp(4.1vw, 4.1vw, 12.8vw);
         font-family: "Tele2 TextSans Regular";
