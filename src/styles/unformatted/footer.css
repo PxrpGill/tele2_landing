@@ -1,3 +1,8 @@
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+}
+
 .footer__title--visually-hidden {
     display: none;
 }
@@ -13,22 +18,19 @@
 }
 
 .footer__upper {
-    display: flex;
+    @apply flex-center;
     justify-content: space-between;
-    align-items: center;
     border-bottom: 0.1vw solid var(--line-color);
     padding-bottom: 0.8vw;
 }
 
 .footer__navigation-list {
-    display: flex;
-    align-items: center;
+    @apply flex-center;
     gap: 0.8vw;
 }
 
 .footer__upper-terms-stonk {
-    display: flex;
-    align-items: center;
+    @apply flex-center;
     gap: 0.8vw;
 }
 
@@ -37,9 +39,8 @@
     height: clamp(2.2vw, 2.2vw, 11.8vw);
     border-radius: var(--border-radius-eclipse);
     border: 0.1vh solid var(--white-color);
-    display: flex;
+    @apply flex-center;
     justify-content: center;
-    align-items: center;
     font-family: "Tele2 TextSans Regular";
     font-size: clamp(0.8vw, 0.8vw, 4.4vw);
     font-weight: var(--bold-weight);
@@ -58,9 +59,8 @@
 }
 
 .footer__lower-copywriting {
-    display: flex;
+    @apply flex-center;
     gap: var(--item-gap);
-    align-items: center;
 }
 
 .footer__copy {
@@ -71,8 +71,7 @@
 }
 
 .footer__lower-made-by {
-    display: flex;
-    align-items: center;
+    @apply flex-center;
     gap: var(--item-gap);
 }
 

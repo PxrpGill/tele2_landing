@@ -1,3 +1,9 @@
+@mixin flex-start-start {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+}
+
 .change-region__title--visually-hidden {
     display: none;
 }
@@ -8,9 +14,7 @@
     height: clamp(38.5vw, 38.5vw, 205.1vw);
     border: none;
     padding: 0;
-    display: flex;
-    justify-content: start;
-    align-items: start;
+    @apply flex-start-start;
     margin: 0 auto;
     padding-top: 10.0vw;
     top: 5.4vw;
@@ -39,9 +43,7 @@
 }
 
 .change-region__region-list {
-    display: flex;
-    align-items: start;
-    justify-content: start;
+    @apply flex-start-start;
 }
 
 .change-region__list {
@@ -54,9 +56,7 @@
 }
 
 .change-region__item-list {
-    display: flex;
-    justify-content: start;
-    align-items: start;
+    @apply flex-start-start;
     padding: 0;
 }
 

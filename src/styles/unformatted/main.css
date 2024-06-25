@@ -1,15 +1,18 @@
-.main {
-    width: 100%;
+@mixin flex-start {
     display: flex;
     justify-content: center;
+}
+
+.main {
+    width: 100%;
+    @apply flex-start;
     align-items: center;
 }
 
 .main__container {
     width: var(--main-container);
-    display: flex;
+    @apply flex-start;
     align-items: start;
-    justify-content: center;
     flex-direction: column;
     gap: var(--section-gap);
     margin: 3.9vw 0px var(--section-gap) 0px;

@@ -1,8 +1,12 @@
-.header {
-    width: 100%;
+@mixin flex-center-center {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.header {
+    width: 100%;
+    @apply flex-center-center;
     height: clamp(5.3vw, 5.3vw, 28.1vw);
     border-bottom: 0.1vw solid var(--line-color);
 }
@@ -29,9 +33,7 @@
 }
 
 .header__geoposition {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @apply flex-center-center;
     gap: 0.6vw;
 }
 

@@ -6,13 +6,22 @@
     display: none;
 }
 
-.main__how-to-get-tariff-slogan {
-    font-family: "Tele2 DisplaySerif Regular";
+@mixin text-big-bold-serif {
     font-size: var(--text-big);
     font-weight: var(--bold-weight);
+    font-family: "Tele2 DisplaySerif Regular";
+}
+
+@mixin flex-just-start {
+    display: flex;
+    justify-content: start;
+}
+
+.main__how-to-get-tariff-slogan {
     line-height: 1.3;
     margin-bottom: clamp(4.4vw, 4.4vw, 23.7vw);
     grid-column: 1/2;
+    @apply text-big-bold-serif;
 }
 
 .first {
@@ -33,9 +42,7 @@
 
 .main__step-title {
     color: var(--blue-color);
-    font-size: var(--text-big);
-    font-weight: var(--weight-bold);
-    font-family: "Tele2 DisplaySerif Regular";
+    @apply text-big-bold-serif;
 }
 
 .main__how-to-get-tariff-personal-data {
@@ -46,9 +53,8 @@
     grid-row-start: 1;
     grid-row-end: 3;
     grid-column: 2/2;
-    display: flex;
     align-items: start;
-    justify-content: start;
+    @apply flex-just-start;
 }
 
 .main__how-to-get-tariff-processing-personal-data {
@@ -89,35 +95,36 @@
 }
 
 .main__how-to-get-tariff-list {
+    @apply flex-just-start;
     width: 100%;
-    display: flex;
     flex-direction: column;
     gap: clamp(2.1vw, 2.1vw, 11.1vw);
-    justify-content: start;
     flex-wrap: wrap;
 }
 
 .main__item-step {
-    display: flex;
+    @apply flex-just-start;
     flex-direction: row;
     align-items: center;
-    justify-content: start;
     gap: var(--item-gap);
     width: 100%;
+}
+
+@mixin text-normal-sans {
+    font-weight: var(--normal-weight);
+    font-family: "Tele2 TextSans Regular";
 }
 
 .main__step-description {
     font-size: var(--info-text-size);
     line-height: 1.5;
-    font-weight: var(--normal-weight);
-    font-family: "Tele2 TextSans Regular";
+    @apply text-normal-sans;
 }
 
 .main__processing-personal-data-tel-label {
     font-size: clamp(0.9vw, 0.9vw, 4.8vw);
     color: var(--data-color);
-    font-weight: var(--normal-weight);
-    font-family: "Tele2 TextSans Regular";
+    @apply text-normal-sans;
 }
 
 .main__processing-personal-data-input-tel {
@@ -158,10 +165,9 @@
 
 .main__processing-personal-data-agree-label {
     font-size: var(--text-mini);
-    font-weight: var(--normal-weight);
     line-height: 1.6;
-    font-family: "Tele2 TextSans Regular";
     width: clamp(21.9vw, 21.9vw, 117.0vw);
+    @apply text-normal-sans;
 }
 
 .main__processing-personal-data-submit {
@@ -180,8 +186,7 @@
 }
 
 .main__how-to-get-tariff-info-message {
-    display: flex;
-    justify-content: start;
+    @apply flex-just-start;
     align-items: center;
     background-color: var(--info-message-color);
     gap: clamp(0.8vw, 0.8vw, 4.4vw);
@@ -191,9 +196,8 @@
 }
 
 .info-message__text-message {
-    font-family: "Tele2 TextSans Regular";
+    @apply text-normal-sans;
     font-size: clamp(1.0vw, 1.0vw, 5.1vw);
-    font-weight: var(--normal-weight);
     color: var(--white-color);
     width: clamp(20.0vw, 20.0vw, 106.7vw);
 }

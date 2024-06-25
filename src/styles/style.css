@@ -1,19 +1,21 @@
-@import url('./mixins_position.css');
 @import url('./root.css');
-@import url('./header.css');
-@import url('./main.css');
-@import url('./sections/stocks.css');
-@import url('./sections/rate.css');
-@import url('./sections/tariff.css');
-@import url('./sections/information.css');
-@import url('./footer.css');
-@import url('./modal/choose_region.css');
-@import url('./modal/change_region.css');
-@import url('./sections/slider.css');
-@import url('./modal/participate.css');
-@import url('./scroll_button.css');
 @import url('./fonts.css');
 @import url('./unstyle.css');
+
+@import url('./formatted/header.css');
+@import url('./formatted/main.css');
+@import url('./formatted/footer.css');
+@import url('./formatted/sections/stocks.css');
+@import url('./formatted/sections/rate.css');
+@import url('./formatted/sections/tariff.css');
+@import url('./formatted/sections/slider.css');
+@import url('./formatted/modal/change_region.css');
+@import url('./formatted/modal/participate.css');
+
+@import url('./neednt_format/information.css');
+@import url('./neednt_format/choose_region.css');
+@import url('./neednt_format/scroll_button.css');
+
 
 
 body {

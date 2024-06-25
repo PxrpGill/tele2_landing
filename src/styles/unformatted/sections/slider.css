@@ -1,3 +1,9 @@
+@mixin flex-center-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .main__slider-title--visually-hidden {
     display: none;
 }
@@ -6,9 +12,7 @@
     position: relative;
     height: clamp(20.8vw, 20.8vw, 111.1vw);
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @apply flex-center-center;
     flex-direction: column;
     gap: clamp(1.4vw, 1.4vw, 7.4vw);
 }
@@ -67,9 +71,7 @@
 [data-component="main__slider"] {
     & .main__slider-markers {
         & li {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @apply flex-center-center;
         }
     }
 }
@@ -77,9 +79,7 @@
 [data-component="main__slider"] {
     & .main__slider-markers {
         & a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @apply flex-center-center;
             width: clamp(2.1vw, 2.1vw, 11.1vw);
             height: clamp(2.1vw, 2.1vw, 11.1vw);
             background: var(--blue-color);

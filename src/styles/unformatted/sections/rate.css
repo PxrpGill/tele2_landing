@@ -1,7 +1,11 @@
-.main__rate-my-online {
+@mixin flex-start {
     display: flex;
-    flex-direction: column;
     justify-content: start;
+}
+
+.main__rate-my-online {
+    @apply flex-start;
+    flex-direction: column;
     align-items: start;
     gap: clamp(3.9vw, 3.9vw, 20.7vw);
 }
@@ -34,10 +38,9 @@
 }
 
 .main__rate-my-online-list {
-    display: flex;
+    @apply flex-start;
     flex-direction: row;
     gap: clamp(3.9vw, 3.9vw, 20.7vw);
-    justify-content: start;
 }
 
 .main__rate-my-online-list-item-title--visually-hidden {
@@ -45,8 +48,7 @@
 }
 
 .main__rate-my-online-list-item-information {
-    display: flex;
-    justify-content: start;
+    @apply flex-start;
     align-items: center;
     gap: clamp(1.1vw, 1.1vw, 6.0vw);
 }

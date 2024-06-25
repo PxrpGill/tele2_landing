@@ -6,24 +6,30 @@
     display: none;
 }
 
-.main__stocks {
+@mixin flex-start-start {
     display: flex;
     justify-content: start;
     align-items: start;
+}
+
+.main__stocks {
+    @apply flex-start-start;
     gap: clamp(3.8vw, 3.8vw, 20.3vw);
 }
 
 .main__stocks-content {
-    display: flex;
+    @apply flex-start-start;
     flex-direction: column;
-    justify-content: start;
-    align-items: start;
 }
 
-.main__stocks-content-data-information {
+@mixin text-normal-sans {
     font-family: "Tele2 TextSans Regular";
     font-size: var(--info-text-size);
     font-weight: var(--normal-weight);
+}
+
+.main__stocks-content-data-information {
+    @apply text-normal-sans;
     margin-top: 1.9vw;
     margin-bottom: 3.3vw;
 }
@@ -41,10 +47,8 @@
 }
 
 .main__stocks-content-about-rate-my-online {
-    font-family: "Tele2 TextSans Regular";
-    font-size: var(--info-text-size);
-    line-height: 1.5;
-    font-weight: var(--normal-weight);
+    @apply text-normal-sans;
+    line-height: 1.5;;
     margin-bottom: 3.9vw;
     width: clamp(23.6vw, 23.6vw, 125.9vw);
 }

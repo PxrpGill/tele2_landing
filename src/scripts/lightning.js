@@ -3,14 +3,27 @@ import fs from 'fs';
 
 let mixins = new Map();
 
+const baseUrl = 'src/styles/unformatted';
+const sectionsUrl = `${baseUrl}/sections`;
+const modalUrl = `${baseUrl}/modal`;
+
 const files = {
-    "header.css": fs.readFileSync('src/styles/header.css'),
-    "mixins_position.css": fs.readFileSync('src/styles/mixins_position.css')
+    "header.css": fs.readFileSync(`${baseUrl}/header.css`),
+    "main.css": fs.readFileSync(`${baseUrl}/main.css`),
+    "footer.css": fs.readFileSync(`${baseUrl}/footer.css`),
+
+    "sections/rate.css": fs.readFileSync(`${sectionsUrl}/rate.css`),
+    "sections/slider.css": fs.readFileSync(`${sectionsUrl}/slider.css`),
+    "sections/stocks.css": fs.readFileSync(`${sectionsUrl}/stocks.css`),
+    "sections/tariff.css": fs.readFileSync(`${sectionsUrl}/tariff.css`),
+
+    "modal/change_region.css": fs.readFileSync(`${modalUrl}/change_region.css`),
+    "modal/participate.css": fs.readFileSync(`${modalUrl}/participate.css`)
 }
 
 for (let key in files) {
     let res = transform({
-        filename: 'style.css',
+        filename: key,
         minify: true,
         code: files[key],
         customAtRules: {
@@ -37,5 +50,5 @@ for (let key in files) {
         }
     });
 
-    fs.writeFileSync(`src/styles/${key}`, res.code.toString());
+    fs.writeFileSync(`src/styles/formatted/${key}`, res.code.toString());
 }
