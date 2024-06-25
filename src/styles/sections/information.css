@@ -73,7 +73,7 @@
 @media screen and (max-width: 992px) {
     .main__tele2-site-information {
         grid-template-columns: auto auto;
-        column-gap: clamp(11.9vw, 11.9vw, 17.2vw);
+        column-gap: clamp(5.6vw, 5.6vw, 8.2vw);
     }
 
     .rate-image {
@@ -85,6 +85,10 @@
         width: clamp(20.7vw, 20.7vw, 29.9vw);
         height: clamp(4.8vw, 4.8vw, 7.0vw);
         padding: 1.5vw 4.0vw;
+    }
+
+    .main__link-to-site-about {
+        width: clamp(51.7vw, 51.7vw, 75.0vw);
     }
 }
 
