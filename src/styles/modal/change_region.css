@@ -73,6 +73,12 @@
     letter-spacing: -1px;
 }
 
+@media screen and (max-width: 992px) {
+    .change-region__modal-window {
+        top: clamp(7.9vw, 7.9vw, 11.4vw);
+    }
+}
+
 @media screen and (max-width: 576px) {
     .change-region__modal-window {
         top: clamp(24.4vw, 24.4vw, 77.8vw);
