@@ -94,7 +94,7 @@
     }
 
     .change-region__title {
-        font-size: clamp(7.5vw, 7.5vw, 23.8vw);
+        font-size: var(--text-big);
     }
 
     .change-region__title {

@@ -103,7 +103,7 @@
 
     .main__link-to-site-slogan {
         margin-bottom: clamp(5.0vw, 5.0vw, 15.9vw);
-        font-size: clamp(7.5vw, 7.5vw, 23.8vw);
+        font-size: var(--text-big);
         width: auto;
     }
 
