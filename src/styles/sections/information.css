@@ -117,6 +117,9 @@
         width: clamp(64.1vw, 64.1vw, 205.0vw);
         height: clamp(15.0vw, 15.0vw, 47.8vw);
         border-radius: clamp(15.0vw, 15.0vw, 47.8vw);
-
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
