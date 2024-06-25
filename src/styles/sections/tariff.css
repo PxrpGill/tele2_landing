@@ -261,6 +261,16 @@
 
     .main__how-to-get-tariff-slogan {
         line-height: 1.4;
+        order: 0;
+        margin: 0;
+    }
+
+    .main__how-to-get-tariff-list-steps {
+        order: 0;
+    }    
+
+    .main__how-to-get-tariff-personal-data {
+        order: 1;
     }
 
     .main__processing-personal-data-submit {
