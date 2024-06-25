@@ -1,0 +1,44 @@
+:root {
+    --main-color: #1F2229;
+    --line-color: #39404C;
+    --data-color: #8F9399;
+    --info-message-color: #262B36;
+    --white-color: #fff;
+    --blue-color: #48CCFD;
+    --black-color: rgb(0, 0, 0);
+    --success-color: #07CB5C;
+    --failed-message-background-color: rgba(255, 77, 108, 1);
+    --failed-message-color: rgba(102, 20, 34, 1);
+    --main-container: clamp(77.5vw, 77.5vw, 413.3vw);
+    --border-radius-button: clamp(3.3vw, 3.3vw, 17.8vw);
+    --border-radius-eclipse: 50%;
+    --info-text-size: clamp(1.3vw, 1.4vw, 7.4vw);
+    --section-gap: clamp(10.3vw, 10.3vw, 54.8vw);
+    --bold-weight: 700;
+    --normal-weight: 400;
+    --text-mini: clamp(1.1vw, 1.1vw, 5.9vw);
+    --text-big: clamp(2.8vw, 2.8vw, 14.8vw);
+    --item-gap: clamp(1.7vw, 1.7vw, 8.9vw);
+}
+
+@media screen and (max-width: 992px) {
+    :root {
+        --main-container: clamp(96.8vw, 96.8vw, 140.4vw);
+        --info-text-size: clamp(2vw, 2vw, 2.9vw);
+        --text-mini: clamp(1.6vw, 1.6vw, 2.3vw);
+        --text-big: clamp(4.0vw, 4.0vw, 5.8vw);
+        --item-gap: clamp(2.4vw, 2.4vw, 3.4vw);
+        --border-radius-button: clamp(4.8vw, 4.8vw, 7.0vw);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    :root {
+        --main-container: clamp(98.8vw, 98.8vw, 320vw);
+        --info-text-size: clamp(5.6vw, 5.6vw, 17.8vw);
+        --section-gap: clamp(22.5vw, 22.5vw, 71.9vw);
+        --text-big: clamp(7.5vw, 7.5vw, 23.8vw);
+        --item-gap: clamp(5vw, 5vw, 15.9vw);
+        --text-mini: clamp(5.0vw, 5.0vw, 15.9vw);
+    }
+}

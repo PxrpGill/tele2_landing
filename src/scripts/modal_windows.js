@@ -1,71 +1,108 @@
-const header = document.querySelector('.header__geoposition');
-const geopositionButton = document.querySelector('.header__geoposition-button');
-const mainContainer = document.querySelector('.main__container');
+document.addEventListener('DOMContentLoaded', () => {
+    const mainHeader = document.querySelector('.header');
+    const main = document.querySelector('.main');
 
-const templateQuestionNode = document.querySelector('.choose-region-question');
-const modalTemplateNodeQuestion = templateQuestionNode.content.cloneNode(true);
-const modalWindow = modalTemplateNodeQuestion.querySelector('.choose-region-question__modal-window');
-const agreeButton = modalWindow.querySelector('.choose-region-question__agree-button');
-const changeRegionShowButton = modalWindow.querySelector('.choose-region-question__change-city-button');
+    const header = document.querySelector('.header__geoposition');
+    const geopositionButton = document.querySelector('.header__geoposition-button');
+    const mainContainer = document.querySelector('.main__container');
 
-const dialogTimeId = setTimeout(() => {
-    const modalContainer = document.createElement('div');
-    modalContainer.className = 'header__modal-container';
+    const templateQuestionNode = document.querySelector('.choose-region-question');
+    const modalTemplateNodeQuestion = templateQuestionNode.content.cloneNode(true);
+    const modalWindowQuestion = modalTemplateNodeQuestion.querySelector('.choose-region-question__modal-window');
+    const agreeButton = modalWindowQuestion.querySelector('.choose-region-question__agree-button');
+    const changeRegionShowButton = modalWindowQuestion.querySelector('.choose-region-question__change-city-button');
 
-    modalContainer.appendChild(modalTemplateNodeQuestion);
-    header.appendChild(modalContainer);
+    const showRegionModal = () => {
+        main.style.opacity = 0;
 
-    header.style.border = 'none';
-    document.body.style.overflow = 'hidden';
+        const templateChangeNode = document.querySelector('.change-region');
+        const modalTemplateNodeChange = templateChangeNode.content.cloneNode(true);
+        const modalWindowChange = modalTemplateNodeChange.querySelector('.change-region__modal-window');
+        const regionButtons = modalTemplateNodeChange.querySelectorAll('.change-region__item-button');
 
-    modalWindow.showModal();
-}, 100);
+        const modalContainer = document.createElement('div');
+        modalContainer.className = 'main__modal-container';
 
-agreeButton.addEventListener('click', () => {
-    document.body.style.overflow = '';
-    modalWindow.close();
+        modalContainer.appendChild(modalTemplateNodeChange);
+        mainContainer.appendChild(modalContainer);
+        modalWindowChange.showModal();
 
-    const modalContainer = header.querySelector('.header__modal-container');
-    header.removeChild(modalContainer);
-});
+        const body = document.body;
+        const bodyPaddingRight = window.getComputedStyle(body).paddingRight;
+        const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
 
-const templateChangeNode = document.querySelector('.change-region');
-const modalTemplateNodeChange = templateChangeNode.content.cloneNode(true);
-const modalWindowChange = modalTemplateNodeChange.querySelector('.change-region__modal-window');
-const regionButtons = modalTemplateNodeChange.querySelectorAll('.change-region__item-button');
+        body.classList.add('modal-open');
+        body.style.paddingRight = `${parseInt(bodyPaddingRight) + scrollBarWidth}px`;
 
-changeRegionShowButton.addEventListener('click', () => {
-    const modalContainer = header.querySelector('.header__modal-container');
-    modalWindow.close();
-    header.removeChild(modalContainer);
+        const closeModal = () => {
+            modalWindowChange.close();
+            mainContainer.removeChild(modalContainer);
+            main.style.opacity = 1;
+            mainHeader.style.position = '';
 
-    const modalContainerChange = document.createElement('div');
-    modalContainerChange.className = 'main__modal-container';
-    modalContainerChange.appendChild(modalTemplateNodeChange);
-    mainContainer.appendChild(modalContainerChange);
-    modalWindowChange.showModal();
-});
+            body.classList.remove('modal-open');
+            body.style.paddingRight = bodyPaddingRight;
+        };
 
-geopositionButton.addEventListener('click', () => {
-    const templateChangeNode = document.querySelector('.change-region');
-    const modalTemplateNodeChange = templateChangeNode.content.cloneNode(true);
-    const modalWindowChange = modalTemplateNodeChange.querySelector('.change-region__modal-window');
-    const regionButtons = modalTemplateNodeChange.querySelectorAll('.change-region__item-button');
+        regionButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                localStorage.setItem('region', button.textContent);
+                geopositionButton.textContent = localStorage.getItem('region');
+                closeModal();
+            });
+        });
 
-    const modalContainerChange = document.createElement('div');
-    modalContainerChange.className = 'main__modal-container';
-    modalContainerChange.appendChild(modalTemplateNodeChange);
-    mainContainer.appendChild(modalContainerChange);
-    modalWindowChange.showModal();
-});
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    };
 
-regionButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        geopositionButton.textContent = button.textContent;
-        document.body.style.overflow = '';
+    const showModalQuestion = () => {
+        const modalContainer = document.createElement('div');
+        modalContainer.className = 'main__dialog-container';
+        modalContainer.appendChild(modalTemplateNodeQuestion);
+        header.appendChild(modalContainer);
 
-        const modalContainerChange = mainContainer.querySelector(".main__modal-container");
-        modalWindowChange.close();
-        mainContainer.removeChild(modalContainerChange);
-    });
+        const body = document.body;
+        const bodyPaddingRight = window.getComputedStyle(body).paddingRight;
+        const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+        setTimeout(() => {
+            document.body.style.overflow = 'hidden';
+            body.style.paddingRight = `${parseInt(bodyPaddingRight) + scrollBarWidth}px`;
+            modalWindowQuestion.showModal();
+        }, 100);
+
+        const closeModal = () => {
+            document.body.style.overflow = '';
+            modalWindowQuestion.close();
+            header.removeChild(modalContainer);
+
+            body.classList.remove('modal-open');
+            body.style.paddingRight = bodyPaddingRight;
+        };
+
+        agreeButton.addEventListener('click', closeModal);
+
+        changeRegionShowButton.addEventListener('click', () => {
+            closeModal();
+            showRegionModal();
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    };
+
+    if (localStorage.getItem('region')) {
+        geopositionButton.textContent = localStorage.getItem('region');
+    } else {
+        showModalQuestion();
+    }
+
+    geopositionButton.addEventListener('click', showRegionModal);
 });

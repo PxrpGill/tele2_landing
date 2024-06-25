@@ -1,202 +1,30 @@
-@import url('./header.css');
-@import url('./main.css');
-@import url('./main/stocks.css');
-@import url('./main/rate.css');
-@import url('./main/tariff.css');
-@import url('./main/information.css');
-@import url('./footer.css');
-@import url('./modal/choose_region.css');
-@import url('./modal/change_region.css');
+@import url('./root.css');
 @import url('./fonts.css');
-@import url('./mixins/display.css');
-@import url('./mixins/text.css');
+@import url('./unstyle.css');
 
-:root {
-    --main-color: #1F2229;
-    --line-color: #39404C;
-    --data-color: #8F9399;
-    --info-message-color: #262B36;
-    --white-color: #fff;
-    --blue-color: #48CCFD;
-    --main-container: 1116px;
-    --border-radius-button: 48px;
-    --border-radius-eclipse: 50%;
-    --info-text-size: 20px;
-    --section-gap: 148px;
-}
+@import url('./formatted/header.css');
+@import url('./formatted/main.css');
+@import url('./formatted/footer.css');
+@import url('./formatted/sections/stocks.css');
+@import url('./formatted/sections/rate.css');
+@import url('./formatted/sections/tariff.css');
+@import url('./formatted/sections/slider.css');
+@import url('./formatted/modal/change_region.css');
+@import url('./formatted/modal/participate.css');
 
-button,
-input {
-    color: black;
-    -webkit-appearance: none;
-    background-color: white;
-}
+@import url('./neednt_format/information.css');
+@import url('./neednt_format/choose_region.css');
+@import url('./neednt_format/scroll_button.css');
 
-@media screen and (max-width: 1178px) {
-    :root {
-        --main-color: #1F2229;
-        --line-color: #39404C;
-        --data-color: #8F9399;
-        --info-message-color: #262B36;
-        --white-color: #fff;
-        --blue-color: #48CCFD;
-        --main-container: 968px;
-        --border-radius-button: 48px;
-        --border-radius-eclipse: 50%;
-        --info-text-size: 18px;
-        --section-gap: 72px;
-    }
-}
 
-@media screen and (max-width: 575px) {
-    :root {
-        --main-color: #1F2229;
-        --line-color: #39404C;
-        --data-color: #8F9399;
-        --info-message-color: #262B36;
-        --white-color: #fff;
-        --blue-color: #48CCFD;
-        --main-container: 320px;
-        --border-radius-button: 48px;
-        --border-radius-eclipse: 50%;
-        --info-text-size: 18px;
-        --section-gap: 72px;
-    }
-}
-
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-    display: block;
-}
-
-body {
-    line-height: 1;
-    color: white;
-}
-
-ol,
-ul {
-    list-style: none;
-}
-
-blockquote,
-q {
-    quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-    content: '';
-    content: none;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
 
 body {
     background-color: var(--main-color);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+body.modal-open {
+    overflow: hidden;
+    padding-right: 17px !important;
 }
