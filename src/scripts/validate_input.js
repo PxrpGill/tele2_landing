@@ -34,7 +34,7 @@ export default class Validate {
         const container2 = document.createElement('div');
         container2.className = 'main__message-container';
         container2.appendChild(templateNode2);
-        container2.querySelector('.info-message__text-message').textContent = this.failedMessagePhoneRetry;
+        container2.querySelector('.main__info-message-text-message').textContent = this.failedMessagePhoneRetry;
         phone.appendChild(container2);
         this.deleteMessageFromDOM(container2);
     }
