@@ -1,4 +1,5 @@
-import { transform } from 'lightningcss';
+import { transform, bundleAsync } from 'lightningcss';
+import path from 'path';
 import fs from 'fs';
 
 let mixins = new Map();
@@ -8,6 +9,7 @@ const sectionsUrl = `${baseUrl}/sections`;
 const modalUrl = `${baseUrl}/modal`;
 
 const files = {
+    "style.css": fs.readFileSync(`${baseUrl}/style.css`),
     "header.css": fs.readFileSync(`${baseUrl}/header.css`),
     "main.css": fs.readFileSync(`${baseUrl}/main.css`),
     "footer.css": fs.readFileSync(`${baseUrl}/footer.css`),
@@ -22,10 +24,24 @@ const files = {
 }
 
 for (let key in files) {
+    const filePath = path.join(baseUrl, key);
+    const { code: buffer } = await bundleAsync({
+        filename: filePath,
+        minify: true,
+        resolver: {
+            read(filePath) {
+                return fs.readFileSync(filePath, 'utf8');
+            },
+            resolve(specifier, from) {
+                return path.resolve(path.dirname(from), specifier);
+            }
+        }
+    });
+
     let res = transform({
         filename: key,
         minify: true,
-        code: files[key],
+        code: buffer.toString('utf-8'),
         customAtRules: {
             mixin: {
                 prelude: '<custom-ident>',
