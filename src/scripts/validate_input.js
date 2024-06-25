@@ -1,6 +1,6 @@
 export default class Validate {
     constructor() {
-        this.timeLiveMessage = 30000000;
+        this.timeLiveMessage = 5000;
         this.successTemplate = document.querySelector('.main__success-message-template');
         this.failedTemplate = document.querySelector('.main__failed-message-template');
         this.failedMessagePhoneRetry = 'На этот номер уже выслан промокод';

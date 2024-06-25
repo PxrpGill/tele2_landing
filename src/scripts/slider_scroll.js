@@ -58,7 +58,7 @@ export default class Slider {
 
     generateSliderElement(i, index, user) {
         return `
-            <a id="item-${i + index}" name="item-${i + index}">
+            <a id="item-${i + index}">
                 <img class="main__slider-image" src="${user.avatar_url}" alt="Картинка пользователя" draggable="false">
             </a>`;
     }
