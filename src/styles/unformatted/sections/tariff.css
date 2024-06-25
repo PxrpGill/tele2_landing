@@ -24,15 +24,15 @@
     @apply text-big-bold-serif;
 }
 
-.first {
+.first-offer {
     width: clamp(30vw, 30vw, 160vw);
 }
 
-.second {
+.second-offer {
     width: clamp(34.2vw, 34.2vw, 182.2vw);
 }
 
-.third {
+.third-offer {
     width: clamp(26.9vw, 26.9vw, 143.3vw);
 }
 
@@ -261,7 +261,7 @@
         width: clamp(31.9vw, 31.9vw, 46.2vw);
     }
 
-    .first {
+    .first-offer {
         width: clamp(43.5vw, 43.5vw, );
     }
 
@@ -340,15 +340,15 @@
         height: clamp(7.5vw, 7.5vw, 23.8vw);
     }
 
-    .first {
+    .first-offer {
         width: clamp(90.0vw, 90.0vw, 287.8vw);
     }
 
-    .second {
+    .second-offer {
         width: clamp(85.0vw, 85.0vw, 271.9vw);
     }
 
-    .third {
+    .third-offer {
         width: clamp(90.0vw, 90.0vw, 287.8vw);
     }
 
