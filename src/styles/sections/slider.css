@@ -130,6 +130,10 @@
                     transition: .5s;
                     cursor: pointer;
                 }
+
+                & img:hover {
+                    transform: none;
+                }
             }
         }
     }
