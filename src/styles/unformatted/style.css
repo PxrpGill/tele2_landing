@@ -19,7 +19,6 @@
 @import url('./scroll_button.css');
 
 
-
 body {
     background-color: var(--main-color);
     -webkit-font-smoothing: antialiased;

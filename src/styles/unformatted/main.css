@@ -1,17 +1,14 @@
-@mixin flex-start {
-    display: flex;
-    justify-content: center;
-}
+@import url('./mixins.css');
 
 .main {
     width: 100%;
-    @apply flex-start;
+    @apply flex-just-start;
     align-items: center;
 }
 
 .main__container {
     width: var(--main-container);
-    @apply flex-start;
+    @apply flex-just-start;
     align-items: start;
     flex-direction: column;
     gap: var(--section-gap);

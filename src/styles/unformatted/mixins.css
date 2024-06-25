@@ -3,3 +3,8 @@
     align-items: center;
     justify-content: center;
 }
+
+@mixin flex-just-start {
+    display: flex;
+    justify-content: center;
+}
