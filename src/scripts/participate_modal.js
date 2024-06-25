@@ -5,13 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const openParticipateDialogButton = document.querySelector('.main__stocks-content-participate-button');
 
     openParticipateDialogButton.addEventListener('click', () => {
-        const participateTemplate = document.querySelector('.participate');
+        const participateTemplate = document.querySelector('.main__participate');
         const participateTemplateNode = participateTemplate.content.cloneNode(true);
-        const modalWindow = participateTemplateNode.querySelector('.participate__modal-window');
+        const modalWindow = participateTemplateNode.querySelector('.main__participate-modal-window');
         const inputTel = modalWindow.querySelector('.main__processing-personal-data-input-tel');
         const checkbox = modalWindow.querySelector('.main__processing-personal-data-agree');
         const submitButton = modalWindow.querySelector('.main__processing-personal-data-submit');
-        const closeModalButton = modalWindow.querySelector('.participate__close-button');
+        const closeModalButton = modalWindow.querySelector('.main__participate-close-button');
         const phonePlace = modalWindow.querySelector('.main__info-message-phone');
         const computerPlace = modalWindow.querySelector('.main__info-message-computers');
 
