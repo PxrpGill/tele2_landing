@@ -2,13 +2,13 @@
 
 .main {
     width: 100%;
-    @apply flex-just-start;
+    @apply flex-just-center;
     align-items: center;
 }
 
 .main__container {
     width: var(--main-container);
-    @apply flex-just-start;
+    @apply flex-just-center;
     align-items: start;
     flex-direction: column;
     gap: var(--section-gap);

@@ -12,12 +12,17 @@
 
 @mixin flex-just-start {
     display: flex;
-    justify-content: center;
+    justify-content: start;
 }
 
 @mixin flex-align-center {
     display: flex;
     align-items: center;
+}
+
+@mixin flex-just-center {
+    display: flex;
+    justify-content: center;
 }
 
 @mixin text-normal-sans {

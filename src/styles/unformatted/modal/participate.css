@@ -1,7 +1,4 @@
-@mixin flex-just-center {
-    display: flex;
-    justify-content: center;
-}
+@import url('../mixins.css');
 
 .main__participate-modal-window {
     background-color: var(--main-color);

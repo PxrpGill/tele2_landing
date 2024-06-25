@@ -1,8 +1,4 @@
-@mixin flex-start-start {
-    display: flex;
-    justify-content: start;
-    align-items: start;
-}
+@import url('../mixins.css');
 
 .change-region__title--visually-hidden {
     display: none;
