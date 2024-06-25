@@ -1,7 +1,4 @@
-@mixin flex-center {
-    display: flex;
-    align-items: center;
-}
+@import url('./mixins.css');
 
 .footer__title--visually-hidden {
     display: none;
@@ -18,19 +15,19 @@
 }
 
 .footer__upper {
-    @apply flex-center;
+    @apply flex-align-center;
     justify-content: space-between;
     border-bottom: 0.1vw solid var(--line-color);
     padding-bottom: 0.8vw;
 }
 
 .footer__navigation-list {
-    @apply flex-center;
+    @apply flex-align-center;
     gap: 0.8vw;
 }
 
 .footer__upper-terms-stonk {
-    @apply flex-center;
+    @apply flex-align-center;
     gap: 0.8vw;
 }
 
@@ -39,8 +36,7 @@
     height: clamp(2.2vw, 2.2vw, 11.8vw);
     border-radius: var(--border-radius-eclipse);
     border: 0.1vh solid var(--white-color);
-    @apply flex-center;
-    justify-content: center;
+    @apply flex-center-center;
     font-family: "Tele2 TextSans Regular";
     font-size: clamp(0.8vw, 0.8vw, 4.4vw);
     font-weight: var(--bold-weight);
@@ -59,7 +55,7 @@
 }
 
 .footer__lower-copywriting {
-    @apply flex-center;
+    @apply flex-align-center;
     gap: var(--item-gap);
 }
 
@@ -71,7 +67,7 @@
 }
 
 .footer__lower-made-by {
-    @apply flex-center;
+    @apply flex-align-center;
     gap: var(--item-gap);
 }
 

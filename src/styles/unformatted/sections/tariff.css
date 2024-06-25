@@ -1,20 +1,11 @@
+@import url('../mixins.css');
+
 .main__how-to-get-tariff-title--visually-hidden {
     display: none;
 }
 
 .main__step-title--visually-hidden {
     display: none;
-}
-
-@mixin text-big-bold-serif {
-    font-size: var(--text-big);
-    font-weight: var(--bold-weight);
-    font-family: "Tele2 DisplaySerif Regular";
-}
-
-@mixin flex-just-start {
-    display: flex;
-    justify-content: start;
 }
 
 .main__how-to-get-tariff-slogan {
@@ -110,21 +101,16 @@
     width: 100%;
 }
 
-@mixin text-normal-sans {
-    font-weight: var(--normal-weight);
-    font-family: "Tele2 TextSans Regular";
-}
-
 .main__step-description {
     font-size: var(--info-text-size);
     line-height: 1.5;
-    @apply text-normal-sans;
+    @apply text-normal-sans-no-font;
 }
 
 .main__processing-personal-data-tel-label {
     font-size: clamp(0.9vw, 0.9vw, 4.8vw);
     color: var(--data-color);
-    @apply text-normal-sans;
+    @apply text-normal-sans-no-font;
 }
 
 .main__processing-personal-data-input-tel {
@@ -167,7 +153,7 @@
     font-size: var(--text-mini);
     line-height: 1.6;
     width: clamp(21.9vw, 21.9vw, 117.0vw);
-    @apply text-normal-sans;
+    @apply text-normal-sans-no-font;
 }
 
 .main__processing-personal-data-submit {
@@ -196,7 +182,7 @@
 }
 
 .main__info-message-text-message {
-    @apply text-normal-sans;
+    @apply text-normal-sans-no-font;
     font-size: clamp(1.0vw, 1.0vw, 5.1vw);
     color: var(--white-color);
     width: clamp(20.0vw, 20.0vw, 106.7vw);
