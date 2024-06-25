@@ -27,28 +27,35 @@ document.addEventListener('DOMContentLoaded', () => {
         mainContainer.appendChild(modalContainer);
         modalWindowChange.showModal();
 
-        // Save the current padding-right of the body
         const body = document.body;
         const bodyPaddingRight = window.getComputedStyle(body).paddingRight;
         const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
 
-        // Apply modal-open class to body and add padding
         body.classList.add('modal-open');
         body.style.paddingRight = `${parseInt(bodyPaddingRight) + scrollBarWidth}px`;
+
+        const closeModal = () => {
+            modalWindowChange.close();
+            mainContainer.removeChild(modalContainer);
+            main.style.opacity = 1;
+            mainHeader.style.position = '';
+
+            body.classList.remove('modal-open');
+            body.style.paddingRight = bodyPaddingRight;
+        };
 
         regionButtons.forEach(button => {
             button.addEventListener('click', () => {
                 localStorage.setItem('region', button.textContent);
                 geopositionButton.textContent = localStorage.getItem('region');
-                modalWindowChange.close();
-                mainContainer.removeChild(modalContainer);
-                main.style.opacity = 1;
-                mainHeader.style.position = '';
-
-                // Remove modal-open class and restore padding
-                body.classList.remove('modal-open');
-                body.style.paddingRight = bodyPaddingRight;
+                closeModal();
             });
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
         });
     };
 
@@ -58,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
         modalContainer.appendChild(modalTemplateNodeQuestion);
         header.appendChild(modalContainer);
 
-        // Save the current padding-right of the body
         const body = document.body;
         const bodyPaddingRight = window.getComputedStyle(body).paddingRight;
         const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
@@ -69,25 +75,26 @@ document.addEventListener('DOMContentLoaded', () => {
             modalWindowQuestion.showModal();
         }, 100);
 
-        agreeButton.addEventListener('click', () => {
+        const closeModal = () => {
             document.body.style.overflow = '';
             modalWindowQuestion.close();
             header.removeChild(modalContainer);
 
-            // Remove modal-open class and restore padding
             body.classList.remove('modal-open');
             body.style.paddingRight = bodyPaddingRight;
-        });
+        };
+
+        agreeButton.addEventListener('click', closeModal);
 
         changeRegionShowButton.addEventListener('click', () => {
-            modalWindowQuestion.close();
-            header.removeChild(modalContainer);
-
-            // Remove modal-open class and restore padding
-            body.classList.remove('modal-open');
-            body.style.paddingRight = bodyPaddingRight;
-
+            closeModal();
             showRegionModal();
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
         });
     };
 
