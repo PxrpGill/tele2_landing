@@ -1,8 +1,4 @@
-@mixin flex-center-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+@import url('./mixins.css');
 
 .header {
     width: 100%;
