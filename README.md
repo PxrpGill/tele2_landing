@@ -2,7 +2,7 @@
 
 # Landing Tele2
 
-В рамках летней практики было реализовано приложение тип "Лэндинг" компании Tele2 при помощи HTML, CSS и JavaScript.
+В рамках летней практики было реализовано приложение типа "Лэндинг" компании Tele2 при помощи HTML, CSS и JavaScript.
 
 Страница на gh-pages: https://pxrpgill.github.io/tele2_landing/
 
