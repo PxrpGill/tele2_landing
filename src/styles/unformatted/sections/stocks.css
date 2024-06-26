@@ -4,10 +4,6 @@
     display: none;
 }
 
-.main__logo-boss-title--visually-hidden {
-    display: none;
-}
-
 .main__stocks {
     @apply flex-start-start;
     gap: clamp(3.8vw, 3.8vw, 20.3vw);
