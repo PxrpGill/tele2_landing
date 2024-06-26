@@ -40,10 +40,6 @@
     gap: clamp(3.9vw, 3.9vw, 20.7vw);
 }
 
-.main__rate-my-online-list-item-title--visually-hidden {
-    display: none;
-}
-
 .main__rate-my-online-list-item-information {
     @apply flex-just-start;
     align-items: center;
