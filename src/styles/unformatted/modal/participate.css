@@ -1,7 +1,4 @@
-@mixin flex-just-center {
-    display: flex;
-    justify-content: center;
-}
+@import url('../mixins.css');
 
 .main__participate-modal-window {
     background-color: var(--main-color);
@@ -56,12 +53,12 @@
 }
 
 @media screen and (max-width: 576px) {
-    .participate__modal-window {
+    .main__participate-modal-window {
         width: clamp(96.9vw, 96.9vw, 310.0vw);
         height: clamp(140.6vw, 140.6vw, 450.0vw);
     }
 
-    .participate__close-button {
+    .main__participate-close-button {
         width: clamp(9.4vw, 9.4vw, 50.0vw);
         height: clamp(15.6vw, 15.6vw, 50.0vw);
     }

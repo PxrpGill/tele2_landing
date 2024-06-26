@@ -1,15 +1,11 @@
+@import url('../mixins.css');
+
 .main__stocks-title--visually-hidden {
     display: none;
 }
 
 .main__logo-boss-title--visually-hidden {
     display: none;
-}
-
-@mixin flex-start-start {
-    display: flex;
-    justify-content: start;
-    align-items: start;
 }
 
 .main__stocks {
@@ -20,12 +16,6 @@
 .main__stocks-content {
     @apply flex-start-start;
     flex-direction: column;
-}
-
-@mixin text-normal-sans {
-    font-family: "Tele2 TextSans Regular";
-    font-size: var(--info-text-size);
-    font-weight: var(--normal-weight);
 }
 
 .main__stocks-content-data-information {

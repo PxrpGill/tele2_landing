@@ -1,8 +1,4 @@
-@mixin flex-center-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+@import url('../mixins.css');
 
 .main__slider-title--visually-hidden {
     display: none;

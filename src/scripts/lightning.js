@@ -1,31 +1,45 @@
-import { transform } from 'lightningcss';
+import { transform, bundleAsync } from 'lightningcss';
+import path from 'path';
 import fs from 'fs';
 
 let mixins = new Map();
 
 const baseUrl = 'src/styles/unformatted';
-const sectionsUrl = `${baseUrl}/sections`;
-const modalUrl = `${baseUrl}/modal`;
+const mixinsFile = `mixins.css`;
 
-const files = {
-    "header.css": fs.readFileSync(`${baseUrl}/header.css`),
-    "main.css": fs.readFileSync(`${baseUrl}/main.css`),
-    "footer.css": fs.readFileSync(`${baseUrl}/footer.css`),
+const files = [
+    "style.css",
+    "header.css",
+    "main.css",
+    "footer.css",
+    "sections/rate.css",
+    "sections/slider.css",
+    "sections/stocks.css",
+    "sections/tariff.css",
+    "modal/change_region.css",
+    "modal/participate.css"
+];
 
-    "sections/rate.css": fs.readFileSync(`${sectionsUrl}/rate.css`),
-    "sections/slider.css": fs.readFileSync(`${sectionsUrl}/slider.css`),
-    "sections/stocks.css": fs.readFileSync(`${sectionsUrl}/stocks.css`),
-    "sections/tariff.css": fs.readFileSync(`${sectionsUrl}/tariff.css`),
+async function processFile(key, collectMixins = false) {
+    const filePath = path.join(baseUrl, key);
 
-    "modal/change_region.css": fs.readFileSync(`${modalUrl}/change_region.css`),
-    "modal/participate.css": fs.readFileSync(`${modalUrl}/participate.css`)
-}
+    const { code: buffer } = await bundleAsync({
+        filename: filePath,
+        minify: true,
+        resolver: {
+            read(filePath) {
+                return fs.readFileSync(filePath, 'utf8');
+            },
+            resolve(specifier, from) {
+                return path.resolve(path.dirname(from), specifier);
+            }
+        }
+    });
 
-for (let key in files) {
     let res = transform({
         filename: key,
         minify: true,
-        code: files[key],
+        code: Buffer.from(buffer),
         customAtRules: {
             mixin: {
                 prelude: '<custom-ident>',
@@ -39,8 +53,11 @@ for (let key in files) {
             Rule: {
                 custom: {
                     mixin(rule) {
-                        mixins.set(rule.prelude.value, rule.body.value);
-                        return [];
+                        if (collectMixins) {
+                            mixins.set(rule.prelude.value, rule.body.value);
+                            return [];
+                        }
+                        return null;
                     },
                     apply(rule) {
                         return mixins.get(rule.prelude.value);
@@ -50,5 +67,17 @@ for (let key in files) {
         }
     });
 
-    fs.writeFileSync(`src/styles/formatted/${key}`, res.code.toString());
+    if (!collectMixins) {
+        fs.writeFileSync(`src/styles/formatted/${key}`, res.code.toString());
+    }
 }
+
+async function processFiles() {
+    await processFile(mixinsFile, true);
+
+    for (let key of files) {
+        await processFile(key);
+    }
+}
+
+processFiles().catch(console.error);
