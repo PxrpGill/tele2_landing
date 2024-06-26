@@ -80,6 +80,10 @@
     .header__geoposition-button::after {
         width: clamp(3.2vw, 3.2vw, 4.6vw);
     }
+
+    .header__geoposition-button:hover {
+        transform: none;
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -101,5 +105,9 @@
 
     .header__geoposition-button {
         text-align: left;
+    }
+
+    .header__geoposition-button:hover {
+        transform: none;
     }
 }
