@@ -38,17 +38,33 @@
     background-color: var(--main-color);
     border: none;
     cursor: pointer;
+    transition: .5s;
+}
+
+.main__participate-close-button:hover {
+    transform: scale(1.5);
 }
 
 .cross {
     width: clamp(3.1vw, 3.1vw, 16.7vw);
     height: clamp(3.1vw, 3.1vw, 16.7vw);
+    transform: .5s;
+}
+
+.cross:hover {
+    >path {
+        fill: rgb(165, 25, 25);
+    }
 }
 
 @media screen and (max-width: 992px) {
     .main__participate-modal-window {
         width: clamp(40.3vw, 40.3vw, 58.5vw);
         height: clamp(45.4vw, 45.4vw, 65.8vw);
+    }
+
+    .main__participate-close-button:hover {
+        transform: none;
     }
 }
 
@@ -59,12 +75,16 @@
     }
 
     .main__participate-close-button {
-        width: clamp(9.4vw, 9.4vw, 50.0vw);
-        height: clamp(15.6vw, 15.6vw, 50.0vw);
+        width: clamp(9.4vw, 9.4vw, 30.0vw);
+        height: clamp(9.4vw, 9.4vw, 30.0vw);
     }
 
     .cross {
         width: clamp(9.4vw, 9.4vw, 30.0vw);
         height: clamp(9.4vw, 9.4vw, 30.0vw);
+    }
+
+    .main__participate-close-button:hover {
+        transform: none;
     }
 }
