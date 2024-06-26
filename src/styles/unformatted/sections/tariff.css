@@ -63,6 +63,10 @@
     margin-bottom: clamp(1.7vw, 1.7vw, 8.9vw);
 }
 
+.main__processing-personal-data-input-tel:-internal-autofill-selected {
+    background: -internal-light-dark(rgb(232, 240, 254), rgba(70, 90, 126, 0.4)) !important;;
+}
+
 .main__how-to-get-tariff {
     display: grid;
     grid-template-columns: clamp(24.2vw, 24.2vw, 128.9vw) clamp(41.5vw, 41.5vw, 221.5vw);

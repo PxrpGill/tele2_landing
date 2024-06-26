@@ -29,3 +29,10 @@ body.modal-open {
     overflow: hidden;
     padding-right: 17px !important;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--white-color);
+    -webkit-box-shadow: 0 0 0px 40rem var(--main-color) inset;
+}
