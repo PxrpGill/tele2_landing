@@ -67,11 +67,21 @@
     cursor: pointer;
     padding: 0;
     letter-spacing: -1px;
+    transition: .5s;
+}
+
+.change-region__item-button:hover {
+    transform: scale(1.1);
+    color: var(--gray-color);
 }
 
 @media screen and (max-width: 992px) {
     .change-region__modal-window {
         top: clamp(7.9vw, 7.9vw, 11.4vw);
+    }
+
+    .change-region__item-button:hover {
+        transform: none;
     }
 }
 
@@ -111,5 +121,9 @@
 
     .change-region__content {
         gap: clamp(15.0vw, 15.0vw, 47.8vw);
+    }
+
+    .change-region__item-button:hover {
+        transform: none;
     }
 }
