@@ -93,7 +93,7 @@ pnpm run dev
 3. components - директория для хранения HTML-handelbars
 
 ## Реализация миксинов при помощи LightningCSS:
-Чтобы внедрить использование миксинов в CSS,( где с коробки это невозможно, так как это считается custom at-rules) было применено следующее:
+Чтобы внедрить использование миксинов в CSS, ( где с коробки это невозможно, так как это считается custom at-rules) было применено следующее:
 1. Написан скрипт для преобразования CSS файлов (src/scripts/lightning.js):
 ```JS
 import { transform, bundleAsync } from 'lightningcss';
