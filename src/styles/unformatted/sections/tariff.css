@@ -4,10 +4,6 @@
     display: none;
 }
 
-.main__step-title--visually-hidden {
-    display: none;
-}
-
 .main__how-to-get-tariff-slogan {
     line-height: 1.3;
     margin-bottom: clamp(4.4vw, 4.4vw, 23.7vw);
@@ -36,10 +32,6 @@
     @apply text-big-bold-serif;
 }
 
-.main__how-to-get-tariff-personal-data {
-    grid-column: 1/2;
-}
-
 .main__how-to-get-tariff-list-steps {
     grid-row-start: 1;
     grid-row-end: 3;
@@ -49,6 +41,7 @@
 }
 
 .main__how-to-get-tariff-processing-personal-data {
+    grid-column: 1/2;
     display: flex;
     flex-direction: column;
     margin-top: clamp(0.6vw, 0.6vw, 2.9vw);
@@ -312,7 +305,7 @@
         order: 0;
     }
 
-    .main__how-to-get-tariff-personal-data {
+    .main__how-to-get-tariff-processing-personal-data {
         order: 1;
     }
 
