@@ -53,6 +53,12 @@
     border: none;
     appearance: none;
     color: var(--black-color);
+    transition: .5s;
+}
+
+.main__stocks-content-participate-button:hover {
+    transform: scale(1.1);
+    background-color: var(--gray-color);
 }
 
 .logo-boss {
@@ -67,6 +73,10 @@
 
     .logo-boss {
         width: clamp(58.9vw, 58.9vw, 85.4vw);
+    }
+
+    .main__stocks-content-participate-button:hover {
+        transform: none;
     }
 }
 
@@ -110,5 +120,9 @@
         width: clamp(62.8vw, 62.8vw, 200.9vw);
         height: clamp(15.0vw, 15.0vw, 47.8vw);
         border-radius: clamp(15.0vw, 15.0vw, 47.8vw);
+    }
+
+    .main__stocks-content-participate-button:hover {
+        transform: none;
     }
 }

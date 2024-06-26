@@ -35,8 +35,14 @@
     cursor: pointer;
     background-color: var(--white-color);
     color: var(--black-color);
-    padding: 1.0vw 3.1vw;
     text-decoration: none;
+    transition: .5s;
+    @apply flex-center-center;
+}
+
+.main__link-to-site-link:hover {
+    transform: scale(1.1);
+    background-color: var(--gray-color);
 }
 
 .main__tele2-site-information {
@@ -92,6 +98,10 @@
     .main__link-to-site-about {
         width: clamp(51.7vw, 51.7vw, 75.0vw);
     }
+
+    .main__link-to-site-link:hover {
+        transform: none;
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -145,5 +155,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .main__link-to-site-link:hover {
+        transform: none;
     }
 }

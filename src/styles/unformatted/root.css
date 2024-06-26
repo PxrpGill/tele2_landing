@@ -9,6 +9,8 @@
     --success-color: #07CB5C;
     --failed-message-background-color: rgba(255, 77, 108, 1);
     --failed-message-color: rgba(102, 20, 34, 1);
+    --gray-color: #9a9a9a;
+
     --main-container: clamp(77.5vw, 77.5vw, 413.3vw);
     --border-radius-button: clamp(3.3vw, 3.3vw, 17.8vw);
     --border-radius-eclipse: 50%;

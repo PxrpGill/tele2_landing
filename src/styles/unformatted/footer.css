@@ -78,6 +78,22 @@
     color: var(--white-color);
 }
 
+.footer__nav-item-image {
+    transition: .5s;
+
+    >path {
+        transition: .5s;
+    }
+}
+
+.footer__nav-item-image:hover {
+    transform: scale(1.1);
+
+    >path {
+        fill: var(--gray-color);
+    }
+}
+
 .twitter {
     width: clamp(1.7vw, 1.7vw, 9.2vw);
 }
@@ -124,6 +140,14 @@
     .chulakov-logo {
         width: clamp(14.1vw, 14.1vw, 20.5vw);
     }
+
+    .footer__nav-item-image:hover {
+        transform: none;
+
+        >path {
+            fill: var(--white-color);
+        }
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -167,5 +191,13 @@
         width: clamp(10.0vw, 10.0vw, 31.9vw);
         height: clamp(10.0vw, 10.0vw, 31.9vw);
         font-size: clamp(3.8vw, 3.8vw, 11.9vw);
+    }
+
+    .footer__nav-item-image:hover {
+        transform: none;
+
+        >path {
+            fill: var(--white-color);
+        }
     }
 }

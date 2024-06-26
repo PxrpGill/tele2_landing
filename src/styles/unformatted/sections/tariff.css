@@ -173,6 +173,12 @@
     appearance: none;
     background-color: white;
     color: black;
+    transition: .5s;
+}
+
+.main__processing-personal-data-submit:hover {
+    transform: scale(1.1);
+    background-color: var(--gray-color);
 }
 
 .main__how-to-get-tariff-info-message {
@@ -268,6 +274,10 @@
         width: clamp(29.0vw, 29.0vw, 42.1vw);
         font-size: clamp(1.4vw, 1.4vw, 2.0vw);
     }
+
+    .main__processing-personal-data-submit:hover {
+        transform: none;
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -276,6 +286,10 @@
         flex-direction: column;
         gap: clamp(12.5vw, 12.5vw, 40.0vw);
         padding: 0px 5.0vw 0px 5.0vw;
+    }
+
+    .main__processing-personal-data-submit:hover {
+        transform: none;
     }
 
     .main__how-to-get-tariff-list {
