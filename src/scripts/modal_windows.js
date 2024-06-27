@@ -54,7 +54,7 @@ function showRegionModal() {
         const handleRegionButtonClick = () => {
             localStorage.setItem('region', button.textContent);
             geopositionButton.textContent = localStorage.getItem('region');
-            closeRegionModal(modalContainer, bodyPaddingRight, keydownHandler);
+            closeRegionModal(modalContainer, bodyPaddingRight, modalWindowChange);
             button.removeEventListener('click', handleRegionButtonClick);
         };
         button.addEventListener('click', handleRegionButtonClick);
