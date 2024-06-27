@@ -3,6 +3,8 @@ const header = document.querySelector('.header');
 const geopositionButton = document.querySelector('.header__geoposition-button');
 const mainContainer = document.querySelector('.main__container');
 
+let questionModalTimeoutId;
+
 function generateModalContainer(toAppend) {
     const container = document.createElement('div');
     container.className = 'main__modal-container';
@@ -49,11 +51,13 @@ function showRegionModal() {
     const bodyPaddingRight = getBodyPaddingRight();
 
     regionButtons.forEach(button => {
-        button.addEventListener('click', () => {
+        const handleRegionButtonClick = () => {
             localStorage.setItem('region', button.textContent);
             geopositionButton.textContent = localStorage.getItem('region');
-            closeRegionModal(modalContainer, bodyPaddingRight, modalWindowChange);
-        });
+            closeRegionModal(modalContainer, bodyPaddingRight, keydownHandler);
+            button.removeEventListener('click', handleRegionButtonClick);
+        };
+        button.addEventListener('click', handleRegionButtonClick);
     });
 
     document.addEventListener('keydown', function handleKeydown(event) {
@@ -65,6 +69,7 @@ function showRegionModal() {
 }
 
 function closeQuestionModal(modalContainer, bodyPaddingRight, modalWindowQuestion) {
+    clearTimeout(questionModalTimeoutId);
     document.body.style.overflow = '';
     modalWindowQuestion.close();
     if (header.contains(modalContainer)) {
@@ -73,6 +78,7 @@ function closeQuestionModal(modalContainer, bodyPaddingRight, modalWindowQuestio
 
     document.body.classList.remove('modal-open');
     document.body.style.paddingRight = bodyPaddingRight;
+    document.removeEventListener('keydown', keydownHandler);
 }
 
 function showQuestionModal() {
@@ -87,7 +93,7 @@ function showQuestionModal() {
 
     const bodyPaddingRight = getBodyPaddingRight();
 
-    setTimeout(() => {
+    questionModalTimeoutId = setTimeout(() => {
         modalWindowQuestion.showModal();
     }, 100);
 
@@ -108,6 +114,8 @@ function showQuestionModal() {
             document.removeEventListener('keydown', handleKeydown);
         }
     });
+
+    geopositionButton.removeEventListener('click', showQuestionModal);
 }
 
 if (localStorage.getItem('region')) {
