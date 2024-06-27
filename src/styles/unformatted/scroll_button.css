@@ -38,5 +38,12 @@
 @media screen and (max-width: 992px) {
     .main__to-scroll-up-button:hover {
         transform: none;
+        background-color: var(--blue-color);
+
+        >svg {
+            >path {
+                fill: black;
+            }
+        }
     }
 }
