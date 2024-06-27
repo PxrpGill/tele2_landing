@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.addEventListener('beforeunload', function (event) {
+        event.preventDefault();
         if (!localStorage.getItem('region')) {
             this.window.scrollTo({
                 top: 0,
@@ -32,7 +33,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     scrollToTopButton.addEventListener('click', scrollButton);
-
-    console.log('Текущая прокрутка сверху: ' + window.pageYOffset);
-    console.log('Текущая прокрутка слева: ' + window.pageXOffset);
 });
