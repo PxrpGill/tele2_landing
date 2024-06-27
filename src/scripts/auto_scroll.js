@@ -15,8 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    window.addEventListener('beforeunload', function (event) {
-        event.preventDefault();
+    window.addEventListener('beforeunload', function () {
         if (!localStorage.getItem('region')) {
             this.window.scrollTo({
                 top: 0,
