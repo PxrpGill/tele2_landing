@@ -1,3 +1,5 @@
+import { throttle } from "./throttle";
+
 export default class Slider {
     constructor() {
         this.itemsInPage = 3;
@@ -18,6 +20,7 @@ export default class Slider {
                 </a>
             </li>`;
         this.addScrollEventListener();
+        this.addClickEventListeners();
     }
 
     generateLastMarker() {
@@ -192,19 +195,19 @@ export default class Slider {
             });
         });
 
-        this.prevButton.addEventListener('click', () => {
+        this.prevButton.addEventListener('click', throttle(() => {
             const currentIndex = this.getCurrentSlideIndex(this.sliderPlace);
             if (currentIndex > 0) {
                 this.scrollToPage(currentIndex);
             }
-        });
+        }, 600));
 
-        this.nextButton.addEventListener('click', () => {
+        this.nextButton.addEventListener('click', throttle(() => {
             const currentIndex = this.getCurrentSlideIndex(this.sliderPlace);
             if (currentIndex < this.totalPages - 1) {
                 this.scrollToPage(currentIndex + 2);
             }
-        });
+        }, 600));
     }
 
     scrollToPage(page) {
