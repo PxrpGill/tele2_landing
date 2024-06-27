@@ -78,7 +78,6 @@ function closeQuestionModal(modalContainer, bodyPaddingRight, modalWindowQuestio
 
     document.body.classList.remove('modal-open');
     document.body.style.paddingRight = bodyPaddingRight;
-    document.removeEventListener('keydown', keydownHandler);
 }
 
 function showQuestionModal() {
