@@ -1,108 +1,119 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const mainHeader = document.querySelector('.header');
-    const main = document.querySelector('.main');
+const main = document.querySelector('.main');
+const header = document.querySelector('.header');
+const geopositionButton = document.querySelector('.header__geoposition-button');
+const mainContainer = document.querySelector('.main__container');
 
-    const header = document.querySelector('.header__geoposition');
-    const geopositionButton = document.querySelector('.header__geoposition-button');
-    const mainContainer = document.querySelector('.main__container');
+function generateModalContainer(toAppend) {
+    const container = document.createElement('div');
+    container.className = 'main__modal-container';
+    container.style.position = 'absolute';
+    container.appendChild(toAppend);
 
+    return container;
+}
+
+function closeRegionModal(modalContainer, bodyPaddingRight, modalWindowChange) {
+    modalWindowChange.close();
+    if (mainContainer.contains(modalContainer)) {
+        mainContainer.removeChild(modalContainer);
+    }
+    main.style.opacity = 1;
+    document.body.style.overflow = '';
+
+    document.body.classList.remove('modal-open');
+    document.body.style.paddingRight = bodyPaddingRight;
+}
+
+function getBodyPaddingRight() {
+    const bodyPaddingRight = window.getComputedStyle(document.body).paddingRight;
+    const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+    document.body.classList.add('modal-open');
+    document.body.style.paddingRight = `${parseInt(bodyPaddingRight) + scrollBarWidth}px`;
+
+    return bodyPaddingRight;
+}
+
+function showRegionModal() {
+    const templateChangeNode = document.querySelector('.change-region');
+    const modalTemplateNodeChange = templateChangeNode.content.cloneNode(true);
+    const modalWindowChange = modalTemplateNodeChange.querySelector('.change-region__modal-window');
+    const regionButtons = modalTemplateNodeChange.querySelectorAll('.change-region__item-button');
+
+    main.style.opacity = 0;
+    const modalContainer = generateModalContainer(modalTemplateNodeChange);
+
+    mainContainer.appendChild(modalContainer);
+    modalWindowChange.showModal();
+
+    const bodyPaddingRight = getBodyPaddingRight();
+
+    regionButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            localStorage.setItem('region', button.textContent);
+            geopositionButton.textContent = localStorage.getItem('region');
+            closeRegionModal(modalContainer, bodyPaddingRight, modalWindowChange);
+        });
+    });
+
+    document.addEventListener('keydown', function handleKeydown(event) {
+        if (event.key === 'Escape') {
+            closeRegionModal(modalContainer, bodyPaddingRight, modalWindowChange);
+            document.removeEventListener('keydown', handleKeydown);
+        }
+    });
+}
+
+function closeQuestionModal(modalContainer, bodyPaddingRight, modalWindowQuestion) {
+    document.body.style.overflow = '';
+    modalWindowQuestion.close();
+    if (header.contains(modalContainer)) {
+        header.removeChild(modalContainer);
+    }
+
+    document.body.classList.remove('modal-open');
+    document.body.style.paddingRight = bodyPaddingRight;
+}
+
+function showQuestionModal() {
     const templateQuestionNode = document.querySelector('.choose-region-question');
     const modalTemplateNodeQuestion = templateQuestionNode.content.cloneNode(true);
     const modalWindowQuestion = modalTemplateNodeQuestion.querySelector('.choose-region-question__modal-window');
     const agreeButton = modalWindowQuestion.querySelector('.choose-region-question__agree-button');
     const changeRegionShowButton = modalWindowQuestion.querySelector('.choose-region-question__change-city-button');
 
-    const showRegionModal = () => {
-        main.style.opacity = 0;
+    const modalContainer = generateModalContainer(modalTemplateNodeQuestion);
+    header.appendChild(modalContainer);
 
-        const templateChangeNode = document.querySelector('.change-region');
-        const modalTemplateNodeChange = templateChangeNode.content.cloneNode(true);
-        const modalWindowChange = modalTemplateNodeChange.querySelector('.change-region__modal-window');
-        const regionButtons = modalTemplateNodeChange.querySelectorAll('.change-region__item-button');
+    const bodyPaddingRight = getBodyPaddingRight();
 
-        const modalContainer = document.createElement('div');
-        modalContainer.className = 'main__modal-container';
+    setTimeout(() => {
+        modalWindowQuestion.showModal();
+    }, 100);
 
-        modalContainer.appendChild(modalTemplateNodeChange);
-        mainContainer.appendChild(modalContainer);
-        modalWindowChange.showModal();
+    agreeButton.addEventListener('click', function handleAgreeClick() {
+        closeQuestionModal(modalContainer, bodyPaddingRight, modalWindowQuestion);
+        agreeButton.removeEventListener('click', handleAgreeClick);
+    });
 
-        const body = document.body;
-        const bodyPaddingRight = window.getComputedStyle(body).paddingRight;
-        const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+    changeRegionShowButton.addEventListener('click', function handleChangeRegionClick() {
+        closeQuestionModal(modalContainer, bodyPaddingRight, modalWindowQuestion);
+        showRegionModal();
+        changeRegionShowButton.removeEventListener('click', handleChangeRegionClick);
+    });
 
-        body.classList.add('modal-open');
-        body.style.paddingRight = `${parseInt(bodyPaddingRight) + scrollBarWidth}px`;
+    document.addEventListener('keydown', function handleKeydown(event) {
+        if (event.key === 'Escape') {
+            closeQuestionModal(modalContainer, bodyPaddingRight, modalWindowQuestion);
+            document.removeEventListener('keydown', handleKeydown);
+        }
+    });
+}
 
-        const closeModal = () => {
-            modalWindowChange.close();
-            mainContainer.removeChild(modalContainer);
-            main.style.opacity = 1;
-            mainHeader.style.position = '';
+if (localStorage.getItem('region')) {
+    geopositionButton.textContent = localStorage.getItem('region');
+} else {
+    showQuestionModal();
+}
 
-            body.classList.remove('modal-open');
-            body.style.paddingRight = bodyPaddingRight;
-        };
-
-        regionButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                localStorage.setItem('region', button.textContent);
-                geopositionButton.textContent = localStorage.getItem('region');
-                closeModal();
-            });
-        });
-
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
-        });
-    };
-
-    const showModalQuestion = () => {
-        const modalContainer = document.createElement('div');
-        modalContainer.className = 'main__dialog-container';
-        modalContainer.appendChild(modalTemplateNodeQuestion);
-        header.appendChild(modalContainer);
-
-        const body = document.body;
-        const bodyPaddingRight = window.getComputedStyle(body).paddingRight;
-        const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
-
-        setTimeout(() => {
-            document.body.style.overflow = 'hidden';
-            body.style.paddingRight = `${parseInt(bodyPaddingRight) + scrollBarWidth}px`;
-            modalWindowQuestion.showModal();
-        }, 100);
-
-        const closeModal = () => {
-            document.body.style.overflow = '';
-            modalWindowQuestion.close();
-            header.removeChild(modalContainer);
-
-            body.classList.remove('modal-open');
-            body.style.paddingRight = bodyPaddingRight;
-        };
-
-        agreeButton.addEventListener('click', closeModal);
-
-        changeRegionShowButton.addEventListener('click', () => {
-            closeModal();
-            showRegionModal();
-        });
-
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
-        });
-    };
-
-    if (localStorage.getItem('region')) {
-        geopositionButton.textContent = localStorage.getItem('region');
-    } else {
-        showModalQuestion();
-    }
-
-    geopositionButton.addEventListener('click', showRegionModal);
-});
+geopositionButton.addEventListener('click', showRegionModal);
