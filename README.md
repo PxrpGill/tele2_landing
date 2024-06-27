@@ -194,12 +194,13 @@ processFiles().catch(console.error);
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "pnpm run transform-css && vite",
+    "dev": "concurrently \"pnpm run watch-css\" \"vite\"",
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "pnpm run build",
     "deploy": "gh-pages -d dist",
-    "transform-css": "node src/scripts/lightning.js"
+    "transform-css": "node src/scripts/lightning.js",
+    "watch-css": "chokidar \"src/styles/unformatted/**/*.css\" -c \"pnpm run transform-css\""
   },
   "keywords": [],
   "author": "",
@@ -212,9 +213,17 @@ processFiles().catch(console.error);
     "vite-plugin-handlebars": "^2.0.0"
   },
   "devDependencies": {
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^8.2.2",
     "lightningcss": "^1.25.1"
   }
 }
 ```
 
 После этих действий мы просто должны применить отформатированные стили к нашей HTML странице.
+
+> [!NOTE]
+> ### CHOKIDAR
+> отвечает за автоматизированное преобразование ваших CSS файлах.
+> 
+> Он отслеживает изменения и запускает команду transform-css.
