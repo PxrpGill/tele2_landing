@@ -96,7 +96,7 @@ export default class Slider {
                     const index = this.getCurrentSlideIndex(this.sliderPlace);
                     this.updateMarkersVisibility(index);
                     this.isScrolling = false;
-                }, 100);
+                }, 750);
             }
         });
 
@@ -195,19 +195,26 @@ export default class Slider {
             });
         });
 
-        this.prevButton.addEventListener('click', throttle(() => {
+        this.prevButton.removeEventListener('click', this.throttledPrevClick);
+        this.nextButton.removeEventListener('click', this.throttledNextClick);
+
+        this.throttledPrevClick = throttle(() => {
             const currentIndex = this.getCurrentSlideIndex(this.sliderPlace);
             if (currentIndex > 0) {
                 this.scrollToPage(currentIndex);
             }
-        }, 5000));
+        }, 10000);
 
-        this.nextButton.addEventListener('click', throttle(() => {
+        this.throttledNextClick = throttle(() => {
             const currentIndex = this.getCurrentSlideIndex(this.sliderPlace);
             if (currentIndex < this.totalPages - 1) {
                 this.scrollToPage(currentIndex + 2);
             }
-        }, 5000));
+        }, 10000);
+
+        // Добавляем троттленные версии функций как слушатели событий
+        this.prevButton.addEventListener('click', this.throttledPrevClick);
+        this.nextButton.addEventListener('click', this.throttledNextClick);
     }
 
     scrollToPage(page) {

@@ -1,12 +1,11 @@
-export function throttle(func, limit) {
-    let inThrottle;
-    return function () {
-        const context = this;
-        const args = arguments;
-        if (!inThrottle) {
-            func.apply(context, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
+export function throttle(func, wait) {
+    let timeout;
+    return function(...args) {
+        if (!timeout) {
+            func.apply(this, args);
+            timeout = setTimeout(() => {
+                timeout = null;
+            }, wait);
         }
     };
 }
