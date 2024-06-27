@@ -38,22 +38,31 @@ openParticipateDialogButton.addEventListener('click', () => {
 
         body.classList.remove('modal-open');
         body.style.paddingRight = `${bodyPaddingRight}px`;
+
+        closeModalButton.removeEventListener('click', closeModal);
+        document.removeEventListener('keydown', handleKeydown);
+        inputTel.removeEventListener('input', onPhoneInput);
+        inputTel.removeEventListener('keydown', onPhoneKeyDown);
+        inputTel.removeEventListener('paste', onPhonePaste);
+        submitButton.removeEventListener('click', handleSubmit);
     };
 
-    closeModalButton.addEventListener('click', closeModal);
-
-    document.addEventListener('keydown', (event) => {
+    const handleKeydown = (event) => {
         if (event.key === 'Escape') {
             closeModal();
         }
-    });
+    };
 
+    const handleSubmit = (event) => {
+        const validate = new Validate();
+        validate.dataProcessing(event, checkbox, phonePlace, computerPlace, submitButton, inputTel);
+    };
+
+    // Добавление обработчиков событий
+    closeModalButton.addEventListener('click', closeModal);
+    document.addEventListener('keydown', handleKeydown);
     inputTel.addEventListener('input', onPhoneInput);
     inputTel.addEventListener('keydown', onPhoneKeyDown);
     inputTel.addEventListener('paste', onPhonePaste);
-
-    submitButton.addEventListener('click', function (event) {
-        const validate = new Validate();
-        validate.dataProcessing(event, checkbox, phonePlace, computerPlace, submitButton, inputTel);
-    });
+    submitButton.addEventListener('click', handleSubmit);
 });
