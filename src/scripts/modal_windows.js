@@ -66,7 +66,6 @@ function showRegionModal() {
             document.removeEventListener('keydown', handleKeydown);
         }
     });
-    
     geopositionButton.removeEventListener('click', showQuestionModal);
 }
 
