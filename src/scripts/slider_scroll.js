@@ -200,14 +200,14 @@ export default class Slider {
             if (currentIndex > 0) {
                 this.scrollToPage(currentIndex);
             }
-        }, 600));
+        }, 5000));
 
         this.nextButton.addEventListener('click', throttle(() => {
             const currentIndex = this.getCurrentSlideIndex(this.sliderPlace);
             if (currentIndex < this.totalPages - 1) {
                 this.scrollToPage(currentIndex + 2);
             }
-        }, 600));
+        }, 5000));
     }
 
     scrollToPage(page) {
