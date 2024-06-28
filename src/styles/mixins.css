@@ -35,9 +35,10 @@
     line-height: $line;
 }
 
-@define-mixin eclipse $weight, $height {
+@define-mixin eclipse $widht, $height {
     border-radius: var(--border-radius-eclipse);
-
+    @mixin responsive width, $widht;
+    @mixin responsive height, $height;
 }
 
 @define-mixin text-normal-sans {

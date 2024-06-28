@@ -14,41 +14,39 @@
 }
 
 .footer__upper {
-    @mixin flex-just-align space-between, center;   
+    @mixin flex-just-align space-between, center;
     border-bottom: 0.1vw solid var(--line-color);
-    padding-bottom: 0.8vw;
+    @mixin responsive padding-bottom, 8;
 }
 
 .footer__navigation-list {
     @mixin flex-just-align none, center;
-    gap: 0.8vw;
+    @mixin responsive gap, 8;
 }
 
 .footer__upper-terms-stonk {
     @mixin flex-just-align none, center;
-    gap: 0.8vw;
+    @mixin responsive gap, 8;
 }
 
 .footer__terms-stonk-eclipse {
     @mixin flex-just-align center, center;
-    width: clamp(2.2vw, 2.2vw, 11.8vw);
-    height: clamp(2.2vw, 2.2vw, 11.8vw);
-    border-radius: var(--border-radius-eclipse);
+    @mixin eclipse 32, 32;
+    @mixin responsive font-size, 12;
+    @mixin text-sans none, var(--bold-weight), none;
     border: 0.1vh solid var(--white-color);
-    font-family: "Tele2 TextSans Regular";
-    font-size: clamp(0.8vw, 0.8vw, 4.4vw);
-    font-weight: var(--bold-weight);
+
 }
 
 .footer__terms-stonk-title {
-    font-family: "Tele2 TextSans Regular";
-    font-size: clamp(0.9vw, 0.9vw, 4.8vw);
-    font-weight: var(--normal-weight);
+    @mixin text-sans none, var(--normal-weight), none;
+    @mixin responsive font-size, 13;
 }
 
 .footer__lower {
     @mixin flex-just-align space-between, none;
-    padding: 2.9vw 0px 3.3vw 0px;
+    @mixin responsive padding-top, 43;
+    @mixin responsive padding-bottom, 47;
 }
 
 .footer__lower-copywriting {
@@ -57,9 +55,7 @@
 }
 
 .footer__copy {
-    font-family: "Tele2 TextSans Regular";
-    font-size: var(--text-mini);
-    font-weight: var(--normal-weight);
+    @mixin text-sans var(--text-mini), var(--normal-weight), none; 
     color: var(--white-color);
 }
 
@@ -69,9 +65,8 @@
 }
 
 .footer__made {
-    font-family: "Tele2 TextSans Regular";
-    font-size: clamp(0.9vw, 0.9vw, 4.8vw);
-    font-weight: var(--normal-weight);
+    @mixin text-normal-sans none, var(--normal-weight), none;
+    @mixin responsive font-size, 13;
     color: var(--white-color);
 }
 
@@ -92,52 +87,22 @@
 }
 
 .twitter {
-    width: clamp(1.7vw, 1.7vw, 9.2vw);
+    @mixin responsive widht, 25;
 }
 
 .vk {
-    width: clamp(1.9vw, 1.9vw, 10.0vw);
+    @mixin responsive widht, 27;
 }
 
 .facebook {
-    width: clamp(0.9vw, 0.9vw, 4.8vw);
+    @mixin responsive widht, 13;
 }
 
 .chulakov-logo {
-    width: clamp(9.7vw, 9.7vw, 51.8vw);
+    @mixin responsive widht, 139;
 }
 
 @media screen and (max-width: 992px) {
-    .vk {
-        width: clamp(2.7vw, 2.7vw, 3.9vw);
-    }
-
-    .twitter {
-        width: clamp(2.5vw, 2.5vw, 3.6vw);
-    }
-
-    .facebook {
-        width: clamp(1.3vw, 1.3vw, 1.8vw);
-    }
-
-    .footer__terms-stonk-title {
-        font-size: clamp(1.3vw, 1.3vw, 1.8vw);
-    }
-
-    .footer__terms-stonk-eclipse {
-        width: clamp(3.2vw, 3.2vw, 4.6vw);
-        height: clamp(3.2vw, 3.2vw, 4.6vw);
-        font-size: clamp(1.2vw, 1.2vw, 1.7vw);
-    }
-
-    .footer__made {
-        font-size: clamp(1.3vw, 1.3vw, 1.8vw);
-    }
-
-    .chulakov-logo {
-        width: clamp(14.1vw, 14.1vw, 20.5vw);
-    }
-
     .footer__nav-item-image:hover {
         transform: none;
 
@@ -153,41 +118,24 @@
     }
 
     .footer__upper {
-        padding: 0px 3.1vw 2.5vw 3.1vw;
+        @mixin responsive padding-right, 10;
+        @mixin responsive padding-left, 10;
+        @mixin responsive padding-bottom, 8;
     }
 
     .footer__lower {
-        padding: 8.4vw 5.0vw 0px 5.0vw;
-    }
-
-    .facebook {
-        width: clamp(2.5vw, 2.5vw, 7.8vw);
-    }
-
-    .twitter {
-        width: clamp(5.6vw, 5.6vw, 17.8vw);
-    }
-
-    .vk {
-        width: clamp(6.3vw, 6.3vw, 20.0vw);
+        padding-bottom: 0;
+        @mixin responsive padding-top, 27;
+        @mixin responsive padding-left, 16;
+        @mixin responsive padding-right 49;
     }
 
     .footer__navigation-list {
-        gap: clamp(2.2vw, 2.2vw, 6.9vw);
-    }
-
-    .footer__upper-terms-stonk {
-        gap: clamp(5.0vw, 5.0vw, 15.9vw);
-    }
-
-    .footer__terms-stonk-title {
-        font-size: clamp(4.1vw, 4.1vw, 12.8vw);
+        @mixin responsive gap, 7;
     }
 
     .footer__terms-stonk-eclipse {
-        width: clamp(10.0vw, 10.0vw, 31.9vw);
-        height: clamp(10.0vw, 10.0vw, 31.9vw);
-        font-size: clamp(3.8vw, 3.8vw, 11.9vw);
+        @mixin eclipse 32, 32;
     }
 
     .footer__nav-item-image:hover {
