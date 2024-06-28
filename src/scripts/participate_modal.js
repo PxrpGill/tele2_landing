@@ -45,6 +45,17 @@ openParticipateDialogButton.addEventListener('click', () => {
         inputTel.removeEventListener('keydown', onPhoneKeyDown);
         inputTel.removeEventListener('paste', onPhonePaste);
         submitButton.removeEventListener('click', handleSubmit);
+
+        participateTemplate = null;
+        participateTemplateNode = null;
+        modalWindow = null;
+        inputTel = null;
+        checkbox = null;
+        submitButton = null;
+        closeModalButton = null;
+        phonePlace = null;
+        computerPlace = null;
+        dialogContainer = null;
     };
 
     const handleKeydown = (event) => {
@@ -58,7 +69,7 @@ openParticipateDialogButton.addEventListener('click', () => {
         validate.dataProcessing(event, checkbox, phonePlace, computerPlace, submitButton, inputTel);
     };
 
-    // Добавление обработчиков событий
+    
     closeModalButton.addEventListener('click', closeModal);
     document.addEventListener('keydown', handleKeydown);
     inputTel.addEventListener('input', onPhoneInput);

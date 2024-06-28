@@ -4,14 +4,16 @@ export default class Validate {
         this.successTemplate = document.querySelector('.main__success-message-template');
         this.failedTemplate = document.querySelector('.main__failed-message-template');
         this.failedMessagePhoneRetry = 'На этот номер уже выслан промокод';
+        this.timers = [];
     }
 
     deleteMessageFromDOM(container) {
-        setTimeout(() => {
+        const timer = setTimeout(() => {
             if (container.parentNode) {
                 container.parentNode.removeChild(container);
             }
         }, this.timeLiveMessage);
+        this.timers.push(timer);
     }
 
     clearMessages(container) {
@@ -21,7 +23,8 @@ export default class Validate {
     }
 
     outputFailedMessage(phone, computer) {
-        this.clearMessages(computer);
+        this.cleanupMessages();
+        
         const templateNode1 = this.failedTemplate.content.cloneNode(true);
         const container1 = document.createElement('div');
         container1.className = 'main__message-container';
@@ -29,18 +32,20 @@ export default class Validate {
         computer.appendChild(container1);
         this.deleteMessageFromDOM(container1);
 
-        this.clearMessages(phone);
         const templateNode2 = this.failedTemplate.content.cloneNode(true);
         const container2 = document.createElement('div');
         container2.className = 'main__message-container';
         container2.appendChild(templateNode2);
-        container2.querySelector('.main__info-message-text-message').textContent = this.failedMessagePhoneRetry;
+        container2.querySelector(
+            '.main__info-message-text-message'
+        ).textContent = this.failedMessagePhoneRetry;
         phone.appendChild(container2);
         this.deleteMessageFromDOM(container2);
     }
 
     outputSuccessMessage(phone, computer) {
-        this.clearMessages(computer);
+        this.cleanupMessages();
+
         const templateNode1 = this.successTemplate.content.cloneNode(true);
         const container1 = document.createElement('div');
         container1.className = 'main__message-container';
@@ -48,7 +53,7 @@ export default class Validate {
         computer.appendChild(container1);
         this.deleteMessageFromDOM(container1);
 
-        this.clearMessages(phone);
+       
         const templateNode2 = this.successTemplate.content.cloneNode(true);
         const container2 = document.createElement('div');
         container2.className = 'main__message-container';
@@ -89,9 +94,10 @@ export default class Validate {
 
         if (!checkbox.checked || phoneNumber == '') {
             submitButton.style.background = 'gray';
-            setTimeout(() => {
+            const timer = setTimeout(() => {
                 submitButton.style.background = 'white';
             }, this.timeLiveMessage);
+            this.timers.push(timer);
         } else {
             if (this.validatePhoneNumber(phoneNumber)) {
                 if (this.phoneInLocalStorage(phoneNumber)) {
@@ -105,18 +111,34 @@ export default class Validate {
             }
         }
     }
+
+    clearTimers() {
+        this.timers.forEach(timer => clearTimeout(timer));
+        this.timers = [];
+    }
+
+    cleanupMessages() {
+        const containers = document.querySelectorAll('.main__message-container');
+        containers.forEach(container => {
+            if (container.parentNode) {
+                container.parentNode.removeChild(container);
+            }
+        });
+        this.clearTimers();
+    }
 }
 
 const inputTel = document.querySelector('.main__processing-personal-data-input-tel');
 const computerMessagePlace = document.querySelector('.main__info-message-computers');
 const phoneMessagePlace = document.querySelector('.main__info-message-phone');
 const checkBox = document.querySelector('.main__processing-personal-data-agree');
-
 const submitButton = document.querySelector('.main__processing-personal-data-submit');
 
-submitButton.addEventListener(
-    'click', function (event) {
-        const validate = new Validate();
-        validate.dataProcessing(event, checkBox, phoneMessagePlace, computerMessagePlace, submitButton, inputTel);
-    }
-);
+const validate = new Validate();
+
+function handleSubmit(event) {
+    event.preventDefault();
+    validate.dataProcessing(event, checkBox, phoneMessagePlace, computerMessagePlace, submitButton, inputTel);
+}
+
+submitButton.addEventListener('click', handleSubmit);
