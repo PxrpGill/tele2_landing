@@ -9,11 +9,11 @@
 
 .header .tele2-logo {
     margin-left: 2.2vw;
-    @mixin responsive 88;
+    @mixin responsive width, 88;
 }
 
 .tele2-logo {
-    width: clamp(5.5vw, 6.1vw, 32.6vw);
+    @mixin responsive width, 88;
 }
 
 .header__geoposition-button {
@@ -53,10 +53,6 @@
         height: clamp(7.7vw, 7.7vw, 11.1vw);
     }
 
-    .tele2-logo {
-        width: clamp(8.9vw, 8.9vw, 12.8vw);
-    }
-
     .header__geoposition-button::after {
         width: clamp(3.2vw, 3.2vw, 4.6vw);
     }
@@ -71,13 +67,17 @@
         height: clamp(14.1vw, 14.1vw, 45vw);
     }
 
-    .tele2-logo {
-        width: clamp(15vw, 15vw, 47.8vw);
-        margin-left: 4.4vw;
-    }
-
     .header__geoposition-button::after {
         width: clamp(7.5vw, 7.5vw, 23.8vw);
+    }
+
+    .header .tele2-logo {
+        margin-left: 2.2vw;
+        @mixin responsive width, 48;
+    }
+
+    .tele2-logo {
+        @mixin responsive width, 48;
     }
 
     .header__geoposition-button {

@@ -22,13 +22,11 @@
     --text-big: clamp(2.8vw, 2.8vw, 14.8vw);
     --item-gap: clamp(1.7vw, 1.7vw, 8.9vw);
 
-    --max-pc: 7680px;
-    --pc: 1440px;
-    --tab: 992px;
-    --phone: 320px;
+    --mb: 320px;
+    --pad: 992px;
 }
 
-@media screen and (max-width: 992px) {
+@media (max-width: 992px) {
     :root {
         --main-container: clamp(96.8vw, 96.8vw, 140.4vw);
         --info-text-size: clamp(2vw, 2vw, 2.9vw);
@@ -39,7 +37,7 @@
     }
 }
 
-@media screen and (max-width: 576px) {
+@media (max-width: 576px) {
     :root {
         --main-container: clamp(98.8vw, 98.8vw, 320vw);
         --info-text-size: clamp(5.6vw, 5.6vw, 17.8vw);

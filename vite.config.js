@@ -1,11 +1,6 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
 import handlebars from "vite-plugin-handlebars";
-import postcssMixins from 'postcss-mixins';
-import postcssSimpleVars from 'postcss-simple-vars';
-import autoprefixer from 'autoprefixer';
-import postcssCalc from 'postcss-calc';
-import postcssMediaVariables from "postcss-media-variables";
 
 const components = 'src/components';
 
@@ -14,15 +9,7 @@ export default defineConfig({
     root: "src/",
     publicDir: resolve(__dirname, 'public'),
     css: {
-        postcss: {
-            plugins: [
-                postcssMixins,
-                postcssSimpleVars,
-                autoprefixer,
-                postcssCalc,
-                postcssMediaVariables
-            ]
-        }
+        postcss: resolve(__dirname, './postcss.config.js')
     },
     build: {
         outDir: "../dist",

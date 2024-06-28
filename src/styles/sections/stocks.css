@@ -76,9 +76,8 @@
     }
 }
 
-@media screen and (max-width: 576px) {
+@media (max-width: 576px) {
     .main__stocks {
-        display: flex;
         flex-direction: column;
         gap: clamp(15.0vw, 15.0vw, 47.8vw);
     }
