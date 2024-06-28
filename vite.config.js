@@ -4,6 +4,8 @@ import handlebars from "vite-plugin-handlebars";
 import postcssMixins from 'postcss-mixins';
 import postcssSimpleVars from 'postcss-simple-vars';
 import autoprefixer from 'autoprefixer';
+import postcssCalc from 'postcss-calc';
+import postcssMediaVariables from "postcss-media-variables";
 
 const components = 'src/components';
 
@@ -17,6 +19,8 @@ export default defineConfig({
                 postcssMixins,
                 postcssSimpleVars,
                 autoprefixer,
+                postcssCalc,
+                postcssMediaVariables
             ]
         }
     },

@@ -11,17 +11,12 @@
 }
 
 .main__about-rate-title-slogan {
-    font-family: "Tele2 DisplaySerif Regular";
-    font-size: var(--text-big);
-    font-weight: var(--bold-weight);
+    @mixin text-sans var(--text-big), var(--bold-weight), none;
     margin-bottom: clamp(1.7vw, 1.7vw, 8.9vw);
 }
 
 .main__about-rate-text {
-    font-family: "Tele2 TextSans Regular";
-    font-size: var(--info-text-size);
-    font-weight: var(--normal-weight);
-    line-height: 1.6;
+    @mixin text-sans var(--info-text-size), var(--normal-weight), 1.6;
     width: clamp(45.8vw, 45.8vw, 244.4vw);
 }
 
@@ -45,16 +40,15 @@
 }
 
 .main__rate-my-online-list-item-about-favico {
+    @mixin flex-just-align center, center;
     width: clamp(5vw, 5vw, 26.7vw);
     height: clamp(5vw, 5vw, 26.7vw);
     border-radius: var(--border-radius-eclipse);
-    @mixin flex-just-align center, center;
     background-color: var(--line-color);
 }
 
 .main__rate-my-online-list-item-about-information {
-    font-family: "Tele2 TextSans Regular";
-    font-size: var(--info-text-size);
+    @mixin text-sans var(--info-text-size), none, none;
 }
 
 .favico-image {

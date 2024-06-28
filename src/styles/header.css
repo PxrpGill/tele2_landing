@@ -8,8 +8,8 @@
 }
 
 .header .tele2-logo {
-    width: clamp(5.5vw, 6.1vw, 32.6vw);
     margin-left: 2.2vw;
+    @mixin responsive 88;
 }
 
 .tele2-logo {

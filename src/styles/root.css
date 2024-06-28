@@ -21,6 +21,11 @@
     --text-mini: clamp(1.1vw, 1.1vw, 5.9vw);
     --text-big: clamp(2.8vw, 2.8vw, 14.8vw);
     --item-gap: clamp(1.7vw, 1.7vw, 8.9vw);
+
+    --max-pc: 7680px;
+    --pc: 1440px;
+    --tab: 992px;
+    --phone: 320px;
 }
 
 @media screen and (max-width: 992px) {
