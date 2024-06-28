@@ -5,9 +5,8 @@
     width: clamp(27.8vw, 27.8vw, 148.1vw);
     height: clamp(31.3vw, 31.3vw, 166.7vw);
     margin: auto;
-    align-items: start;
     border: none;
-    @mixin flex-just-center;
+    @mixin flex-just-align center, start;
 }
 
 .main__participate-modal-window::backdrop {
@@ -23,9 +22,8 @@
 }
 
 .main__participate-modal-window-content {
-    display: flex;
+    @mixin flex-just-align none, end;
     flex-direction: column;
-    align-items: end;
     gap: clamp(3.5vw, 3.5vw, 18.5vw);
 }
 
@@ -33,8 +31,7 @@
     border-radius: 50%;
     width: clamp(3.1vw, 3.1vw, 16.7vw);
     height: clamp(3.1vw, 3.1vw, 16.7vw);
-    @mixin flex-just-center;
-    align-items: center;
+    @mixin flex-just-align center, center;
     background-color: var(--main-color);
     border: none;
     cursor: pointer;

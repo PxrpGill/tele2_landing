@@ -1,9 +1,8 @@
 @import url('../mixins.css');
 
 .main__rate-my-online {
-    @mixin flex-just-start;
+    @mixin flex-just-align start, start;
     flex-direction: column;
-    align-items: start;
     gap: clamp(3.9vw, 3.9vw, 20.7vw);
 }
 
@@ -35,14 +34,13 @@
 }
 
 .main__rate-my-online-list {
-    @mixin flex-just-start;
+    @mixin flex-just-align start, none;
     flex-direction: row;
     gap: clamp(3.9vw, 3.9vw, 20.7vw);
 }
 
 .main__rate-my-online-list-item-information {
-    @mixin flex-just-start;
-    align-items: center;
+    @mixin flex-just-align start, center;
     gap: clamp(1.1vw, 1.1vw, 6.0vw);
 }
 
@@ -50,9 +48,7 @@
     width: clamp(5vw, 5vw, 26.7vw);
     height: clamp(5vw, 5vw, 26.7vw);
     border-radius: var(--border-radius-eclipse);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @mixin flex-just-align center, center;
     background-color: var(--line-color);
 }
 

@@ -1,28 +1,7 @@
-@define-mixin flex-center-center {
+@define-mixin flex-just-align $justify, $align {
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-@define-mixin flex-start-start {
-    display: flex;
-    justify-content: start;
-    align-items: start;
-}
-
-@define-mixin flex-just-start {
-    display: flex;
-    justify-content: start;
-}
-
-@define-mixin flex-align-center {
-    display: flex;
-    align-items: center;
-}
-
-@define-mixin flex-just-center {
-    display: flex;
-    justify-content: center;
+    justify-content: $justify;
+    align-items: $align;
 }
 
 @define-mixin text-normal-sans {

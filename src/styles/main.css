@@ -2,14 +2,12 @@
 
 .main {
     width: 100%;
-    @mixin flex-just-center;
-    align-items: center;
+    @mixin flex-just-align center, center;
 }
 
 .main__container {
     width: var(--main-container);
-    @mixin flex-just-center;
-    align-items: start;
+    @mixin flex-just-align center, start;
     flex-direction: column;
     gap: var(--section-gap);
     margin: 3.9vw 0px var(--section-gap) 0px;

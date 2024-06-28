@@ -5,12 +5,12 @@
 }
 
 .main__stocks {
-    @mixin flex-start-start;
+    @mixin flex-just-align start, start;
     gap: clamp(3.8vw, 3.8vw, 20.3vw);
 }
 
 .main__stocks-content {
-    @mixin flex-start-start;
+    @mixin flex-just-align start, start;
     flex-direction: column;
 }
 

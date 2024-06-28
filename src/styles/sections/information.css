@@ -37,7 +37,7 @@
     color: var(--black-color);
     text-decoration: none;
     transition: .5s;
-    @mixin flex-center-center;
+    @mixin flex-just-align center, center;
 }
 
 .main__link-to-site-link:hover {
@@ -53,9 +53,8 @@
 
 .main__tele2-site-information-about {
     grid-column: 1/2;
-    display: flex;
+    @mixin flex-just-align start, none;
     flex-direction: column;
-    justify-content: start;
     margin-top: clamp(3.5vw, 3.5vw, 18.9vw);
 }
 
@@ -70,9 +69,7 @@
 }
 
 .main__tele2-site-information-image-rate {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @mixin flex-just-align center, center;
     grid-column: 2/2;
     grid-row-start: 1;
     grid-row-end: 3;
