@@ -20,7 +20,6 @@ export default defineConfig({
             ]
         }
     },
-    cssMinify: 'lightningcss',
     build: {
         outDir: "../dist",
         minify: true,
