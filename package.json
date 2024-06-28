@@ -10,7 +10,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "pnpm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "pnpm run transform-css && pnpm run build && gh-pages -d dist",
     "transform-css": "node src/scripts/lightning.js",
     "watch-css": "chokidar \"src/styles/unformatted/**/*.css\" -c \"pnpm run transform-css\""
   },
