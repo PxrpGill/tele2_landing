@@ -8,7 +8,7 @@
     line-height: 1.3;
     margin-bottom: clamp(4.4vw, 4.4vw, 23.7vw);
     grid-column: 1/2;
-    @apply text-big-bold-serif;
+    @mixin text-big-bold-serif;
 }
 
 .first-offer {
@@ -29,7 +29,7 @@
 
 .main__step-title {
     color: var(--blue-color);
-    @apply text-big-bold-serif;
+    @mixin text-big-bold-serif;
 }
 
 .main__how-to-get-tariff-list-steps {
@@ -37,7 +37,7 @@
     grid-row-end: 3;
     grid-column: 2/2;
     align-items: start;
-    @apply flex-just-start;
+    @mixin flex-just-start;
 }
 
 .main__how-to-get-tariff-processing-personal-data {
@@ -83,7 +83,7 @@
 }
 
 .main__how-to-get-tariff-list {
-    @apply flex-just-start;
+    @mixin flex-just-start;
     width: 100%;
     flex-direction: column;
     gap: clamp(2.1vw, 2.1vw, 11.1vw);
@@ -91,7 +91,7 @@
 }
 
 .main__item-step {
-    @apply flex-just-start;
+    @mixin flex-just-start;
     flex-direction: row;
     align-items: center;
     gap: var(--item-gap);
@@ -101,13 +101,13 @@
 .main__step-description {
     font-size: var(--info-text-size);
     line-height: 1.5;
-    @apply text-normal-sans-no-font;
+    @mixin text-normal-sans-no-font;
 }
 
 .main__processing-personal-data-tel-label {
     font-size: clamp(0.9vw, 0.9vw, 4.8vw);
     color: var(--data-color);
-    @apply text-normal-sans-no-font;
+    @mixin text-normal-sans-no-font;
 }
 
 .main__processing-personal-data-input-tel {
@@ -150,7 +150,7 @@
     font-size: var(--text-mini);
     line-height: 1.6;
     width: clamp(21.9vw, 21.9vw, 117.0vw);
-    @apply text-normal-sans-no-font;
+    @mixin text-normal-sans-no-font;
 }
 
 .main__processing-personal-data-submit {
@@ -175,7 +175,7 @@
 }
 
 .main__how-to-get-tariff-info-message {
-    @apply flex-just-start;
+    @mixin flex-just-start;
     align-items: center;
     background-color: var(--info-message-color);
     gap: clamp(0.8vw, 0.8vw, 4.4vw);
@@ -185,7 +185,7 @@
 }
 
 .main__info-message-text-message {
-    @apply text-normal-sans-no-font;
+    @mixin text-normal-sans-no-font;
     font-size: clamp(1.0vw, 1.0vw, 5.1vw);
     color: var(--white-color);
     width: clamp(20.0vw, 20.0vw, 106.7vw);

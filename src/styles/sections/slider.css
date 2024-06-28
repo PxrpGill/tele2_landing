@@ -8,7 +8,7 @@
     position: relative;
     height: clamp(20.8vw, 20.8vw, 111.1vw);
     width: 100%;
-    @apply flex-center-center;
+    @mixin flex-center-center;
     flex-direction: column;
     gap: clamp(1.4vw, 1.4vw, 7.4vw);
 }
@@ -67,7 +67,7 @@
 [data-component="main__slider"] {
     & .main__slider-markers {
         & li {
-            @apply flex-center-center;
+            @mixin flex-center-center;
         }
     }
 }
@@ -75,7 +75,7 @@
 [data-component="main__slider"] {
     & .main__slider-markers {
         & a {
-            @apply flex-center-center;
+            @mixin flex-center-center;
             width: clamp(2.1vw, 2.1vw, 11.1vw);
             height: clamp(2.1vw, 2.1vw, 11.1vw);
             background: var(--blue-color);

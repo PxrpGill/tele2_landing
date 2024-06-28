@@ -5,17 +5,17 @@
 }
 
 .main__stocks {
-    @apply flex-start-start;
+    @mixin flex-start-start;
     gap: clamp(3.8vw, 3.8vw, 20.3vw);
 }
 
 .main__stocks-content {
-    @apply flex-start-start;
+    @mixin flex-start-start;
     flex-direction: column;
 }
 
 .main__stocks-content-data-information {
-    @apply text-normal-sans;
+    @mixin text-normal-sans;
     margin-top: 1.9vw;
     margin-bottom: 3.3vw;
 }
@@ -33,7 +33,7 @@
 }
 
 .main__stocks-content-about-rate-my-online {
-    @apply text-normal-sans;
+    @mixin text-normal-sans;
     line-height: 1.5;;
     margin-bottom: 3.9vw;
     width: clamp(23.6vw, 23.6vw, 125.9vw);

@@ -7,7 +7,7 @@
     margin: auto;
     align-items: start;
     border: none;
-    @apply flex-just-center;
+    @mixin flex-just-center;
 }
 
 .main__participate-modal-window::backdrop {
@@ -33,7 +33,7 @@
     border-radius: 50%;
     width: clamp(3.1vw, 3.1vw, 16.7vw);
     height: clamp(3.1vw, 3.1vw, 16.7vw);
-    @apply flex-just-center;
+    @mixin flex-just-center;
     align-items: center;
     background-color: var(--main-color);
     border: none;

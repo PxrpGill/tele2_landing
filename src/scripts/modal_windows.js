@@ -1,7 +1,7 @@
 const main = document.querySelector('.main');
 const header = document.querySelector('.header');
 const geopositionButton = document.querySelector('.header__geoposition-button');
-const mainContainer = document.querySelector('.main__container');
+let mainContainer = document.querySelector('.main__container');
 
 let questionModalTimeoutId;
 
@@ -37,13 +37,13 @@ function getBodyPaddingRight() {
 }
 
 function showRegionModal() {
-    const templateChangeNode = document.querySelector('.change-region');
-    const modalTemplateNodeChange = templateChangeNode.content.cloneNode(true);
-    const modalWindowChange = modalTemplateNodeChange.querySelector('.change-region__modal-window');
-    const regionButtons = modalTemplateNodeChange.querySelectorAll('.change-region__item-button');
+    let templateChangeNode = document.querySelector('.change-region');
+    let modalTemplateNodeChange = templateChangeNode.content.cloneNode(true);
+    let modalWindowChange = modalTemplateNodeChange.querySelector('.change-region__modal-window');
+    let regionButtons = modalTemplateNodeChange.querySelectorAll('.change-region__item-button');
 
     main.style.opacity = 0;
-    const modalContainer = generateModalContainer(modalTemplateNodeChange);
+    let modalContainer = generateModalContainer(modalTemplateNodeChange);
 
     mainContainer.appendChild(modalContainer);
     modalWindowChange.showModal();
@@ -94,13 +94,13 @@ function closeQuestionModal(modalContainer, bodyPaddingRight, modalWindowQuestio
 }
 
 function showQuestionModal() {
-    const templateQuestionNode = document.querySelector('.choose-region-question');
-    const modalTemplateNodeQuestion = templateQuestionNode.content.cloneNode(true);
-    const modalWindowQuestion = modalTemplateNodeQuestion.querySelector('.choose-region-question__modal-window');
-    const agreeButton = modalWindowQuestion.querySelector('.choose-region-question__agree-button');
-    const changeRegionShowButton = modalWindowQuestion.querySelector('.choose-region-question__change-city-button');
+    let templateQuestionNode = document.querySelector('.choose-region-question');
+    let modalTemplateNodeQuestion = templateQuestionNode.content.cloneNode(true);
+    let modalWindowQuestion = modalTemplateNodeQuestion.querySelector('.choose-region-question__modal-window');
+    let agreeButton = modalWindowQuestion.querySelector('.choose-region-question__agree-button');
+    let changeRegionShowButton = modalWindowQuestion.querySelector('.choose-region-question__change-city-button');
 
-    const modalContainer = generateModalContainer(modalTemplateNodeQuestion);
+    let modalContainer = generateModalContainer(modalTemplateNodeQuestion);
     header.appendChild(modalContainer);
 
     const bodyPaddingRight = getBodyPaddingRight();

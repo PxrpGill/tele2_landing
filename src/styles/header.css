@@ -2,7 +2,7 @@
 
 .header {
     width: 100%;
-    @apply flex-align-center;
+    @mixin flex-align-center;
     justify-content: space-between;
     height: clamp(5.3vw, 5.3vw, 28.1vw);
     border-bottom: 0.1vw solid var(--line-color);

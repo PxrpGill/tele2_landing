@@ -1,43 +1,43 @@
-@mixin flex-center-center {
+@define-mixin flex-center-center {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-@mixin flex-start-start {
+@define-mixin flex-start-start {
     display: flex;
     justify-content: start;
     align-items: start;
 }
 
-@mixin flex-just-start {
+@define-mixin flex-just-start {
     display: flex;
     justify-content: start;
 }
 
-@mixin flex-align-center {
+@define-mixin flex-align-center {
     display: flex;
     align-items: center;
 }
 
-@mixin flex-just-center {
+@define-mixin flex-just-center {
     display: flex;
     justify-content: center;
 }
 
-@mixin text-normal-sans {
+@define-mixin text-normal-sans {
     font-family: "Tele2 TextSans Regular";
     font-size: var(--info-text-size);
     font-weight: var(--normal-weight);
 }
 
-@mixin text-big-bold-serif {
+@define-mixin text-big-bold-serif {
     font-size: var(--text-big);
     font-weight: var(--bold-weight);
     font-family: "Tele2 DisplaySerif Regular";
 }
 
-@mixin text-normal-sans-no-font {
+@define-mixin text-normal-sans-no-font {
     font-weight: var(--normal-weight);
     font-family: "Tele2 TextSans Regular";
 }

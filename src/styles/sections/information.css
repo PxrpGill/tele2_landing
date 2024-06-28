@@ -37,7 +37,7 @@
     color: var(--black-color);
     text-decoration: none;
     transition: .5s;
-    @apply flex-center-center;
+    @mixin flex-center-center;
 }
 
 .main__link-to-site-link:hover {
