@@ -4,6 +4,7 @@ function getInputNumberValue(input) {
     return input.value.replace(/\D/g, "");
 };
 
+
 export function onPhoneInput(event) {
     let input = event.target;
     let inputNumbersValue = getInputNumberValue(input);
@@ -63,7 +64,6 @@ export function onPhoneInput(event) {
             formattedInputValue += "-" + inputNumbersValue.substring(9, 11);
         }
     }
-
     input.value = formattedInputValue;
 };
 
