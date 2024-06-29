@@ -2,8 +2,8 @@
 
 .main__rate-my-online {
     @mixin flex-just-align start, start;
+    @mixin responsive gap, 56;
     flex-direction: column;
-    gap: clamp(3.9vw, 3.9vw, 20.7vw);
 }
 
 .main__rate-my-online-title--visually-hidden {
@@ -12,12 +12,12 @@
 
 .main__about-rate-title-slogan {
     @mixin text-sans var(--text-big), var(--bold-weight), 1;
-    margin-bottom: clamp(1.7vw, 1.7vw, 8.9vw);
+    @mixin responsive margin-bottom, 24;
 }
 
 .main__about-rate-text {
     @mixin text-sans var(--info-text-size), var(--normal-weight), 1.6;
-    width: clamp(45.8vw, 45.8vw, 244.4vw);
+    @mixin responsive width, 665;
 }
 
 .main__rate-my-online-title--visually-hidden {
@@ -30,19 +30,19 @@
 
 .main__rate-my-online-list {
     @mixin flex-just-align start, none;
+    @mixin responsive gap, 56;
     flex-direction: row;
-    gap: clamp(3.9vw, 3.9vw, 20.7vw);
 }
 
 .main__rate-my-online-list-item-information {
     @mixin flex-just-align start, center;
-    gap: clamp(1.1vw, 1.1vw, 6.0vw);
+    @mixin responsive gap, 16;
 }
 
 .main__rate-my-online-list-item-about-favico {
     @mixin flex-just-align center, center;
-    width: clamp(5vw, 5vw, 26.7vw);
-    height: clamp(5vw, 5vw, 26.7vw);
+    @mixin responsive width, 72;
+    @mixin responsive height, 72;
     border-radius: var(--border-radius-eclipse);
     background-color: var(--line-color);
 }
@@ -52,28 +52,20 @@
 }
 
 .favico-image {
-    width: clamp(2.8vw, 2.8vw, 14.8vw);
+    @mixin responsive width, 40;
 }
 
 @media screen and (max-width: 992px) {
-    .main__about-rate-text {
-        width: clamp(67.0vw, 67.0vw, 97.3vw);
-    }
-
-    .main__rate-my-online-list-item-about-favico {
-        width: clamp(7.3vw, 7.3vw, 10.5vw);
-        height: clamp(7.3vw, 7.3vw, 10.5vw);
-    }
-
-    .favico-image {
-        width: clamp(4.0vw, 4.0vw, 5.8vw);
+    .main__rate-my-online-list {
+        @mixin responsive gap, 32;
     }
 }
 
 @media screen and (max-width: 576px) {
     .main__rate-my-online {
-        padding: 0px 4.9vw 0px 4.9vw;
-        gap: clamp(11.3vw, 11.3vw, 35.9vw);
+        @mixin responsive padding-right, 16;
+        @mixin responsive padding-left, 16;
+        @mixin responsive gap, 40;
     }
 
     .main__about-rate {
@@ -81,13 +73,13 @@
     }
 
     .main__about-rate-title-slogan {
-        width: clamp(90.0vw, 90.0vw, 287.8vw);
+        @mixin responsive width, 288;
+        @mixin responsive margin-bottom, 16;
         line-height: 1.3;
-        margin-bottom: clamp(5.0vw, 5.0vw, 15.9vw);
     }
 
     .main__about-rate-text {
-        width: clamp(90.0vw, 90.0vw, 287.8vw);
+        @mixin responsive width, 288;
         line-height: 1.6;
         margin-bottom: 0;
         padding: 0;
@@ -95,7 +87,7 @@
     }
 
     .main__rate-my-online-list-item-information {
-        gap: clamp(5.0vw, 5.0vw, 15.9vw);
+        @mixin responsive gap, 24;
     }
 
     .main__rate-my-online-list {
@@ -104,16 +96,11 @@
     }
 
     .main__rate-my-online-list {
-        gap: clamp(10.0vw, 10.0vw, 31.9vw);
+        @mixin responsive gap, 40;
     }
 
     .main__rate-my-online-list-item-about-favico {
-        width: clamp(17.5vw, 17.5vw, 55.9vw);
-        height: clamp(17.5vw, 17.5vw, 55.9vw);
-    }
-
-    .favico-image {
-        width: clamp(10.0vw, 10.0vw, 31.9vw);
-        height: clamp(10.0vw, 10.0vw, 31.9vw);
+        @mixin responsive width, 56;
+        @mixin responsive height, 56;
     }
 }
