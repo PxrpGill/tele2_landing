@@ -9,35 +9,22 @@
 }
 
 .main__link-to-site-slogan {
-    font-size: var(--text-big);
-    font-weight: var(--bold-weight);
-    line-height: 1.5;
-    font-family: "Tele2 DisplaySerif Regular";
-    margin-bottom: clamp(2.1vw, 2.1vw, 11.1vw);
+    @mixin text-serif var(--text-big), var(--bold-weight), 1.5;
+    @mixin responsive margin-bottom, 30;
 }
 
 .main__link-to-site-about {
-    font-size: var(--info-text-size);
-    font-weight: var(--normal-weight);
-    line-height: 1.5;
-    font-family: "Tele2 TextSans Regular";
-    width: clamp(35.6vw, 35.6vw, 190.0vw);
+    @mixin text-sans var(--info-text-size), var(--normal-weight), 1.5;
+    @mixin responsive width, 513;
 }
 
 .main__link-to-site-link {
-    border-radius: var(--border-radius-button);
-    width: clamp(14.2vw, 14.2vw, 75.9vw);
-    height: clamp(3.3vw, 3.3vw, 17.8vw);
-    border: none;
-    font-family: "Tele2 TextSans Regular";
-    font-size: var(--text-mini);
-    font-weight: var(--bold-weight);
-    cursor: pointer;
+    @mixin button 205, 48;
+    @mixin flex-just-align center, center;
     background-color: var(--white-color);
     color: var(--black-color);
     text-decoration: none;
     transition: .5s;
-    @mixin flex-just-align center, center;
 }
 
 .main__link-to-site-link:hover {
@@ -46,21 +33,21 @@
 }
 
 .main__tele2-site-information {
+    @mixin responsive column-gap, 118;
     display: grid;
     grid-template-columns: clamp(35.6vw, 35.6vw, 190.0vw) clamp(24.9vw, 24.9vw, 132.9vw);
-    column-gap: clamp(8.2vw, 8.2vw, 43.7vw);
 }
 
 .main__tele2-site-information-about {
-    grid-column: 1/2;
     @mixin flex-just-align start, none;
+    @mixin responsive margin-top, 30;
+    grid-column: 1/2;
     flex-direction: column;
-    margin-top: clamp(3.5vw, 3.5vw, 18.9vw);
 }
 
 .rate-image {
-    width: clamp(24.9vw, 24.9vw, 132.9vw);
-    height: clamp(25.9vw, 25.9vw, 138.1vw);
+    @mixin responsive width, 359;
+    @mixin responsive height, 373;
 }
 
 .main__tele2-site-information-link-to-site {
@@ -78,22 +65,7 @@
 @media screen and (max-width: 992px) {
     .main__tele2-site-information {
         grid-template-columns: auto auto;
-        column-gap: clamp(5.6vw, 5.6vw, 8.2vw);
-    }
-
-    .rate-image {
-        width: clamp(36.2vw, 36.2vw, 52.5vw);
-        height: clamp(36.2vw, 36.2vw, 52.5vw);
-    }
-
-    .main__link-to-site-link {
-        width: clamp(20.7vw, 20.7vw, 29.9vw);
-        height: clamp(4.8vw, 4.8vw, 7.0vw);
-        padding: 1.5vw 4.0vw;
-    }
-
-    .main__link-to-site-about {
-        width: clamp(51.7vw, 51.7vw, 75.0vw);
+        @mixin responsive column-gap, 55;
     }
 
     .main__link-to-site-link:hover {
@@ -107,24 +79,23 @@
         flex-direction: column;
         gap: 0;
         margin: 0;
-        padding: 0px 5.0vw 0px 5.0vw;
+        @mixin responsive padding-right, 16;
+        @mixin responsive padding-left, 16;
     }
 
     .main__link-to-site-slogan {
-        margin-bottom: clamp(5.0vw, 5.0vw, 15.9vw);
-        font-size: var(--text-big);
+        @mixin responsive margin-bottom, 16;
         width: auto;
     }
 
     .rate-image {
-        width: clamp(71.9vw, 71.9vw, 230.0vw);
-        height: clamp(74.7vw, 74.7vw, 238.8vw);
+        @mixin responsive width, 230;
+        @mixin responsive height, 239;
     }
 
     .main__tele2-site-information-link-to-site {
         order: 2;
-        display: flex;
-        justify-content: center;
+        @mixin flex-just-align center, center;
     }
 
     .main__tele2-site-information-about {
@@ -132,8 +103,8 @@
     }
 
     .main__link-to-site-about {
-        margin-bottom: clamp(10.0vw, 10.0vw, 31.9vw);
-        width: clamp(90.0vw, 90.0vw, 287.8vw);
+        @mixin responsive margin-bottom, 32;
+        @mixin responsive width, 288;
     }
 
     .main__link-to-site-about::after {
@@ -141,17 +112,12 @@
     }
 
     .main__tele2-site-information-image-rate {
-        margin-bottom: clamp(15.0vw, 15.0vw, 47.8vw);
+        @mixin responsive margin-bottom, 48;
     }
 
     .main__link-to-site-link {
-        width: clamp(64.1vw, 64.1vw, 205.0vw);
-        height: clamp(15.0vw, 15.0vw, 47.8vw);
-        border-radius: clamp(15.0vw, 15.0vw, 47.8vw);
+        @mixin responsive border-radius, 48;
         padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 
     .main__link-to-site-link:hover {
