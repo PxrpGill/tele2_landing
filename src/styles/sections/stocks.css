@@ -6,7 +6,7 @@
 
 .main__stocks {
     @mixin flex-just-align start, start;
-    gap: clamp(3.8vw, 3.8vw, 20.3vw);
+    @mixin responsive gap, 55;
 }
 
 .main__stocks-content {
@@ -15,17 +15,16 @@
 }
 
 .main__stocks-content-data-information {
-    @mixin text-normal-sans;
-    margin-top: 1.9vw;
-    margin-bottom: 3.3vw;
+    @mixin text-sans var(--info-text-size), var(--info-text-size), 1;
+    @mixin responsive margin-top, 27;
+    @mixin responsive margin-bottom, 48;
 }
 
 .main__stocks-content-title {
-    font-family: "Standard CT Stencil";
-    font-size: clamp(4.7vw, 4.7vw, 25.1vw);
-    line-height: 1;
-    margin-bottom: 1.7vw;
-    width: clamp(33.1vw, 33.1vw, 176.7vw);
+    @mixin responsive font-size, 68;
+    @mixin text-ct none, var(--normal-weight), 1;
+    @mixin responsive margin-bottom, 24;
+    @mixin responsive width, 477;
 }
 
 .stocks-content__title--benefit {
@@ -33,22 +32,13 @@
 }
 
 .main__stocks-content-about-rate-my-online {
-    @mixin text-normal-sans;
-    line-height: 1.5;;
-    margin-bottom: 3.9vw;
-    width: clamp(23.6vw, 23.6vw, 125.9vw);
+    @mixin text-sans var(--info-text-size), var(--normal-weight), 1.5;
+    @mixin responsive margin-bottom, 56;
+    @mixin responsive width, 340;
 }
 
 .main__stocks-content-participate-button {
-    padding: 1.3vw 3.1vw 1.3vw 3.1vw;
-    font-family: "Tele2 TextSans Regular";
-    font-size: var(--text-mini);
-    font-weight: var(--bold-weight);
-    border-radius: 3.3vw;
-    cursor: pointer;
-    border: none;
-    appearance: none;
-    color: var(--black-color);
+    @mixin button 209, 60;
     transition: .5s;
 }
 
@@ -59,16 +49,20 @@
 
 .logo-boss {
     background: none;
-    width: clamp(40.6vw, 40.6vw, 216.3vw);
+    @mixin responsive width, 584;
 }
 
 @media screen and (max-width: 992px) {
+    .main__stocks-content-about-rate-my-online {
+        @mixin responsive width, 310;
+    }
+
     .main__stocks {
-        gap: clamp(5.5vw, 5.5vw, 8.0vw);
+        @mixin responsive gap, 32;
     }
 
     .logo-boss {
-        width: clamp(58.9vw, 58.9vw, 85.4vw);
+        @mixin responsive width, 450;
     }
 
     .main__stocks-content-participate-button:hover {
@@ -79,42 +73,40 @@
 @media (max-width: 576px) {
     .main__stocks {
         flex-direction: column;
-        gap: clamp(15.0vw, 15.0vw, 47.8vw);
+        @mixin responsive gap, 48;
     }
 
     .main__stocks-content-data-information {
-        margin-bottom: clamp(12.5vw, 12.5vw, 40.0vw);
+        @mixin responsive margin-bottom, 40;
+        @mixin text-sans var(--text-mini), var(--normal-weight), 1.5;
         margin-top: 0;
-        line-height: 1.5;
-        font-size: var(--text-mini);
     }
 
     .main__stocks-content-title {
-        font-size: clamp(11.3vw, 11.3vw, 35.9vw);
+        @mixin responsive font-size, 36;
+        @mixin responsive width, 288;
+        @mixin responsive margin-bottom, 16;
         text-align: left;
-        margin-bottom: clamp(5.0vw, 5.0vw, 15.9vw);
-        width: clamp(90.0vw, 90.0vw, 287.8vw);
     }
 
     .main__stocks-content-about-rate-my-online {
-        margin-bottom: clamp(12.5vw, 12.5vw, 40.0vw);
-        width: clamp(90.0vw, 90.0vw, 287.8vw);
-        line-height: 1.5;
+        @mixin responsive margin-bottom, 40;
+        @mixin responsive width, 288;
     }
 
     .logo-boss {
-        width: clamp(98.8vw, 98.8vw, 315.9vw);
-        height: clamp(104.1vw, 104.1vw, 332.8vw);
+        @mixin responsive width, 316;
+        @mixin responsive height, 333;
     }
 
     .main__stocks-content {
-        padding: 0px 5.0vw 0px 5.0vw;
+        @mixin responsive padding-right, 18;
+        @mixin responsive padding-left, 16;
     }
 
     .main__stocks-content-participate-button {
-        width: clamp(62.8vw, 62.8vw, 200.9vw);
-        height: clamp(15.0vw, 15.0vw, 47.8vw);
-        border-radius: clamp(15.0vw, 15.0vw, 47.8vw);
+        @mixin button 201, 48;
+        @mixin responsive border-radius, 48;
     }
 
     .main__stocks-content-participate-button:hover {

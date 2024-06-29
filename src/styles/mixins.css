@@ -10,19 +10,19 @@
         max-size-vw)vw
     );
 
-@media screen and (max-width: 992px) {
-    $default: calc(($size / 992) * 100);
-    $max-size-vw: calc((((1440 / 992) * $size) / 992) * 100);
+    @media screen and (max-width: 992px) {
+        $default: calc(($size / 992) * 100);
+        $max-size-vw: calc((((1440 / 992) * $size) / 992) * 100);
 
-    $(property): clamp($(default)vw, $(default)vw, $(max-size-vw)vw);
-}
+        $(property): clamp($(default)vw, $(default)vw, $(max-size-vw)vw);
+    }
 
-@media screen and (max-width: 576px) {
-    $default: calc(($size / 320) * 100);
-    $max-size-vw: calc((((1024 / 320) * $size) / 1024) * 100);
+    @media screen and (max-width: 576px) {
+        $default: calc(($size / 320) * 100);
+        $max-size-vw: calc((((1024 / 320) * $size) / 1024) * 100);
 
-    $(property): clamp($(default)vw, $(default)vw, $(max-size-vw)vw);
-}
+        $(property): clamp($(default)vw, $(default)vw, $(max-size-vw)vw);
+    }
 }
 
 @define-mixin flex-just-align $justify, $align {
@@ -38,10 +38,28 @@
     line-height: $line;
 }
 
+@define-mixin text-ct $size, $weight, $line {
+    font-family: "Standard CT Stencil";
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $line;
+}
+
 @define-mixin eclipse $widht, $height {
     border-radius: var(--border-radius-eclipse);
     @mixin responsive width, $widht;
     @mixin responsive height, $height;
+}
+
+@define-mixin button $width, $height {
+    @mixin responsive width, $width;
+    @mixin responsive height, $height;
+    @mixin text-sans var(--text-mini), var(--bold-weight), 1;
+    border-radius: var(--border-radius-button);
+    cursor: pointer;
+    border: none;
+    appearance: none;
+    color: var(--black-color);
 }
 
 @define-mixin text-normal-sans {
