@@ -11,6 +11,7 @@
 .main__link-to-site-slogan {
     @mixin text-serif var(--text-big), var(--bold-weight), 1.5;
     @mixin responsive margin-bottom, 30;
+    @mixin responsive margin-top, 52;
 }
 
 .main__link-to-site-about {
@@ -85,6 +86,7 @@
 
     .main__link-to-site-slogan {
         @mixin responsive margin-bottom, 16;
+        margin-top: 0;
         width: auto;
     }
 
