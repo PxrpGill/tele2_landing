@@ -1,3 +1,5 @@
+@import url('../mixins.css');
+
 .choose-region-question__modal-window {
     margin: 0;
     width: clamp(20.6vw, 20.6vw, 110.0vw);

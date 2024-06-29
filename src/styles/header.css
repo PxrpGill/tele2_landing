@@ -17,7 +17,7 @@
 }
 
 .header__geoposition-button {
-    @mixin text-sans var(--info-text-size), var(--normal-weight), none;
+    @mixin text-sans var(--info-text-size), var(--normal-weight), 1;
     @mixin flex-just-align center, center;
     @mixin responsive margin-right, 30;
     @mixin responsive gap, 8;

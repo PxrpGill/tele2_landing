@@ -33,13 +33,13 @@
     @mixin flex-just-align center, center;
     @mixin eclipse 32, 32;
     @mixin responsive font-size, 12;
-    @mixin text-sans none, var(--bold-weight), none;
+    @mixin text-sans none, var(--bold-weight), 1;
     border: 0.1vh solid var(--white-color);
 
 }
 
 .footer__terms-stonk-title {
-    @mixin text-sans none, var(--normal-weight), none;
+    @mixin text-sans none, var(--normal-weight), 1;
     @mixin responsive font-size, 13;
 }
 
@@ -55,7 +55,7 @@
 }
 
 .footer__copy {
-    @mixin text-sans var(--text-mini), var(--normal-weight), none; 
+    @mixin text-sans var(--text-mini), var(--normal-weight), 1;
     color: var(--white-color);
 }
 
@@ -87,19 +87,19 @@
 }
 
 .twitter {
-    @mixin responsive widht, 25;
+    @mixin responsive width, 25;
 }
 
 .vk {
-    @mixin responsive widht, 27;
+    @mixin responsive width, 27;
 }
 
 .facebook {
-    @mixin responsive widht, 13;
+    @mixin responsive width, 13;
 }
 
 .chulakov-logo {
-    @mixin responsive widht, 139;
+    @mixin responsive width, 139;
 }
 
 @media screen and (max-width: 992px) {
@@ -127,7 +127,7 @@
         padding-bottom: 0;
         @mixin responsive padding-top, 27;
         @mixin responsive padding-left, 16;
-        @mixin responsive padding-right 49;
+        @mixin responsive padding-right, 49;
     }
 
     .footer__navigation-list {

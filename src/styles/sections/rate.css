@@ -11,7 +11,7 @@
 }
 
 .main__about-rate-title-slogan {
-    @mixin text-sans var(--text-big), var(--bold-weight), none;
+    @mixin text-sans var(--text-big), var(--bold-weight), 1;
     margin-bottom: clamp(1.7vw, 1.7vw, 8.9vw);
 }
 
@@ -48,7 +48,7 @@
 }
 
 .main__rate-my-online-list-item-about-information {
-    @mixin text-sans var(--info-text-size), none, none;
+    @mixin text-sans var(--info-text-size), var(--normal-weight), 1;
 }
 
 .favico-image {
