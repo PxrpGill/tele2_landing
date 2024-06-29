@@ -38,6 +38,13 @@
     line-height: $line;
 }
 
+@define-mixin text-serif $size, $weight, $line {
+    font-family: "Tele2 DisplaySerif Regular";
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $line;
+}
+
 @define-mixin text-ct $size, $weight, $line {
     font-family: "Standard CT Stencil";
     font-size: $size;
@@ -62,6 +69,8 @@
     color: var(--black-color);
 }
 
+
+/*Удалить после завершения эти миксины*/
 @define-mixin text-normal-sans {
     font-family: "Tele2 TextSans Regular";
     font-size: var(--info-text-size);
