@@ -84,6 +84,10 @@
         left: calc(100% - 40.2vw);
         @mixin responsive top, 72;
     }
+
+    .choose-region-question__modal-window::after {
+        @mixin responsive top, -5;
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -96,7 +100,7 @@
     }
 
     .choose-region-question__modal-window::after {
-        @mixin responsive top, -30;
+        @mixin responsive top, -7;
         left: 80%;
         border-width: 3.1vw 3.1vw 0 3.1vw;
     }
