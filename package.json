@@ -25,6 +25,7 @@
     "postcss-calc": "^10.0.0",
     "postcss-custom-media": "^10.0.6",
     "postcss-import": "^16.1.0",
+    "postcss-lightningcss": "^1.0.0",
     "postcss-media-variables": "^2.0.1",
     "postcss-mixins": "^10.0.1",
     "postcss-nested": "^6.0.1",

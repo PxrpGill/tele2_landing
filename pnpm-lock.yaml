@@ -35,6 +35,9 @@ importers:
       postcss-import:
         specifier: ^16.1.0
         version: 16.1.0(postcss@8.4.38)
+      postcss-lightningcss:
+        specifier: ^1.0.0
+        version: 1.0.0(postcss@8.4.38)
       postcss-media-variables:
         specifier: ^2.0.1
         version: 2.0.1
@@ -1086,6 +1089,12 @@ packages:
     engines: {node: ^12 || ^14 || >= 16}
     peerDependencies:
       postcss: ^8.4.21
+
+  postcss-lightningcss@1.0.0:
+    resolution: {integrity: sha512-sLNRVh+DINZHf5b31KUZnv3w4sf/CEdmvYP5JWzyyB8++E6WdaE7yxsrhfXiUFqISNBXcSrKfAF/MtTZrYAlbg==}
+    engines: {node: ^16.0.0 || ^18.0.0 || >= 20, npm: '>=7.0.0'}
+    peerDependencies:
+      postcss: ^8.0.0
 
   postcss-media-variables@2.0.1:
     resolution: {integrity: sha512-uY8wxciMEzUkLtJaR3EklC9fZDr/4U7DH7wkcNAvCyH5fd3mXgAkwYLLpotF33BDZxNb1ETyhsOiRxR3Zd0h7g==}
@@ -2422,6 +2431,12 @@ snapshots:
   postcss-js@4.0.1(postcss@8.4.38):
     dependencies:
       camelcase-css: 2.0.1
+      postcss: 8.4.38
+
+  postcss-lightningcss@1.0.0(postcss@8.4.38):
+    dependencies:
+      browserslist: 4.23.1
+      lightningcss: 1.25.1
       postcss: 8.4.38
 
   postcss-media-variables@2.0.1:
