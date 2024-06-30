@@ -40,7 +40,7 @@
 }
 
 .main__tele2-site-information-about {
-    @mixin flex-just-align start, none;
+    @mixin flex-just-align start, start;
     @mixin responsive margin-top, 30;
     grid-column: 1/2;
     flex-direction: column;
@@ -110,7 +110,7 @@
     }
 
     .main__link-to-site-about::after {
-        content: 'Теперь вы получите 1 ТБ на ваш телефон при подключении тарифа «Мой онлайн+».'
+        content: 'Теперь вы получите 1 ТБ на ваш телефон при подключении тарифа «Мой онлайн+».';
     }
 
     .main__tele2-site-information-image-rate {
