@@ -58,12 +58,6 @@ function showRegionModal() {
             geopositionButton.textContent = localStorage.getItem('region');
             closeRegionModal(modalContainer, bodyPaddingRight, modalWindowChange);
             button.removeEventListener('click', handleRegionButtonClick);
-
-            templateChangeNode = null;
-            modalTemplateNodeChange = null;
-            modalWindowChange = null;
-            regionButtons = null;
-            mainContainer = null;
         };
         button.addEventListener('click', handleRegionButtonClick);
     });
@@ -72,12 +66,6 @@ function showRegionModal() {
         if (event.key === 'Escape') {
             closeRegionModal(modalContainer, bodyPaddingRight, modalWindowChange);
             document.removeEventListener('keydown', handleKeydown);
-
-            templateChangeNode = null;
-            modalTemplateNodeChange = null;
-            modalWindowChange = null;
-            regionButtons = null;
-            mainContainer = null;
         }
     });
     geopositionButton.removeEventListener('click', showQuestionModal);
@@ -123,26 +111,12 @@ function showQuestionModal() {
         closeQuestionModal(modalContainer, bodyPaddingRight, modalWindowQuestion);
         showRegionModal();
         changeRegionShowButton.removeEventListener('click', handleChangeRegionClick);
-
-        templateQuestionNode = null;
-        modalTemplateNodeQuestion = null;
-        modalWindowQuestion = null;
-        agreeButton = null;
-        changeRegionShowButton = null;
-        modalContainer = null;
     });
 
     document.addEventListener('keydown', function handleKeydown(event) {
         if (event.key === 'Escape') {
             closeQuestionModal(modalContainer, bodyPaddingRight, modalWindowQuestion);
             document.removeEventListener('keydown', handleKeydown);
-
-            templateQuestionNode = null;
-            modalTemplateNodeQuestion = null;
-            modalWindowQuestion = null;
-            agreeButton = null;
-            changeRegionShowButton = null;
-            modalContainer = null;
         }
     });
 

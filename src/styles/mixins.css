@@ -68,22 +68,3 @@
     appearance: none;
     color: var(--black-color);
 }
-
-
-/*Удалить после завершения эти миксины*/
-@define-mixin text-normal-sans {
-    font-family: "Tele2 TextSans Regular";
-    font-size: var(--info-text-size);
-    font-weight: var(--normal-weight);
-}
-
-@define-mixin text-big-bold-serif {
-    font-size: var(--text-big);
-    font-weight: var(--bold-weight);
-    font-family: "Tele2 DisplaySerif Regular";
-}
-
-@define-mixin text-normal-sans-no-font {
-    font-weight: var(--normal-weight);
-    font-family: "Tele2 TextSans Regular";
-}

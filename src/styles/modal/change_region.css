@@ -5,15 +5,14 @@
 }
 
 .change-region__modal-window {
+    @mixin flex-just-align start, start;
+    @mixin responsive height, 555;
+    @mixin responsive top, 78;
+    @mixin responsive padding-top, 144;
     width: var(--main-container);
     background-color: var(--main-color);
-    height: clamp(38.5vw, 38.5vw, 205.1vw);
     border: none;
-    padding: 0;
-    @mixin flex-just-align start, start;
     margin: 0 auto;
-    padding-top: 10.0vw;
-    top: 5.4vw;
     height: 100%;
 }
 
@@ -24,19 +23,15 @@
 }
 
 .change-region__title {
-    font-family: "Tele2 DisplaySerif Regular";
-    font-size: var(--text-big);
-    font-weight: var(--bold-weight);
+    @mixin text-serif var(--text-big), var(--bold-weight), 1; 
     text-align: left;
     color: var(--white-color);
 }
 
 .change-region__content {
+    @mixin responsive gap, 64;
     display: flex;
-    gap: 6.1vw;
     flex-direction: column;
-    gap: 4.4vw;
-    padding-left: 1vw;
 }
 
 .change-region__region-list {
@@ -44,10 +39,10 @@
 }
 
 .change-region__list {
+    @mixin responsive column-gap, 88;
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(4, 2.1vw);
-    column-gap: 6.1vw;
     row-gap: var(--item-gap);
     grid-auto-flow: column;
 }
@@ -58,16 +53,13 @@
 }
 
 .change-region__item-button {
+    @mixin text-sans var(--info-text-size), var(--normal-weight), 1;
     background: none;
     color: var(--white-color);
-    font-family: "Tele2 TextSans Regular";
-    font-size: var(--info-text-size);
-    font-weight: var(--normal-weight);
     text-align: left;
     border: none;
     cursor: pointer;
     padding: 0;
-    letter-spacing: -1px;
     transition: .5s;
 }
 
@@ -76,23 +68,13 @@
     color: var(--gray-color);
 }
 
-@media screen and (max-width: 992px) {
-    .change-region__modal-window {
-        top: clamp(7.9vw, 7.9vw, 11.4vw);
-    }
-
-    .change-region__item-button:hover {
-        transform: none;
-    }
-}
-
 @media screen and (max-width: 576px) {
     .change-region__modal-window {
-        top: clamp(24.4vw, 24.4vw, 77.8vw);
+        @mixin responsive top, 46;
+        @mixin responsive padding-top, 68;
         height: 100%;
-        width: clamp(100.0vw, 100.0vw, 320.0vw);
+        width: 100%;
         align-items: start;
-        padding-top: clamp(20.0vw, 20.0vw, 63.7vw);
     }
 
     .change-region__list {
@@ -110,18 +92,19 @@
 
     .change-region__item-button {
         font-size: var(--info-text-size);
+        letter-spacing: -0.6px;
     }
 
     .change-region__list {
         display: grid;
         grid-template-columns: auto auto;
         grid-template-rows: repeat(6, clamp(8.4vw, 8.4vw, 26.9vw));
-        column-gap: clamp(16.6vw, 16.6vw, 52.8vw);
+        @mixin responsive column-gap, 53;
         row-gap: var(--item-gap);
     }
 
     .change-region__content {
-        gap: clamp(15.0vw, 15.0vw, 47.8vw);
+        @mixin responsive gap, 48;
     }
 
     .change-region__item-button:hover {
