@@ -30,8 +30,10 @@ function getBodyPaddingRight() {
     const bodyPaddingRight = window.getComputedStyle(document.body).paddingRight;
     const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
 
-    document.body.classList.add('modal-open');
-    document.body.style.paddingRight = `${parseInt(bodyPaddingRight) + scrollBarWidth}px`;
+    if (window.innerWidth > 992) {
+        document.body.classList.add('modal-open');
+        document.body.style.paddingRight = `${parseInt(bodyPaddingRight) + scrollBarWidth}px`;
+    }
 
     return bodyPaddingRight;
 }
