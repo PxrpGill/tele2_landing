@@ -362,7 +362,7 @@
 
     .successed-image {
         @mixin responsive width, 5;
-        @mixin responsive heigth, 5;
+        @mixin responsive height, 5;
     }
 
     .successed {
