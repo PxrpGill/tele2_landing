@@ -1,0 +1,115 @@
+@import url('../mixins.css');
+
+.main__stocks-title--visually-hidden {
+    display: none;
+}
+
+.main__stocks {
+    @mixin flex-just-align start, start;
+    @mixin responsive gap, 55;
+}
+
+.main__stocks-content {
+    @mixin flex-just-align start, start;
+    flex-direction: column;
+}
+
+.main__stocks-content-data-information {
+    @mixin text-sans var(--info-text-size), var(--info-text-size), 1;
+    @mixin responsive margin-top, 27;
+    @mixin responsive margin-bottom, 48;
+}
+
+.main__stocks-content-title {
+    @mixin responsive font-size, 68;
+    @mixin text-ct none, var(--normal-weight), 1;
+    @mixin responsive margin-bottom, 24;
+    @mixin responsive width, 477;
+}
+
+.stocks-content__title--benefit {
+    color: var(--blue-color);
+}
+
+.main__stocks-content-about-rate-my-online {
+    @mixin text-sans var(--info-text-size), var(--normal-weight), 1.5;
+    @mixin responsive margin-bottom, 56;
+    @mixin responsive width, 340;
+}
+
+.main__stocks-content-participate-button {
+    @mixin button 209, 60;
+    transition: .5s;
+}
+
+.main__stocks-content-participate-button:hover {
+    transform: scale(1.1);
+    background-color: var(--gray-color);
+}
+
+.logo-boss {
+    background: none;
+    @mixin responsive width, 584;
+}
+
+@media screen and (max-width: 992px) {
+    .main__stocks-content-about-rate-my-online {
+        @mixin responsive width, 310;
+    }
+
+    .main__stocks {
+        @mixin responsive gap, 32;
+    }
+
+    .logo-boss {
+        @mixin responsive width, 450;
+    }
+
+    .main__stocks-content-participate-button:hover {
+        transform: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .main__stocks {
+        flex-direction: column;
+        @mixin responsive gap, 48;
+    }
+
+    .main__stocks-content-data-information {
+        @mixin responsive margin-bottom, 40;
+        @mixin text-sans var(--text-mini), var(--normal-weight), 1.5;
+        margin-top: 0;
+    }
+
+    .main__stocks-content-title {
+        @mixin responsive font-size, 36;
+        @mixin responsive width, 288;
+        @mixin responsive margin-bottom, 16;
+        text-align: left;
+    }
+
+    .main__stocks-content-about-rate-my-online {
+        @mixin responsive margin-bottom, 40;
+        @mixin responsive width, 288;
+    }
+
+    .logo-boss {
+        @mixin responsive width, 316;
+        @mixin responsive height, 333;
+    }
+
+    .main__stocks-content {
+        @mixin responsive padding-right, 18;
+        @mixin responsive padding-left, 16;
+    }
+
+    .main__stocks-content-participate-button {
+        @mixin button 201, 48;
+        @mixin responsive border-radius, 48;
+    }
+
+    .main__stocks-content-participate-button:hover {
+        transform: none;
+    }
+}

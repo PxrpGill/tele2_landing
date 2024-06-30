@@ -1,0 +1,128 @@
+@import url('../mixins.css');
+
+.main__tele2-site-information-title--visually-hidden {
+    display: none;
+}
+
+.main__image-rate-title--visually-hidden {
+    display: none;
+}
+
+.main__link-to-site-slogan {
+    @mixin text-serif var(--text-big), var(--bold-weight), 1.5;
+    @mixin responsive margin-bottom, 30;
+    @mixin responsive margin-top, 52;
+}
+
+.main__link-to-site-about {
+    @mixin text-sans var(--info-text-size), var(--normal-weight), 1.5;
+    @mixin responsive width, 513;
+}
+
+.main__link-to-site-link {
+    @mixin button 205, 48;
+    @mixin flex-just-align center, center;
+    background-color: var(--white-color);
+    color: var(--black-color);
+    text-decoration: none;
+    transition: .5s;
+}
+
+.main__link-to-site-link:hover {
+    transform: scale(1.1);
+    background-color: var(--gray-color);
+}
+
+.main__tele2-site-information {
+    @mixin responsive column-gap, 118;
+    display: grid;
+    grid-template-columns: clamp(35.6vw, 35.6vw, 190.0vw) clamp(24.9vw, 24.9vw, 132.9vw);
+}
+
+.main__tele2-site-information-about {
+    @mixin flex-just-align start, start;
+    @mixin responsive margin-top, 30;
+    grid-column: 1/2;
+    flex-direction: column;
+}
+
+.rate-image {
+    @mixin responsive width, 359;
+    @mixin responsive height, 373;
+}
+
+.main__tele2-site-information-link-to-site {
+    grid-column: 1/2;
+
+}
+
+.main__tele2-site-information-image-rate {
+    @mixin flex-just-align center, center;
+    grid-column: 2/2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+@media screen and (max-width: 992px) {
+    .main__tele2-site-information {
+        grid-template-columns: auto auto;
+        @mixin responsive column-gap, 55;
+    }
+
+    .main__link-to-site-link:hover {
+        transform: none;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .main__tele2-site-information {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin: 0;
+        @mixin responsive padding-right, 16;
+        @mixin responsive padding-left, 16;
+    }
+
+    .main__link-to-site-slogan {
+        @mixin responsive margin-bottom, 16;
+        margin-top: 0;
+        width: auto;
+    }
+
+    .rate-image {
+        @mixin responsive width, 230;
+        @mixin responsive height, 239;
+    }
+
+    .main__tele2-site-information-link-to-site {
+        order: 2;
+        @mixin flex-just-align center, center;
+    }
+
+    .main__tele2-site-information-about {
+        padding-top: 0;
+    }
+
+    .main__link-to-site-about {
+        @mixin responsive margin-bottom, 32;
+        @mixin responsive width, 288;
+    }
+
+    .main__link-to-site-about::after {
+        content: 'Теперь вы получите 1 ТБ на ваш телефон при подключении тарифа «Мой онлайн+».';
+    }
+
+    .main__tele2-site-information-image-rate {
+        @mixin responsive margin-bottom, 48;
+    }
+
+    .main__link-to-site-link {
+        @mixin responsive border-radius, 48;
+        padding: 0;
+    }
+
+    .main__link-to-site-link:hover {
+        transform: none;
+    }
+}

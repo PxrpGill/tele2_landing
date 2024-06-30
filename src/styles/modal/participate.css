@@ -1,13 +1,12 @@
 @import url('../mixins.css');
 
 .main__participate-modal-window {
+    @mixin flex-just-align center, start;
+    @mixin responsive width, 400;
+    @mixin responsive height, 400;
     background-color: var(--main-color);
-    width: clamp(27.8vw, 27.8vw, 148.1vw);
-    height: clamp(31.3vw, 31.3vw, 166.7vw);
     margin: auto;
-    align-items: start;
     border: none;
-    @apply flex-just-center;
 }
 
 .main__participate-modal-window::backdrop {
@@ -23,18 +22,14 @@
 }
 
 .main__participate-modal-window-content {
-    display: flex;
+    @mixin flex-just-align none, end;
+    @mixin responsive gap, 50;
     flex-direction: column;
-    align-items: end;
-    gap: clamp(3.5vw, 3.5vw, 18.5vw);
 }
 
 .main__participate-close-button {
-    border-radius: 50%;
-    width: clamp(3.1vw, 3.1vw, 16.7vw);
-    height: clamp(3.1vw, 3.1vw, 16.7vw);
-    @apply flex-just-center;
-    align-items: center;
+    @mixin eclipse 45, 45;
+    @mixin flex-just-align center, center;
     background-color: var(--main-color);
     border: none;
     cursor: pointer;
@@ -42,12 +37,11 @@
 }
 
 .main__participate-close-button:hover {
-    transform: scale(1.5);
+    transform: scale(1.1);
 }
 
 .cross {
-    width: clamp(3.1vw, 3.1vw, 16.7vw);
-    height: clamp(3.1vw, 3.1vw, 16.7vw);
+    @mixin eclipse 45, 45;
     transform: .5s;
 }
 
@@ -58,11 +52,6 @@
 }
 
 @media screen and (max-width: 992px) {
-    .main__participate-modal-window {
-        width: clamp(40.3vw, 40.3vw, 58.5vw);
-        height: clamp(45.4vw, 45.4vw, 65.8vw);
-    }
-
     .main__participate-close-button:hover {
         transform: none;
     }
@@ -70,18 +59,16 @@
 
 @media screen and (max-width: 576px) {
     .main__participate-modal-window {
-        width: clamp(96.9vw, 96.9vw, 310.0vw);
-        height: clamp(140.6vw, 140.6vw, 450.0vw);
+        @mixin responsive width, 300;
+        @mixin responsive height, 350;
     }
 
     .main__participate-close-button {
-        width: clamp(9.4vw, 9.4vw, 30.0vw);
-        height: clamp(9.4vw, 9.4vw, 30.0vw);
+        @mixin eclipse 30, 30;
     }
 
     .cross {
-        width: clamp(9.4vw, 9.4vw, 30.0vw);
-        height: clamp(9.4vw, 9.4vw, 30.0vw);
+        @mixin eclipse 30, 30;
     }
 
     .main__participate-close-button:hover {

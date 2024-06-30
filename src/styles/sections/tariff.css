@@ -5,22 +5,21 @@
 }
 
 .main__how-to-get-tariff-slogan {
-    line-height: 1.3;
-    margin-bottom: clamp(4.4vw, 4.4vw, 23.7vw);
+    @mixin text-serif var(--text-big), var(--bold-weight), 1.3;
+    @mixin responsive margin-bottom, 64;
     grid-column: 1/2;
-    @apply text-big-bold-serif;
 }
 
 .first-offer {
-    width: clamp(30vw, 30vw, 160vw);
+    @mixin responsive width, 432;
 }
 
 .second-offer {
-    width: clamp(34.2vw, 34.2vw, 182.2vw);
+    @mixin responsive width, 494;
 }
 
 .third-offer {
-    width: clamp(26.9vw, 26.9vw, 143.3vw);
+    @mixin responsive width, 387;
 }
 
 .main__how-to-get-tariff-slogan--benefit {
@@ -28,94 +27,82 @@
 }
 
 .main__step-title {
+    @mixin text-serif var(--text-big), var(--bold-weight), 1;
     color: var(--blue-color);
-    @apply text-big-bold-serif;
 }
 
 .main__how-to-get-tariff-list-steps {
+    @mixin flex-just-align start, start;
     grid-row-start: 1;
     grid-row-end: 3;
     grid-column: 2/2;
-    align-items: start;
-    @apply flex-just-start;
 }
 
 .main__how-to-get-tariff-processing-personal-data {
     grid-column: 1/2;
     display: flex;
     flex-direction: column;
-    margin-top: clamp(0.6vw, 0.6vw, 2.9vw);
 }
 
 .main__processing-personal-data-input-tel {
+    @mixin text-sans var(--text-mini), var(--normal-weight), 1;
+    @mixin responsive padding-top, 3;
+    @mixin responsive padding-bottom, 5;
+    @mixin responsive margin-bottom, 31;
     display: flex;
     flex-direction: column-reverse;
-    font-family: "Tele2 TextSans Regular";
-    font-size: var(--text-mini);
-    padding: 0.3vw 0px 0.3vw 0px;
-    margin-bottom: clamp(1.7vw, 1.7vw, 8.9vw);
 }
 
 .main__processing-personal-data-input-tel:-internal-autofill-selected {
-    background: -internal-light-dark(rgb(232, 240, 254), rgba(70, 90, 126, 0.4)) !important;;
+    background: -internal-light-dark(rgb(232, 240, 254), rgba(70, 90, 126, 0.4)) !important;
 }
 
 .main__how-to-get-tariff {
+    @mixin responsive column-gap, 132;
     display: grid;
     grid-template-columns: clamp(24.2vw, 24.2vw, 128.9vw) clamp(41.5vw, 41.5vw, 221.5vw);
-    column-gap: clamp(9.0vw, 9.0vw, 48.1vw);
     position: relative;
 }
 
 .main__step-eclipse {
-    width: clamp(5.6vw, 5.6vw, 29.6vw);
-    height: clamp(5.6vw, 5.6vw, 29.6vw);
-    border-radius: var(--border-radius-eclipse);
+    @mixin eclipse 80, 80;
+    @mixin flex-just-align center, center;
+    @mixin text-serif var(--text-big), var(--bold-weight), 1;
     background: none;
     border: 0.1vw solid var(--line-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: var(--blue-color);
-    font-size: clamp(2.4vw, 2.4vw, 12.9vw);
-    font-weight: var(--bold-weight);
-    font-family: "Tele2 DisplaySerif Regular";
 }
 
 .main__how-to-get-tariff-list {
-    @apply flex-just-start;
+    @mixin flex-just-align start, none;
+    @mixin responsive gap, 32;
     width: 100%;
     flex-direction: column;
-    gap: clamp(2.1vw, 2.1vw, 11.1vw);
     flex-wrap: wrap;
 }
 
 .main__item-step {
-    @apply flex-just-start;
+    @mixin flex-just-align start, center;
     flex-direction: row;
-    align-items: center;
     gap: var(--item-gap);
     width: 100%;
 }
 
 .main__step-description {
-    font-size: var(--info-text-size);
-    line-height: 1.5;
-    @apply text-normal-sans-no-font;
+    @mixin text-sans var(--info-text-size), var(--normal-weight), 1.5;
 }
 
 .main__processing-personal-data-tel-label {
-    font-size: clamp(0.9vw, 0.9vw, 4.8vw);
+    @mixin text-sans none, var(--normal-weight), 1;
+    @mixin responsive font-size, 13;
     color: var(--data-color);
-    @apply text-normal-sans-no-font;
 }
 
 .main__processing-personal-data-input-tel {
+    @mixin text-sans var(--text-mini), var(--normal-weight), 1;
     background: none;
     border: none;
     border-bottom: 0.1vw solid var(--line-color);
-    font-size: var(--text-mini);
-    font-family: "Tele2 TextSans Regular";
     color: var(--white-color);
 }
 
@@ -124,16 +111,15 @@
 }
 
 .main__processing-personal-data-agreement {
-    display: flex;
-    align-items: start;
-    gap: clamp(0.6vw, 0.6vw, 2.9vw);
+    @mixin flex-just-align none, start;
+    @mixin responsive gap, 8;
 }
 
 .main__processing-personal-data-agree {
+    @mixin responsive width, 24;
+    @mixin responsive height, 24;
     appearance: none;
     margin: 0;
-    width: clamp(1.7vw, 1.7vw, 8.9vw);
-    height: clamp(1.7vw, 1.7vw, 8.9vw);
     border: 0.1vw solid var(--white-color);
     cursor: pointer;
 }
@@ -143,26 +129,19 @@
     background-repeat: no-repeat;
     background-position: center;
     color: black;
-    background-size: clamp(0.8vw, 0.8vw, 4.4vw);
+    @mixin responsive background-size, 12;
 }
 
 .main__processing-personal-data-agree-label {
-    font-size: var(--text-mini);
-    line-height: 1.6;
-    width: clamp(21.9vw, 21.9vw, 117.0vw);
-    @apply text-normal-sans-no-font;
+    @mixin text-sans var(--text-mini), var(--normal-weight), 1.6;
+    @mixin responsive width, 316;
 }
 
 .main__processing-personal-data-submit {
-    width: clamp(15.1vw, 15.1vw, 80.7vw);
-    height: clamp(3.3vw, 3.3vw, 17.8vw);
-    border-radius: var(--border-radius-button);
-    border: none;
-    font-family: "Tele2 TextSans Regular";
-    font-weight: var(--bold-weight);
-    font-size: var(--text-mini);
+    @mixin button 218, 48;
+    @mixin text-sans var(--text-mini), var(--bold-weight), 1;
+    @mixin responsive margin-top, 32;
     cursor: pointer;
-    margin-top: clamp(2.2vw, 2.2vw, 11.8vw);
     appearance: none;
     background-color: white;
     color: black;
@@ -175,20 +154,19 @@
 }
 
 .main__how-to-get-tariff-info-message {
-    @apply flex-just-start;
-    align-items: center;
+    @mixin flex-just-align start, center;
+    @mixin responsive gap, 12;
+    @mixin responsive padding, 12;
+    @mixin responsive border-radius, 8;
+    @mixin responsive margin-top, 48;
     background-color: var(--info-message-color);
-    gap: clamp(0.8vw, 0.8vw, 4.4vw);
-    padding: 0.6vw;
-    border-radius: 0.6vw;
-    margin-top: clamp(3.3vw, 3.3vw, 17.8vw);
 }
 
 .main__info-message-text-message {
-    @apply text-normal-sans-no-font;
-    font-size: clamp(1.0vw, 1.0vw, 5.1vw);
+    @mixin text-sans none, var(--normal-weight), 1;
+    @mixin responsive font-size, 14;
+    @mixin responsive width, 288;
     color: var(--white-color);
-    width: clamp(20.0vw, 20.0vw, 106.7vw);
 }
 
 .main__processing-personal-data-input-tel-block {
@@ -206,12 +184,8 @@
 }
 
 .main__tariff-circle {
-    width: clamp(1.7vw, 1.7vw, 8.9vw);
-    height: clamp(1.7vw, 1.7vw, 8.9vw);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @mixin eclipse 24, 24;
+    @mixin flex-just-align center, center;
 }
 
 .success {
@@ -219,10 +193,10 @@
 }
 
 .failed {
+    @mixin text-sans none, var(--normal-weight), 1;
+    @mixin responsive font-size, 14;
     background-color: var(--failed-message-background-color);
     color: var(--failed-message-color);
-    font-size: clamp(1.0vw, 1.0vw, 5.1vw);
-    font-family: "Tele2 TextSans Regular";
 }
 
 .fail {
@@ -230,42 +204,25 @@
 }
 
 .successed-image {
-    width: clamp(0.6vw, 0.6vw, 3.3vw);
-    height: clamp(0.6vw, 0.6vw, 3.3vw);
+    @mixin responsive width, 9;
 }
 
 @media screen and (max-width: 992px) {
     .main__how-to-get-tariff {
+        @mixin responsive column-gap, 35;
         grid-template-columns: auto auto;
-        column-gap: clamp(13.3vw, 13.3vw, 19.3vw);
-    }
-
-    .main__step-eclipse {
-        width: clamp(8.1vw, 8.1vw, 11.7vw);
-        height: clamp(8.1vw, 8.1vw, 11.7vw);
-        font-size: var(--text-big);
-    }
-
-    .main__processing-personal-data-agree-label {
-        width: clamp(31.9vw, 31.9vw, 46.2vw);
     }
 
     .first-offer {
-        width: clamp(43.5vw, 43.5vw, );
+        @mixin responsive width, 430;
     }
 
-    .main__processing-personal-data-submit {
-        width: clamp(21.9vw, 21.9vw, 31.9vw);
-        height: clamp(4.8vw, 4.8vw, 7.0vw);
+    .second-offer {
+        @mixin responsive width, 450;
     }
 
-    .main__how-to-get-tariff-info-message {
-        padding: 1.2vw;
-    }
-
-    .main__info-message-text-message {
-        width: clamp(29.0vw, 29.0vw, 42.1vw);
-        font-size: clamp(1.4vw, 1.4vw, 2.0vw);
+    .third-offer {
+        @mixin responsive width, 430;
     }
 
     .main__processing-personal-data-submit:hover {
@@ -275,10 +232,11 @@
 
 @media screen and (max-width: 576px) {
     .main__how-to-get-tariff {
+        @mixin responsive gap, 40;
+        @mixin responsive padding-left, 16;
+        @mixin responsive padding-right, 16;
         display: flex;
         flex-direction: column;
-        gap: clamp(12.5vw, 12.5vw, 40.0vw);
-        padding: 0px 5.0vw 0px 5.0vw;
     }
 
     .main__processing-personal-data-submit:hover {
@@ -286,8 +244,7 @@
     }
 
     .main__how-to-get-tariff-list {
-        gap: clamp(10.0vw, 10.0vw, 31.9vw);
-        margin-bottom: clamp(4.4vw, 4.4vw, 13.8vw);
+        @mixin responsive gap, 32;
     }
 
     .main__item-step {
@@ -310,16 +267,12 @@
     }
 
     .main__processing-personal-data-submit {
+        @mixin responsive border-radius, 48; 
         justify-self: center;
-        width: clamp(68.1vw, 68.1vw, 217.8vw);
-        height: clamp(15.0vw, 15.0vw, 47.8vw);
-        border-radius: clamp(15.0vw, 15.0vw, 47.8vw);
     }
 
     .main__processing-personal-data-agreement {
-        gap: clamp(2.5vw, 2.5vw, 8.0vw);
-        margin-top: clamp(5.0vw, 5.0vw, 15.9vw);
-        margin-bottom: clamp(7.5vw, 7.5vw, 23.8vw);
+        @mixin responsive margin-top, 24;
     }
 
     .main__processing-personal-data-agree:checked {
@@ -332,21 +285,16 @@
         justify-content: center;
     }
 
-    .main__processing-personal-data-agree {
-        width: clamp(7.5vw, 7.5vw, 23.8vw);
-        height: clamp(7.5vw, 7.5vw, 23.8vw);
-    }
-
     .first-offer {
-        width: clamp(90.0vw, 90.0vw, 287.8vw);
+        @mixin responsive width, 288;
     }
 
     .second-offer {
-        width: clamp(85.0vw, 85.0vw, 271.9vw);
+        @mixin responsive width, 272;
     }
 
     .third-offer {
-        width: clamp(90.0vw, 90.0vw, 287.8vw);
+        @mixin responsive width, 272;
     }
 
     .main__processing-personal-data-agree-label {
@@ -355,8 +303,7 @@
     }
 
     .main__step-eclipse {
-        width: clamp(17.5vw, 17.5vw, 55.9vw);
-        height: clamp(17.5vw, 17.5vw, 55.9vw);
+        @mixin eclipse 56, 56;
         font-size: var(--text-big);
     }
 
@@ -366,14 +313,13 @@
 
     .main__processing-personal-data-input-tel {
         order: 2;
-        padding-bottom: 1.9vw;
         margin-bottom: 2.5vw;
     }
 
     .main__processing-personal-data-tel-label {
+        @mixin responsive margin-bottom, 8;
         order: 2;
         font-size: clamp(4.1vw, 4.1vw, 12.8vw);
-        margin-bottom: 1.6vw;
     }
 
     .main__info-message-phone {
@@ -394,12 +340,7 @@
     }
 
     .main__tariff-circle {
-        width: clamp(3.8vw, 3.8vw, 11.9vw);
-        height: clamp(3.8vw, 3.8vw, 11.9vw);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @mixin eclipse 12, 12;
     }
 
     .success {
@@ -411,11 +352,8 @@
     }
 
     .failed {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: "Tele2 TextSans Regular";
-        font-size: clamp(2.5vw, 2.5vw, 7.8vw);
+        @mixin text-sans none, var(--normal-weight), 1;
+        @mixin responsive font-size, 8;
     }
 
     .fail {
@@ -423,8 +361,8 @@
     }
 
     .successed-image {
-        width: clamp(1.6vw, 1.6vw, 11.9vw);
-        height: clamp(1.6vw, 1.6vw, 11.9vw);
+        @mixin responsive width, 5;
+        @mixin responsive heigth, 5;
     }
 
     .successed {
@@ -433,13 +371,10 @@
 
     .main__how-to-get-tariff-info-message {
         padding: 0;
-        margin-top: clamp(2.5vw, 2.5vw, 7.8vw);
-        gap: clamp(1.3vw, 1.3vw, 3.8vw);
+        @mixin responsive gap, 7;
     }
 
     .main__info-message-text-message {
-        width: clamp(77.5vw, 77.5vw, 247.8vw);
-        font-size: clamp(4.1vw, 4.1vw, 12.8vw);
-        font-family: "Tele2 TextSans Regular";
+        @mixin responsive width, 268;
     }
 }
