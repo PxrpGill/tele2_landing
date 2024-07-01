@@ -100,7 +100,7 @@
     }
 
     .main__stocks-content {
-        @mixin responsive padding-right, 18;
+        @mixin responsive padding-right, 16;
         @mixin responsive padding-left, 16;
     }
 

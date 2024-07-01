@@ -19,7 +19,7 @@
 
     @media screen and (max-width: 576px) {
         $default: calc(($size / 320) * 100);
-        $max-size-vw: calc((((1024 / 320) * $size) / 1024) * 100);
+        $max-size-vw: calc((((992 / 320) * $size) / 992) * 100);
 
         $(property): clamp($(default)vw, $(default)vw, $(max-size-vw)vw);
     }
