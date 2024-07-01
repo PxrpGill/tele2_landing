@@ -1,3 +1,5 @@
+import { getDataWithExpirationCheck, saveDataWithTimestamp } from "./localStorageOperations";
+
 const main = document.querySelector('.main');
 const header = document.querySelector('.header');
 const geopositionButton = document.querySelector('.header__geoposition-button');
@@ -55,8 +57,8 @@ function showRegionModal() {
 
     regionButtons.forEach(button => {
         const handleRegionButtonClick = () => {
-            localStorage.setItem('region', button.textContent);
-            geopositionButton.textContent = localStorage.getItem('region');
+            saveDataWithTimestamp('region', button.textContent);
+            geopositionButton.textContent = getDataWithExpirationCheck('region');
             closeRegionModal(modalContainer, bodyPaddingRight, modalWindowChange);
             button.removeEventListener('click', handleRegionButtonClick);
         };
@@ -108,7 +110,8 @@ function showQuestionModal() {
 
         modalContainer.remove();
 
-        localStorage.setItem('region', 'Санкт-Петербург');
+        saveDataWithTimestamp('region', 'Санкт-Петербург');
+        geopositionButton.textContent = getDataWithExpirationCheck('region');
     });
 
     changeRegionShowButton.addEventListener('click', function handleChangeRegionClick() {
@@ -121,16 +124,18 @@ function showQuestionModal() {
         if (event.key === 'Escape') {
             closeQuestionModal(modalContainer, bodyPaddingRight, modalWindowQuestion);
             document.removeEventListener('keydown', handleKeydown);
-            localStorage.setItem('region', 'Санкт-Петербург');
+            saveDataWithTimestamp('region', 'Санкт-Петербург');
+            geopositionButton.textContent = getDataWithExpirationCheck('region');
         }
     });
 
     geopositionButton.removeEventListener('click', showQuestionModal);
 }
 
-if (localStorage.getItem('region')) {
-    geopositionButton.textContent = localStorage.getItem('region');
+if (getDataWithExpirationCheck('region')) {
+    geopositionButton.textContent = getDataWithExpirationCheck('region');
 } else {
+    geopositionButton.textContent = 'Санкт-Петербург';
     showQuestionModal();
 }
 

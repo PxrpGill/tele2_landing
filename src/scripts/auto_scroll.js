@@ -1,3 +1,5 @@
+import { getDataWithExpirationCheck } from "./localStorageOperations";
+
 document.addEventListener('DOMContentLoaded', () => {
     const scrollToTopButton = document.querySelector('.main__to-scroll-up-button');
 
@@ -16,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.addEventListener('beforeunload', function () {
-        if (!localStorage.getItem('region')) {
+        if (!getDataWithExpirationCheck('region')) {
             this.window.scrollTo({
                 top: 0,
                 left: 0,
