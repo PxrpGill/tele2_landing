@@ -29,6 +29,7 @@
     & .main__slider-items {
         >li {
             @mixin flex-just-align space-around, center;
+            @mixin responsive height, 250;
             flex: 0 0 100%;
         }
     }
