@@ -85,6 +85,7 @@ pnpm run dev
 ├── package-lock.json
 ├── package.json
 ├── pnpm-lock.yaml
+├── postcss.config.js
 └── vite.config.js
 ```
 - #### Директория public:
