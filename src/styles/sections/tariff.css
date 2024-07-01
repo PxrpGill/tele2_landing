@@ -223,6 +223,13 @@
     @mixin responsive width, 9;
 }
 
+.main__info-message-computers {
+    @mixin responsive width, 348;
+    @mixin responsive height, 52;
+    position: relative;
+    display: block;
+}
+
 @media screen and (max-width: 992px) {
     .main__how-to-get-tariff {
         @mixin responsive column-gap, 35;
@@ -325,6 +332,8 @@
 
     .main__info-message-phone {
         display: block;
+        @mixin responsive width, 250;
+        @mixin responsive height, 14;
     }
 
     .main__processing-personal-data-input-tel {

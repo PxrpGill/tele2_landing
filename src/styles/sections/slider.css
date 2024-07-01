@@ -8,6 +8,7 @@
     @mixin responsive height, 300;
     @mixin responsive gap, 20;
     @mixin flex-just-align center, center;
+    @mixin responsive min-height, 300;
     position: relative;
     width: 100%;
     flex-direction: column;
@@ -145,6 +146,7 @@
     [data-component="main__slider"] {
         @mixin flex-just-align center, start;
         @mixin responsive height, 200;
+        @mixin responsive min-height, 200;
         position: relative;
         width: 100%;
     }

@@ -50,6 +50,7 @@
 .logo-boss {
     background: none;
     @mixin responsive width, 584;
+    @mixin responsive min-height, 551;
 }
 
 @media screen and (max-width: 992px) {
@@ -63,6 +64,7 @@
 
     .logo-boss {
         @mixin responsive width, 450;
+        @mixin responsive min-height, 374;
     }
 
     .main__stocks-content-participate-button:hover {
@@ -97,6 +99,7 @@
     .logo-boss {
         @mixin responsive width, 316;
         @mixin responsive height, 333;
+        @mixin responsive min-height, 333;
     }
 
     .main__stocks-content {
