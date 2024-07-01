@@ -24,7 +24,7 @@ export default class Validate {
 
     outputFailedMessage(phone, computer) {
         this.cleanupMessages();
-        
+
         const templateNode1 = this.failedTemplate.content.cloneNode(true);
         const container1 = document.createElement('div');
         container1.className = 'main__message-container';
@@ -53,7 +53,7 @@ export default class Validate {
         computer.appendChild(container1);
         this.deleteMessageFromDOM(container1);
 
-       
+
         const templateNode2 = this.successTemplate.content.cloneNode(true);
         const container2 = document.createElement('div');
         container2.className = 'main__message-container';
@@ -141,4 +141,16 @@ function handleSubmit(event) {
     validate.dataProcessing(event, checkBox, phoneMessagePlace, computerMessagePlace, submitButton, inputTel);
 }
 
+function checkFormValidity() {
+    if (inputTel.value.trim() == '' || !checkBox.checked) {
+        submitButton.style.pointerEvents = 'none';
+    } else {
+        submitButton.style.pointerEvents = '';
+    }
+}
+
+inputTel.addEventListener('input', checkFormValidity);
+checkBox.addEventListener('change', checkFormValidity);
+
+submitButton.style.pointerEvents = 'none';
 submitButton.addEventListener('click', handleSubmit);

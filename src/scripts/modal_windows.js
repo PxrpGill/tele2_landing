@@ -1,9 +1,11 @@
+import { getDataWithExpirationCheck, saveDataWithTimestamp } from "./localStorageOperations";
+
 const main = document.querySelector('.main');
 const header = document.querySelector('.header');
 const geopositionButton = document.querySelector('.header__geoposition-button');
 let mainContainer = document.querySelector('.main__container');
 
-let questionModalTimeoutId;
+const scrollButton = document.querySelector('.main__to-scroll-up-button');
 
 function generateModalContainer(toAppend) {
     const container = document.createElement('div');
@@ -24,9 +26,11 @@ function closeRegionModal(modalContainer, bodyPaddingRight, modalWindowChange) {
 
     document.body.classList.remove('modal-open');
     document.body.style.paddingRight = bodyPaddingRight;
+
+    scrollButton.style.display = 'block';
 }
 
-function getBodyPaddingRight() {
+export function getBodyPaddingRight() {
     const bodyPaddingRight = window.getComputedStyle(document.body).paddingRight;
     const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
 
@@ -51,12 +55,14 @@ function showRegionModal() {
     mainContainer.appendChild(modalContainer);
     modalWindowChange.showModal();
 
+    scrollButton.style.display = 'none';
+
     const bodyPaddingRight = getBodyPaddingRight();
 
     regionButtons.forEach(button => {
         const handleRegionButtonClick = () => {
-            localStorage.setItem('region', button.textContent);
-            geopositionButton.textContent = localStorage.getItem('region');
+            saveDataWithTimestamp('region', button.textContent);
+            geopositionButton.textContent = getDataWithExpirationCheck('region');
             closeRegionModal(modalContainer, bodyPaddingRight, modalWindowChange);
             button.removeEventListener('click', handleRegionButtonClick);
         };
@@ -73,7 +79,6 @@ function showRegionModal() {
 }
 
 function closeQuestionModal(modalContainer, bodyPaddingRight, modalWindowQuestion) {
-    clearTimeout(questionModalTimeoutId);
     document.body.style.overflow = '';
     modalWindowQuestion.close();
     if (header.contains(modalContainer)) {
@@ -82,6 +87,8 @@ function closeQuestionModal(modalContainer, bodyPaddingRight, modalWindowQuestio
 
     document.body.classList.remove('modal-open');
     document.body.style.paddingRight = bodyPaddingRight;
+
+    scrollButton.style.display = 'block';
 }
 
 function showQuestionModal() {
@@ -96,9 +103,9 @@ function showQuestionModal() {
 
     const bodyPaddingRight = getBodyPaddingRight();
 
-    questionModalTimeoutId = setTimeout(() => {
-        modalWindowQuestion.showModal();
-    }, 100);
+    modalWindowQuestion.showModal();
+
+    scrollButton.style.display = 'none';
 
     document.body.style.overflow = 'hidden';
 
@@ -107,7 +114,9 @@ function showQuestionModal() {
         agreeButton.removeEventListener('click', handleAgreeClick);
 
         modalContainer.remove();
-        modalContainer = null;
+
+        saveDataWithTimestamp('region', 'Санкт-Петербург');
+        geopositionButton.textContent = getDataWithExpirationCheck('region');
     });
 
     changeRegionShowButton.addEventListener('click', function handleChangeRegionClick() {
@@ -120,15 +129,18 @@ function showQuestionModal() {
         if (event.key === 'Escape') {
             closeQuestionModal(modalContainer, bodyPaddingRight, modalWindowQuestion);
             document.removeEventListener('keydown', handleKeydown);
+            saveDataWithTimestamp('region', 'Санкт-Петербург');
+            geopositionButton.textContent = getDataWithExpirationCheck('region');
         }
     });
 
     geopositionButton.removeEventListener('click', showQuestionModal);
 }
 
-if (localStorage.getItem('region')) {
-    geopositionButton.textContent = localStorage.getItem('region');
+if (getDataWithExpirationCheck('region')) {
+    geopositionButton.textContent = getDataWithExpirationCheck('region');
 } else {
+    geopositionButton.textContent = 'Санкт-Петербург';
     showQuestionModal();
 }
 

@@ -4,6 +4,7 @@
     @mixin flex-just-align center, start;
     @mixin responsive width, 400;
     @mixin responsive height, 400;
+    @mixin responsive border-radius, 40;
     background-color: var(--main-color);
     margin: auto;
     border: none;

@@ -45,17 +45,6 @@ openParticipateDialogButton.addEventListener('click', () => {
         inputTel.removeEventListener('keydown', onPhoneKeyDown);
         inputTel.removeEventListener('paste', onPhonePaste);
         submitButton.removeEventListener('click', handleSubmit);
-
-        participateTemplate = null;
-        participateTemplateNode = null;
-        modalWindow = null;
-        inputTel = null;
-        checkbox = null;
-        submitButton = null;
-        closeModalButton = null;
-        phonePlace = null;
-        computerPlace = null;
-        dialogContainer = null;
     };
 
     const handleKeydown = (event) => {
@@ -69,7 +58,21 @@ openParticipateDialogButton.addEventListener('click', () => {
         validate.dataProcessing(event, checkbox, phonePlace, computerPlace, submitButton, inputTel);
     };
 
-    
+
+
+    const checkFormValidity = () => {
+        if (inputTel.value.trim() == '' || !checkbox.checked) {
+            submitButton.style.pointerEvents = 'none';
+        } else {
+            submitButton.style.pointerEvents = '';
+        }
+    }
+
+    inputTel.addEventListener('input', checkFormValidity);
+    checkbox.addEventListener('change', checkFormValidity);
+
+    submitButton.style.pointerEvents = 'none';
+
     closeModalButton.addEventListener('click', closeModal);
     document.addEventListener('keydown', handleKeydown);
     inputTel.addEventListener('input', onPhoneInput);
