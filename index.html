@@ -8,16 +8,14 @@
 
   <link rel="icon" href="/tele2_landing/images/favico_tele2.png" type="image/x-icon">
 
-  <script type="module" crossorigin src="/tele2_landing/assets/main-Cg7BLn_l.js"></script>
-  <link rel="stylesheet" crossorigin href="/tele2_landing/assets/main-DqTh4nDX.css">
+  <script type="module" crossorigin src="/tele2_landing/assets/main-5yDDEJSw.js"></script>
+  <link rel="stylesheet" crossorigin href="/tele2_landing/assets/main-DSDI1V6u.css">
 </head>
 
 <body>
   <header class="header">
     <img class="tele2-logo" src="/tele2_landing/images/tele2_logo.svg" alt="Логотип Теле2" loading="lazy">
-    <button class="header__geoposition-button">
-      Санкт-Петербург
-    </button>  </header>
+    <button class="header__geoposition-button"></button>  </header>
   <main class="main">
     <div class="main__container">
       <section class="main__stocks">
@@ -42,7 +40,7 @@
             Принять участие
           </button>
         </article>
-        <img src="/tele2_landing/images/first_section/boss.png" alt="" class="logo-boss" loading="lazy">
+        <img src="/tele2_landing/images/first_section/boss.png" alt="Картинка Tele2 босса" class="logo-boss" loading="lazy">
       </section>      <section class="main__rate-my-online">
         <h2 class="main__rate-my-online-title--visually-hidden">
           Секция о тарифе «Мой онлайн+»
@@ -106,14 +104,14 @@
             </article>
           </div>
           <div class="main__processing-personal-data-agreement">
-            <input type="checkbox" id="agree" class="main__processing-personal-data-agree">
+            <input type="checkbox" id="agree" class="main__processing-personal-data-agree" required>
             <label for="agree" class="main__processing-personal-data-agree-label">
               Даю согласие на обработку персональных
               данных. <a class="main__processing-link" href="https://rostov.tele2.ru" target="_blank">Условия соглашения</a>.
             </label>
           </div>
           <div class="main__submit-form">
-            <input class="main__processing-personal-data-submit" type="submit" value="Выслать промокод">
+            <input class="main__processing-personal-data-submit" type="submit" value="Выслать промокод" required>
           </div>
           <!--Здесь будет стоять информация об отправке сообщения-->
           <article class="main__info-message-computers">
@@ -247,14 +245,14 @@
               </article>
             </div>
             <div class="main__processing-personal-data-agreement">
-              <input type="checkbox" id="agree" class="main__processing-personal-data-agree">
+              <input type="checkbox" id="agree" class="main__processing-personal-data-agree" required>
               <label for="agree" class="main__processing-personal-data-agree-label">
                 Даю согласие на обработку персональных
                 данных. <a class="main__processing-link" href="https://rostov.tele2.ru" target="_blank">Условия соглашения</a>.
               </label>
             </div>
             <div class="main__submit-form">
-              <input class="main__processing-personal-data-submit" type="submit" value="Выслать промокод">
+              <input class="main__processing-personal-data-submit" type="submit" value="Выслать промокод" required>
             </div>
             <!--Здесь будет стоять информация об отправке сообщения-->
             <article class="main__info-message-computers">
@@ -437,6 +435,19 @@
           </ul>    </article>
       </article>
     </dialog>  </template>
+  <template class="user-poppup">
+    <dialog class="user-poppup__modal-window">
+      <article class="user-poppup__content">
+        <h2 class="user-poppup__title--visually-hidden">Информация пользователя</h2>
+        <button class="user-poppup__close-button"><svg width="48" height="48" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="cross">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M4.11 2.697L2.698 4.11 6.586 8l-3.89 3.89 1.415 1.413L8 
+    9.414l3.89 3.89 1.413-1.415L9.414 8l3.89-3.89-1.415-1.413L8 6.586l-3.89-3.89z" fill="red">
+  </path>
+</svg></button>
+        <article class="user-poppup__user-content"></article>
+      </article>
+    </dialog>
+  </template>
 </body>
 
 </html>
