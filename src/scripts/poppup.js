@@ -15,7 +15,7 @@ export function openPoppup(user) {
     const userContent = templateNode.querySelector('.user-poppup__user-content  ');
 
 
-    const userImage = `<img src="${user.avatar_url}">`
+    const userImage = `<img src="${user.avatar_url}" loading="lazy">`
     const username = `<h4 class="user-poppup__username">${user.login}</h4>`;
     const userLinkGit = `
     <p class="user-poppup__information">
