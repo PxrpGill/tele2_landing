@@ -107,7 +107,8 @@ function showQuestionModal() {
         agreeButton.removeEventListener('click', handleAgreeClick);
 
         modalContainer.remove();
-        modalContainer = null;
+
+        localStorage.setItem('region', 'Санкт-Петербург');
     });
 
     changeRegionShowButton.addEventListener('click', function handleChangeRegionClick() {
@@ -120,6 +121,7 @@ function showQuestionModal() {
         if (event.key === 'Escape') {
             closeQuestionModal(modalContainer, bodyPaddingRight, modalWindowQuestion);
             document.removeEventListener('keydown', handleKeydown);
+            localStorage.setItem('region', 'Санкт-Петербург');
         }
     });
 
