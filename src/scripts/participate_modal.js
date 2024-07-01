@@ -59,12 +59,13 @@ openParticipateDialogButton.addEventListener('click', () => {
     };
 
 
-
     const checkFormValidity = () => {
         if (inputTel.value.trim() == '' || !checkbox.checked) {
             submitButton.style.pointerEvents = 'none';
+            submitButton.style.background = 'gray';
         } else {
             submitButton.style.pointerEvents = '';
+            submitButton.style.background = 'white';
         }
     }
 
@@ -79,4 +80,6 @@ openParticipateDialogButton.addEventListener('click', () => {
     inputTel.addEventListener('keydown', onPhoneKeyDown);
     inputTel.addEventListener('paste', onPhonePaste);
     submitButton.addEventListener('click', handleSubmit);
+
+    checkFormValidity();
 });

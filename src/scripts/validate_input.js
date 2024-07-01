@@ -144,8 +144,10 @@ function handleSubmit(event) {
 function checkFormValidity() {
     if (inputTel.value.trim() == '' || !checkBox.checked) {
         submitButton.style.pointerEvents = 'none';
+        submitButton.style.background = 'gray';
     } else {
         submitButton.style.pointerEvents = '';
+        submitButton.style.background = 'white';
     }
 }
 
@@ -154,3 +156,5 @@ checkBox.addEventListener('change', checkFormValidity);
 
 submitButton.style.pointerEvents = 'none';
 submitButton.addEventListener('click', handleSubmit);
+
+checkFormValidity();

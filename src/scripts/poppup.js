@@ -14,7 +14,7 @@ export function openPoppup(user) {
     const templateNode = template.content.cloneNode(true);
     const modalWindow = templateNode.querySelector('.user-poppup__modal-window');
     const closeButton = templateNode.querySelector('.user-poppup__close-button');
-    const userContent = templateNode.querySelector('.user-poppup__user-content  ');
+    const userContent = templateNode.querySelector('.user-poppup__user-content');
 
 
     const userImage = `<img src="${user.avatar_url}" loading="lazy">`
