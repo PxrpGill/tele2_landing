@@ -1,4 +1,5 @@
 import { throttle } from "./throttle";
+import { openPoppup } from "./poppup";
 
 export default class Slider {
     constructor() {
@@ -68,7 +69,7 @@ export default class Slider {
     generateSliderElement(i, index, user) {
         return `
             <a id="item-${i + index}">
-                <img class="main__slider-image" src="${user.avatar_url}" alt="Картинка пользователя" draggable="false" loading="lazy">
+                <img id="image-${i + index}" class="main__slider-image" src="${user.avatar_url}" alt="Картинка пользователя" draggable="false" loading="lazy">
             </a>`;
     }
 
@@ -87,6 +88,15 @@ export default class Slider {
             sliderElement += '</li>';
             this.sliderPlace.innerHTML += sliderElement;
         }
+
+        const userImages = this.sliderPlace.querySelectorAll('.main__slider-image');
+        userImages.forEach(image => {
+            image.addEventListener('click', () => {
+                const userId = +image.id.slice(6, image.id.length);
+                const userData = data[userId];
+                openPoppup(userData);
+            });
+        });
 
         this.totalPages = Math.ceil(data.length / this.itemsInPage);
         this.generatePaginationMarkers(1);

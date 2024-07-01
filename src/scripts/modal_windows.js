@@ -28,7 +28,7 @@ function closeRegionModal(modalContainer, bodyPaddingRight, modalWindowChange) {
     document.body.style.paddingRight = bodyPaddingRight;
 }
 
-function getBodyPaddingRight() {
+export function getBodyPaddingRight() {
     const bodyPaddingRight = window.getComputedStyle(document.body).paddingRight;
     const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
 
