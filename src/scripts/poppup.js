@@ -4,6 +4,8 @@ import { getBodyPaddingRight } from "./modal_windows";
 export function openPoppup(user) {
     const main = document.querySelector('.main__container');
 
+    const scrollButton = document.querySelector('.main__to-scroll-up-button');
+
     const modalContainer = document.createElement('div');
     modalContainer.className = 'main__modal-container';
     modalContainer.style.position = 'absolute';
@@ -32,6 +34,8 @@ export function openPoppup(user) {
     main.appendChild(modalContainer);
     modalWindow.showModal();
 
+    scrollButton.style.display = 'none';
+
     const bodyPadding = getBodyPaddingRight();
 
     document.body.style.overflow = 'hidden';
@@ -45,6 +49,8 @@ export function openPoppup(user) {
         document.removeEventListener('keydown', handleKeydown);
         document.body.classList.remove('modal-open');
         document.body.style.paddingRight = bodyPadding;
+
+        scrollButton.style.display = 'block';
     };
 
     const handleKeydown = (event) => {

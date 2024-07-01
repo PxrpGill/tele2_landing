@@ -5,6 +5,8 @@ const header = document.querySelector('.header');
 const geopositionButton = document.querySelector('.header__geoposition-button');
 let mainContainer = document.querySelector('.main__container');
 
+const scrollButton = document.querySelector('.main__to-scroll-up-button');
+
 let questionModalTimeoutId;
 
 function generateModalContainer(toAppend) {
@@ -26,6 +28,8 @@ function closeRegionModal(modalContainer, bodyPaddingRight, modalWindowChange) {
 
     document.body.classList.remove('modal-open');
     document.body.style.paddingRight = bodyPaddingRight;
+
+    scrollButton.style.display = 'block';
 }
 
 export function getBodyPaddingRight() {
@@ -52,6 +56,8 @@ function showRegionModal() {
 
     mainContainer.appendChild(modalContainer);
     modalWindowChange.showModal();
+
+    scrollButton.style.display = 'none';
 
     const bodyPaddingRight = getBodyPaddingRight();
 
@@ -84,6 +90,8 @@ function closeQuestionModal(modalContainer, bodyPaddingRight, modalWindowQuestio
 
     document.body.classList.remove('modal-open');
     document.body.style.paddingRight = bodyPaddingRight;
+
+    scrollButton.style.display = 'block';
 }
 
 function showQuestionModal() {
@@ -101,6 +109,8 @@ function showQuestionModal() {
     questionModalTimeoutId = setTimeout(() => {
         modalWindowQuestion.showModal();
     }, 100);
+
+    scrollButton.style.display = 'none';
 
     document.body.style.overflow = 'hidden';
 
