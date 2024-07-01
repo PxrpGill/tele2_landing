@@ -19,8 +19,8 @@ export function openPoppup(user) {
     const username = `<h4 class="user-poppup__username">${user.login}</h4>`;
     const userLinkGit = `
     <p class="user-poppup__information">
-        Ссылка на github: <a class="user-poppup__github-link">
-            ${user.html_url}
+        Ссылка на github: <a href="${user.html_url}" class="user-poppup__github-link" target="_blank">
+            Перейти
         </a>
     </p>`;
 
