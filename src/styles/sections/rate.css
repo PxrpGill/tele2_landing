@@ -1,0 +1,106 @@
+@import url('../mixins.css');
+
+.main__rate-my-online {
+    @mixin flex-just-align start, start;
+    @mixin responsive gap, 56;
+    flex-direction: column;
+}
+
+.main__rate-my-online-title--visually-hidden {
+    display: none;
+}
+
+.main__about-rate-title-slogan {
+    @mixin text-sans var(--text-big), var(--bold-weight), 1;
+    @mixin responsive margin-bottom, 24;
+}
+
+.main__about-rate-text {
+    @mixin text-sans var(--info-text-size), var(--normal-weight), 1.6;
+    @mixin responsive width, 665;
+}
+
+.main__rate-my-online-title--visually-hidden {
+    display: none;
+}
+
+.main__rate-my-online-information-list {
+    width: 100%;
+}
+
+.main__rate-my-online-list {
+    @mixin flex-just-align start, none;
+    @mixin responsive gap, 56;
+    flex-direction: row;
+}
+
+.main__rate-my-online-list-item-information {
+    @mixin flex-just-align start, center;
+    @mixin responsive gap, 16;
+}
+
+.main__rate-my-online-list-item-about-favico {
+    @mixin flex-just-align center, center;
+    @mixin responsive width, 72;
+    @mixin responsive height, 72;
+    border-radius: var(--border-radius-eclipse);
+    background-color: var(--line-color);
+}
+
+.main__rate-my-online-list-item-about-information {
+    @mixin text-sans var(--info-text-size), var(--normal-weight), 1;
+}
+
+.favico-image {
+    @mixin responsive width, 40;
+}
+
+@media screen and (max-width: 992px) {
+    .main__rate-my-online-list {
+        @mixin responsive gap, 32;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .main__rate-my-online {
+        @mixin responsive padding-right, 16;
+        @mixin responsive padding-left, 16;
+        @mixin responsive gap, 40;
+    }
+
+    .main__about-rate {
+        margin-bottom: 0;
+    }
+
+    .main__about-rate-title-slogan {
+        @mixin responsive width, 288;
+        @mixin responsive margin-bottom, 16;
+        line-height: 1.3;
+    }
+
+    .main__about-rate-text {
+        @mixin responsive width, 288;
+        line-height: 1.6;
+        margin-bottom: 0;
+        padding: 0;
+        letter-spacing: -0.5px;
+    }
+
+    .main__rate-my-online-list-item-information {
+        @mixin responsive gap, 24;
+    }
+
+    .main__rate-my-online-list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main__rate-my-online-list {
+        @mixin responsive gap, 40;
+    }
+
+    .main__rate-my-online-list-item-about-favico {
+        @mixin responsive width, 56;
+        @mixin responsive height, 56;
+    }
+}

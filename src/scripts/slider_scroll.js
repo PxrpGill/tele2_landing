@@ -1,3 +1,5 @@
+import { throttle } from "./throttle";
+
 export default class Slider {
     constructor() {
         this.itemsInPage = 3;
@@ -17,7 +19,14 @@ export default class Slider {
                     1
                 </a>
             </li>`;
+
+        this.throttledScroll = throttle(this.onScroll.bind(this), 750);
+        this.throttledWheel = throttle(this.onWheel.bind(this), 750);
+        this.throttledPrevClick = throttle(this.onPrevClick.bind(this), 750);
+        this.throttledNextClick = throttle(this.onNextClick.bind(this), 750);
+
         this.addScrollEventListener();
+        this.addClickEventListeners();
     }
 
     generateLastMarker() {
@@ -86,32 +95,35 @@ export default class Slider {
     }
 
     addScrollEventListener() {
-        this.sliderPlace.addEventListener('scroll', () => {
-            if (!this.isScrolling) {
-                this.isScrolling = true;
-                setTimeout(() => {
-                    const index = this.getCurrentSlideIndex(this.sliderPlace);
-                    this.updateMarkersVisibility(index);
-                    this.isScrolling = false;
-                }, 100);
-            }
-        });
+        this.sliderPlace.addEventListener('scroll', this.throttledScroll);
+        this.sliderPlace.addEventListener('wheel', this.throttledWheel);
+    }
 
-        this.sliderPlace.addEventListener('wheel', (event) => {
-            if (event.shiftKey) {
-                event.preventDefault();
-                const slideWidth = this.sliderPlace.clientWidth;
-                const scrollAmount = Math.round(event.deltaY / 100) * slideWidth;
-
-                this.sliderPlace.scrollTo({
-                    left: this.sliderPlace.scrollLeft + scrollAmount,
-                    behavior: 'smooth'
-                });
-
+    onScroll() {
+        if (!this.isScrolling) {
+            this.isScrolling = true;
+            setTimeout(() => {
                 const index = this.getCurrentSlideIndex(this.sliderPlace);
                 this.updateMarkersVisibility(index);
-            }
-        });
+                this.isScrolling = false;
+            }, 750);
+        }
+    }
+
+    onWheel(event) {
+        if (event.shiftKey) {
+            event.preventDefault();
+            const slideWidth = this.sliderPlace.clientWidth;
+            const scrollAmount = Math.round(event.deltaY / 100) * slideWidth;
+
+            this.sliderPlace.scrollTo({
+                left: this.sliderPlace.scrollLeft + scrollAmount,
+                behavior: 'smooth'
+            });
+
+            const index = this.getCurrentSlideIndex(this.sliderPlace);
+            this.updateMarkersVisibility(index);
+        }
     }
 
     getCurrentSlideIndex(container) {
@@ -192,24 +204,34 @@ export default class Slider {
             });
         });
 
-        this.prevButton.addEventListener('click', () => {
-            const currentIndex = this.getCurrentSlideIndex(this.sliderPlace);
-            if (currentIndex > 0) {
-                this.scrollToPage(currentIndex);
-            }
-        });
+        this.prevButton.addEventListener('click', this.throttledPrevClick);
+        this.nextButton.addEventListener('click', this.throttledNextClick);
+    }
 
-        this.nextButton.addEventListener('click', () => {
-            const currentIndex = this.getCurrentSlideIndex(this.sliderPlace);
-            if (currentIndex < this.totalPages - 1) {
-                this.scrollToPage(currentIndex + 2);
-            }
-        });
+    onPrevClick() {
+        const currentIndex = this.getCurrentSlideIndex(this.sliderPlace);
+        if (currentIndex > 0) {
+            this.scrollToPage(currentIndex);
+        }
+    }
+
+    onNextClick() {
+        const currentIndex = this.getCurrentSlideIndex(this.sliderPlace);
+        if (currentIndex < this.totalPages - 1) {
+            this.scrollToPage(currentIndex + 2);
+        }
     }
 
     scrollToPage(page) {
         const slideWidth = this.sliderPlace.clientWidth;
         const scrollPosition = (page - 1) * slideWidth;
         this.sliderPlace.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+    }
+
+    destroy() {
+        this.sliderPlace.removeEventListener('scroll', this.throttledScroll);
+        this.sliderPlace.removeEventListener('wheel', this.throttledWheel);
+        this.prevButton.removeEventListener('click', this.throttledPrevClick);
+        this.nextButton.removeEventListener('click', this.throttledNextClick);
     }
 }

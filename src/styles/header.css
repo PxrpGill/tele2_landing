@@ -1,0 +1,96 @@
+@import url('./mixins.css');
+
+.header {
+    @mixin flex-just-align space-between, center;
+    @mixin responsive height, 76;
+    width: 100%;
+    border-bottom: 0.1vw solid var(--line-color);
+}
+
+.header .tele2-logo {
+    @mixin responsive margin-left, 32;
+    @mixin responsive width, 88;
+}
+
+.tele2-logo {
+    @mixin responsive width, 88;
+}
+
+.header__geoposition-button {
+    @mixin text-sans var(--info-text-size), var(--normal-weight), 1;
+    @mixin flex-just-align center, center;
+    @mixin responsive margin-right, 30;
+    @mixin responsive gap, 8;
+    background: none;
+    border: none;
+    color: var(--white-color);
+    padding: 0;
+    cursor: pointer;
+    transition: .5s;
+    padding: 0;
+    flex-direction: row-reverse;
+}
+
+.header__geoposition-button::after {
+    content: url("data:image/svg+xml,%3Csvg viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16 3C11.0174 3.0547 7 7.10546 7 12.0939C7 12.1197 7 12.1462 7 12.172C7 17.019 15.0574 27.2733 15.4005 27.707C15.5412 27.8859 15.7569 28 16 28C16.2431 28 16.4588 27.8859 16.5979 27.7085C16.9426 27.2733 25 17.019 25 12.1681C25 12.1462 25 12.1205 25 12.0939C25 7.10468 20.9818 3.0547 16.0047 3H16ZM16 25.9488C13.4669 22.6162 8.53973 15.4531 8.53973 12.1681C8.53895 12.1291 8.53817 12.0822 8.53817 12.0361C8.53817 7.91577 11.8787 4.57608 16 4.57608C20.1213 4.57608 23.4618 7.91577 23.4618 12.0361C23.4618 12.0822 23.4611 12.1291 23.4603 12.1752C23.4603 15.4516 18.5323 22.6131 15.9992 25.9473L16 25.9488ZM16 8.21113C15.9766 8.21035 15.9492 8.21035 15.9218 8.21035C13.6341 8.21035 11.7794 10.0646 11.7794 12.3518C11.7794 14.6389 13.6341 16.4932 15.9218 16.4932C18.2096 16.4932 20.0635 14.6397 20.0643 12.3525C20.0643 12.3416 20.0643 12.3283 20.0643 12.315C20.0643 10.0623 18.2502 8.23223 16.0023 8.20723L16 8.21113ZM16 14.9241C15.9859 14.9241 15.9687 14.9249 15.9515 14.9249C14.5298 14.9249 13.3778 13.7731 13.3778 12.3518C13.3778 10.9304 14.5298 9.77861 15.9515 9.77861C17.3733 9.77861 18.5253 10.9304 18.5253 12.3518C18.5253 12.3525 18.5253 12.3525 18.5253 12.3533C18.5253 12.358 18.5253 12.3643 18.5253 12.3697C18.5253 13.7692 17.3975 14.9061 16.0016 14.921L16 14.9241Z' fill='white'/%3E%3C/svg%3E%0A");
+    @mixin responsive width, 32;
+    @mixin responsive height, 32;
+}
+
+.header__geoposition-button:hover {
+    transform: scale(1.1);
+    color: var(--gray-color);
+}
+
+.header__modal-container {
+    position: absolute;
+}
+
+@media screen and (max-width: 992px) {
+    .header {
+        @mixin responsive height, 76;
+    }
+
+    .header__geoposition-button {
+        @mixin flex-just-align center, center;
+    }
+
+    .header__geoposition-button::after {
+        @mixin responsive width, 48;
+        @mixin responsive height, 48;
+    }
+
+    .header__geoposition-button:hover {
+        transform: none;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .header {
+        @mixin responsive height, 45;
+
+    }
+
+    .header__geoposition-button::after {
+        width: clamp(7.5vw, 7.5vw, 23.8vw);
+        height: clamp(7.5vw, 7.5vw, 23.8vw);
+    }
+
+    .header .tele2-logo {
+        @mixin responsive margin-left, 16;
+        @mixin responsive width, 48;
+    }
+
+    .tele2-logo {
+        @mixin responsive width, 48;
+    }
+
+    .header__geoposition-button {
+        text-align: left;
+        @mixin responsive margin-right, 14;
+    }
+
+    .header__geoposition-button:hover {
+        transform: none;
+    }
+}

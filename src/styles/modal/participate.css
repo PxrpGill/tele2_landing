@@ -1,0 +1,77 @@
+@import url('../mixins.css');
+
+.main__participate-modal-window {
+    @mixin flex-just-align center, start;
+    @mixin responsive width, 400;
+    @mixin responsive height, 400;
+    background-color: var(--main-color);
+    margin: auto;
+    border: none;
+}
+
+.main__participate-modal-window::backdrop {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.main__participate-title--visually-hidden {
+    display: none;
+}
+
+.main__processing-personal-data-agree-label {
+    color: white;
+}
+
+.main__participate-modal-window-content {
+    @mixin flex-just-align none, end;
+    @mixin responsive gap, 50;
+    flex-direction: column;
+}
+
+.main__participate-close-button {
+    @mixin eclipse 45, 45;
+    @mixin flex-just-align center, center;
+    background-color: var(--main-color);
+    border: none;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.main__participate-close-button:hover {
+    transform: scale(1.1);
+}
+
+.cross {
+    @mixin eclipse 45, 45;
+    transform: .5s;
+}
+
+.cross:hover {
+    >path {
+        fill: rgb(165, 25, 25);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .main__participate-close-button:hover {
+        transform: none;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .main__participate-modal-window {
+        @mixin responsive width, 300;
+        @mixin responsive height, 350;
+    }
+
+    .main__participate-close-button {
+        @mixin eclipse 30, 30;
+    }
+
+    .cross {
+        @mixin eclipse 30, 30;
+    }
+
+    .main__participate-close-button:hover {
+        transform: none;
+    }
+}

@@ -1,7 +1,5 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
-import { Features, browserslistToTargets } from "lightningcss";
-import browserslist from "browserslist";
 import handlebars from "vite-plugin-handlebars";
 
 
@@ -12,24 +10,11 @@ export default defineConfig({
     root: "src/",
     publicDir: resolve(__dirname, 'public'),
     css: {
-        devSourcemap: true,
-        transformer: 'lightningcss',
-        lightningcss: {
-            targets: browserslistToTargets(browserslist('>= 0.25%')),
-            include:
-                Features.Colors |
-                Features.Nesting |
-                Features.MediaRangeSyntax,
-
-            exclude:
-                Features.LogicalProperties
-        },
+        postcss: resolve(__dirname, './postcss.config.js')
     },
-    cssMinify: 'lightningcss',
     build: {
         outDir: "../dist",
         minify: true,
-        cssMinify: 'lightningcss',
         rollupOptions: {
             input: {
                 main: resolve(__dirname, 'src/index.html')
@@ -54,7 +39,8 @@ export default defineConfig({
                 resolve(__dirname, `${components}/dialog_question`),
                 resolve(__dirname, `${components}/dialog_change`),
                 resolve(__dirname, `${components}/info_message`),
-                resolve(__dirname, `${components}/participate`)
+                resolve(__dirname, `${components}/participate`),
+                resolve(__dirname, `${components}/up_arrow`)
             ]
         }),
     ]

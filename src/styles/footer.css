@@ -1,0 +1,148 @@
+@import url('./mixins.css');
+
+.footer__title--visually-hidden {
+    display: none;
+}
+
+.footer {
+    width: 100%;
+    @mixin flex-just-align center, none;
+}
+
+.footer__container {
+    width: var(--main-container);
+}
+
+.footer__upper {
+    @mixin flex-just-align space-between, center;
+    border-bottom: 0.1vw solid var(--line-color);
+    @mixin responsive padding-bottom, 8;
+}
+
+.footer__navigation-list {
+    @mixin flex-just-align none, center;
+    @mixin responsive gap, 8;
+}
+
+.footer__upper-terms-stonk {
+    @mixin flex-just-align none, center;
+    @mixin responsive gap, 8;
+}
+
+.footer__terms-stonk-eclipse {
+    @mixin flex-just-align center, center;
+    @mixin eclipse 32, 32;
+    @mixin responsive font-size, 12;
+    @mixin text-sans none, var(--bold-weight), 1;
+    border: 0.1vh solid var(--white-color);
+
+}
+
+.footer__terms-stonk-title {
+    @mixin text-sans none, var(--normal-weight), 1;
+    @mixin responsive font-size, 13;
+}
+
+.footer__lower {
+    @mixin flex-just-align space-between, none;
+    @mixin responsive padding-top, 43;
+    @mixin responsive padding-bottom, 47;
+}
+
+.footer__lower-copywriting {
+    @mixin flex-just-align none, center;
+    gap: var(--item-gap);
+}
+
+.footer__copy {
+    @mixin text-sans var(--text-mini), var(--normal-weight), 1;
+    color: var(--white-color);
+}
+
+.footer__lower-made-by {
+    @mixin flex-just-align none, center;
+    gap: var(--item-gap);
+}
+
+.footer__made {
+    @mixin text-sans none, var(--normal-weight), none;
+    @mixin responsive font-size, 13;
+    color: var(--white-color);
+}
+
+.footer__nav-item-image {
+    transition: .5s;
+
+    >path {
+        transition: .5s;
+    }
+}
+
+.footer__nav-item-image:hover {
+    transform: scale(1.1);
+
+    >path {
+        fill: var(--gray-color);
+    }
+}
+
+.twitter {
+    @mixin responsive width, 25;
+}
+
+.vk {
+    @mixin responsive width, 27;
+}
+
+.facebook {
+    @mixin responsive width, 13;
+}
+
+.chulakov-logo {
+    @mixin responsive width, 139;
+}
+
+@media screen and (max-width: 992px) {
+    .footer__nav-item-image:hover {
+        transform: none;
+
+        >path {
+            fill: var(--white-color);
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .footer__lower-made-by {
+        display: none;
+    }
+
+    .footer__upper {
+        @mixin responsive padding-right, 10;
+        @mixin responsive padding-left, 10;
+        @mixin responsive padding-bottom, 8;
+    }
+
+    .footer__lower {
+        padding-bottom: 0;
+        @mixin responsive padding-top, 27;
+        @mixin responsive padding-left, 16;
+        @mixin responsive padding-right, 49;
+    }
+
+    .footer__navigation-list {
+        @mixin responsive gap, 7;
+    }
+
+    .footer__terms-stonk-eclipse {
+        @mixin eclipse 32, 32;
+    }
+
+    .footer__nav-item-image:hover {
+        transform: none;
+
+        >path {
+            fill: var(--white-color);
+        }
+    }
+}
