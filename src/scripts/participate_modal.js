@@ -1,4 +1,5 @@
 import { onPhoneInput, onPhoneKeyDown, onPhonePaste } from "./mask_input";
+import { getBodyPaddingRight } from "./modal_windows";
 import Validate from "./validate_input";
 
 const openParticipateDialogButton = document.querySelector('.main__stocks-content-participate-button');
@@ -24,20 +25,15 @@ openParticipateDialogButton.addEventListener('click', () => {
     modalWindow.showModal();
     document.body.style.overflow = 'hidden';
 
-    const body = document.body;
-    const bodyPaddingRight = parseInt(window.getComputedStyle(body).paddingRight, 10) || 0;
-    const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
-
-    body.classList.add('modal-open');
-    body.style.paddingRight = `${bodyPaddingRight + scrollBarWidth}px`;
+    const bodyPaddingRight = getBodyPaddingRight();
 
     const closeModal = () => {
         modalWindow.close();
         mainContainer.removeChild(dialogContainer);
         document.body.style.overflow = '';
 
-        body.classList.remove('modal-open');
-        body.style.paddingRight = `${bodyPaddingRight}px`;
+        document.body.classList.remove('modal-open');
+        document.body.style.paddingRight = bodyPaddingRight;
 
         closeModalButton.removeEventListener('click', closeModal);
         document.removeEventListener('keydown', handleKeydown);

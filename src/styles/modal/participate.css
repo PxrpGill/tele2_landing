@@ -8,10 +8,12 @@
     background-color: var(--main-color);
     margin: auto;
     border: none;
+    animation: .5s openModal ease;
 }
 
 .main__participate-modal-window::backdrop {
     background-color: rgba(0, 0, 0, 0.8);
+    animation: .5 openBackdrop ease;
 }
 
 .main__participate-title--visually-hidden {
