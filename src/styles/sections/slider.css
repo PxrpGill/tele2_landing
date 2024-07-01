@@ -156,4 +156,12 @@
             }
         }
     }
+
+    [data-component="main__slider"] {
+        & .main__slider-items {
+            >li {
+                @mixin responsive height, 190;
+            }
+        }
+    }
 }
