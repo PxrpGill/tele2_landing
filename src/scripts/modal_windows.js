@@ -45,6 +45,7 @@ function showRegionModal() {
     let regionButtons = modalTemplateNodeChange.querySelectorAll('.change-region__item-button');
 
     main.style.opacity = 0;
+    document.body.style.overflow = 'hidden';
     let modalContainer = generateModalContainer(modalTemplateNodeChange);
 
     mainContainer.appendChild(modalContainer);
@@ -98,6 +99,8 @@ function showQuestionModal() {
     questionModalTimeoutId = setTimeout(() => {
         modalWindowQuestion.showModal();
     }, 100);
+
+    document.body.style.overflow = 'hidden';
 
     agreeButton.addEventListener('click', function handleAgreeClick() {
         closeQuestionModal(modalContainer, bodyPaddingRight, modalWindowQuestion);
