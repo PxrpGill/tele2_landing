@@ -203,6 +203,22 @@
     align-items: start;
 }
 
+.main__step-description-link {
+    color: var(--white-color);
+}
+
+.main__step-description-link:visited {
+    color: var(--white-color);
+}
+
+.main__processing-link {
+    color: var(--white-color);
+}
+
+.main__processing-link:visited {
+    color: var(--white-color);
+}
+
 .successed-image {
     @mixin responsive width, 9;
 }
