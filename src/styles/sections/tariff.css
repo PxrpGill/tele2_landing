@@ -348,6 +348,7 @@
     }
 
     .main__info-message-phone {
+        @mixin responsive width, 250;
         display: block;
     }
 
