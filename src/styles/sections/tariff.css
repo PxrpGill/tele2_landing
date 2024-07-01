@@ -48,7 +48,7 @@
     @mixin text-sans var(--text-mini), var(--normal-weight), 1;
     @mixin responsive padding-top, 3;
     @mixin responsive padding-bottom, 5;
-    @mixin responsive margin-bottom, 31;
+    @mixin responsive margin-bottom, 24;
     display: flex;
     flex-direction: column-reverse;
 }
@@ -295,7 +295,7 @@
     }
 
     .main__processing-personal-data-agreement {
-        @mixin responsive margin-top, 24;
+        @mixin responsive margin-top, 8;
     }
 
     .main__processing-personal-data-agree:checked {
@@ -338,7 +338,7 @@
 
     .main__processing-personal-data-input-tel {
         order: 2;
-        margin-bottom: 2.5vw;
+        @mixin responsive margin-bottom, 8;
     }
 
     .main__processing-personal-data-tel-label {
@@ -401,6 +401,6 @@
     }
 
     .main__info-message-text-message {
-        @mixin responsive width, 268;
+        @mixin responsive width, 240;
     }
 }
