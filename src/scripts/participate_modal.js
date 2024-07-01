@@ -17,6 +17,7 @@ openParticipateDialogButton.addEventListener('click', () => {
 
     let dialogContainer = document.createElement('div');
     dialogContainer.className = 'main__modal-container';
+    dialogContainer.style.position = 'absolute';
     const mainContainer = document.querySelector('.main__container');
 
     dialogContainer.appendChild(participateTemplateNode);
@@ -24,12 +25,22 @@ openParticipateDialogButton.addEventListener('click', () => {
 
     modalWindow.showModal();
     document.body.style.overflow = 'hidden';
+    modalWindow.classList.remove('closing');
+    modalWindow.classList.remove('close-modal');
 
     const bodyPaddingRight = getBodyPaddingRight();
 
     const closeModal = () => {
-        modalWindow.close();
-        mainContainer.removeChild(dialogContainer);
+        modalWindow.classList.add('closing');
+        modalWindow.classList.add('close-modal');
+
+        setTimeout(() => {
+            modalWindow.close();
+            modalWindow.classList.remove('closing');
+            modalWindow.classList.remove('close-modal');
+            mainContainer.removeChild(dialogContainer);
+        }, 490); 
+
         document.body.style.overflow = '';
 
         document.body.classList.remove('modal-open');

@@ -1,7 +1,6 @@
 import { getBodyPaddingRight } from "./modal_windows";
 
 export function openPoppup(user) {
-    let timerId = null;
 
     const main = document.querySelector('.main__container');
     const scrollButton = document.querySelector('.main__to-scroll-up-button');
@@ -52,7 +51,6 @@ export function openPoppup(user) {
             main.removeChild(modalContainer);
         }, 490); 
 
-        clearTimeout(timerId);
         closeButton.removeEventListener('click', closeModal);
         document.removeEventListener('keydown', handleKeydown);
         document.body.classList.remove('modal-open');

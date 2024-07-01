@@ -11,9 +11,17 @@
     animation: .5s openModal ease;
 }
 
+.main__participate-modal-window.close-modal {
+    animation: .5s closeModal ease;
+}
+
 .main__participate-modal-window::backdrop {
     background-color: rgba(0, 0, 0, 0.8);
-    animation: .5 openBackdrop ease;
+    animation: .5s openBackdrop ease;
+}
+
+.main__participate-modal-window.closing::backdrop {
+    animation: .5s closeBackdrop ease;
 }
 
 .main__participate-title--visually-hidden {
