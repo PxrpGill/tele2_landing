@@ -7,8 +7,6 @@ let mainContainer = document.querySelector('.main__container');
 
 const scrollButton = document.querySelector('.main__to-scroll-up-button');
 
-let questionModalTimeoutId;
-
 function generateModalContainer(toAppend) {
     const container = document.createElement('div');
     container.className = 'main__modal-container';
@@ -81,7 +79,6 @@ function showRegionModal() {
 }
 
 function closeQuestionModal(modalContainer, bodyPaddingRight, modalWindowQuestion) {
-    clearTimeout(questionModalTimeoutId);
     document.body.style.overflow = '';
     modalWindowQuestion.close();
     if (header.contains(modalContainer)) {
@@ -106,9 +103,7 @@ function showQuestionModal() {
 
     const bodyPaddingRight = getBodyPaddingRight();
 
-    questionModalTimeoutId = setTimeout(() => {
-        modalWindowQuestion.showModal();
-    }, 100);
+    modalWindowQuestion.showModal();
 
     scrollButton.style.display = 'none';
 
