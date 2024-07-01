@@ -97,11 +97,13 @@
 }
 
 .main__slider-control {
+    @mixin flex-just-align center, center;
     @mixin eclipse 30, 30;
     @mixin text-sans var(--text-mini), var(--normal-weight), 1;
     background-color: white;
     border: none;
     cursor: pointer;
+    appearance: none;
 }
 
 @media screen and (max-width: 992px) {
