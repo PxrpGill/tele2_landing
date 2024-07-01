@@ -1,9 +1,9 @@
 import { getBodyPaddingRight } from "./modal_windows";
 
-
 export function openPoppup(user) {
-    const main = document.querySelector('.main__container');
+    let timerId = null;
 
+    const main = document.querySelector('.main__container');
     const scrollButton = document.querySelector('.main__to-scroll-up-button');
 
     const modalContainer = document.createElement('div');
@@ -15,7 +15,6 @@ export function openPoppup(user) {
     const modalWindow = templateNode.querySelector('.user-poppup__modal-window');
     const closeButton = templateNode.querySelector('.user-poppup__close-button');
     const userContent = templateNode.querySelector('.user-poppup__user-content');
-
 
     const userImage = `<img src="${user.avatar_url}" loading="lazy">`
     const username = `<h4 class="user-poppup__username">${user.login}</h4>`;
@@ -34,23 +33,33 @@ export function openPoppup(user) {
     main.appendChild(modalContainer);
     modalWindow.showModal();
 
+    modalWindow.classList.remove('closing');
+    modalWindow.classList.remove('close-modal');
+
     scrollButton.style.display = 'none';
 
     const bodyPadding = getBodyPaddingRight();
-
     document.body.style.overflow = 'hidden';
 
     const closeModal = () => {
-        document.body.style.overflow = '';  
-        userContent.innerHTML = '';
-        modalWindow.close();
-        main.removeChild(modalContainer);
+        modalWindow.classList.add('closing');
+        modalWindow.classList.add('close-modal');
+
+        setTimeout(() => {
+            modalWindow.close();
+            modalWindow.classList.remove('closing');
+            modalWindow.classList.remove('close-modal');
+            main.removeChild(modalContainer);
+        }, 490); 
+
+        clearTimeout(timerId);
         closeButton.removeEventListener('click', closeModal);
         document.removeEventListener('keydown', handleKeydown);
         document.body.classList.remove('modal-open');
         document.body.style.paddingRight = bodyPadding;
 
         scrollButton.style.display = 'block';
+        document.body.style.overflow = '';
     };
 
     const handleKeydown = (event) => {

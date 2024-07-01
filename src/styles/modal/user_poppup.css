@@ -9,6 +9,11 @@
     color: var(--white-color);
     border: none;
     padding: 0;
+    animation: .5s openModal ease;
+}
+
+.user-poppup__modal-window.close-modal {
+    animation: .5s closeModal ease;
 }
 
 .user-poppup__content {
@@ -19,6 +24,11 @@
 
 .user-poppup__modal-window::backdrop {
     background-color: rgba(0, 0, 0, 0.8);
+    animation: openBackdrop 0.5s forwards; 
+}
+
+.user-poppup__modal-window.closing::backdrop {
+    animation: closeBackdrop 0.5s forwards; 
 }
 
 .user-poppup__user-content {
