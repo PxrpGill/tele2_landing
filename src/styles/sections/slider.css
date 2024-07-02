@@ -23,6 +23,7 @@
         scroll-behavior: smooth;
         scrollbar-width: none;
         scroll-snap-type: x mandatory;
+        outline: none;
     }
 }
 

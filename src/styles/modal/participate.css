@@ -70,8 +70,9 @@
 
 @media screen and (max-width: 576px) {
     .main__participate-modal-window {
-        @mixin responsive width, 300;
+        @mixin responsive width, 288;
         @mixin responsive height, 350;
+        padding: 0;
     }
 
     .main__participate-close-button {

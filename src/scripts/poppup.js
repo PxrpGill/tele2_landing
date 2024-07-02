@@ -49,7 +49,7 @@ export function openPoppup(user) {
             modalWindow.classList.remove('closing');
             modalWindow.classList.remove('close-modal');
             main.removeChild(modalContainer);
-        }, 490); 
+        }, 499); 
 
         closeButton.removeEventListener('click', closeModal);
         document.removeEventListener('keydown', handleKeydown);
