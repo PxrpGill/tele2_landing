@@ -59,7 +59,6 @@
 }
 
 .main__participate-close-button {
-    @mixin eclipse 45, 45;
     @mixin flex-just-align center, center;
     background-color: var(--main-color);
     border: none;

@@ -61,7 +61,7 @@ openParticipateDialogButton.addEventListener('click', () => {
         if (closeTimer) {
             clearTimeout(closeTimer);
         }
-        closeButton.removeEventListener('click', closeModal);
+        closeModalButton.removeEventListener('click', closeModal);
         document.removeEventListener('keydown', handleKeydown);
     };
 
