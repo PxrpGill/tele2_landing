@@ -8,20 +8,40 @@
     background-color: var(--main-color);
     margin: auto;
     border: none;
-    animation: .5s openModal ease;
+    transition: .5s;
+    transform: translateY(0%) scale(1);
+
+    @starting-style {
+        transform: translateY(-150%) scale(0);
+    }
 }
 
-.main__participate-modal-window.close-modal {
-    animation: .5s closeModal ease;
+.main__participate-modal-window.close{
+    transition: .5s;
+    transform: translateY(-150%) scale(0);
+
+    @starting-style {
+        transform: translateY(0%) scale(1);
+    }
 }
 
 .main__participate-modal-window::backdrop {
     background-color: rgba(0, 0, 0, 0.8);
-    animation: .5s openBackdrop ease;
+    transition: .5s;
+    opacity: 1;
+
+    @starting-style {
+        opacity: 0;
+    }
 }
 
-.main__participate-modal-window.closing::backdrop {
-    animation: .5s closeBackdrop ease;
+.main__participate-modal-window.close::backdrop {
+    transition: .5s;
+    opacity: 0;
+
+    @starting-style {
+        opacity: 1;
+    }
 }
 
 .main__participate-title--visually-hidden {

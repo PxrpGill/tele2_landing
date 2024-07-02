@@ -68,8 +68,8 @@ export default class Slider {
 
     generateSliderElement(i, index, user) {
         return `
-            <a id="item-${i + index}">
-                <img id="image-${i + index}" class="main__slider-image" src="${user.avatar_url}" alt="Картинка пользователя" draggable="false" loading="lazy">
+            <a id="item-${i + index}" popovertarget="mypopover">
+                <img id="image-${i + index}" class="main__slider-image" src="${user.avatar_url}" alt="Картинка пользователя" draggable="false" loading="lazy" popovertarget="mypopover">
             </a>`;
     }
 

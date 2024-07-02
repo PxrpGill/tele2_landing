@@ -1,7 +1,6 @@
 import { getBodyPaddingRight } from "./modal_windows";
 
 export function openPoppup(user) {
-
     const main = document.querySelector('.main__container');
     const scrollButton = document.querySelector('.main__to-scroll-up-button');
 
@@ -15,14 +14,14 @@ export function openPoppup(user) {
     const closeButton = templateNode.querySelector('.user-poppup__close-button');
     const userContent = templateNode.querySelector('.user-poppup__user-content');
 
-    const userImage = `<img src="${user.avatar_url}" loading="lazy">`
+    const userImage = `<img src="${user.avatar_url}" loading="lazy">`;
     const username = `<h4 class="user-poppup__username">${user.login}</h4>`;
     const userLinkGit = `
-    <p class="user-poppup__information">
-        Ссылка на github: <a href="${user.html_url}" class="user-poppup__github-link" target="_blank">
-            Перейти
-        </a>
-    </p>`;
+        <p class="user-poppup__information">
+            Ссылка на github: <a href="${user.html_url}" class="user-poppup__github-link" target="_blank">
+                Перейти
+            </a>
+        </p>`;
 
     userContent.innerHTML += username;
     userContent.innerHTML += userImage;
@@ -33,29 +32,25 @@ export function openPoppup(user) {
     modalWindow.showModal();
 
     modalWindow.classList.remove('closing');
-    modalWindow.classList.remove('close-modal');
-
     scrollButton.style.display = 'none';
+    document.body.style.overflow = 'hidden';
 
     const bodyPadding = getBodyPaddingRight();
-    document.body.style.overflow = 'hidden';
+    let closeTimer;
 
     const closeModal = () => {
         modalWindow.classList.add('closing');
-        modalWindow.classList.add('close-modal');
-
-        setTimeout(() => {
+        closeTimer = setTimeout(() => {
             modalWindow.close();
-            modalWindow.classList.remove('closing');
-            modalWindow.classList.remove('close-modal');
             main.removeChild(modalContainer);
-        }, 499); 
+            modalWindow.classList.remove('closing');
+            userContent.innerHTML = '';
+        }, 500);
 
         closeButton.removeEventListener('click', closeModal);
         document.removeEventListener('keydown', handleKeydown);
-        document.body.classList.remove('modal-open');
         document.body.style.paddingRight = bodyPadding;
-
+        document.body.classList.remove('modal-open');
         scrollButton.style.display = 'block';
         document.body.style.overflow = '';
     };
@@ -66,6 +61,23 @@ export function openPoppup(user) {
         }
     };
 
-    document.addEventListener('keydown', handleKeydown);
-    closeButton.addEventListener('click', closeModal);
+    const cleanup = () => {
+        if (closeTimer) {
+            clearTimeout(closeTimer);
+        }
+        closeButton.removeEventListener('click', closeModal);
+        document.removeEventListener('keydown', handleKeydown);
+    };
+
+    closeButton.addEventListener('click', () => {
+        cleanup();
+        closeModal();
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            cleanup();
+            closeModal();
+        }
+    });
 }

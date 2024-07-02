@@ -1,5 +1,6 @@
 @import url('../mixins.css');
 
+
 .user-poppup__modal-window {
     @mixin responsive width, 450;
     @mixin responsive height, 500;
@@ -9,11 +10,17 @@
     color: var(--white-color);
     border: none;
     padding: 0;
-    animation: .5s openModal ease;
+    transition: .5s ease;
+    transform: translateY(0%) scale(1);
+
+    @starting-style {
+        transform: translateY(-150%) scale(0);
+    }
 }
 
-.user-poppup__modal-window.close-modal {
-    animation: .5s closeModal ease;
+.user-poppup__modal-window.closing {
+    transition: .5s ease;
+    transform: translateY(-150%) scale(0);
 }
 
 .user-poppup__content {
@@ -24,12 +31,15 @@
 
 .user-poppup__modal-window::backdrop {
     background-color: rgba(0, 0, 0, 0.8);
-    animation: openBackdrop 0.5s forwards; 
+    opacity: 1;
+    transition: .5s;
 }
 
 .user-poppup__modal-window.closing::backdrop {
-    animation: closeBackdrop 0.5s forwards; 
+    opacity: 0;
+    transition: .5s;
 }
+
 
 .user-poppup__user-content {
     flex-direction: column;
@@ -95,6 +105,7 @@
             @mixin responsive width, 180;
             @mixin responsive height, 180;
         }
+
         @mixin responsive margin-bottom, 20;
         @mixin flex-just-align center, center;
     }

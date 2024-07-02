@@ -24,25 +24,21 @@ openParticipateDialogButton.addEventListener('click', () => {
     mainContainer.appendChild(dialogContainer);
 
     modalWindow.showModal();
+    modalWindow.classList.remove('close');
     document.body.style.overflow = 'hidden';
-    modalWindow.classList.remove('closing');
-    modalWindow.classList.remove('close-modal');
 
     const bodyPaddingRight = getBodyPaddingRight();
+    let closeTimer;
 
     const closeModal = () => {
-        modalWindow.classList.add('closing');
-        modalWindow.classList.add('close-modal');
-
-        setTimeout(() => {
+        modalWindow.classList.add('close');
+        closeTimer = setTimeout(() => {
             modalWindow.close();
-            modalWindow.classList.remove('closing');
-            modalWindow.classList.remove('close-modal');
-            mainContainer.removeChild(dialogContainer);
-        }, 490); 
-
+            mainContainer.removeChild(dialogContainer); 
+            modalWindow.classList.remove('close');
+        }, 500);
         document.body.style.overflow = '';
-
+        
         document.body.classList.remove('modal-open');
         document.body.style.paddingRight = bodyPaddingRight;
 
@@ -57,7 +53,16 @@ openParticipateDialogButton.addEventListener('click', () => {
     const handleKeydown = (event) => {
         if (event.key === 'Escape') {
             closeModal();
+            cleanup();
         }
+    };
+
+    const cleanup = () => {
+        if (closeTimer) {
+            clearTimeout(closeTimer);
+        }
+        closeButton.removeEventListener('click', closeModal);
+        document.removeEventListener('keydown', handleKeydown);
     };
 
     const handleSubmit = (event) => {
