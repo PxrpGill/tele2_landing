@@ -33,6 +33,10 @@
     background-color: rgba(0, 0, 0, 0.8);
     opacity: 1;
     transition: .5s;
+
+    @starting-style {
+        opacity: 0;
+    }
 }
 
 .user-poppup__modal-window.closing::backdrop {
