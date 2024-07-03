@@ -15,7 +15,8 @@
 @import url('./modal/change_region.css');
 @import url('./modal/participate.css');
 @import url('./modal/choose_region.css');
-@import url('./modal/user_poppup.css');
+
+@import url('./modal/user_poppup_rule.css');
 
 @import url('./scroll_button.css');
 

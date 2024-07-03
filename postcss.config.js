@@ -4,6 +4,7 @@ import postcssCalc from 'postcss-calc';
 import autoprefixer from 'autoprefixer';
 import postcssImport from 'postcss-import';
 import lightningcssPlugin from 'postcss-lightningcss';
+import postcssDialogPolyfill from 'postcss-dialog-polyfill';
 
 
 export default {
@@ -13,6 +14,7 @@ export default {
         postcssCalc(),
         autoprefixer(),
         postcssImport(),
+        postcssDialogPolyfill(),
         lightningcssPlugin({
             browsers: '>= .25%',
             lightningcssOptions: {

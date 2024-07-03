@@ -1,4 +1,5 @@
 import { getBodyPaddingRight } from "./modal_windows";
+import { isStartingStyleSupported } from "./starting_isSupporting";
 
 export function openPoppup(user) {
     const main = document.querySelector('.main__container');
@@ -31,21 +32,44 @@ export function openPoppup(user) {
     main.appendChild(modalContainer);
     modalWindow.showModal();
 
-    modalWindow.classList.remove('closing');
+    if (isStartingStyleSupported()) {
+        console.log('Имеется поддержка');
+    } else {
+        modalWindow.style.transition = 'none';
+        modalWindow.style.transform = 'translateY(-150%) scale(0)';
+        modalWindow.style.opacity = '0';
+
+        setTimeout(() => {
+            modalWindow.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+            modalWindow.style.transform = 'translateY(0%) scale(1)';
+            modalWindow.style.opacity = '1';
+        }, 10);
+    }
+
     scrollButton.style.display = 'none';
     document.body.style.overflow = 'hidden';
 
     const bodyPadding = getBodyPaddingRight();
-    let closeTimer;
 
     const closeModal = () => {
-        modalWindow.classList.add('closing');
-        closeTimer = setTimeout(() => {
-            modalWindow.close();
-            main.removeChild(modalContainer);
-            modalWindow.classList.remove('closing');
-            userContent.innerHTML = '';
-        }, 500);
+        if (isStartingStyleSupported()) {
+            modalWindow.classList.add('closing');
+            setTimeout(() => {
+                modalWindow.close();
+                main.removeChild(modalContainer);
+                modalWindow.classList.remove('closing');
+                userContent.innerHTML = '';
+            }, 500);
+        } else {
+            modalWindow.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+            modalWindow.style.transform = 'translateY(-150%) scale(0)';
+            modalWindow.style.opacity = '0';
+            setTimeout(() => {
+                modalWindow.close();
+                main.removeChild(modalContainer);
+                userContent.innerHTML = '';
+            }, 500);
+        }
 
         closeButton.removeEventListener('click', closeModal);
         document.removeEventListener('keydown', handleKeydown);
@@ -61,23 +85,6 @@ export function openPoppup(user) {
         }
     };
 
-    const cleanup = () => {
-        if (closeTimer) {
-            clearTimeout(closeTimer);
-        }
-        closeButton.removeEventListener('click', closeModal);
-        document.removeEventListener('keydown', handleKeydown);
-    };
-
-    closeButton.addEventListener('click', () => {
-        cleanup();
-        closeModal();
-    });
-
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-            cleanup();
-            closeModal();
-        }
-    });
+    closeButton.addEventListener('click', closeModal);
+    document.addEventListener('keydown', handleKeydown);
 }
