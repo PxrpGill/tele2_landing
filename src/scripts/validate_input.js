@@ -139,6 +139,7 @@ const validate = new Validate();
 function handleSubmit(event) {
     event.preventDefault();
     validate.dataProcessing(event, checkBox, phoneMessagePlace, computerMessagePlace, submitButton, inputTel);
+    inputTel.value = '';
 }
 
 function checkFormValidity() {

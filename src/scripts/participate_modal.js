@@ -99,6 +99,7 @@ openParticipateDialogButton.addEventListener('click', () => {
     const handleSubmit = (event) => {
         const validate = new Validate();
         validate.dataProcessing(event, checkbox, phonePlace, computerPlace, submitButton, inputTel);
+        inputTel.value = '';
     };
 
 
