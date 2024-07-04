@@ -1,6 +1,5 @@
 @import url('../mixins.css');
 
-
 .user-poppup__modal-window {
     @mixin responsive width, 450;
     @mixin responsive height, 500;
@@ -16,11 +15,6 @@
         transform: translateY(-150%) scale(0);
         opacity: 0;
     }
-}
-
-.user-poppup__modal-window.open {
-    transform: translateY(0%) scale(1);
-    opacity: 1;
 }
 
 .user-poppup__modal-window.closing {

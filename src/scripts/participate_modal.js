@@ -1,6 +1,7 @@
 import { onPhoneInput, onPhoneKeyDown, onPhonePaste } from "./mask_input";
 import { getBodyPaddingRight } from "./modal_windows";
 import Validate from "./validate_input";
+import { isStartingStyleSupported } from "./starting_isSupporting";
 
 const openParticipateDialogButton = document.querySelector('.main__stocks-content-participate-button');
 
@@ -24,21 +25,51 @@ openParticipateDialogButton.addEventListener('click', () => {
     mainContainer.appendChild(dialogContainer);
 
     modalWindow.showModal();
-    modalWindow.classList.remove('close');
+
+    if (isStartingStyleSupported()) {
+        console.log('Имеется поддержка @starting-style');
+    } else {
+        modalWindow.style.transition = 'none';
+        modalWindow.style.transform = 'translateY(-150%) scale(0)';
+        modalWindow.style.opacity = '0';
+        modalWindow.classList.add('close');
+
+        setTimeout(() => {
+            modalWindow.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+            modalWindow.style.transform = 'translateY(0%) scale(1)';
+            modalWindow.style.opacity = '1';
+            modalWindow.classList.remove('close');
+        }, 100);
+    }
+
     document.body.style.overflow = 'hidden';
 
     const bodyPaddingRight = getBodyPaddingRight();
     let closeTimer;
 
     const closeModal = () => {
-        modalWindow.classList.add('close');
-        closeTimer = setTimeout(() => {
-            modalWindow.close();
-            mainContainer.removeChild(dialogContainer); 
-            modalWindow.classList.remove('close');
-        }, 500);
+        if (isStartingStyleSupported()) {
+            modalWindow.classList.add('close');
+            setTimeout(() => {
+                modalWindow.close();
+                main.removeChild(dialogContainer);
+                modalWindow.classList.remove('close');
+                userContent.innerHTML = '';
+            }, 500);
+        } else {
+            modalWindow.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+            modalWindow.style.transform = 'translateY(-150%) scale(0)';
+            modalWindow.style.opacity = '0';
+            modalWindow.classList.add('close');
+            setTimeout(() => {
+                modalWindow.close();
+                main.removeChild(dialogContainer);
+                modalWindow.classList.remove('close')
+                userContent.innerHTML = '';
+            }, 500);
+        }
+
         document.body.style.overflow = '';
-        
         document.body.classList.remove('modal-open');
         document.body.style.paddingRight = bodyPaddingRight;
 

@@ -33,17 +33,19 @@ export function openPoppup(user) {
     modalWindow.showModal();
 
     if (isStartingStyleSupported()) {
-        console.log('Имеется поддержка');
+        console.log('Имеется поддержка @starting-style');
     } else {
         modalWindow.style.transition = 'none';
         modalWindow.style.transform = 'translateY(-150%) scale(0)';
         modalWindow.style.opacity = '0';
+        modalWindow.classList.add('closing');
 
         setTimeout(() => {
             modalWindow.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
             modalWindow.style.transform = 'translateY(0%) scale(1)';
             modalWindow.style.opacity = '1';
-        }, 10);
+            modalWindow.classList.remove('closing');
+        }, 100);
     }
 
     scrollButton.style.display = 'none';
@@ -64,9 +66,11 @@ export function openPoppup(user) {
             modalWindow.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
             modalWindow.style.transform = 'translateY(-150%) scale(0)';
             modalWindow.style.opacity = '0';
+            modalWindow.classList.add('closing');
             setTimeout(() => {
                 modalWindow.close();
                 main.removeChild(modalContainer);
+                modalWindow.classList.remove('closing')
                 userContent.innerHTML = '';
             }, 500);
         }
