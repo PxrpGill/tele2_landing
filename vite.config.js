@@ -40,7 +40,8 @@ export default defineConfig({
                 resolve(__dirname, `${components}/dialog_change`),
                 resolve(__dirname, `${components}/info_message`),
                 resolve(__dirname, `${components}/participate`),
-                resolve(__dirname, `${components}/up_arrow`)
+                resolve(__dirname, `${components}/up_arrow`),
+                resolve(__dirname, `${components}/user_poppup`),
             ]
         }),
     ]
